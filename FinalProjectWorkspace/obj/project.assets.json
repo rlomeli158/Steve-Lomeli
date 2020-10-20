@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+      "projectUniqueName": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
       "projectName": "FinalProjectWorkspace",
-      "projectPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+      "projectPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
       "packagesPath": "/Users/slomeli/.nuget/packages/",
-      "outputPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProjectWorkspace/obj/",
+      "outputPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/slomeli/.config/NuGet/NuGet.Config"
