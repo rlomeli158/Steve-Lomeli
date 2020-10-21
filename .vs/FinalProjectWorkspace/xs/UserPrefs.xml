@@ -1,10 +1,20 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Order.cs">
+    <Files>
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="23" Column="75" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="15" Column="36" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="9" Column="24" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="FinalProjectWorkspace" expanded="True" selected="True">
-            <Node name="FinalProjectWorkspace" expanded="True" />
+          <Node name="FinalProjectWorkspace" expanded="True">
+            <Node name="FinalProjectWorkspace" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Order.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
