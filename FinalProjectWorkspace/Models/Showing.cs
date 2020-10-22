@@ -11,7 +11,9 @@ namespace FinalProjectWorkspace.Models
         public Int32 ShowingID { get; set; }
         public DateTime ShowingDate { get; set; }
         public Int32 SeatsAvailable { get; set; }
+
         public Movie Movie { get; set; }
+        public List<Ticket> Tickets { get; set; }
 
     }
 }
