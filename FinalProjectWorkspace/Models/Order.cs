@@ -9,7 +9,7 @@ namespace FinalProjectWorkspace.Models
 
     public class Order
     {
-        private const Decimal SALES_TAX = 0.0825m;
+        private const Decimal SALES_TAX_RATE = 0.0825m; //Verify this is tax rate
 
         public Int32 OrderID { get; set; }
 
@@ -24,7 +24,7 @@ namespace FinalProjectWorkspace.Models
 
         public Decimal Taxes
         {
-            get { return OrderSubtotal * SALES_TAX; }
+            get { return OrderSubtotal * SALES_TAX_RATE; }
         }
 
         public Decimal OrderTotal
@@ -34,7 +34,7 @@ namespace FinalProjectWorkspace.Models
 
         public List<Ticket> Tickets { get; set; }
 
-        //public Customer Customer { get; set; } or public AppUser User {get;set;} ?
+        public AppUser User { get; set; } //Customer that bought
 
         public Order()
         {

@@ -1,4 +1,8 @@
+using System;
+using System.Globalization;
+using FinalProjectWorkspace.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 //TODO: Make this namespace match your project - be sure to remove the []
@@ -31,14 +35,11 @@ namespace FinalProjectWorkspace
             .AddDefaultTokenProviders();*/
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IServiceProvider service)
         {
             //These lines allow you to see more detailed error messages
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
-
-            //TODO: Once you have added Identity into your project, you will need to uncomment this line
-            //app.UseAuthentication();
 
             //This line allows you to use static pages like style sheets and images
             app.UseStaticFiles();
@@ -46,6 +47,19 @@ namespace FinalProjectWorkspace
             //This marks the position in the middleware pipeline where a routing decision
             //is made for a URL.
             app.UseRouting();
+
+            //This allows the data annotations for currency to work on Macs
+            app.Use(async (context, next) =>
+            {
+                CultureInfo.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+                CultureInfo.CurrentUICulture = CultureInfo.CurrentCulture;
+
+                await next.Invoke();
+            });
+
+            //TODO: Once you have added Identity into your project, you will need to uncomment this line
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             //This method maps the controllers and their actions to a patter for
             //requests that's known as the default route. This route identifies
