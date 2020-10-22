@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Order.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Genre.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="23" Column="75" />
-      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="15" Column="36" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="9" Column="24" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="23" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="30" Column="34" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="17" Column="31" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Genre.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,8 +14,9 @@
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="Order.cs" selected="True" />
+                <Node name="Genre.cs" selected="True" />
               </Node>
+              <Node name="Views" expanded="True" />
             </Node>
           </Node>
         </State>
