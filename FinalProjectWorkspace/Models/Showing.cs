@@ -13,6 +13,5 @@ namespace FinalProjectWorkspace.Models
         public Int32 SeatsAvailable { get; set; }
         public Movie Movie { get; set; }
 
-
     }
 }
