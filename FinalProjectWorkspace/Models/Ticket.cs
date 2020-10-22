@@ -14,8 +14,8 @@ namespace FinalProjectWorkspace.Models
         public Decimal TicketPrice { get; set; }
         public Decimal TotalCost { get; set; }
 
-        //Seat number
-        //public List<Seat> Seats { get; set; } is this right?
+        //Seats purchased
+        public List<String> Seats { get; set; } //Take in a list of strings (seat row & numbers)
 
         public Order Order { get; set; }
         public Showing Showing { get; set; }
