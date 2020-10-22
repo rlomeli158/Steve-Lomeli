@@ -23,7 +23,6 @@ namespace FinalProjectWorkspace.Models
 
         public List<Actor> Actors { get; set; } //Is this right?
         public List<Showing> Showings { get; set; }
-        public List<Ticket> Tickets { get; set; }
 
         public Movie()
         {
@@ -37,10 +36,6 @@ namespace FinalProjectWorkspace.Models
                 Showings = new List<Showing>();
             }
 
-            if (Tickets == null)
-            {
-                Tickets = new List<Ticket>();
-            }
         }
 
     }
