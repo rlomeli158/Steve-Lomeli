@@ -129,5 +129,6 @@ namespace FinalProjectWorkspace.Models
         public String State { get; set; }
         public String Zip { get; set; }
         public DateTime Birthday { get; set; }
+        public Int32 PCPBalance { get; set; }
     }
 }
