@@ -1,8 +1,10 @@
 using System;
 using System.Globalization;
+using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 //TODO: Make this namespace match your project - be sure to remove the []
