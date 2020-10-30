@@ -100,3 +100,41 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.pdb
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.genruntimeconfig.cache
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.csproj.CopyComplete
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/appsettings.Development.json
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/appsettings.json
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/libman.json
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/FinalProjectWorkspace.deps.json
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/FinalProjectWorkspace.runtimeconfig.json
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/FinalProjectWorkspace.runtimeconfig.dev.json
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/FinalProjectWorkspace.dll
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/FinalProjectWorkspace.pdb
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/FinalProjectWorkspace.Views.dll
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/FinalProjectWorkspace.Views.pdb
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.csprojAssemblyReference.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.AssemblyInfoInputs.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.AssemblyInfo.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.csproj.CoreCompileInputs.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.MvcApplicationPartsAssemblyInfo.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.RazorAssemblyInfo.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.RazorAssemblyInfo.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.TagHelpers.input.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.TagHelpers.output.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.RazorCoreGenerate.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/CancelledOrderConfirmed.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/EmployeeHomeView.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/ManagerHomeView.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderConfirmed.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.RazorTargetAssemblyInfo.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.RazorTargetAssemblyInfo.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.Views.pdb
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/staticwebassets/FinalProjectWorkspace.StaticWebAssets.Manifest.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/staticwebassets/FinalProjectWorkspace.StaticWebAssets.xml
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.dll
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.pdb
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.genruntimeconfig.cache
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.csproj.CopyComplete
