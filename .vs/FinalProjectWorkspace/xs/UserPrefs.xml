@@ -1,5 +1,9 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="5" Column="41" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="22" Column="91" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -8,9 +12,13 @@
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="SVM" expanded="True" />
-                <Node name="Movie.cs" selected="True" />
               </Node>
-              <Node name="Views" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

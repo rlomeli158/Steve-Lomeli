@@ -18,10 +18,24 @@
             <div class="collapse navbar-collapse" id="nav-content">
                 <ul class="navbar-nav mr-auto">
                     <!--The link to products is provided as an example.  You can add more links for additional pages-->
-                    <li class="nav-item"><a asp-controller="Products" asp-action="Index" class="nav-link">Products</a></li>
-                    
+                    <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Browse</a></li>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Account</a></li>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">PopcornPoints</a></li>
                 </ul>
             </div>
+            <div>
+                <form asp -action="Index" asp-controller="Home" method="get">
+                    <p class="form-group">
+                        <input name="SearchString" class="form-control" />
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </p>
+                </form>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a asp-action="Register" asp-controller="Account" id="registerLink" class="nav-link">Register</a></li>
+                <li><a asp-action="Login" asp-controller="Account" id="loginLink" class="nav-link">Log in</a></li>
+            </ul>
         </div>
     </nav>
 
