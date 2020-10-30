@@ -13,9 +13,9 @@
     <Folder Include="wwwroot\" />
     <Folder Include="wwwroot\lib\" />
     <Folder Include="Models\ViewModels\" />
-    <Folder Include="wwwroot\Images\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\RoleAdmin\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />

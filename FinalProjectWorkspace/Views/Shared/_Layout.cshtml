@@ -4,55 +4,35 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/Images/Main st. logo.png" width="80" height="80" alt="Main St. Movies' Logo" title="Main St. Movies' Logo"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="nav-content">
+<body style="background-color:black">
+    <div>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand text-center" asp-controller="Home" asp-action="Index"><img src="~/images/logo.jpeg" width="80" height="80" alt="Main St. Movies' Logo" title="Main St. Movies' Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     <!--The link to products is provided as an example.  You can add more links for additional pages-->
                     <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Browse</a></li>
                     <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Account</a></li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        @if (User.IsInRole("Manager"))
-                        {
-                            <li>
-                                <a asp-controller="RoleAdmin" asp-action="Index" class="nav-link">Manage Users</a>
-                            </li>
-                            <li>
-                                <a asp-controller="Movies" asp-action="Index" class="nav-link">Manage Movies</a>
-                            </li>
-                            <li>
-                                <a asp-controller="Schedule" asp-action="Index" class="nav-link">Manage Schedule</a>
-                            </li>
-                        }
-                    }
+                    <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">PopcornPoints</a></li>
                 </ul>
             </div>
-            <div>
-                <form asp -action="Index" asp-controller="Home" method="get">
-                    <p class="form-group">
-                        <input name="SearchString" class="form-control" />
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </p>
-                </form>
-            </div>
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-            </svg>
-        </div>
-        @await Html.PartialAsync("_LoginPartial")
-    </nav>
+
+
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
+    
 
     <div class="container">
         @RenderBody()
