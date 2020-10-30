@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="42" Column="15" />
-      <File FileName="FinalProjectWorkspace/Startup.cs" />
-      <File FileName="FinalProjectWorkspace/DAL/AppDbContext.cs" />
-      <File FileName="FinalProjectWorkspace/Models/SVM/SearchViewModel.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Movie.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
-      <File FileName="FinalProjectWorkspace/wwwroot/images/search.svg" />
-      <File FileName="../../../../../../../../../usr/local/share/dotnet/sdk/3.1.403/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="7" Column="21" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="38" Column="18" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="55" Column="9" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/RoleViewModels.cs" Line="6" Column="32" />
+      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="64" Column="45" />
+      <File FileName="FinalProjectWorkspace/Controllers/RoleAdminController.cs" Line="13" Column="32" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Register.cshtml" Line="86" Column="17" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/AccountViewModels.cs" Line="54" Column="62" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" Line="40" Column="33" />
+      <File FileName="FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml" Line="71" Column="38" />
+      <File FileName="FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,18 +19,20 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="SVM" expanded="True" />
+                <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_Layout.cshtml" selected="True" />
+                <Node name="RoleAdmin" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
                 </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
-                <Node name="images" expanded="True" />
+                <Node name="Images" expanded="True" />
+                <Node name="lib" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -38,7 +41,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
