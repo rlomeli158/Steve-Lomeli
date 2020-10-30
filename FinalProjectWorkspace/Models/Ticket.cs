@@ -23,7 +23,7 @@ namespace FinalProjectWorkspace.Models
 
         //These two are nullable because some people won't gift tickets, they'll just buy for themselves
         public Boolean? Gifted { get; set; }
-        public String? GiftRecipient { get; set; } //why does it give that green mark?
+        public String GiftRecipient { get; set; } //why does it give that green mark?
 
 
         public Order Order { get; set; }
