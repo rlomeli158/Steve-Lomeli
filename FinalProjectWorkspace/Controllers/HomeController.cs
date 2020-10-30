@@ -15,5 +15,31 @@ namespace FinalProjectWorkspace.Controllers
         {
             return View();
         }
+
+        // Views Employee Home After Login
+        public IActionResult EmployeeHomeView()
+        {
+            return View();
+        }
+
+        // Views Manager Home After Login
+        public IActionResult ManagerHomeView()
+        {
+            return View();
+        }
+
+
+        // Views Order Confirmed
+        public IActionResult OrderConfirmed()
+        {
+            return View();
+        }
+
+
+        // Views Cancelled Order Confirmed
+        public IActionResult CancelledOrderConfirmed()
+        {
+            return View();
+        }
     }
 }
