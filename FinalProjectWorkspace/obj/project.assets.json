@@ -5830,24 +5830,25 @@
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.9",
       "Microsoft.EntityFrameworkCore >= 3.1.9",
+      "Microsoft.EntityFrameworkCore.Analyzers >= 3.1.9",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.9"
     ]
   },
   "packageFolders": {
-    "/Users/slomeli/.nuget/packages/": {}
+    "/Users/guy/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+      "projectUniqueName": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
       "projectName": "FinalProjectWorkspace",
-      "projectPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
-      "packagesPath": "/Users/slomeli/.nuget/packages/",
-      "outputPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/",
+      "projectPath": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+      "packagesPath": "/Users/guy/.nuget/packages/",
+      "outputPath": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/slomeli/.config/NuGet/NuGet.Config"
+        "/Users/guy/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5874,6 +5875,10 @@
             "version": "[3.1.9, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[3.1.9, )"
+          },
+          "Microsoft.EntityFrameworkCore.Analyzers": {
             "target": "Package",
             "version": "[3.1.9, )"
           },
