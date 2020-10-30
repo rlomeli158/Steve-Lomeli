@@ -4,18 +4,17 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/Images/Main st. logo.png" width="80" height="80" alt="Main St. Movies' Logo" title="Main St. Movies' Logo"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="nav-content">
+<body style="background-color:black">
+    <div>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand text-center" asp-controller="Home" asp-action="Index"><img src="~/images/logo.jpeg" width="80" height="80" alt="Main St. Movies' Logo" title="Main St. Movies' Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     <!--The link to products is provided as an example.  You can add more links for additional pages-->
                     <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
@@ -24,16 +23,16 @@
                     <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">PopcornPoints</a></li>
                 </ul>
             </div>
-           
 
-            
+
+
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
-
-        </div>
-    </nav>
+        </nav>
+    </div>
+    
 
     <div class="container">
         @RenderBody()
