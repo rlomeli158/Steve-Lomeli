@@ -12,6 +12,7 @@ namespace FinalProjectWorkspace.Models
         public DateTime ShowingDate { get; set; }
 
         public List<String> SeatsAvailable { get; set; } // You take the difference of all seats and seats purchased
+        public Boolean SpecialEvent { get; set; }
 
         public Movie Movie { get; set; }
         public List<Ticket> Tickets { get; set; }

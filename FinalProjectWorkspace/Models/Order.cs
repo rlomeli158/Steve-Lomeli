@@ -19,7 +19,7 @@ namespace FinalProjectWorkspace.Models
 
         public Decimal OrderSubtotal
         {
-            get { return Tickets.Sum(t => t.TotalCost); }
+            get { return Tickets.Sum(t => t.TotalCost); } //** We have to take off discount amount? 
         }
 
         public Decimal Taxes
@@ -31,6 +31,8 @@ namespace FinalProjectWorkspace.Models
         {
             get { return OrderSubtotal + Taxes; }
         }
+
+        public Boolean OrderStatus { get; set; } //Active or inactive in case it was cancelled
 
         public List<Ticket> Tickets { get; set; }
 
