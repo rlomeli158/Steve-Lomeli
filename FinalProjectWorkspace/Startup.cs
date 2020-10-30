@@ -1,8 +1,10 @@
 using System;
 using System.Globalization;
+using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 //TODO: Make this namespace match your project - be sure to remove the []
@@ -15,11 +17,11 @@ namespace FinalProjectWorkspace
             //This adds the MVC engine and Razor code
             services.AddControllersWithViews();
 
-             //TODO: (For HW4 and beyond) Add a connection string here once you have created it on Azure
-            //String connectionString = "";
+             //add the connection string for jeremiah Azure account
+            var connectionString = "Server=tcp:finalprojectteam17.database.windows.net,1433;Initial Catalog=finalprojectteam17;Persist Security Info=False;User ID=burtram;Password=basic123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             //TODO: Uncomment this line once you have your connection string
-            //services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 
             //TODO: Uncomment these lines once you have added Identity to your project
             ////NOTE: This is where you would change your password requirements
