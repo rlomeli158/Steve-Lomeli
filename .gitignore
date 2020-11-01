@@ -1,3 +1,7 @@
 
 .vs/FinalProjectWorkspace/xs/UserPrefs.xml
 *.xml
+*.cache
+FinalProjectWorkspace/.DS_Store
+*.xml
+FinalProjectWorkspace/wwwroot/.DS_Store
