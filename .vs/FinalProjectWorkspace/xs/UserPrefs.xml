@@ -1,22 +1,5 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Home/Index.cshtml">
-    <Files>
-      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="44" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" />
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/RoleViewModels.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/RoleAdminController.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Account/Register.cshtml" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/AccountViewModels.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml" />
-      <File FileName="FinalProjectWorkspace/DAL/AppDbContext.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml" />
-      <File FileName="FinalProjectWorkspace/wwwroot/css/bootstrap.css" />
-      <File FileName="FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -27,19 +10,11 @@
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
-                <Node name="RoleAdmin" expanded="True" />
-                <Node name="Shared" expanded="True" />
+              <Node name="Seeding" expanded="True">
+                <Node name="SeedIdentity.cs" selected="True" />
               </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
-                <Node name="images" expanded="True" />
-                <Node name="lib" expanded="True" />
-              </Node>
+              <Node name="Views" expanded="True" />
+              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>

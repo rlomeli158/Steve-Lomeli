@@ -16,6 +16,7 @@
     <Folder Include="Views\Account\" />
     <Folder Include="Views\RoleAdmin\" />
     <Folder Include="wwwroot\images\" />
+    <Folder Include="Seeding\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />

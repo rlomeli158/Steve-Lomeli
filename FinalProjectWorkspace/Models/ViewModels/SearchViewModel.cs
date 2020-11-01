@@ -8,18 +8,33 @@ namespace FinalProjectWorkspace.Models
 {
     public enum AllGenres
     {
+        Action,
+        Adventure,
+        Animation,
         Comedy,
+        Crime,
+        Drama,
+        Family,
+        Fantasy,
         Horror,
-        Documentary
+        Musical,
+        Romance,
+        [Display(Name = "Science Fiction")]
+        ScienceFiction,
+        Thriller,
+        War,
+        Western
+        
     }
 
     public enum AllMPAARatings
     {
         G,
         PG,
+        [Display(Name = "PG-13")]
         PG13,
         R,
-        NR,
+        Unrated
     }
 
     public enum AllSearchTypes
@@ -35,14 +50,14 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Search by Title:")]
         public String SelectedTitle { get; set; } //Textbox
 
-        [Display(Name = "Search by Tagline:")]
-        public String SelectedTagline { get; set; } //Textbox
+        [Display(Name = "Search by Overview:")]
+        public String SelectedOverview { get; set; } //Textbox
 
         [Display(Name = "Search by Genre:")]
-        public Int32 SelectedGenre { get; set; } //Dropdown
+        public Int32 SelectedGenreID { get; set; } //Dropdown
 
         [Display(Name = "Search by Year:")]
-        public Int32 SelectedYear { get; set; } //Textbox, verify it's a year (similar to salary) Should we use Int32 or String?
+        public DateTime? SelectedYear { get; set; } //Textbox, verify it's a year (similar to salary) Should we use Int32 or String?
 
         [Display(Name = "Search by MPAA Rating:")]
         public Int32 SelectedMPAARating { get; set; } //Dropdown
@@ -54,7 +69,7 @@ namespace FinalProjectWorkspace.Models
         public AllSearchTypes SelectedSearchType { get; set; } //Radio Button
 
         [Display(Name = "Search by Showing Date:")]
-        public DateTime SelectedShowingDate { get; set; } //Date selector
+        public DateTime? SelectedShowingDate { get; set; } //Date selector
 
     }
 }
