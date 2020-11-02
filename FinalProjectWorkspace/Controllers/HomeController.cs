@@ -47,7 +47,7 @@ namespace FinalProjectWorkspace.Controllers
             //Populate the view bag with a count of selected job postings
             ViewBag.SelectedMovies = SelectedMovies.Count();
 
-            //return View(SelectedMovies.OrderByDescending(jp => jp.Showings.ShowingDate)); // This line of code doesn't work because of the showing date ***********
+            //return View(SelectedMovies.OrderByDescending(jp => jp.Showings.First(s => s.ShowingDate))); // This line of code doesn't work because of the showing date ***********
 
             return View(SelectedMovies);
 
