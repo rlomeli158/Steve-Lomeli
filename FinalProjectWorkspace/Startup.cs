@@ -25,7 +25,7 @@ namespace FinalProjectWorkspace
 
             //TODO: Uncomment these lines once you have added Identity to your project
             ////NOTE: This is where you would change your password requirements
-            /*services.AddIdentity<AppUser, IdentityRole>(opts => {
+            services.AddIdentity<AppUser, IdentityRole>(opts => {
                 opts.User.RequireUniqueEmail = true;
                 opts.Password.RequiredLength = 6;
                 opts.Password.RequireNonAlphanumeric = false;
@@ -34,7 +34,7 @@ namespace FinalProjectWorkspace
                 opts.Password.RequireDigit = false;
             })
             .AddEntityFrameworkStores<AppDbContext>()
-            .AddDefaultTokenProviders();*/
+            .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IServiceProvider service)

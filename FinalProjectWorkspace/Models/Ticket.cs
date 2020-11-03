@@ -17,7 +17,7 @@ namespace FinalProjectWorkspace.Models
         public Decimal TotalCost { get; set; }
 
         //Seats purchased
-        public List<String> SeatNumber { get; set; } //Take in a list of strings (seat row & numbers)
+        public String SeatNumber { get; set; } //The strings (seat row & numbers)
 
         public Decimal TransactionPopcornPoints { get; set; }
 
