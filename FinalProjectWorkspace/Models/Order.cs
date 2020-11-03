@@ -36,7 +36,9 @@ namespace FinalProjectWorkspace.Models
 
         public List<Ticket> Tickets { get; set; }
 
-        public AppUser User { get; set; } //Customer that bought
+        public AppUser Purchaser { get; set; } //Customer that purchased
+
+        public AppUser Recipient { get; set; } //Recipient of gift, if there is one
 
         public Order()
         {
