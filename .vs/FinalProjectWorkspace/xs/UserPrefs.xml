@@ -1,5 +1,19 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Seeding/SeedIdentity.cs">
+    <Files>
+      <File FileName="FinalProjectWorkspace/Startup.cs" Line="11" Column="32" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" Line="110" Column="2" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" Line="17" Column="74" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" Line="22" Column="22" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="125" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" Line="27" Column="28" />
+      <File FileName="FinalProjectWorkspace/Models/Genre.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
