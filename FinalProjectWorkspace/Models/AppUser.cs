@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
 namespace FinalProjectWorkspace.Models
@@ -48,17 +49,17 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Popcorn Point Balance")]
         public Int32 PCPBalance { get; set; }
 
-        [Display(Name = "Enter user SSN")]
-        [Required(ErrorMessage = "Please enter your SSN!")]
-        public String SSN { get; set; }
-
-        [Display(Name = "Enter user employee type")]
-        [Required(ErrorMessage = "Please select the employee type!")]
-        public String EmpType { get; set; }
-
         public List<Order> Orders { get; set; }
         public List<MovieReview> MovieReviews { get; set; }
         public List<Ticket> Tickets { get; set; }
+
+        //Will show all of the orders someone has purchased
+        [InverseProperty("Purchaser")]
+        public List<Order> OrdersPurchased { get; set; }
+
+        //Will show all of the orders someone has received
+        [InverseProperty("Recipient")]
+        public List<Order> OrdersReceived { get; set; }
 
 
     }

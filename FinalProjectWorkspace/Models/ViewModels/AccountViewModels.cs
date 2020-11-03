@@ -87,9 +87,6 @@ namespace FinalProjectWorkspace.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Display(Name = "Enter user employee type")]
-        [Required(ErrorMessage = "Please select the employee type!")]
-        public String EmpType { get; set; }
     }
 
     //NOTE: This is the view model used to allow the user to 

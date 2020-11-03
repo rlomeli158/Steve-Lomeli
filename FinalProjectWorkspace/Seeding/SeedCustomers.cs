@@ -32,7 +32,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser2.FirstName = "Christopher";
 				newCustUser2.LastName = "Baker";
 				newCustUser2.MiddleInitial = "L";
-				newCustUser2.Birthday = "11/23/1949";
+				newCustUser2.Birthday = Convert.ToDateTime("11/23/1949");
 				newCustUser2.Address = "1245 Lake Anchorage Blvd.";
 				newCustUser2.City = "Austin";
 				newCustUser2.State = "TX";
