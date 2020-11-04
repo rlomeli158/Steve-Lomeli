@@ -23,6 +23,7 @@ namespace FinalProjectWorkspace.Seeding
 			//Get instances of the services needed to add a user & add a user to a role
 
 			AppUser newCustUser2 = db.Users.FirstOrDefault(u => u.Email == "cbaker@puppy.com");
+
 			if (newCustUser2 == null)
 			{
 				newCustUser2 = new AppUser();
@@ -32,7 +33,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser2.FirstName = "Christopher";
 				newCustUser2.LastName = "Baker";
 				newCustUser2.MiddleInitial = "L";
-				newCustUser2.Birthday = Convert.ToDateTime("11/23/1949");
+				newCustUser2.Birthday = new DateTime(1949, 11, 23);
 				newCustUser2.Address = "1245 Lake Anchorage Blvd.";
 				newCustUser2.City = "Austin";
 				newCustUser2.State = "TX";
@@ -66,7 +67,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser3.FirstName = "Martin";
 				newCustUser3.LastName = "Banks";
 				newCustUser3.MiddleInitial = "T";
-				newCustUser3.Birthday = "11/27/1962";
+				newCustUser3.Birthday = new DateTime(1962, 11, 27);
 				newCustUser3.Address = "6700 Small Pine Lane";
 				newCustUser3.City = "Austin";
 				newCustUser3.State = "TX";
@@ -100,7 +101,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser4.FirstName = "Franco";
 				newCustUser4.LastName = "Broccolo";
 				newCustUser4.MiddleInitial = "V";
-				newCustUser4.Birthday = "10/11/1992";
+				newCustUser4.Birthday = new DateTime(1992, 10, 11);
 				newCustUser4.Address = "562 Sad Road";
 				newCustUser4.City = "Austin";
 				newCustUser4.State = "TX";
@@ -134,7 +135,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser5.FirstName = "Wiseman";
 				newCustUser5.LastName = "Chang";
 				newCustUser5.MiddleInitial = "L";
-				newCustUser5.Birthday = "5/16/1997";
+				newCustUser5.Birthday = new DateTime(1997, 5, 16);
 				newCustUser5.Address = "7202 Big Hall";
 				newCustUser5.City = "Round Rock";
 				newCustUser5.State = "TX";
@@ -168,7 +169,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser6.FirstName = "Lim";
 				newCustUser6.LastName = "Chou";
 				newCustUser6.MiddleInitial = "C";
-				newCustUser6.Birthday = "4/6/1970";
+				newCustUser6.Birthday = new DateTime(1970, 4, 6);
 				newCustUser6.Address = "8600 Cherry Lane";
 				newCustUser6.City = "Austin";
 				newCustUser6.State = "TX";
@@ -202,7 +203,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser7.FirstName = "Shaman";
 				newCustUser7.LastName = "Dixon";
 				newCustUser7.MiddleInitial = "D";
-				newCustUser7.Birthday = "1/12/1984";
+				newCustUser7.Birthday = new DateTime(1984, 1, 12);
 				newCustUser7.Address = "8234 Puppy Circle";
 				newCustUser7.City = "Austin";
 				newCustUser7.State = "TX";
@@ -236,7 +237,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser8.FirstName = "Jim Bob";
 				newCustUser8.LastName = "Evans";
 				newCustUser8.MiddleInitial = "C";
-				newCustUser8.Birthday = "9/9/1959";
+				newCustUser8.Birthday = new DateTime(1959, 9, 9);
 				newCustUser8.Address = "9506 Kitten Circle";
 				newCustUser8.City = "Georgetown";
 				newCustUser8.State = "TX";
@@ -270,7 +271,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser9.FirstName = "Lou Ann";
 				newCustUser9.LastName = "Feeley";
 				newCustUser9.MiddleInitial = "K";
-				newCustUser9.Birthday = "1/12/2001";
+				newCustUser9.Birthday = new DateTime(2001, 1, 12);
 				newCustUser9.Address = "7600 N 7th Street W";
 				newCustUser9.City = "Austin";
 				newCustUser9.State = "TX";
@@ -304,7 +305,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser10.FirstName = "Teresa";
 				newCustUser10.LastName = "Freeley";
 				newCustUser10.MiddleInitial = "P";
-				newCustUser10.Birthday = "2/4/1991";
+				newCustUser10.Birthday = new DateTime(1991, 2, 4);
 				newCustUser10.Address = "5448 Clearview Ave.";
 				newCustUser10.City = "Horseshoe Bay";
 				newCustUser10.State = "TX";
@@ -338,7 +339,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser11.FirstName = "Mikaela";
 				newCustUser11.LastName = "Garcia";
 				newCustUser11.MiddleInitial = "L";
-				newCustUser11.Birthday = "10/2/1991";
+				newCustUser11.Birthday = new DateTime(1991, 10, 2);
 				newCustUser11.Address = "3594 Cowview";
 				newCustUser11.City = "Austin";
 				newCustUser11.State = "TX";
@@ -372,7 +373,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser12.FirstName = "Charmander";
 				newCustUser12.LastName = "Haley";
 				newCustUser12.MiddleInitial = "E";
-				newCustUser12.Birthday = "7/10/1974";
+				newCustUser12.Birthday = new DateTime(1974, 7, 10);
 				newCustUser12.Address = "43 One Pigboy Pkwy";
 				newCustUser12.City = "Austin";
 				newCustUser12.State = "TX";
@@ -406,7 +407,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser13.FirstName = "Jeff";
 				newCustUser13.LastName = "Hampton";
 				newCustUser13.MiddleInitial = "T";
-				newCustUser13.Birthday = "3/10/2004";
+				newCustUser13.Birthday = new DateTime(2004, 3, 10);
 				newCustUser13.Address = "7337 67th St.";
 				newCustUser13.City = "San Marcos";
 				newCustUser13.State = "TX";
@@ -440,7 +441,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser14.FirstName = "John";
 				newCustUser14.LastName = "Hearn";
 				newCustUser14.MiddleInitial = "B";
-				newCustUser14.Birthday = "8/5/1950";
+				newCustUser14.Birthday = new DateTime(1950, 8, 5);
 				newCustUser14.Address = "8225 South First";
 				newCustUser14.City = "Plano";
 				newCustUser14.State = "TX";
@@ -474,7 +475,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser15.FirstName = "Abadon";
 				newCustUser15.LastName = "Hicks";
 				newCustUser15.MiddleInitial = "J";
-				newCustUser15.Birthday = "12/8/2004";
+				newCustUser15.Birthday = new DateTime(2004, 12, 8);
 				newCustUser15.Address = "632 NE Dog Ln., Ste 910";
 				newCustUser15.City = "Austin";
 				newCustUser15.State = "TX";
@@ -508,7 +509,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser16.FirstName = "Brock";
 				newCustUser16.LastName = "Ingram";
 				newCustUser16.MiddleInitial = "S";
-				newCustUser16.Birthday = "9/5/2001";
+				newCustUser16.Birthday = new DateTime(2001, 9, 5);
 				newCustUser16.Address = "9548 El Perro Ct.";
 				newCustUser16.City = "New York";
 				newCustUser16.State = "NY";
@@ -542,7 +543,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser17.FirstName = "Todd";
 				newCustUser17.LastName = "Jack";
 				newCustUser17.MiddleInitial = "L";
-				newCustUser17.Birthday = "1/20/1999";
+				newCustUser17.Birthday = new DateTime(1999, 1, 20);
 				newCustUser17.Address = "2564 Tree St.";
 				newCustUser17.City = "Austin";
 				newCustUser17.State = "TX";
@@ -576,7 +577,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser18.FirstName = "Vic";
 				newCustUser18.LastName = "Lancer";
 				newCustUser18.MiddleInitial = "M";
-				newCustUser18.Birthday = "4/14/2000";
+				newCustUser18.Birthday = new DateTime(2000, 4, 14);
 				newCustUser18.Address = "1639 Butter Ln.";
 				newCustUser18.City = "Beverly Hills";
 				newCustUser18.State = "CA";
@@ -610,7 +611,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser19.FirstName = "Sweeney";
 				newCustUser19.LastName = "Lineback";
 				newCustUser19.MiddleInitial = "W";
-				newCustUser19.Birthday = "12/2/2003";
+				newCustUser19.Birthday = new DateTime(2003, 12, 2);
 				newCustUser19.Address = "1700 Land St";
 				newCustUser19.City = "Austin";
 				newCustUser19.State = "TX";
@@ -644,7 +645,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser20.FirstName = "Ernesto";
 				newCustUser20.LastName = "Lowe";
 				newCustUser20.MiddleInitial = "S";
-				newCustUser20.Birthday = "12/7/1977";
+				newCustUser20.Birthday = new DateTime(1977, 12, 7);
 				newCustUser20.Address = "2301 Snail Drive";
 				newCustUser20.City = "New Braunfels";
 				newCustUser20.State = "TX";
@@ -678,7 +679,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser21.FirstName = "Charles";
 				newCustUser21.LastName = "Luce";
 				newCustUser21.MiddleInitial = "B";
-				newCustUser21.Birthday = "3/16/1949";
+				newCustUser21.Birthday = new DateTime(1949, 3, 16);
 				newCustUser21.Address = "7945 Small Clouds";
 				newCustUser21.City = "Cactus";
 				newCustUser21.State = "TX";
@@ -712,7 +713,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser22.FirstName = "Jackson";
 				newCustUser22.LastName = "MacLeod";
 				newCustUser22.MiddleInitial = "D";
-				newCustUser22.Birthday = "2/21/1947";
+				newCustUser22.Birthday = new DateTime(1947, 2, 21);
 				newCustUser22.Address = "2804 Near West Blvd.";
 				newCustUser22.City = "Plano";
 				newCustUser22.State = "TX";
@@ -746,7 +747,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser23.FirstName = "Candice";
 				newCustUser23.LastName = "Markham";
 				newCustUser23.MiddleInitial = "P";
-				newCustUser23.Birthday = "3/20/1972";
+				newCustUser23.Birthday = new DateTime(1972, 3, 20);
 				newCustUser23.Address = "9761 Bike Chase";
 				newCustUser23.City = "Kissimmee";
 				newCustUser23.State = "FL";
@@ -780,7 +781,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser24.FirstName = "Clarence";
 				newCustUser24.LastName = "Martin";
 				newCustUser24.MiddleInitial = "A";
-				newCustUser24.Birthday = "7/19/1992";
+				newCustUser24.Birthday = new DateTime(1992, 7, 19);
 				newCustUser24.Address = "387 Alcedo St.";
 				newCustUser24.City = "Austin";
 				newCustUser24.State = "TX";
@@ -814,7 +815,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser25.FirstName = "Greg";
 				newCustUser25.LastName = "Martinez";
 				newCustUser25.MiddleInitial = "R";
-				newCustUser25.Birthday = "5/28/1947";
+				newCustUser25.Birthday = new DateTime(1947, 5, 28);
 				newCustUser25.Address = "2495 Sunrise Blvd.";
 				newCustUser25.City = "Red Rock";
 				newCustUser25.State = "TX";
@@ -848,7 +849,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser26.FirstName = "Charles";
 				newCustUser26.LastName = "Miller";
 				newCustUser26.MiddleInitial = "R";
-				newCustUser26.Birthday = "10/15/1990";
+				newCustUser26.Birthday = new DateTime(1990, 10, 15);
 				newCustUser26.Address = "897762 Main St.";
 				newCustUser26.City = "South Padre Island";
 				newCustUser26.State = "TX";
@@ -882,7 +883,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser27.FirstName = "Kelly";
 				newCustUser27.LastName = "Nelson";
 				newCustUser27.MiddleInitial = "T";
-				newCustUser27.Birthday = "7/13/1971";
+				newCustUser27.Birthday = new DateTime(1971, 7, 13);
 				newCustUser27.Address = "5601 Blue River";
 				newCustUser27.City = "Disney";
 				newCustUser27.State = "OK";
@@ -916,7 +917,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser28.FirstName = "Joe";
 				newCustUser28.LastName = "Nguyen";
 				newCustUser28.MiddleInitial = "C";
-				newCustUser28.Birthday = "3/17/1984";
+				newCustUser28.Birthday = new DateTime(1984, 3, 17);
 				newCustUser28.Address = "8249 54th SW St.";
 				newCustUser28.City = "Del Rio";
 				newCustUser28.State = "TX";
@@ -950,7 +951,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser29.FirstName = "Bill";
 				newCustUser29.LastName = "O'Reilly";
 				newCustUser29.MiddleInitial = "T";
-				newCustUser29.Birthday = "7/8/1959";
+				newCustUser29.Birthday = new DateTime(1959, 7, 8);
 				newCustUser29.Address = "9870 Gato Drive";
 				newCustUser29.City = "Fort Worth";
 				newCustUser29.State = "TX";
@@ -984,7 +985,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser30.FirstName = "Anka";
 				newCustUser30.LastName = "Radkovich";
 				newCustUser30.MiddleInitial = "L";
-				newCustUser30.Birthday = "5/19/1966";
+				newCustUser30.Birthday = new DateTime(1966, 5, 19);
 				newCustUser30.Address = "7900 Mark Pl";
 				newCustUser30.City = "Plano";
 				newCustUser30.State = "TX";
@@ -1018,7 +1019,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser31.FirstName = "Megan";
 				newCustUser31.LastName = "Rhodes";
 				newCustUser31.MiddleInitial = "C";
-				newCustUser31.Birthday = "3/12/1965";
+				newCustUser31.Birthday = new DateTime(1965, 3, 12);
 				newCustUser31.Address = "1187 Carpet Rd.";
 				newCustUser31.City = "Austin";
 				newCustUser31.State = "TX";
@@ -1052,7 +1053,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser32.FirstName = "Eryn";
 				newCustUser32.LastName = "Rice";
 				newCustUser32.MiddleInitial = "M";
-				newCustUser32.Birthday = "4/28/1975";
+				newCustUser32.Birthday = new DateTime(1975, 4, 28);
 				newCustUser32.Address = "2205 Rio Pequeno";
 				newCustUser32.City = "Austin";
 				newCustUser32.State = "TX";
@@ -1076,4 +1077,3 @@ namespace FinalProjectWorkspace.Seeding
 		}
 	}
 }
-
