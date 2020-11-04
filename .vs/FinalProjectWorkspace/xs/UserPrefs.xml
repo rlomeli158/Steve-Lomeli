@@ -1,37 +1,50 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Seeding/SeedIdentity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/RoleAdminController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="118" Column="10" />
+      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="26" Column="25" />
       <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Movie.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Genre.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" Line="62" Column="62" />
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" />
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
-      <File FileName="FinalProjectWorkspace/Startup.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" Line="48" Column="35" />
-      <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Order.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedGenres.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="15" Column="16" />
+      <File FileName="FinalProjectWorkspace/Models/Genre.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="18" Column="45" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" Line="39" Column="36" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="122" Column="26" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="20" Column="70" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" Line="171" Column="35" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" Line="78" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Register.cshtml" Line="75" Column="19" />
+      <File FileName="FinalProjectWorkspace/DAL/AppDbContext.cs" Line="18" Column="38" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/SeedController.cs" Line="30" Column="9" />
+      <File FileName="FinalProjectWorkspace/Views/Seed/Index.cshtml" Line="5" Column="58" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="21" Column="83" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedGenres.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="62" Column="35" />
+      <File FileName="FinalProjectWorkspace/Controllers/RoleAdminController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="RoleAdminController.cs" selected="True" />
+              </Node>
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
-              <Node name="Seeding" expanded="True">
-                <Node name="SeedIdentity.cs" selected="True" />
+              <Node name="Seeding" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Seed" expanded="True" />
+                <Node name="Shared" expanded="True" />
               </Node>
-              <Node name="Views" expanded="True" />
               <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>

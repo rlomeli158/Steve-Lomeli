@@ -29,7 +29,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser2 = new AppUser();
 				newCustUser2.UserName = "cbaker@puppy.com";
 				newCustUser2.Email = "cbaker@puppy.com";
-				newCustUser2.CustomerID = "5001";
+				newCustUser2.Id = "5001";
 				newCustUser2.FirstName = "Christopher";
 				newCustUser2.LastName = "Baker";
 				newCustUser2.MiddleInitial = "L";
@@ -63,7 +63,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser3 = new AppUser();
 				newCustUser3.UserName = "banker@longhorn.net";
 				newCustUser3.Email = "banker@longhorn.net";
-				newCustUser3.CustomerID = "5002";
+				newCustUser3.Id = "5002";
 				newCustUser3.FirstName = "Martin";
 				newCustUser3.LastName = "Banks";
 				newCustUser3.MiddleInitial = "T";
@@ -97,7 +97,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser4 = new AppUser();
 				newCustUser4.UserName = "franco@puppy.com";
 				newCustUser4.Email = "franco@puppy.com";
-				newCustUser4.CustomerID = "5003";
+				newCustUser4.Id = "5003";
 				newCustUser4.FirstName = "Franco";
 				newCustUser4.LastName = "Broccolo";
 				newCustUser4.MiddleInitial = "V";
@@ -131,7 +131,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser5 = new AppUser();
 				newCustUser5.UserName = "wchang@puppy.com";
 				newCustUser5.Email = "wchang@puppy.com";
-				newCustUser5.CustomerID = "5004";
+				newCustUser5.Id = "5004";
 				newCustUser5.FirstName = "Wiseman";
 				newCustUser5.LastName = "Chang";
 				newCustUser5.MiddleInitial = "L";
@@ -165,7 +165,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser6 = new AppUser();
 				newCustUser6.UserName = "limchou@gogle.com";
 				newCustUser6.Email = "limchou@gogle.com";
-				newCustUser6.CustomerID = "5005";
+				newCustUser6.Id = "5005";
 				newCustUser6.FirstName = "Lim";
 				newCustUser6.LastName = "Chou";
 				newCustUser6.MiddleInitial = "C";
@@ -199,7 +199,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser7 = new AppUser();
 				newCustUser7.UserName = "shdixon@aoll.com";
 				newCustUser7.Email = "shdixon@aoll.com";
-				newCustUser7.CustomerID = "5006";
+				newCustUser7.Id = "5006";
 				newCustUser7.FirstName = "Shaman";
 				newCustUser7.LastName = "Dixon";
 				newCustUser7.MiddleInitial = "D";
@@ -233,7 +233,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser8 = new AppUser();
 				newCustUser8.UserName = "j.b.evans@aheca.org";
 				newCustUser8.Email = "j.b.evans@aheca.org";
-				newCustUser8.CustomerID = "5007";
+				newCustUser8.Id = "5007";
 				newCustUser8.FirstName = "Jim Bob";
 				newCustUser8.LastName = "Evans";
 				newCustUser8.MiddleInitial = "C";
@@ -267,7 +267,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser9 = new AppUser();
 				newCustUser9.UserName = "feeley@penguin.org";
 				newCustUser9.Email = "feeley@penguin.org";
-				newCustUser9.CustomerID = "5008";
+				newCustUser9.Id = "5008";
 				newCustUser9.FirstName = "Lou Ann";
 				newCustUser9.LastName = "Feeley";
 				newCustUser9.MiddleInitial = "K";
@@ -301,7 +301,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser10 = new AppUser();
 				newCustUser10.UserName = "tfreeley@minnetonka.ci.us";
 				newCustUser10.Email = "tfreeley@minnetonka.ci.us";
-				newCustUser10.CustomerID = "5009";
+				newCustUser10.Id = "5009";
 				newCustUser10.FirstName = "Teresa";
 				newCustUser10.LastName = "Freeley";
 				newCustUser10.MiddleInitial = "P";
@@ -335,7 +335,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser11 = new AppUser();
 				newCustUser11.UserName = "mgarcia@gogle.com";
 				newCustUser11.Email = "mgarcia@gogle.com";
-				newCustUser11.CustomerID = "5010";
+				newCustUser11.Id = "5010";
 				newCustUser11.FirstName = "Mikaela";
 				newCustUser11.LastName = "Garcia";
 				newCustUser11.MiddleInitial = "L";
@@ -369,7 +369,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser12 = new AppUser();
 				newCustUser12.UserName = "chaley@mug.com";
 				newCustUser12.Email = "chaley@mug.com";
-				newCustUser12.CustomerID = "5011";
+				newCustUser12.Id = "5011";
 				newCustUser12.FirstName = "Charmander";
 				newCustUser12.LastName = "Haley";
 				newCustUser12.MiddleInitial = "E";
@@ -403,7 +403,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser13 = new AppUser();
 				newCustUser13.UserName = "jeffh@mario.com";
 				newCustUser13.Email = "jeffh@mario.com";
-				newCustUser13.CustomerID = "5012";
+				newCustUser13.Id = "5012";
 				newCustUser13.FirstName = "Jeff";
 				newCustUser13.LastName = "Hampton";
 				newCustUser13.MiddleInitial = "T";
@@ -437,7 +437,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser14 = new AppUser();
 				newCustUser14.UserName = "wjhearniii@umich.org";
 				newCustUser14.Email = "wjhearniii@umich.org";
-				newCustUser14.CustomerID = "5013";
+				newCustUser14.Id = "5013";
 				newCustUser14.FirstName = "John";
 				newCustUser14.LastName = "Hearn";
 				newCustUser14.MiddleInitial = "B";
@@ -471,7 +471,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser15 = new AppUser();
 				newCustUser15.UserName = "ahick@yaho.com";
 				newCustUser15.Email = "ahick@yaho.com";
-				newCustUser15.CustomerID = "5014";
+				newCustUser15.Id = "5014";
 				newCustUser15.FirstName = "Abadon";
 				newCustUser15.LastName = "Hicks";
 				newCustUser15.MiddleInitial = "J";
@@ -505,7 +505,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser16 = new AppUser();
 				newCustUser16.UserName = "ingram@jack.com";
 				newCustUser16.Email = "ingram@jack.com";
-				newCustUser16.CustomerID = "5015";
+				newCustUser16.Id = "5015";
 				newCustUser16.FirstName = "Brock";
 				newCustUser16.LastName = "Ingram";
 				newCustUser16.MiddleInitial = "S";
@@ -539,7 +539,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser17 = new AppUser();
 				newCustUser17.UserName = "toddj@yourmom.com";
 				newCustUser17.Email = "toddj@yourmom.com";
-				newCustUser17.CustomerID = "5016";
+				newCustUser17.Id = "5016";
 				newCustUser17.FirstName = "Todd";
 				newCustUser17.LastName = "Jack";
 				newCustUser17.MiddleInitial = "L";
@@ -573,7 +573,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser18 = new AppUser();
 				newCustUser18.UserName = "thequeen@aska.net";
 				newCustUser18.Email = "thequeen@aska.net";
-				newCustUser18.CustomerID = "5017";
+				newCustUser18.Id = "5017";
 				newCustUser18.FirstName = "Vic";
 				newCustUser18.LastName = "Lancer";
 				newCustUser18.MiddleInitial = "M";
@@ -607,7 +607,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser19 = new AppUser();
 				newCustUser19.UserName = "linebacker@gogle.com";
 				newCustUser19.Email = "linebacker@gogle.com";
-				newCustUser19.CustomerID = "5018";
+				newCustUser19.Id = "5018";
 				newCustUser19.FirstName = "Sweeney";
 				newCustUser19.LastName = "Lineback";
 				newCustUser19.MiddleInitial = "W";
@@ -641,7 +641,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser20 = new AppUser();
 				newCustUser20.UserName = "elowe@scare.net";
 				newCustUser20.Email = "elowe@scare.net";
-				newCustUser20.CustomerID = "5019";
+				newCustUser20.Id = "5019";
 				newCustUser20.FirstName = "Ernesto";
 				newCustUser20.LastName = "Lowe";
 				newCustUser20.MiddleInitial = "S";
@@ -675,7 +675,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser21 = new AppUser();
 				newCustUser21.UserName = "cluce@gogle.com";
 				newCustUser21.Email = "cluce@gogle.com";
-				newCustUser21.CustomerID = "5020";
+				newCustUser21.Id = "5020";
 				newCustUser21.FirstName = "Charles";
 				newCustUser21.LastName = "Luce";
 				newCustUser21.MiddleInitial = "B";
@@ -709,7 +709,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser22 = new AppUser();
 				newCustUser22.UserName = "mackcloud@george.com";
 				newCustUser22.Email = "mackcloud@george.com";
-				newCustUser22.CustomerID = "5021";
+				newCustUser22.Id = "5021";
 				newCustUser22.FirstName = "Jackson";
 				newCustUser22.LastName = "MacLeod";
 				newCustUser22.MiddleInitial = "D";
@@ -743,7 +743,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser23 = new AppUser();
 				newCustUser23.UserName = "cmartin@beets.com";
 				newCustUser23.Email = "cmartin@beets.com";
-				newCustUser23.CustomerID = "5022";
+				newCustUser23.Id = "5022";
 				newCustUser23.FirstName = "Candice";
 				newCustUser23.LastName = "Markham";
 				newCustUser23.MiddleInitial = "P";
@@ -777,7 +777,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser24 = new AppUser();
 				newCustUser24.UserName = "clarence@yoho.com";
 				newCustUser24.Email = "clarence@yoho.com";
-				newCustUser24.CustomerID = "5023";
+				newCustUser24.Id = "5023";
 				newCustUser24.FirstName = "Clarence";
 				newCustUser24.LastName = "Martin";
 				newCustUser24.MiddleInitial = "A";
@@ -811,7 +811,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser25 = new AppUser();
 				newCustUser25.UserName = "gregmartinez@drdre.com";
 				newCustUser25.Email = "gregmartinez@drdre.com";
-				newCustUser25.CustomerID = "5024";
+				newCustUser25.Id = "5024";
 				newCustUser25.FirstName = "Greg";
 				newCustUser25.LastName = "Martinez";
 				newCustUser25.MiddleInitial = "R";
@@ -845,7 +845,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser26 = new AppUser();
 				newCustUser26.UserName = "cmiller@bob.com";
 				newCustUser26.Email = "cmiller@bob.com";
-				newCustUser26.CustomerID = "5025";
+				newCustUser26.Id = "5025";
 				newCustUser26.FirstName = "Charles";
 				newCustUser26.LastName = "Miller";
 				newCustUser26.MiddleInitial = "R";
@@ -879,7 +879,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser27 = new AppUser();
 				newCustUser27.UserName = "knelson@aoll.com";
 				newCustUser27.Email = "knelson@aoll.com";
-				newCustUser27.CustomerID = "5026";
+				newCustUser27.Id = "5026";
 				newCustUser27.FirstName = "Kelly";
 				newCustUser27.LastName = "Nelson";
 				newCustUser27.MiddleInitial = "T";
@@ -913,7 +913,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser28 = new AppUser();
 				newCustUser28.UserName = "joewin@xfactor.com";
 				newCustUser28.Email = "joewin@xfactor.com";
-				newCustUser28.CustomerID = "5027";
+				newCustUser28.Id = "5027";
 				newCustUser28.FirstName = "Joe";
 				newCustUser28.LastName = "Nguyen";
 				newCustUser28.MiddleInitial = "C";
@@ -947,7 +947,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser29 = new AppUser();
 				newCustUser29.UserName = "orielly@foxnews.cnn";
 				newCustUser29.Email = "orielly@foxnews.cnn";
-				newCustUser29.CustomerID = "5028";
+				newCustUser29.Id = "5028";
 				newCustUser29.FirstName = "Bill";
 				newCustUser29.LastName = "O'Reilly";
 				newCustUser29.MiddleInitial = "T";
@@ -981,7 +981,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser30 = new AppUser();
 				newCustUser30.UserName = "ankaisrad@gogle.com";
 				newCustUser30.Email = "ankaisrad@gogle.com";
-				newCustUser30.CustomerID = "5029";
+				newCustUser30.Id = "5029";
 				newCustUser30.FirstName = "Anka";
 				newCustUser30.LastName = "Radkovich";
 				newCustUser30.MiddleInitial = "L";
@@ -1015,7 +1015,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser31 = new AppUser();
 				newCustUser31.UserName = "megrhodes@freserve.co.uk";
 				newCustUser31.Email = "megrhodes@freserve.co.uk";
-				newCustUser31.CustomerID = "5030";
+				newCustUser31.Id = "5030";
 				newCustUser31.FirstName = "Megan";
 				newCustUser31.LastName = "Rhodes";
 				newCustUser31.MiddleInitial = "C";
@@ -1049,7 +1049,7 @@ namespace FinalProjectWorkspace.Seeding
 				newCustUser32 = new AppUser();
 				newCustUser32.UserName = "erynrice@aoll.com";
 				newCustUser32.Email = "erynrice@aoll.com";
-				newCustUser32.CustomerID = "5031";
+				newCustUser32.Id = "5031";
 				newCustUser32.FirstName = "Eryn";
 				newCustUser32.LastName = "Rice";
 				newCustUser32.MiddleInitial = "M";

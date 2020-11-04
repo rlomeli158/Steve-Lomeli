@@ -55,10 +55,18 @@ namespace FinalProjectWorkspace.Seeding
                 newUser.UserName = "admin@example.com";
                 newUser.Email = "admin@example.com";
                 newUser.PhoneNumber = "(512)555-1234";
+                newUser.Id = "1";
 
                 //FirstName is included as an example, add any other fields they may need
                 newUser.FirstName = "Manager";
+                newUser.MiddleInitial = "M";
                 newUser.LastName = "Manager";
+                newUser.Address = "123 Manager St.";
+                newUser.City = "Manager";
+                newUser.State = "MA";
+                newUser.Zip = "12345";
+                newUser.Birthday = new DateTime(2000,12,25);
+                newUser.PCPBalance = 1000;
 
                 //create a variable for result
                 IdentityResult result = new IdentityResult();
