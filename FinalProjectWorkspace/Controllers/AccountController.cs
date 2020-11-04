@@ -62,6 +62,7 @@ namespace FinalProjectWorkspace.Controllers
                     State = rvm.FirstName,
                     Zip = rvm.FirstName,
                     Birthday = rvm.Birthday,
+                    PCPBalance = 0
                 };
 
                 //This code uses the UserManager object to create a new user with the specified password
