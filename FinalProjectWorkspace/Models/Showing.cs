@@ -11,6 +11,12 @@ namespace FinalProjectWorkspace.Models
         public Int32 ShowingID { get; set; }
         public DateTime ShowingDate { get; set; }
 
+        public TimeSpan StartTime { get; set; }
+
+        public TimeSpan EndTime { get; set; }
+
+        public String Theatre { get; set; }
+
         public List<String> SeatsAvailable { get; set; } // You take the difference of all seats and seats purchased
         public Boolean SpecialEvent { get; set; }
 

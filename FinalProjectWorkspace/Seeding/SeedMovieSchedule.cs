@@ -19,109 +19,108 @@ namespace FinalProjectWorkspace.Seeding
 		List<Showing> Showings = new List<Showing>();
 		Showings.Add(new Showing
 		{
-			StartTime = 9:05,
-			EndTime = 10:52,
+			StartTime = new TimeSpan(9,05,0),
+			EndTime = new TimeSpan(10,52,0),
 			Movie = "Footloose",
 			Theatre = "1",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 11:30,
-			EndTime = 13:24,
+			StartTime = new TimeSpan(11,30,0),
+			EndTime = new TimeSpan(13,24,0),
 			Movie = "WarGames",
 			Theatre = "1",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 14:00,
-			EndTime = 15:29,
+			StartTime = new TimeSpan(14,00,0),
+			EndTime = new TimeSpan(15,29,0),
 			Movie = "Office Space",
 			Theatre = "1",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 15:55,
-			EndTime = 17:55,
+			StartTime = new TimeSpan(15,55,0),
+			EndTime = new TimeSpan(17,55,0),
 			Movie = "Diamonds are Forever",
 			Theatre = "1",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 18:40,
-			EndTime = 21:12,
+			StartTime = new TimeSpan(18,40,0),
+			EndTime = new TimeSpan(21,12,0),
 			Movie = "West Side Story",
 			Theatre = "1",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 21:37,
-			EndTime = 23:59,
+			StartTime = new TimeSpan(21,37,0),
+			EndTime = new TimeSpan(23,59,0),
 			Movie = "Forrest Gump",
 			Theatre = "1",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 9:00,
-			EndTime = 10:21,
+			StartTime = new TimeSpan(09,00,0),
+			EndTime = new TimeSpan(10,21,0),
 			Movie = "Toy Story",
 			Theatre = "2",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 10:50,
-			EndTime = 12:32,
+			StartTime = new TimeSpan(10,50,0),
+			EndTime = new TimeSpan(12,32,0),
 			Movie = "Dazed and Confused",
 			Theatre = "2",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 13:00,
-			EndTime = 14:40,
+			StartTime = new TimeSpan(13,00,0),
+			EndTime = new TimeSpan(14,40,0),
 			Movie = "The Lego Movie",
 			Theatre = "2",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 15:20,
-			EndTime = 16:58,
+			StartTime = new TimeSpan(15,20,0),
+			EndTime = new TimeSpan(16,58,0),
 			Movie = "The Princess Bride",
 			Theatre = "2",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 17:25,
-			EndTime = 19:05,
+			StartTime = new TimeSpan(17,25,0),
+			EndTime = new TimeSpan(19,05,0),
 			Movie = "Finding Nemo",
 			Theatre = "2",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 19:30,
-			EndTime = 22:11,
+			StartTime = new TimeSpan(19,30,0),
+			EndTime = new TimeSpan(22,11,0),
 			Movie = "Harry Potter and the Chamber of Secrets",
 			Theatre = "2",
 		});
 		Showings.Add(new Showing
 		{
-			StartTime = 22:40,
-			EndTime = 23:49,
+			StartTime = new TimeSpan(22,40,0),
+			EndTime = new TimeSpan(23,49,0),
 			Movie = "The Land Before Time",
 			Theatre = "2",
 		});
-
 		//create some counters to help debug problems
 		Int32 intMovieSchedule = 0;
 		String strMovieSchedule = "Start";
 
 			//loop through the list to add or update the Movie Schedule
 			try
-		{
-			foreach (Showing seedShowing in Showings)
 			{
-                    //update the counters
-                    intMovieSchedule = Showings.Movie;
-                    //see if the movie is already in the database using the IMDBID
-                    Showing dbMovieSchedule = db.Showings.FirstOrDefault(f => f.Movie == Showings.Movie);
+				foreach (Showing seedShowing in Showings)
+				{
+					//update the counters
+					intMovieSchedule = Showings.Movie;
+					//see if the movie is already in the database using the IMDBID
+					Showing dbMovieSchedule = db.Showings.FirstOrDefault(f => f.Movie == Showings.Movie);
 
 					//if Movie Schedule is null, MovieSchedule is not in database
 					if (dbMovieSchedule == null)
@@ -136,6 +135,7 @@ namespace FinalProjectWorkspace.Seeding
 						dbMovieSchedule.EndTime = Showings.EndTime;
 						dbMovieSchedule.Movie = Showings.Movie;
 						dbMovieSchedule.Theatre = Showings.Theatre;
+					}
 				}
 			}
 			catch (Exception ex) //throw error if there is a problem in the database

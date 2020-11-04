@@ -36,8 +36,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp2.City = "Georgetown";
 				newUserEmp2.State = "TX";
 				newUserEmp2.Zip = "78628";
-				newUserEmp2.Birthday = "4/25/1958";
-				newUserEmp2.SSN = "341553365";
+				newUserEmp2.Birthday = new DateTime(1958, 4, 25);
 
 
 
@@ -68,8 +67,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp3.City = "Austin";
 				newUserEmp3.State = "TX";
 				newUserEmp3.Zip = "78746";
-				newUserEmp3.Birthday = "7/2/1959";
-				newUserEmp3.SSN = "454776657";
+				newUserEmp3.Birthday = new DateTime(1959, 7, 2);
 
 
 
@@ -100,8 +98,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp4.City = "Austin";
 				newUserEmp4.State = "TX";
 				newUserEmp4.Zip = "78727";
-				newUserEmp4.Birthday = "9/2/1964";
-				newUserEmp4.SSN = "934778452";
+				newUserEmp4.Birthday = new DateTime(1964, 9, 2);
 
 
 
@@ -132,8 +129,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp5.City = "Austin";
 				newUserEmp5.State = "TX";
 				newUserEmp5.Zip = "78712";
-				newUserEmp5.Birthday = "3/30/1992";
-				newUserEmp5.SSN = "463566718";
+				newUserEmp5.Birthday = new DateTime(1992, 3, 30);
 
 
 
@@ -164,8 +160,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp6.City = "San Marcos";
 				newUserEmp6.State = "TX";
 				newUserEmp6.Zip = "78666";
-				newUserEmp6.Birthday = "12/29/1996";
-				newUserEmp6.SSN = "223449167";
+				newUserEmp6.Birthday = new DateTime(1996, 12, 29);
 
 
 
@@ -196,8 +191,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp7.City = "Austin";
 				newUserEmp7.State = "TX";
 				newUserEmp7.Zip = "78712";
-				newUserEmp7.Birthday = "8/12/1970";
-				newUserEmp7.SSN = "904440929";
+				newUserEmp7.Birthday = new DateTime(1970, 8, 12);
 
 
 
@@ -228,8 +222,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp8.City = "Austin";
 				newUserEmp8.State = "TX";
 				newUserEmp8.Zip = "78729";
-				newUserEmp8.Birthday = "12/18/1970";
-				newUserEmp8.SSN = "353904746";
+				newUserEmp8.Birthday = new DateTime(1970, 12, 18);
 
 
 
@@ -260,8 +253,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp9.City = "San Antonio";
 				newUserEmp9.State = "TX";
 				newUserEmp9.Zip = "78758";
-				newUserEmp9.Birthday = "3/11/1971";
-				newUserEmp9.SSN = "363998335";
+				newUserEmp9.Birthday = new DateTime(1971, 3, 11);
 
 
 
@@ -292,8 +284,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp10.City = "Austin";
 				newUserEmp10.State = "TX";
 				newUserEmp10.Zip = "78746";
-				newUserEmp10.Birthday = "12/20/1972";
-				newUserEmp10.SSN = "393412631";
+				newUserEmp10.Birthday = new DateTime(1972, 12, 20);
 
 
 
@@ -324,8 +315,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp11.City = "Austin";
 				newUserEmp11.State = "TX";
 				newUserEmp11.Zip = "78712";
-				newUserEmp11.Birthday = "4/28/1973";
-				newUserEmp11.SSN = "770097399";
+				newUserEmp11.Birthday = new DateTime(1973, 4, 28);
 
 
 
@@ -356,8 +346,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp12.City = "Austin";
 				newUserEmp12.State = "TX";
 				newUserEmp12.Zip = "78705";
-				newUserEmp12.Birthday = "6/21/1978";
-				newUserEmp12.SSN = "700002943";
+				newUserEmp12.Birthday = new DateTime(1978, 6, 21);
 
 
 
@@ -388,8 +377,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp13.City = "Cedar Park";
 				newUserEmp13.State = "TX";
 				newUserEmp13.Zip = "78613";
-				newUserEmp13.Birthday = "3/16/1993";
-				newUserEmp13.SSN = "401661146";
+				newUserEmp13.Birthday = new DateTime(1993, 3, 16);
 
 
 
@@ -420,8 +408,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp14.City = "Austin";
 				newUserEmp14.State = "TX";
 				newUserEmp14.Zip = "78755";
-				newUserEmp14.Birthday = "5/25/1986";
-				newUserEmp14.SSN = "500830084";
+				newUserEmp14.Birthday = new DateTime(1986, 5, 25);
 
 
 
@@ -452,8 +439,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp15.City = "Austin";
 				newUserEmp15.State = "TX";
 				newUserEmp15.Zip = "78701";
-				newUserEmp15.Birthday = "6/6/1986";
-				newUserEmp15.SSN = "1112223232";
+				newUserEmp15.Birthday = new DateTime(1986, 6, 6);
 
 
 
@@ -484,8 +470,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp16.City = "Austin";
 				newUserEmp16.State = "TX";
 				newUserEmp16.Zip = "78760";
-				newUserEmp16.Birthday = "10/16/1989";
-				newUserEmp16.SSN = "8889993434";
+				newUserEmp16.Birthday = new DateTime(1989, 10, 16);
 
 
 
@@ -516,8 +501,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp17.City = "Austin";
 				newUserEmp17.State = "TX";
 				newUserEmp17.Zip = "78734";
-				newUserEmp17.Birthday = "4/5/1988";
-				newUserEmp17.SSN = "7776665555";
+				newUserEmp17.Birthday = new DateTime(1988, 4, 5);
 
 
 
@@ -548,8 +532,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp18.City = "Kyle";
 				newUserEmp18.State = "TX";
 				newUserEmp18.Zip = "78640";
-				newUserEmp18.Birthday = "2/22/1993";
-				newUserEmp18.SSN = "1112221212";
+				newUserEmp18.Birthday = new DateTime(1993, 2, 22);
 
 
 
@@ -580,8 +563,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp19.City = "Austin";
 				newUserEmp19.State = "TX";
 				newUserEmp19.Zip = "78747";
-				newUserEmp19.Birthday = "6/29/1996";
-				newUserEmp19.SSN = "9099099999";
+				newUserEmp19.Birthday = new DateTime(1996, 6, 29);
 
 
 
@@ -612,8 +594,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp20.City = "Austin";
 				newUserEmp20.State = "TX";
 				newUserEmp20.Zip = "78758";
-				newUserEmp20.Birthday = "12/29/1997";
-				newUserEmp20.SSN = "7776661111";
+				newUserEmp20.Birthday = new DateTime(1997, 12, 29);
 
 
 
@@ -644,8 +625,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp21.City = "Buda";
 				newUserEmp21.State = "TX";
 				newUserEmp21.Zip = "78712";
-				newUserEmp21.Birthday = "12/17/1999";
-				newUserEmp21.SSN = "1911919111";
+				newUserEmp21.Birthday = new DateTime(1999, 12, 17);
 
 
 
@@ -662,7 +642,6 @@ namespace FinalProjectWorkspace.Seeding
 				await _userManager.IsInRoleAsync(newUserEmp21, "Employee");
 			}
 			db.SaveChanges();
-
 		}
 	}
 }

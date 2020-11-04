@@ -42,7 +42,7 @@ namespace FinalProjectWorkspace.Seeding
             }
 
             //check to see if the manager has already been added
-            AppUser newUser = _context.Users.FirstOrDefault(u => u.Email == "manager@mainst.com");
+            AppUser newUser = _context.Users.FirstOrDefault(u => u.Email == "manager@mainstreetmovies.com");
 
             //if manager hasn't been created, then add them
             if (newUser == null)
@@ -93,7 +93,7 @@ namespace FinalProjectWorkspace.Seeding
                     throw new Exception("This user can't be added:" + msg.ToString());
                 }
                 _context.SaveChanges();
-                newUser = _context.Users.FirstOrDefault(u => u.UserName == "manager@mainst.com");
+                newUser = _context.Users.FirstOrDefault(u => u.UserName == "manager@mainstreetmovies.com");
             }
 
             //Add the new user we just created to the Manager role
