@@ -1,5 +1,6 @@
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -1325,8 +1326,9 @@ namespace FinalProjectWorkspace.Seeding
 			{
 				//update the counters
 				intMovieID = seedMovies.MovieID;
-                    //see if the movie is already in the database using the IMDBID
-                    Movie dbSeedMovies = db.Movies.FirstOrDefault(f => f.MovieID == seedMovies.MovieID);
+                    //db.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[Movies] ON");
+					//see if the movie is already in the database using the IMDBID
+					Movie dbSeedMovies = db.Movies.FirstOrDefault(f => f.MovieID == seedMovies.MovieID);
 
 					//if Movie Information is null, MovieInformation is not in database
 					if (dbSeedMovies == null)

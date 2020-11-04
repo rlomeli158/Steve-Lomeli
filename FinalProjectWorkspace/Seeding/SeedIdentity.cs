@@ -52,10 +52,9 @@ namespace FinalProjectWorkspace.Seeding
 
                 //populate the user properties that are from the 
                 //IdentityUser base class
-                newUser.UserName = "admin@example.com";
-                newUser.Email = "admin@example.com";
+                newUser.UserName = "manager@mainstreetmovies.com";
+                newUser.Email = "manager@mainstreetmovies.com";
                 newUser.PhoneNumber = "(512)555-1234";
-                newUser.Id = "1";
 
                 //FirstName is included as an example, add any other fields they may need
                 newUser.FirstName = "Manager";
