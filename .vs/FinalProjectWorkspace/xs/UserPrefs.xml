@@ -1,19 +1,22 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Seeding/SeedMovies.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Seeding/SeedIdentity.cs">
     <Files>
       <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="118" Column="10" />
       <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="29" Column="38" />
-      <File FileName="FinalProjectWorkspace/Models/Genre.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" Line="35" Column="47" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Genre.cs" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" Line="62" Column="62" />
       <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="22" Column="37" />
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="20" Column="54" />
-      <File FileName="FinalProjectWorkspace/Startup.cs" Line="45" Column="1" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" />
+      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" Line="48" Column="35" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedGenres.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,7 +29,7 @@
                 <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Seeding" expanded="True">
-                <Node name="SeedMovies.cs" selected="True" />
+                <Node name="SeedIdentity.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True" />
               <Node name="wwwroot" expanded="True" />
