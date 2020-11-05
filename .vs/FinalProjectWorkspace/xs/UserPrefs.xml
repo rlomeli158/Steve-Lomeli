@@ -1,30 +1,11 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Movie.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/HomeController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="26" Column="25" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" />
+      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="146" Column="68" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="28" Column="74" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/Genre.cs" />
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" />
-      <File FileName="FinalProjectWorkspace/Startup.cs" Line="21" Column="317" />
-      <File FileName="FinalProjectWorkspace/Views/Account/Register.cshtml" />
-      <File FileName="FinalProjectWorkspace/DAL/AppDbContext.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/SeedController.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Seed/Index.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" />
-      <File FileName="FinalProjectWorkspace/Models/Order.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedGenres.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/RoleAdminController.cs" />
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,15 +13,15 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
-                <Node name="Movie.cs" selected="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Seed" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Home" expanded="True" />
               </Node>
             </Node>
           </Node>

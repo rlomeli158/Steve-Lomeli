@@ -23,6 +23,7 @@ namespace FinalProjectWorkspace.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+            ViewBag.AllMPAARatings = GetAllRatings(); //TODO: Delete this code once Steve transfers to detailed search      
             return View();
         }
 
@@ -80,8 +81,10 @@ namespace FinalProjectWorkspace.Controllers
 
             //Set default properties
             SearchViewModel svm = new SearchViewModel();
-            //svm.SelectedCategories = AllCategories.Computer;
-            //svm.SelectedSearchType = AllSearchTypes.GreaterThan;
+            //Are these here necessary?
+            svm.SelectedGenreID = (int)AllGenres.Action;
+            svm.SelectedSearchType = AllSearchTypes.GreaterThan;
+            //Add svm.SelectedMPAARatings = 0 although it may not work
 
             return View(svm);
         }
@@ -106,13 +109,16 @@ namespace FinalProjectWorkspace.Controllers
             return genreSelectList;
         }
 
-
-        //Just found this for MPAA ratings
-        public static IEnumerable<SelectListItem> GetEnumSelectList<MPAARatings>()
+        public SelectList GetAllRatings()
         {
-            return (Enum.GetValues(typeof(MPAARatings)).Cast<int>().Select(e => new SelectListItem() { Text = Enum.GetName(typeof(MPAARatings), e), Value = e.ToString() })).ToList();
-        }
+            var MPAASelectList = new SelectList(Enum.GetValues(typeof(AllMPAARatings)).Cast<AllMPAARatings>().Select(v => new SelectListItem
+            {
+                Text = v.ToString(),
+                Value = ((int)v).ToString()
+            }).ToList(), "Value", "Text");
 
+            return MPAASelectList;
+        }
 
         public IActionResult DisplaySearchResults(SearchViewModel svm)
         {
@@ -137,13 +143,11 @@ namespace FinalProjectWorkspace.Controllers
                 query = query.Where(m => m.Genre == GenreToDisplay);
             }
 
-            /*
-            if (svm.SelectedMPAARating != 0) //For MPAA Rating, Ask Katie how we can search this ********
+            if (svm.SelectedMPAARating != 0) //For MPAARating
             {
-                MPAARatings MPAARatingToDisplay =
-                query = query.Where(m => m.MPAARating == MPAARatingToDisplay);
+                string MPAARatingToDisplay = Enum.GetName(typeof(AllMPAARatings), svm.SelectedMPAARating);
+                query = query.Where(m => m.MPAARating.Equals(MPAARatingToDisplay));
             }
-            */
 
             /*
             if (svm.SelectedCustomerRating != null) For rating ********
@@ -179,8 +183,9 @@ namespace FinalProjectWorkspace.Controllers
                 TryValidateModel(svm);
                 if (ModelState.IsValid == false)
                 {
-                    //re-populate ViewBag to have list of all categories
+                    //re-populate ViewBag to have list of all categories & MPAA Ratings
                     ViewBag.AllCategories = GetAllGenres();
+                    ViewBag.AllMPAARatings = GetAllRatings();
 
                     //View is returned with error messages
                     return View("DetailedSearch", svm);
