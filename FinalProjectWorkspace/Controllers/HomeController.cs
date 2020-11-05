@@ -48,9 +48,9 @@ namespace FinalProjectWorkspace.Controllers
             //Populate the view bag with a count of selected job postings
             ViewBag.SelectedMovies = SelectedMovies.Count();
 
-            //return View(SelectedMovies.OrderByDescending(jp => jp.Showings.First(s => s.ShowingDate))); // This line of code doesn't work because of the showing date ***********
+            return View(SelectedMovies.OrderByDescending(jp => jp.Showings.Min(s => s.ShowingDate))); // This line of code doesn't work because of the showing date ***********
 
-            return View(SelectedMovies);
+            //return View(SelectedMovies);
 
         }
 
@@ -149,22 +149,22 @@ namespace FinalProjectWorkspace.Controllers
                 query = query.Where(m => m.MPAARating.Equals(MPAARatingToDisplay));
             }
 
-            /*
-            if (svm.SelectedCustomerRating != null) For rating ********
+            
+            if (svm.SelectedCustomerRating != null) //For rating ******** TODO:Change type of SelectedCustomerRating to String
             {
                 switch (svm.SelectedSearchType)
                 {
                     case AllSearchTypes.GreaterThan:
-                        query = query.Where(m => m.MovieReviews.Rating >= Convert.ToDecimal(svm.SelectedCustomerRating)); //Troubleshoot these lines, same as above
+                        query = query.Where(m => m.MovieReviews.Min(r => r.Rating) >= Convert.ToDecimal(svm.SelectedCustomerRating)); //Troubleshoot these lines, same as above
                         break;
                     case AllSearchTypes.LessThan:
-                        query = query.Where(m => m.MovieReviews.Rating <= Convert.ToDecimal(svm.SelectedCustomerRating)); //Troubleshoot these lines, same as above
+                        query = query.Where(m => m.MovieReviews.Max(r => r.Rating) <= Convert.ToDecimal(svm.SelectedCustomerRating)); //Troubleshoot these lines, same as above
                         break;
                     default:
                         break;
                 }
             }
-            */
+            
 
             if (svm.SelectedYear != null) //For release year
             {
@@ -175,7 +175,8 @@ namespace FinalProjectWorkspace.Controllers
             if (svm.SelectedShowingDate != null) //For showing date ********
             {
                 DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
-                //query = query.Where(m => m.Showings.ShowingDate >= datSelectedDate); //Same issue as above, get showing date from showings or rating from movie review
+                query = query.Where(m => m.Showings.Min(r => r.ShowingDate) >= datSelectedDate); //Same issue as above, get showing date from showings or rating from movie review.
+                                                                                                 //Should it even be min?
             }
 
             if (query != null) //they searched for something

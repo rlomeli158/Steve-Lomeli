@@ -43,6 +43,11 @@ namespace FinalProjectWorkspace.Models
                 Showings = new List<Showing>();
             }
 
+            if (MovieReviews == null)
+            {
+                MovieReviews = new List<MovieReview>();
+            }
+
             /*
              * Do we have to add a similar thing as above but for movie review?
              */

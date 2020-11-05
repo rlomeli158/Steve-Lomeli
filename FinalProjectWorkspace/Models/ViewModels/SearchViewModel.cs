@@ -63,7 +63,7 @@ namespace FinalProjectWorkspace.Models
         public Int32 SelectedMPAARating { get; set; } //Dropdown
 
         [Display(Name = "Search by Customer Rating:")]
-        public Decimal SelectedCustomerRating { get; set; } //Number Input
+        public String SelectedCustomerRating { get; set; } //Number Input
 
         [Display(Name = "Search Type:")]
         public AllSearchTypes SelectedSearchType { get; set; } //Radio Button
