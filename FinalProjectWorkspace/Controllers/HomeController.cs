@@ -146,19 +146,19 @@ namespace FinalProjectWorkspace.Controllers
             if (svm.SelectedMPAARating != 0) //For MPAARating
             {
                 string MPAARatingToDisplay = Enum.GetName(typeof(AllMPAARatings), svm.SelectedMPAARating);
-                query = query.Where(m => m.MPAARating.Equals(MPAARatingToDisplay));
+                query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay);
             }
 
             
-            if (svm.SelectedCustomerRating != null) //For rating ******** TODO:Change type of SelectedCustomerRating to String
+            if (svm.SelectedCustomerRating != null) //For rating 
             {
                 switch (svm.SelectedSearchType)
                 {
                     case AllSearchTypes.GreaterThan:
-                        query = query.Where(m => m.MovieReviews.Min(r => r.Rating) >= Convert.ToDecimal(svm.SelectedCustomerRating)); //Troubleshoot these lines, same as above
+                        query = query.Where(m => m.MovieReviews.Average(r => r.Rating) >= Convert.ToDouble(svm.SelectedCustomerRating));
                         break;
                     case AllSearchTypes.LessThan:
-                        query = query.Where(m => m.MovieReviews.Max(r => r.Rating) <= Convert.ToDecimal(svm.SelectedCustomerRating)); //Troubleshoot these lines, same as above
+                        query = query.Where(m => m.MovieReviews.Average(r => r.Rating) <= Convert.ToDouble(svm.SelectedCustomerRating)); 
                         break;
                     default:
                         break;

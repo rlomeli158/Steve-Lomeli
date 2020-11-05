@@ -25,7 +25,7 @@ namespace FinalProjectWorkspace.Models
         public String Title { get; set; }
         public String Overview { get; set; }
         public String Tagline { get; set; }
-        public Decimal RunTime { get; set; }
+        public Double RunTime { get; set; }
         public DateTime Year { get; set; } //reflect this change on Balsamiq model
         public Decimal Revenue { get; set; } //Add this to model
         public String Actors { get; set; }
