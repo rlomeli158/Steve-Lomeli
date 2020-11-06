@@ -11,19 +11,22 @@ using System.Threading.Tasks;
 
 namespace FinalProjectWorkspace.Seeding
 {
-    public static class SeedMovieSchedule
-    {
+	public static class SeedMovieSchedule
+	{
 		public static void SeedShowings(AppDbContext db)
 		{
+		}
+	}
+}
+			/*
 		//Create a new list for all of the Movie Schedules
 		List<Showing> Showings = new List<Showing>();
-		Showings.Add(new Showing
-		{
-			StartTime = new TimeSpan(9,05,0),
-			EndTime = new TimeSpan(10,52,0),
-			Movie = db.Movies.FirstOrDefault(c => c.Title == "Footloose"),
-			Theatre = "1",
-		});
+		Showing s1 = new Showing();
+		s1.Movie = db.Movies.FirstOrDefault(c => c.Title == "Footloose");
+		s1.StartTime = new DateTime(2020, 12, 4, 9, 5, 0);
+		s1.EndTime = s1.StartTime.AddMinutes(s1.Movie.RunTime);
+        s1.Theatre = Theatre.Theater1; 
+		Showings.Add(s1);
 		Showings.Add(new Showing
 		{
 			StartTime = new TimeSpan(11,30,0),
@@ -151,3 +154,4 @@ namespace FinalProjectWorkspace.Seeding
 		}
 	}
 }
+			*/

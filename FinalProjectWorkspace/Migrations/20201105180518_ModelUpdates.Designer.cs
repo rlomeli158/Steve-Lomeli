@@ -4,14 +4,16 @@ using FinalProjectWorkspace.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FinalProjectWorkspace.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201105180518_ModelUpdates")]
+    partial class ModelUpdates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,8 +157,8 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<decimal>("Revenue")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<double>("RunTime")
-                        .HasColumnType("float");
+                    b.Property<decimal>("RunTime")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Tagline")
                         .HasColumnType("nvarchar(max)");
@@ -251,8 +253,8 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("EndTime")
+                        .HasColumnType("time");
 
                     b.Property<int?>("MovieID")
                         .HasColumnType("int");
@@ -266,11 +268,11 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<bool>("SpecialEvent")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("StartTime")
+                        .HasColumnType("time");
 
-                    b.Property<int>("Theatre")
-                        .HasColumnType("int");
+                    b.Property<string>("Theatre")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ShowingID");
 
