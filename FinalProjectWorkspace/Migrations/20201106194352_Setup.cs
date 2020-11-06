@@ -216,10 +216,11 @@ namespace FinalProjectWorkspace.Migrations
                 {
                     MovieID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    MovieNumber = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     Overview = table.Column<string>(nullable: true),
                     Tagline = table.Column<string>(nullable: true),
-                    RunTime = table.Column<decimal>(nullable: false),
+                    RunTime = table.Column<double>(nullable: false),
                     Year = table.Column<DateTime>(nullable: false),
                     Revenue = table.Column<decimal>(nullable: false),
                     Actors = table.Column<string>(nullable: true),
@@ -274,9 +275,9 @@ namespace FinalProjectWorkspace.Migrations
                     ShowingID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ShowingDate = table.Column<DateTime>(nullable: false),
-                    StartTime = table.Column<TimeSpan>(nullable: false),
-                    EndTime = table.Column<TimeSpan>(nullable: false),
-                    Theatre = table.Column<string>(nullable: true),
+                    StartTime = table.Column<DateTime>(nullable: false),
+                    EndTime = table.Column<DateTime>(nullable: false),
+                    Theatre = table.Column<int>(nullable: false),
                     SeatsAvailable = table.Column<int>(nullable: false),
                     SpecialEvent = table.Column<bool>(nullable: false),
                     MovieID = table.Column<int>(nullable: true)

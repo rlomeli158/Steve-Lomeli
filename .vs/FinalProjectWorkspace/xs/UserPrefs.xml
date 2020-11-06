@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Startup.cs">
     <Files>
       <File FileName="FinalProjectWorkspace/Models/Genre.cs" Line="26" Column="1" />
       <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="45" Column="47" />
       <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="34" Column="1" />
       <File FileName="FinalProjectWorkspace/Models/Order.cs" />
       <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" />
       <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" />
@@ -15,43 +15,28 @@
       <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" />
       <File FileName="FinalProjectWorkspace/Models/ViewModels/Prices.cs" />
       <File FileName="FinalProjectWorkspace/Models/Prices.cs" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="32" Column="42" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="31" Column="5" />
       <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" />
       <File FileName="FinalProjectWorkspace/Models/Movie.cs" />
-      <File FileName="FinalProjectWorkspace/Startup.cs" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" Line="21" Column="172" />
       <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" />
       <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" />
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" />
+      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" />
       <File FileName="FinalProjectWorkspace/Seeding/SeedGenres.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201106054202_Setuptb1.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201106052843_Setup8.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201106052118_Setup7.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201105180518_ModelUpdates.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201104072550_Setup6.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201104063005_Setup5.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201104060602_Setup4.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201104054320_Setup3.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201104053751_Setup2.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201104052751_Setup1.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201104040808_Setup.cs" />
       <File FileName="FinalProjectWorkspace/Models/ViewModels/RoleViewModels.cs" />
       <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201106055854_Setuptb2.cs" />
-      <File FileName="FinalProjectWorkspace/Migrations/20201105232455_ModelUpdatesNov5.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
-              <Node name="Seeding" expanded="True">
-                <Node name="SeedMovieSchedule.cs" selected="True" />
-              </Node>
+              <Node name="Seeding" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

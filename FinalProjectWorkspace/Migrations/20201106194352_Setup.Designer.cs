@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProjectWorkspace.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201104072550_Setup6")]
-    partial class Setup6
+    [Migration("20201106194352_Setup")]
+    partial class Setup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -138,7 +138,9 @@ namespace FinalProjectWorkspace.Migrations
             modelBuilder.Entity("FinalProjectWorkspace.Models.Movie", b =>
                 {
                     b.Property<int>("MovieID")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Actors")
                         .HasColumnType("nvarchar(max)");
@@ -149,14 +151,17 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("MPAARating")
                         .HasColumnType("int");
 
+                    b.Property<int>("MovieNumber")
+                        .HasColumnType("int");
+
                     b.Property<string>("Overview")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Revenue")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("RunTime")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("RunTime")
+                        .HasColumnType("float");
 
                     b.Property<string>("Tagline")
                         .HasColumnType("nvarchar(max)");
@@ -251,8 +256,8 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<TimeSpan>("EndTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("MovieID")
                         .HasColumnType("int");
@@ -266,11 +271,11 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<bool>("SpecialEvent")
                         .HasColumnType("bit");
 
-                    b.Property<TimeSpan>("StartTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Theatre")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Theatre")
+                        .HasColumnType("int");
 
                     b.HasKey("ShowingID");
 

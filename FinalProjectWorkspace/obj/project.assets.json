@@ -5847,7 +5847,7 @@
       "outputPath": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/guy/.config/NuGet/NuGet.Config"
+        "/Users/guy/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
