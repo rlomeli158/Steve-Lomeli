@@ -73,7 +73,7 @@ namespace FinalProjectWorkspace.Controllers
             return View(movie);
         }
 
-        public IActionResult DetailedSearch()
+        public IActionResult Browse()
         {
 
             //Populate view bag with list of categories
