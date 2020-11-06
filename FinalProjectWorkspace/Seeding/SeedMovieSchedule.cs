@@ -15,7 +15,7 @@ namespace FinalProjectWorkspace.Seeding
 	{
 		public static void SeedShowings(AppDbContext db)
 		{
-		List<Showing> Showings = new List<Showing>();
+			List<Showing> Showings = new List<Showing>();
 
 			Showing s1 = new Showing();
 			{
@@ -23,9 +23,9 @@ namespace FinalProjectWorkspace.Seeding
 				s1.StartTime = new DateTime(2020, 12, 4, 9, 5, 0);
 				s1.EndTime = s1.StartTime.AddMinutes(s1.Movie.RunTime);
 				s1.Theatre = Theatre.Theatre1;
-				Showings.Add(s1);
 				s1.ShowingDate = new DateTime(2020, 12, 4);
 				s1.SeatsAvailable = 25;
+				Showings.Add(s1);
 			};
 			Showing s2 = new Showing();
 			{
@@ -33,9 +33,9 @@ namespace FinalProjectWorkspace.Seeding
 				s2.StartTime = new DateTime(2020, 12, 4, 11, 30, 0);
 				s2.EndTime = s2.StartTime.AddMinutes(s2.Movie.RunTime);
 				s2.Theatre = Theatre.Theatre1;
-				Showings.Add(s2);
 				s2.ShowingDate = new DateTime(2020, 12, 4);
 				s2.SeatsAvailable = 25;
+				Showings.Add(s2);
 			};
 			Showing s3 = new Showing();
 			{
@@ -43,9 +43,9 @@ namespace FinalProjectWorkspace.Seeding
 				s3.StartTime = new DateTime(2020, 12, 4, 14, 0, 0);
 				s3.EndTime = s3.StartTime.AddMinutes(s3.Movie.RunTime);
 				s3.Theatre = Theatre.Theatre1;
-				Showings.Add(s3);
 				s3.ShowingDate = new DateTime(2020, 12, 4);
 				s3.SeatsAvailable = 25;
+				Showings.Add(s3);
 			};
 			Showing s4 = new Showing();
 			{
@@ -53,9 +53,9 @@ namespace FinalProjectWorkspace.Seeding
 				s4.StartTime = new DateTime(2020, 12, 4, 15, 55, 0);
 				s4.EndTime = s4.StartTime.AddMinutes(s4.Movie.RunTime);
 				s4.Theatre = Theatre.Theatre1;
-				Showings.Add(s4);
 				s4.ShowingDate = new DateTime(2020, 12, 4);
 				s4.SeatsAvailable = 25;
+				Showings.Add(s4);
 			};
 			Showing s5 = new Showing();
 			{
@@ -63,9 +63,9 @@ namespace FinalProjectWorkspace.Seeding
 				s5.StartTime = new DateTime(2020, 12, 4, 18, 40, 0);
 				s5.EndTime = s5.StartTime.AddMinutes(s5.Movie.RunTime);
 				s5.Theatre = Theatre.Theatre1;
-				Showings.Add(s5);
 				s5.ShowingDate = new DateTime(2020, 12, 4);
 				s5.SeatsAvailable = 25;
+				Showings.Add(s5);
 			};
 			Showing s6 = new Showing();
 			{
@@ -73,9 +73,9 @@ namespace FinalProjectWorkspace.Seeding
 				s6.StartTime = new DateTime(2020, 12, 4, 21, 37, 0);
 				s6.EndTime = s6.StartTime.AddMinutes(s6.Movie.RunTime);
 				s6.Theatre = Theatre.Theatre1;
-				Showings.Add(s6);
 				s6.ShowingDate = new DateTime(2020, 12, 4);
 				s6.SeatsAvailable = 25;
+				Showings.Add(s6);
 			};
 			Showing s7 = new Showing();
 			{
@@ -83,9 +83,9 @@ namespace FinalProjectWorkspace.Seeding
 				s7.StartTime = new DateTime(2020, 12, 4, 9, 0, 0);
 				s7.EndTime = s7.StartTime.AddMinutes(s7.Movie.RunTime);
 				s7.Theatre = Theatre.Theatre2;
-				Showings.Add(s7);
 				s7.ShowingDate = new DateTime(2020, 12, 4);
 				s7.SeatsAvailable = 25;
+				Showings.Add(s7);
 			};
 			Showing s8 = new Showing();
 			{
@@ -93,9 +93,9 @@ namespace FinalProjectWorkspace.Seeding
 				s8.StartTime = new DateTime(2020, 12, 4, 10, 50, 0);
 				s8.EndTime = s8.StartTime.AddMinutes(s8.Movie.RunTime);
 				s8.Theatre = Theatre.Theatre2;
-				Showings.Add(s8);
 				s8.ShowingDate = new DateTime(2020, 12, 4);
 				s8.SeatsAvailable = 25;
+				Showings.Add(s8);
 			};
 			Showing s9 = new Showing();
 			{
@@ -103,9 +103,9 @@ namespace FinalProjectWorkspace.Seeding
 				s9.StartTime = new DateTime(2020, 12, 4, 13, 0, 0);
 				s9.EndTime = s9.StartTime.AddMinutes(s9.Movie.RunTime);
 				s9.Theatre = Theatre.Theatre2;
-				Showings.Add(s9);
 				s9.ShowingDate = new DateTime(2020, 12, 4);
 				s9.SeatsAvailable = 25;
+				Showings.Add(s9);
 			};
 			Showing s10 = new Showing();
 			{
@@ -113,9 +113,9 @@ namespace FinalProjectWorkspace.Seeding
 				s10.StartTime = new DateTime(2020, 12, 4, 15, 20, 0);
 				s10.EndTime = s10.StartTime.AddMinutes(s10.Movie.RunTime);
 				s10.Theatre = Theatre.Theatre2;
-				Showings.Add(s10);
 				s10.ShowingDate = new DateTime(2020, 12, 4);
 				s10.SeatsAvailable = 25;
+				Showings.Add(s10);
 			};
 			Showing s11 = new Showing();
 			{
@@ -123,9 +123,9 @@ namespace FinalProjectWorkspace.Seeding
 				s11.StartTime = new DateTime(2020, 12, 4, 17, 25, 0);
 				s11.EndTime = s11.StartTime.AddMinutes(s11.Movie.RunTime);
 				s11.Theatre = Theatre.Theatre2;
-				Showings.Add(s11);
 				s11.ShowingDate = new DateTime(2020, 12, 4);
 				s11.SeatsAvailable = 25;
+				Showings.Add(s11);
 			};
 			Showing s12 = new Showing();
 			{
@@ -133,9 +133,9 @@ namespace FinalProjectWorkspace.Seeding
 				s12.StartTime = new DateTime(2020, 12, 4, 19, 30, 0);
 				s12.EndTime = s12.StartTime.AddMinutes(s12.Movie.RunTime);
 				s12.Theatre = Theatre.Theatre2;
-				Showings.Add(s12);
 				s12.ShowingDate = new DateTime(2020, 12, 4);
 				s12.SeatsAvailable = 25;
+				Showings.Add(s12);
 			};
 			Showing s13 = new Showing();
 			{
@@ -143,9 +143,9 @@ namespace FinalProjectWorkspace.Seeding
 				s13.StartTime = new DateTime(2020, 12, 4, 22, 40, 0);
 				s13.EndTime = s13.StartTime.AddMinutes(s13.Movie.RunTime);
 				s13.Theatre = Theatre.Theatre2;
-				Showings.Add(s13);
 				s13.ShowingDate = new DateTime(2020, 12, 4);
 				s13.SeatsAvailable = 25;
+				Showings.Add(s13);
 			};
 			Showing s14 = new Showing();
 			{
@@ -153,9 +153,9 @@ namespace FinalProjectWorkspace.Seeding
 				s14.StartTime = new DateTime(2020, 12, 5, 9, 5, 0);
 				s14.EndTime = s14.StartTime.AddMinutes(s14.Movie.RunTime);
 				s14.Theatre = Theatre.Theatre1;
-				Showings.Add(s14);
 				s14.ShowingDate = new DateTime(2020, 12, 5);
 				s14.SeatsAvailable = 25;
+				Showings.Add(s14);
 			};
 			Showing s15 = new Showing();
 			{
@@ -163,9 +163,9 @@ namespace FinalProjectWorkspace.Seeding
 				s15.StartTime = new DateTime(2020, 12, 5, 11, 30, 0);
 				s15.EndTime = s15.StartTime.AddMinutes(s15.Movie.RunTime);
 				s15.Theatre = Theatre.Theatre1;
-				Showings.Add(s15);
 				s15.ShowingDate = new DateTime(2020, 12, 5);
 				s15.SeatsAvailable = 25;
+				Showings.Add(s15);
 			};
 			Showing s16 = new Showing();
 			{
@@ -173,9 +173,9 @@ namespace FinalProjectWorkspace.Seeding
 				s16.StartTime = new DateTime(2020, 12, 5, 14, 0, 0);
 				s16.EndTime = s16.StartTime.AddMinutes(s16.Movie.RunTime);
 				s16.Theatre = Theatre.Theatre1;
-				Showings.Add(s16);
 				s16.ShowingDate = new DateTime(2020, 12, 5);
 				s16.SeatsAvailable = 25;
+				Showings.Add(s16);
 			};
 			Showing s17 = new Showing();
 			{
@@ -183,9 +183,9 @@ namespace FinalProjectWorkspace.Seeding
 				s17.StartTime = new DateTime(2020, 12, 5, 15, 55, 0);
 				s17.EndTime = s17.StartTime.AddMinutes(s17.Movie.RunTime);
 				s17.Theatre = Theatre.Theatre1;
-				Showings.Add(s17);
 				s17.ShowingDate = new DateTime(2020, 12, 5);
 				s17.SeatsAvailable = 25;
+				Showings.Add(s17);
 			};
 			Showing s18 = new Showing();
 			{
@@ -193,9 +193,9 @@ namespace FinalProjectWorkspace.Seeding
 				s18.StartTime = new DateTime(2020, 12, 5, 18, 40, 0);
 				s18.EndTime = s18.StartTime.AddMinutes(s18.Movie.RunTime);
 				s18.Theatre = Theatre.Theatre1;
-				Showings.Add(s18);
 				s18.ShowingDate = new DateTime(2020, 12, 5);
 				s18.SeatsAvailable = 25;
+				Showings.Add(s18);
 			};
 			Showing s19 = new Showing();
 			{
@@ -203,9 +203,9 @@ namespace FinalProjectWorkspace.Seeding
 				s19.StartTime = new DateTime(2020, 12, 5, 21, 37, 0);
 				s19.EndTime = s19.StartTime.AddMinutes(s19.Movie.RunTime);
 				s19.Theatre = Theatre.Theatre1;
-				Showings.Add(s19);
 				s19.ShowingDate = new DateTime(2020, 12, 5);
 				s19.SeatsAvailable = 25;
+				Showings.Add(s19);
 			};
 			Showing s20 = new Showing();
 			{
@@ -213,9 +213,9 @@ namespace FinalProjectWorkspace.Seeding
 				s20.StartTime = new DateTime(2020, 12, 5, 9, 0, 0);
 				s20.EndTime = s20.StartTime.AddMinutes(s20.Movie.RunTime);
 				s20.Theatre = Theatre.Theatre2;
-				Showings.Add(s20);
 				s20.ShowingDate = new DateTime(2020, 12, 5);
 				s20.SeatsAvailable = 25;
+				Showings.Add(s20);
 			};
 			Showing s21 = new Showing();
 			{
@@ -223,9 +223,9 @@ namespace FinalProjectWorkspace.Seeding
 				s21.StartTime = new DateTime(2020, 12, 5, 10, 50, 0);
 				s21.EndTime = s21.StartTime.AddMinutes(s21.Movie.RunTime);
 				s21.Theatre = Theatre.Theatre2;
-				Showings.Add(s21);
 				s21.ShowingDate = new DateTime(2020, 12, 5);
 				s21.SeatsAvailable = 25;
+				Showings.Add(s21);
 			};
 			Showing s22 = new Showing();
 			{
@@ -233,9 +233,9 @@ namespace FinalProjectWorkspace.Seeding
 				s22.StartTime = new DateTime(2020, 12, 5, 13, 0, 0);
 				s22.EndTime = s22.StartTime.AddMinutes(s22.Movie.RunTime);
 				s22.Theatre = Theatre.Theatre2;
-				Showings.Add(s22);
 				s22.ShowingDate = new DateTime(2020, 12, 5);
 				s22.SeatsAvailable = 25;
+				Showings.Add(s22);
 			};
 			Showing s23 = new Showing();
 			{
@@ -243,9 +243,9 @@ namespace FinalProjectWorkspace.Seeding
 				s23.StartTime = new DateTime(2020, 12, 5, 15, 20, 0);
 				s23.EndTime = s23.StartTime.AddMinutes(s23.Movie.RunTime);
 				s23.Theatre = Theatre.Theatre2;
-				Showings.Add(s23);
 				s23.ShowingDate = new DateTime(2020, 12, 5);
 				s23.SeatsAvailable = 25;
+				Showings.Add(s23);
 			};
 			Showing s24 = new Showing();
 			{
@@ -253,9 +253,9 @@ namespace FinalProjectWorkspace.Seeding
 				s24.StartTime = new DateTime(2020, 12, 5, 17, 25, 0);
 				s24.EndTime = s24.StartTime.AddMinutes(s24.Movie.RunTime);
 				s24.Theatre = Theatre.Theatre2;
-				Showings.Add(s24);
 				s24.ShowingDate = new DateTime(2020, 12, 5);
 				s24.SeatsAvailable = 25;
+				Showings.Add(s24);
 			};
 			Showing s25 = new Showing();
 			{
@@ -263,9 +263,9 @@ namespace FinalProjectWorkspace.Seeding
 				s25.StartTime = new DateTime(2020, 12, 5, 19, 30, 0);
 				s25.EndTime = s25.StartTime.AddMinutes(s25.Movie.RunTime);
 				s25.Theatre = Theatre.Theatre2;
-				Showings.Add(s25);
 				s25.ShowingDate = new DateTime(2020, 12, 5);
 				s25.SeatsAvailable = 25;
+				Showings.Add(s25);
 			};
 			Showing s26 = new Showing();
 			{
@@ -273,9 +273,9 @@ namespace FinalProjectWorkspace.Seeding
 				s26.StartTime = new DateTime(2020, 12, 5, 22, 40, 0);
 				s26.EndTime = s26.StartTime.AddMinutes(s26.Movie.RunTime);
 				s26.Theatre = Theatre.Theatre2;
-				Showings.Add(s26);
 				s26.ShowingDate = new DateTime(2020, 12, 5);
 				s26.SeatsAvailable = 25;
+				Showings.Add(s26);
 			};
 			Showing s27 = new Showing();
 			{
@@ -283,9 +283,9 @@ namespace FinalProjectWorkspace.Seeding
 				s27.StartTime = new DateTime(2020, 12, 6, 9, 5, 0);
 				s27.EndTime = s27.StartTime.AddMinutes(s27.Movie.RunTime);
 				s27.Theatre = Theatre.Theatre1;
-				Showings.Add(s27);
 				s27.ShowingDate = new DateTime(2020, 12, 6);
 				s27.SeatsAvailable = 25;
+				Showings.Add(s27);
 			};
 			Showing s28 = new Showing();
 			{
@@ -293,9 +293,9 @@ namespace FinalProjectWorkspace.Seeding
 				s28.StartTime = new DateTime(2020, 12, 6, 11, 30, 0);
 				s28.EndTime = s28.StartTime.AddMinutes(s28.Movie.RunTime);
 				s28.Theatre = Theatre.Theatre1;
-				Showings.Add(s28);
 				s28.ShowingDate = new DateTime(2020, 12, 6);
 				s28.SeatsAvailable = 25;
+				Showings.Add(s28);
 			};
 			Showing s29 = new Showing();
 			{
@@ -303,9 +303,9 @@ namespace FinalProjectWorkspace.Seeding
 				s29.StartTime = new DateTime(2020, 12, 6, 14, 0, 0);
 				s29.EndTime = s29.StartTime.AddMinutes(s29.Movie.RunTime);
 				s29.Theatre = Theatre.Theatre1;
-				Showings.Add(s29);
 				s29.ShowingDate = new DateTime(2020, 12, 6);
 				s29.SeatsAvailable = 25;
+				Showings.Add(s29);
 			};
 			Showing s30 = new Showing();
 			{
@@ -313,9 +313,9 @@ namespace FinalProjectWorkspace.Seeding
 				s30.StartTime = new DateTime(2020, 12, 6, 15, 55, 0);
 				s30.EndTime = s30.StartTime.AddMinutes(s30.Movie.RunTime);
 				s30.Theatre = Theatre.Theatre1;
-				Showings.Add(s30);
 				s30.ShowingDate = new DateTime(2020, 12, 6);
 				s30.SeatsAvailable = 25;
+				Showings.Add(s30);
 			};
 			Showing s31 = new Showing();
 			{
@@ -323,9 +323,9 @@ namespace FinalProjectWorkspace.Seeding
 				s31.StartTime = new DateTime(2020, 12, 6, 18, 40, 0);
 				s31.EndTime = s31.StartTime.AddMinutes(s31.Movie.RunTime);
 				s31.Theatre = Theatre.Theatre1;
-				Showings.Add(s31);
 				s31.ShowingDate = new DateTime(2020, 12, 6);
 				s31.SeatsAvailable = 25;
+				Showings.Add(s31);
 			};
 			Showing s32 = new Showing();
 			{
@@ -333,9 +333,9 @@ namespace FinalProjectWorkspace.Seeding
 				s32.StartTime = new DateTime(2020, 12, 6, 21, 37, 0);
 				s32.EndTime = s32.StartTime.AddMinutes(s32.Movie.RunTime);
 				s32.Theatre = Theatre.Theatre1;
-				Showings.Add(s32);
 				s32.ShowingDate = new DateTime(2020, 12, 6);
 				s32.SeatsAvailable = 25;
+				Showings.Add(s32);
 			};
 			Showing s33 = new Showing();
 			{
@@ -343,9 +343,9 @@ namespace FinalProjectWorkspace.Seeding
 				s33.StartTime = new DateTime(2020, 12, 6, 9, 0, 0);
 				s33.EndTime = s33.StartTime.AddMinutes(s33.Movie.RunTime);
 				s33.Theatre = Theatre.Theatre2;
-				Showings.Add(s33);
 				s33.ShowingDate = new DateTime(2020, 12, 6);
 				s33.SeatsAvailable = 25;
+				Showings.Add(s33);
 			};
 			Showing s34 = new Showing();
 			{
@@ -353,9 +353,9 @@ namespace FinalProjectWorkspace.Seeding
 				s34.StartTime = new DateTime(2020, 12, 6, 10, 50, 0);
 				s34.EndTime = s34.StartTime.AddMinutes(s34.Movie.RunTime);
 				s34.Theatre = Theatre.Theatre2;
-				Showings.Add(s34);
 				s34.ShowingDate = new DateTime(2020, 12, 6);
 				s34.SeatsAvailable = 25;
+				Showings.Add(s34);
 			};
 			Showing s35 = new Showing();
 			{
@@ -363,9 +363,9 @@ namespace FinalProjectWorkspace.Seeding
 				s35.StartTime = new DateTime(2020, 12, 6, 13, 0, 0);
 				s35.EndTime = s35.StartTime.AddMinutes(s35.Movie.RunTime);
 				s35.Theatre = Theatre.Theatre2;
-				Showings.Add(s35);
 				s35.ShowingDate = new DateTime(2020, 12, 6);
 				s35.SeatsAvailable = 25;
+				Showings.Add(s35);
 			};
 			Showing s36 = new Showing();
 			{
@@ -373,9 +373,9 @@ namespace FinalProjectWorkspace.Seeding
 				s36.StartTime = new DateTime(2020, 12, 6, 15, 20, 0);
 				s36.EndTime = s36.StartTime.AddMinutes(s36.Movie.RunTime);
 				s36.Theatre = Theatre.Theatre2;
-				Showings.Add(s36);
 				s36.ShowingDate = new DateTime(2020, 12, 6);
 				s36.SeatsAvailable = 25;
+				Showings.Add(s36);
 			};
 			Showing s37 = new Showing();
 			{
@@ -383,9 +383,9 @@ namespace FinalProjectWorkspace.Seeding
 				s37.StartTime = new DateTime(2020, 12, 6, 17, 25, 0);
 				s37.EndTime = s37.StartTime.AddMinutes(s37.Movie.RunTime);
 				s37.Theatre = Theatre.Theatre2;
-				Showings.Add(s37);
 				s37.ShowingDate = new DateTime(2020, 12, 6);
 				s37.SeatsAvailable = 25;
+				Showings.Add(s37);
 			};
 			Showing s38 = new Showing();
 			{
@@ -393,9 +393,9 @@ namespace FinalProjectWorkspace.Seeding
 				s38.StartTime = new DateTime(2020, 12, 6, 19, 30, 0);
 				s38.EndTime = s38.StartTime.AddMinutes(s38.Movie.RunTime);
 				s38.Theatre = Theatre.Theatre2;
-				Showings.Add(s38);
 				s38.ShowingDate = new DateTime(2020, 12, 6);
 				s38.SeatsAvailable = 25;
+				Showings.Add(s38);
 			};
 			Showing s39 = new Showing();
 			{
@@ -403,9 +403,9 @@ namespace FinalProjectWorkspace.Seeding
 				s39.StartTime = new DateTime(2020, 12, 6, 22, 40, 0);
 				s39.EndTime = s39.StartTime.AddMinutes(s39.Movie.RunTime);
 				s39.Theatre = Theatre.Theatre2;
-				Showings.Add(s39);
 				s39.ShowingDate = new DateTime(2020, 12, 6);
 				s39.SeatsAvailable = 25;
+				Showings.Add(s39);
 			};
 			Showing s40 = new Showing();
 			{
@@ -413,9 +413,9 @@ namespace FinalProjectWorkspace.Seeding
 				s40.StartTime = new DateTime(2020, 12, 7, 9, 5, 0);
 				s40.EndTime = s40.StartTime.AddMinutes(s40.Movie.RunTime);
 				s40.Theatre = Theatre.Theatre1;
-				Showings.Add(s40);
 				s40.ShowingDate = new DateTime(2020, 12, 7);
 				s40.SeatsAvailable = 25;
+				Showings.Add(s40);
 			};
 			Showing s41 = new Showing();
 			{
@@ -423,9 +423,9 @@ namespace FinalProjectWorkspace.Seeding
 				s41.StartTime = new DateTime(2020, 12, 7, 11, 30, 0);
 				s41.EndTime = s41.StartTime.AddMinutes(s41.Movie.RunTime);
 				s41.Theatre = Theatre.Theatre1;
-				Showings.Add(s41);
 				s41.ShowingDate = new DateTime(2020, 12, 7);
 				s41.SeatsAvailable = 25;
+				Showings.Add(s41);
 			};
 			Showing s42 = new Showing();
 			{
@@ -433,9 +433,9 @@ namespace FinalProjectWorkspace.Seeding
 				s42.StartTime = new DateTime(2020, 12, 7, 14, 0, 0);
 				s42.EndTime = s42.StartTime.AddMinutes(s42.Movie.RunTime);
 				s42.Theatre = Theatre.Theatre1;
-				Showings.Add(s42);
 				s42.ShowingDate = new DateTime(2020, 12, 7);
 				s42.SeatsAvailable = 25;
+				Showings.Add(s42);
 			};
 			Showing s43 = new Showing();
 			{
@@ -443,9 +443,9 @@ namespace FinalProjectWorkspace.Seeding
 				s43.StartTime = new DateTime(2020, 12, 7, 15, 55, 0);
 				s43.EndTime = s43.StartTime.AddMinutes(s43.Movie.RunTime);
 				s43.Theatre = Theatre.Theatre1;
-				Showings.Add(s43);
 				s43.ShowingDate = new DateTime(2020, 12, 7);
 				s43.SeatsAvailable = 25;
+				Showings.Add(s43);
 			};
 			Showing s44 = new Showing();
 			{
@@ -453,9 +453,9 @@ namespace FinalProjectWorkspace.Seeding
 				s44.StartTime = new DateTime(2020, 12, 7, 18, 40, 0);
 				s44.EndTime = s44.StartTime.AddMinutes(s44.Movie.RunTime);
 				s44.Theatre = Theatre.Theatre1;
-				Showings.Add(s44);
 				s44.ShowingDate = new DateTime(2020, 12, 7);
 				s44.SeatsAvailable = 25;
+				Showings.Add(s44);
 			};
 			Showing s45 = new Showing();
 			{
@@ -463,9 +463,9 @@ namespace FinalProjectWorkspace.Seeding
 				s45.StartTime = new DateTime(2020, 12, 7, 21, 37, 0);
 				s45.EndTime = s45.StartTime.AddMinutes(s45.Movie.RunTime);
 				s45.Theatre = Theatre.Theatre1;
-				Showings.Add(s45);
 				s45.ShowingDate = new DateTime(2020, 12, 7);
 				s45.SeatsAvailable = 25;
+				Showings.Add(s45);
 			};
 			Showing s46 = new Showing();
 			{
@@ -473,9 +473,9 @@ namespace FinalProjectWorkspace.Seeding
 				s46.StartTime = new DateTime(2020, 12, 7, 9, 0, 0);
 				s46.EndTime = s46.StartTime.AddMinutes(s46.Movie.RunTime);
 				s46.Theatre = Theatre.Theatre2;
-				Showings.Add(s46);
 				s46.ShowingDate = new DateTime(2020, 12, 7);
 				s46.SeatsAvailable = 25;
+				Showings.Add(s46);
 			};
 			Showing s47 = new Showing();
 			{
@@ -483,9 +483,9 @@ namespace FinalProjectWorkspace.Seeding
 				s47.StartTime = new DateTime(2020, 12, 7, 10, 50, 0);
 				s47.EndTime = s47.StartTime.AddMinutes(s47.Movie.RunTime);
 				s47.Theatre = Theatre.Theatre2;
-				Showings.Add(s47);
 				s47.ShowingDate = new DateTime(2020, 12, 7);
 				s47.SeatsAvailable = 25;
+				Showings.Add(s47);
 			};
 			Showing s48 = new Showing();
 			{
@@ -493,9 +493,9 @@ namespace FinalProjectWorkspace.Seeding
 				s48.StartTime = new DateTime(2020, 12, 7, 13, 0, 0);
 				s48.EndTime = s48.StartTime.AddMinutes(s48.Movie.RunTime);
 				s48.Theatre = Theatre.Theatre2;
-				Showings.Add(s48);
 				s48.ShowingDate = new DateTime(2020, 12, 7);
 				s48.SeatsAvailable = 25;
+				Showings.Add(s48);
 			};
 			Showing s49 = new Showing();
 			{
@@ -503,9 +503,9 @@ namespace FinalProjectWorkspace.Seeding
 				s49.StartTime = new DateTime(2020, 12, 7, 15, 20, 0);
 				s49.EndTime = s49.StartTime.AddMinutes(s49.Movie.RunTime);
 				s49.Theatre = Theatre.Theatre2;
-				Showings.Add(s49);
 				s49.ShowingDate = new DateTime(2020, 12, 7);
 				s49.SeatsAvailable = 25;
+				Showings.Add(s49);
 			};
 			Showing s50 = new Showing();
 			{
@@ -513,9 +513,9 @@ namespace FinalProjectWorkspace.Seeding
 				s50.StartTime = new DateTime(2020, 12, 7, 17, 25, 0);
 				s50.EndTime = s50.StartTime.AddMinutes(s50.Movie.RunTime);
 				s50.Theatre = Theatre.Theatre2;
-				Showings.Add(s50);
 				s50.ShowingDate = new DateTime(2020, 12, 7);
 				s50.SeatsAvailable = 25;
+				Showings.Add(s50);
 			};
 			Showing s51 = new Showing();
 			{
@@ -523,9 +523,9 @@ namespace FinalProjectWorkspace.Seeding
 				s51.StartTime = new DateTime(2020, 12, 7, 19, 30, 0);
 				s51.EndTime = s51.StartTime.AddMinutes(s51.Movie.RunTime);
 				s51.Theatre = Theatre.Theatre2;
-				Showings.Add(s51);
 				s51.ShowingDate = new DateTime(2020, 12, 7);
 				s51.SeatsAvailable = 25;
+				Showings.Add(s51);
 			};
 			Showing s52 = new Showing();
 			{
@@ -533,9 +533,9 @@ namespace FinalProjectWorkspace.Seeding
 				s52.StartTime = new DateTime(2020, 12, 7, 22, 40, 0);
 				s52.EndTime = s52.StartTime.AddMinutes(s52.Movie.RunTime);
 				s52.Theatre = Theatre.Theatre2;
-				Showings.Add(s52);
 				s52.ShowingDate = new DateTime(2020, 12, 7);
 				s52.SeatsAvailable = 25;
+				Showings.Add(s52);
 			};
 			Showing s53 = new Showing();
 			{
@@ -543,9 +543,9 @@ namespace FinalProjectWorkspace.Seeding
 				s53.StartTime = new DateTime(2020, 12, 8, 9, 5, 0);
 				s53.EndTime = s53.StartTime.AddMinutes(s53.Movie.RunTime);
 				s53.Theatre = Theatre.Theatre1;
-				Showings.Add(s53);
 				s53.ShowingDate = new DateTime(2020, 12, 8);
 				s53.SeatsAvailable = 25;
+				Showings.Add(s53);
 			};
 			Showing s54 = new Showing();
 			{
@@ -553,9 +553,9 @@ namespace FinalProjectWorkspace.Seeding
 				s54.StartTime = new DateTime(2020, 12, 8, 11, 30, 0);
 				s54.EndTime = s54.StartTime.AddMinutes(s54.Movie.RunTime);
 				s54.Theatre = Theatre.Theatre1;
-				Showings.Add(s54);
 				s54.ShowingDate = new DateTime(2020, 12, 8);
 				s54.SeatsAvailable = 25;
+				Showings.Add(s54);
 			};
 			Showing s55 = new Showing();
 			{
@@ -563,9 +563,9 @@ namespace FinalProjectWorkspace.Seeding
 				s55.StartTime = new DateTime(2020, 12, 8, 14, 0, 0);
 				s55.EndTime = s55.StartTime.AddMinutes(s55.Movie.RunTime);
 				s55.Theatre = Theatre.Theatre1;
-				Showings.Add(s55);
 				s55.ShowingDate = new DateTime(2020, 12, 8);
 				s55.SeatsAvailable = 25;
+				Showings.Add(s55);
 			};
 			Showing s56 = new Showing();
 			{
@@ -573,9 +573,9 @@ namespace FinalProjectWorkspace.Seeding
 				s56.StartTime = new DateTime(2020, 12, 8, 15, 55, 0);
 				s56.EndTime = s56.StartTime.AddMinutes(s56.Movie.RunTime);
 				s56.Theatre = Theatre.Theatre1;
-				Showings.Add(s56);
 				s56.ShowingDate = new DateTime(2020, 12, 8);
 				s56.SeatsAvailable = 25;
+				Showings.Add(s56);
 			};
 			Showing s57 = new Showing();
 			{
@@ -583,9 +583,9 @@ namespace FinalProjectWorkspace.Seeding
 				s57.StartTime = new DateTime(2020, 12, 8, 18, 40, 0);
 				s57.EndTime = s57.StartTime.AddMinutes(s57.Movie.RunTime);
 				s57.Theatre = Theatre.Theatre1;
-				Showings.Add(s57);
 				s57.ShowingDate = new DateTime(2020, 12, 8);
 				s57.SeatsAvailable = 25;
+				Showings.Add(s57);
 			};
 			Showing s58 = new Showing();
 			{
@@ -593,9 +593,9 @@ namespace FinalProjectWorkspace.Seeding
 				s58.StartTime = new DateTime(2020, 12, 8, 21, 37, 0);
 				s58.EndTime = s58.StartTime.AddMinutes(s58.Movie.RunTime);
 				s58.Theatre = Theatre.Theatre1;
-				Showings.Add(s58);
 				s58.ShowingDate = new DateTime(2020, 12, 8);
 				s58.SeatsAvailable = 25;
+				Showings.Add(s58);
 			};
 			Showing s59 = new Showing();
 			{
@@ -603,9 +603,9 @@ namespace FinalProjectWorkspace.Seeding
 				s59.StartTime = new DateTime(2020, 12, 8, 9, 0, 0);
 				s59.EndTime = s59.StartTime.AddMinutes(s59.Movie.RunTime);
 				s59.Theatre = Theatre.Theatre2;
-				Showings.Add(s59);
 				s59.ShowingDate = new DateTime(2020, 12, 8);
 				s59.SeatsAvailable = 25;
+				Showings.Add(s59);
 			};
 			Showing s60 = new Showing();
 			{
@@ -613,9 +613,9 @@ namespace FinalProjectWorkspace.Seeding
 				s60.StartTime = new DateTime(2020, 12, 8, 10, 50, 0);
 				s60.EndTime = s60.StartTime.AddMinutes(s60.Movie.RunTime);
 				s60.Theatre = Theatre.Theatre2;
-				Showings.Add(s60);
 				s60.ShowingDate = new DateTime(2020, 12, 8);
 				s60.SeatsAvailable = 25;
+				Showings.Add(s60);
 			};
 			Showing s61 = new Showing();
 			{
@@ -623,9 +623,9 @@ namespace FinalProjectWorkspace.Seeding
 				s61.StartTime = new DateTime(2020, 12, 8, 13, 0, 0);
 				s61.EndTime = s61.StartTime.AddMinutes(s61.Movie.RunTime);
 				s61.Theatre = Theatre.Theatre2;
-				Showings.Add(s61);
 				s61.ShowingDate = new DateTime(2020, 12, 8);
 				s61.SeatsAvailable = 25;
+				Showings.Add(s61);
 			};
 			Showing s62 = new Showing();
 			{
@@ -633,9 +633,9 @@ namespace FinalProjectWorkspace.Seeding
 				s62.StartTime = new DateTime(2020, 12, 8, 15, 20, 0);
 				s62.EndTime = s62.StartTime.AddMinutes(s62.Movie.RunTime);
 				s62.Theatre = Theatre.Theatre2;
-				Showings.Add(s62);
 				s62.ShowingDate = new DateTime(2020, 12, 8);
 				s62.SeatsAvailable = 25;
+				Showings.Add(s62);
 			};
 			Showing s63 = new Showing();
 			{
@@ -643,9 +643,9 @@ namespace FinalProjectWorkspace.Seeding
 				s63.StartTime = new DateTime(2020, 12, 8, 17, 25, 0);
 				s63.EndTime = s63.StartTime.AddMinutes(s63.Movie.RunTime);
 				s63.Theatre = Theatre.Theatre2;
-				Showings.Add(s63);
 				s63.ShowingDate = new DateTime(2020, 12, 8);
 				s63.SeatsAvailable = 25;
+				Showings.Add(s63);
 			};
 			Showing s64 = new Showing();
 			{
@@ -653,9 +653,9 @@ namespace FinalProjectWorkspace.Seeding
 				s64.StartTime = new DateTime(2020, 12, 8, 19, 30, 0);
 				s64.EndTime = s64.StartTime.AddMinutes(s64.Movie.RunTime);
 				s64.Theatre = Theatre.Theatre2;
-				Showings.Add(s64);
 				s64.ShowingDate = new DateTime(2020, 12, 8);
 				s64.SeatsAvailable = 25;
+				Showings.Add(s64);
 			};
 			Showing s65 = new Showing();
 			{
@@ -663,9 +663,9 @@ namespace FinalProjectWorkspace.Seeding
 				s65.StartTime = new DateTime(2020, 12, 8, 22, 40, 0);
 				s65.EndTime = s65.StartTime.AddMinutes(s65.Movie.RunTime);
 				s65.Theatre = Theatre.Theatre2;
-				Showings.Add(s65);
 				s65.ShowingDate = new DateTime(2020, 12, 8);
 				s65.SeatsAvailable = 25;
+				Showings.Add(s65);
 			};
 			Showing s66 = new Showing();
 			{
@@ -673,9 +673,9 @@ namespace FinalProjectWorkspace.Seeding
 				s66.StartTime = new DateTime(2020, 12, 9, 9, 5, 0);
 				s66.EndTime = s66.StartTime.AddMinutes(s66.Movie.RunTime);
 				s66.Theatre = Theatre.Theatre1;
-				Showings.Add(s66);
 				s66.ShowingDate = new DateTime(2020, 12, 9);
 				s66.SeatsAvailable = 25;
+				Showings.Add(s66);
 			};
 			Showing s67 = new Showing();
 			{
@@ -683,9 +683,9 @@ namespace FinalProjectWorkspace.Seeding
 				s67.StartTime = new DateTime(2020, 12, 9, 11, 30, 0);
 				s67.EndTime = s67.StartTime.AddMinutes(s67.Movie.RunTime);
 				s67.Theatre = Theatre.Theatre1;
-				Showings.Add(s67);
 				s67.ShowingDate = new DateTime(2020, 12, 9);
 				s67.SeatsAvailable = 25;
+				Showings.Add(s67);
 			};
 			Showing s68 = new Showing();
 			{
@@ -693,9 +693,9 @@ namespace FinalProjectWorkspace.Seeding
 				s68.StartTime = new DateTime(2020, 12, 9, 14, 0, 0);
 				s68.EndTime = s68.StartTime.AddMinutes(s68.Movie.RunTime);
 				s68.Theatre = Theatre.Theatre1;
-				Showings.Add(s68);
 				s68.ShowingDate = new DateTime(2020, 12, 9);
 				s68.SeatsAvailable = 25;
+				Showings.Add(s68);
 			};
 			Showing s69 = new Showing();
 			{
@@ -703,9 +703,9 @@ namespace FinalProjectWorkspace.Seeding
 				s69.StartTime = new DateTime(2020, 12, 9, 15, 55, 0);
 				s69.EndTime = s69.StartTime.AddMinutes(s69.Movie.RunTime);
 				s69.Theatre = Theatre.Theatre1;
-				Showings.Add(s69);
 				s69.ShowingDate = new DateTime(2020, 12, 9);
 				s69.SeatsAvailable = 25;
+				Showings.Add(s69);
 			};
 			Showing s70 = new Showing();
 			{
@@ -713,9 +713,9 @@ namespace FinalProjectWorkspace.Seeding
 				s70.StartTime = new DateTime(2020, 12, 9, 18, 40, 0);
 				s70.EndTime = s70.StartTime.AddMinutes(s70.Movie.RunTime);
 				s70.Theatre = Theatre.Theatre1;
-				Showings.Add(s70);
 				s70.ShowingDate = new DateTime(2020, 12, 9);
 				s70.SeatsAvailable = 25;
+				Showings.Add(s70);
 			};
 			Showing s71 = new Showing();
 			{
@@ -723,9 +723,9 @@ namespace FinalProjectWorkspace.Seeding
 				s71.StartTime = new DateTime(2020, 12, 9, 21, 37, 0);
 				s71.EndTime = s71.StartTime.AddMinutes(s71.Movie.RunTime);
 				s71.Theatre = Theatre.Theatre1;
-				Showings.Add(s71);
 				s71.ShowingDate = new DateTime(2020, 12, 9);
 				s71.SeatsAvailable = 25;
+				Showings.Add(s71);
 			};
 			Showing s72 = new Showing();
 			{
@@ -733,9 +733,9 @@ namespace FinalProjectWorkspace.Seeding
 				s72.StartTime = new DateTime(2020, 12, 9, 9, 0, 0);
 				s72.EndTime = s72.StartTime.AddMinutes(s72.Movie.RunTime);
 				s72.Theatre = Theatre.Theatre2;
-				Showings.Add(s72);
 				s72.ShowingDate = new DateTime(2020, 12, 9);
 				s72.SeatsAvailable = 25;
+				Showings.Add(s72);
 			};
 			Showing s73 = new Showing();
 			{
@@ -743,9 +743,9 @@ namespace FinalProjectWorkspace.Seeding
 				s73.StartTime = new DateTime(2020, 12, 9, 10, 50, 0);
 				s73.EndTime = s73.StartTime.AddMinutes(s73.Movie.RunTime);
 				s73.Theatre = Theatre.Theatre2;
-				Showings.Add(s73);
 				s73.ShowingDate = new DateTime(2020, 12, 9);
 				s73.SeatsAvailable = 25;
+				Showings.Add(s73);
 			};
 			Showing s74 = new Showing();
 			{
@@ -753,9 +753,9 @@ namespace FinalProjectWorkspace.Seeding
 				s74.StartTime = new DateTime(2020, 12, 9, 13, 0, 0);
 				s74.EndTime = s74.StartTime.AddMinutes(s74.Movie.RunTime);
 				s74.Theatre = Theatre.Theatre2;
-				Showings.Add(s74);
 				s74.ShowingDate = new DateTime(2020, 12, 9);
 				s74.SeatsAvailable = 25;
+				Showings.Add(s74);
 			};
 			Showing s75 = new Showing();
 			{
@@ -763,9 +763,9 @@ namespace FinalProjectWorkspace.Seeding
 				s75.StartTime = new DateTime(2020, 12, 9, 15, 20, 0);
 				s75.EndTime = s75.StartTime.AddMinutes(s75.Movie.RunTime);
 				s75.Theatre = Theatre.Theatre2;
-				Showings.Add(s75);
 				s75.ShowingDate = new DateTime(2020, 12, 9);
 				s75.SeatsAvailable = 25;
+				Showings.Add(s75);
 			};
 			Showing s76 = new Showing();
 			{
@@ -773,9 +773,9 @@ namespace FinalProjectWorkspace.Seeding
 				s76.StartTime = new DateTime(2020, 12, 9, 17, 25, 0);
 				s76.EndTime = s76.StartTime.AddMinutes(s76.Movie.RunTime);
 				s76.Theatre = Theatre.Theatre2;
-				Showings.Add(s76);
 				s76.ShowingDate = new DateTime(2020, 12, 9);
 				s76.SeatsAvailable = 25;
+				Showings.Add(s76);
 			};
 			Showing s77 = new Showing();
 			{
@@ -783,9 +783,9 @@ namespace FinalProjectWorkspace.Seeding
 				s77.StartTime = new DateTime(2020, 12, 9, 19, 30, 0);
 				s77.EndTime = s77.StartTime.AddMinutes(s77.Movie.RunTime);
 				s77.Theatre = Theatre.Theatre2;
-				Showings.Add(s77);
 				s77.ShowingDate = new DateTime(2020, 12, 9);
 				s77.SeatsAvailable = 25;
+				Showings.Add(s77);
 			};
 			Showing s78 = new Showing();
 			{
@@ -793,9 +793,9 @@ namespace FinalProjectWorkspace.Seeding
 				s78.StartTime = new DateTime(2020, 12, 9, 22, 40, 0);
 				s78.EndTime = s78.StartTime.AddMinutes(s78.Movie.RunTime);
 				s78.Theatre = Theatre.Theatre2;
-				Showings.Add(s78);
 				s78.ShowingDate = new DateTime(2020, 12, 9);
 				s78.SeatsAvailable = 25;
+				Showings.Add(s78);
 			};
 			Showing s79 = new Showing();
 			{
@@ -803,9 +803,9 @@ namespace FinalProjectWorkspace.Seeding
 				s79.StartTime = new DateTime(2020, 12, 10, 9, 5, 0);
 				s79.EndTime = s79.StartTime.AddMinutes(s79.Movie.RunTime);
 				s79.Theatre = Theatre.Theatre1;
-				Showings.Add(s79);
 				s79.ShowingDate = new DateTime(2020, 12, 10);
 				s79.SeatsAvailable = 25;
+				Showings.Add(s79);
 			};
 			Showing s80 = new Showing();
 			{
@@ -813,9 +813,9 @@ namespace FinalProjectWorkspace.Seeding
 				s80.StartTime = new DateTime(2020, 12, 10, 11, 30, 0);
 				s80.EndTime = s80.StartTime.AddMinutes(s80.Movie.RunTime);
 				s80.Theatre = Theatre.Theatre1;
-				Showings.Add(s80);
 				s80.ShowingDate = new DateTime(2020, 12, 10);
 				s80.SeatsAvailable = 25;
+				Showings.Add(s80);
 			};
 			Showing s81 = new Showing();
 			{
@@ -823,9 +823,9 @@ namespace FinalProjectWorkspace.Seeding
 				s81.StartTime = new DateTime(2020, 12, 10, 14, 0, 0);
 				s81.EndTime = s81.StartTime.AddMinutes(s81.Movie.RunTime);
 				s81.Theatre = Theatre.Theatre1;
-				Showings.Add(s81);
 				s81.ShowingDate = new DateTime(2020, 12, 10);
 				s81.SeatsAvailable = 25;
+				Showings.Add(s81);
 			};
 			Showing s82 = new Showing();
 			{
@@ -833,9 +833,9 @@ namespace FinalProjectWorkspace.Seeding
 				s82.StartTime = new DateTime(2020, 12, 10, 15, 55, 0);
 				s82.EndTime = s82.StartTime.AddMinutes(s82.Movie.RunTime);
 				s82.Theatre = Theatre.Theatre1;
-				Showings.Add(s82);
 				s82.ShowingDate = new DateTime(2020, 12, 10);
 				s82.SeatsAvailable = 25;
+				Showings.Add(s82);
 			};
 			Showing s83 = new Showing();
 			{
@@ -843,9 +843,9 @@ namespace FinalProjectWorkspace.Seeding
 				s83.StartTime = new DateTime(2020, 12, 10, 18, 40, 0);
 				s83.EndTime = s83.StartTime.AddMinutes(s83.Movie.RunTime);
 				s83.Theatre = Theatre.Theatre1;
-				Showings.Add(s83);
 				s83.ShowingDate = new DateTime(2020, 12, 10);
 				s83.SeatsAvailable = 25;
+				Showings.Add(s83);
 			};
 			Showing s84 = new Showing();
 			{
@@ -853,9 +853,9 @@ namespace FinalProjectWorkspace.Seeding
 				s84.StartTime = new DateTime(2020, 12, 10, 21, 37, 0);
 				s84.EndTime = s84.StartTime.AddMinutes(s84.Movie.RunTime);
 				s84.Theatre = Theatre.Theatre1;
-				Showings.Add(s84);
 				s84.ShowingDate = new DateTime(2020, 12, 10);
 				s84.SeatsAvailable = 25;
+				Showings.Add(s84);
 			};
 			Showing s85 = new Showing();
 			{
@@ -863,9 +863,9 @@ namespace FinalProjectWorkspace.Seeding
 				s85.StartTime = new DateTime(2020, 12, 10, 9, 0, 0);
 				s85.EndTime = s85.StartTime.AddMinutes(s85.Movie.RunTime);
 				s85.Theatre = Theatre.Theatre2;
-				Showings.Add(s85);
 				s85.ShowingDate = new DateTime(2020, 12, 10);
 				s85.SeatsAvailable = 25;
+				Showings.Add(s85);
 			};
 			Showing s86 = new Showing();
 			{
@@ -873,9 +873,9 @@ namespace FinalProjectWorkspace.Seeding
 				s86.StartTime = new DateTime(2020, 12, 10, 10, 50, 0);
 				s86.EndTime = s86.StartTime.AddMinutes(s86.Movie.RunTime);
 				s86.Theatre = Theatre.Theatre2;
-				Showings.Add(s86);
 				s86.ShowingDate = new DateTime(2020, 12, 10);
 				s86.SeatsAvailable = 25;
+				Showings.Add(s86);
 			};
 			Showing s87 = new Showing();
 			{
@@ -883,9 +883,9 @@ namespace FinalProjectWorkspace.Seeding
 				s87.StartTime = new DateTime(2020, 12, 10, 13, 0, 0);
 				s87.EndTime = s87.StartTime.AddMinutes(s87.Movie.RunTime);
 				s87.Theatre = Theatre.Theatre2;
-				Showings.Add(s87);
 				s87.ShowingDate = new DateTime(2020, 12, 10);
 				s87.SeatsAvailable = 25;
+				Showings.Add(s87);
 			};
 			Showing s88 = new Showing();
 			{
@@ -893,9 +893,9 @@ namespace FinalProjectWorkspace.Seeding
 				s88.StartTime = new DateTime(2020, 12, 10, 15, 20, 0);
 				s88.EndTime = s88.StartTime.AddMinutes(s88.Movie.RunTime);
 				s88.Theatre = Theatre.Theatre2;
-				Showings.Add(s88);
 				s88.ShowingDate = new DateTime(2020, 12, 10);
 				s88.SeatsAvailable = 25;
+				Showings.Add(s88);
 			};
 			Showing s89 = new Showing();
 			{
@@ -903,9 +903,9 @@ namespace FinalProjectWorkspace.Seeding
 				s89.StartTime = new DateTime(2020, 12, 10, 17, 25, 0);
 				s89.EndTime = s89.StartTime.AddMinutes(s89.Movie.RunTime);
 				s89.Theatre = Theatre.Theatre2;
-				Showings.Add(s89);
 				s89.ShowingDate = new DateTime(2020, 12, 10);
 				s89.SeatsAvailable = 25;
+				Showings.Add(s89);
 			};
 			Showing s90 = new Showing();
 			{
@@ -913,9 +913,9 @@ namespace FinalProjectWorkspace.Seeding
 				s90.StartTime = new DateTime(2020, 12, 10, 19, 30, 0);
 				s90.EndTime = s90.StartTime.AddMinutes(s90.Movie.RunTime);
 				s90.Theatre = Theatre.Theatre2;
-				Showings.Add(s90);
 				s90.ShowingDate = new DateTime(2020, 12, 10);
 				s90.SeatsAvailable = 25;
+				Showings.Add(s90);
 			};
 			Showing s91 = new Showing();
 			{
@@ -923,9 +923,9 @@ namespace FinalProjectWorkspace.Seeding
 				s91.StartTime = new DateTime(2020, 12, 10, 22, 40, 0);
 				s91.EndTime = s91.StartTime.AddMinutes(s91.Movie.RunTime);
 				s91.Theatre = Theatre.Theatre2;
-				Showings.Add(s91);
 				s91.ShowingDate = new DateTime(2020, 12, 10);
 				s91.SeatsAvailable = 25;
+				Showings.Add(s91);
 			};
 
 
@@ -941,7 +941,8 @@ namespace FinalProjectWorkspace.Seeding
 					//update the counters
 					intMovieSchedule = seedShowing.ShowingID;
 					//see if the movie is already in the database using the IMDBID
-					Showing dbMovieSchedule = db.Showings.FirstOrDefault(f => f.Movie == seedShowing.Movie);
+					Showing dbMovieSchedule = db.Showings.FirstOrDefault(f => f.ShowingID == seedShowing.ShowingID);
+
 
 					//if Movie Schedule is null, MovieSchedule is not in database
 					if (dbMovieSchedule == null)
@@ -956,6 +957,8 @@ namespace FinalProjectWorkspace.Seeding
 						dbMovieSchedule.EndTime = seedShowing.EndTime;
 						dbMovieSchedule.Movie = seedShowing.Movie;
 						dbMovieSchedule.Theatre = seedShowing.Theatre;
+						dbMovieSchedule.ShowingDate = seedShowing.ShowingDate;
+						dbMovieSchedule.SeatsAvailable = seedShowing.SeatsAvailable;
 					}
 				}
 			}
@@ -972,4 +975,3 @@ namespace FinalProjectWorkspace.Seeding
 		}
 	}
 }
-		
