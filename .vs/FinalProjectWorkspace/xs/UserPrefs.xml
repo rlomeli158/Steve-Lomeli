@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Ticket.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Prices.cs">
     <Files>
       <File FileName="FinalProjectWorkspace/Models/Genre.cs" Line="26" Column="1" />
       <File FileName="FinalProjectWorkspace/Models/AppUser.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="12" Column="46" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="12" Column="44" />
       <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
       <File FileName="FinalProjectWorkspace/Models/Order.cs" />
       <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" />
@@ -13,6 +13,8 @@
       <File FileName="FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" />
       <File FileName="FinalProjectWorkspace/Views/Home/OrderConfirmed.cshtml" />
       <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/Prices.cs" Line="37" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Prices.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,8 +23,7 @@
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="SVM" expanded="True" />
-                <Node name="Ticket.cs" selected="True" />
+                <Node name="Prices.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
