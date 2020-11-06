@@ -18,7 +18,7 @@ namespace FinalProjectWorkspace
             services.AddControllersWithViews();
 
              //add the connection string for jeremiah Azure account
-            var connectionString = "Server = tcp:finalprojectgroup17.database.windows.net,1433; Initial Catalog = FinalProjectGroup17; Persist Security Info = False; User ID = MISAdmin; Password = Password123; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
+            var connectionString = "Server=tcp:finalprojectgroup17.database.windows.net,1433;Initial Catalog=FinalProjectGroup17;Persist Security Info=False;User ID=MISAdmin;Password=Password123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             //TODO: Uncomment this line once you have your connection string
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));

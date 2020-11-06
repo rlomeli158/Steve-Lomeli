@@ -8,8 +8,8 @@ namespace FinalProjectWorkspace.Models
 {
     public enum Theatre
     {
-        Theater1,
-        Theater2
+        Theatre1,
+        Theatre2
     }
 
     public class Showing

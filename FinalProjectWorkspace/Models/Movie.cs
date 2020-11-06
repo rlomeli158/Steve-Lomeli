@@ -22,6 +22,7 @@ namespace FinalProjectWorkspace.Models
 
         public Int32 MovieID { get; set; } //from 3001!
 
+        public int MovieNumber { get; set; }
         public String Title { get; set; }
         public String Overview { get; set; }
         public String Tagline { get; set; }
