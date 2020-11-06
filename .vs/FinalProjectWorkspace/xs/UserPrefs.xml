@@ -18,7 +18,7 @@
       <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="31" Column="5" />
       <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" />
       <File FileName="FinalProjectWorkspace/Models/Movie.cs" />
-      <File FileName="FinalProjectWorkspace/Startup.cs" Line="21" Column="172" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" Line="81" Column="50" />
       <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" />
       <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" />
       <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="1" Column="1" />
@@ -31,12 +31,11 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FinalProjectWorkspace" expanded="True">
-            <Node name="FinalProjectWorkspace" expanded="True">
+            <Node name="FinalProjectWorkspace" expanded="True" selected="True">
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
