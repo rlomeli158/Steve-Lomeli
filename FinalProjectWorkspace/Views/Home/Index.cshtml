@@ -1,5 +1,56 @@
-﻿@{
+﻿@model FinalProjectWorkspace.Models.SearchViewModel
+<!--Delete this line above, just used it for testing purposes-->
+
+@{
     ViewBag.Title = "Index";
 }
 
-<p>Hello! This is a test for Github.</p>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div class="text-center">
+        <h1>Now Playing</h1>
+
+        <h2>Coming Soon! Explore Main Street Movies.</h2>
+    </div>
+
+
+    <div class="text-center">
+        <a asp-contoller="Seed" asp-action="Index" class="btn btn-outline-primary text-center">Seeding</a>
+        <a href="" target="_blank" type="button" class="btn btn-outline-danger">Button Danger</a>
+        <a href="" target="_blank" type="button" class="btn btn-outline-success">Button Success</a>
+    </div>
+    <!--code for MPAA Rating Search below, will transfer over when we have detailed search page-->
+    <div class="form-group">
+        <label class="control-label"></label>
+        <label asp-for="SelectedMPAARating" class="control-label"></label>
+        @Html.DropDownList("selectedMPAASelectList", (SelectList)ViewBag.AllMPAARatings,"All MPAA Ratings")
+        <span asp-validation-for="SelectedMPAARating" class="text-danger"></span>
+    </div>
+    <!--code for MPAA Rating Search above, will transfer over when we have detailed search page-->
+    <select asp-for="@Model.SelectedMPAARating" asp-items="Html.GetEnumSelectList<AllMPAARatings>()"></select>
+
+
+        <div class="text-center">
+            <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+            <br />
+            <h2>
+                Slideshow Example
+            </h2>
+            <br />
+            <div class="text-center">
+                <!-- change the image on the CSS File and add new if necessry-->
+                <div class="simple-ss-1" alt="" title=""></div>
+                <div class="content-ss-1"></div>
+            </div>
+            <br />
+            <br />
+        </div>
+
+</body>
+</html>

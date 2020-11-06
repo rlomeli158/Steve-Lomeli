@@ -1,8 +1,10 @@
 using System;
 using System.Globalization;
+using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 //TODO: Make this namespace match your project - be sure to remove the []
@@ -15,15 +17,15 @@ namespace FinalProjectWorkspace
             //This adds the MVC engine and Razor code
             services.AddControllersWithViews();
 
-             //TODO: (For HW4 and beyond) Add a connection string here once you have created it on Azure
-            //String connectionString = "";
+             //add the connection string for jeremiah Azure account
+            var connectionString = "Server = tcp:finalprojectgroup17.database.windows.net,1433; Initial Catalog = FinalProjectGroup17; Persist Security Info = False; User ID = MISAdmin; Password = Password123; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
 
             //TODO: Uncomment this line once you have your connection string
-            //services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 
             //TODO: Uncomment these lines once you have added Identity to your project
             ////NOTE: This is where you would change your password requirements
-            /*services.AddIdentity<AppUser, IdentityRole>(opts => {
+            services.AddIdentity<AppUser, IdentityRole>(opts => {
                 opts.User.RequireUniqueEmail = true;
                 opts.Password.RequiredLength = 6;
                 opts.Password.RequireNonAlphanumeric = false;
@@ -32,7 +34,7 @@ namespace FinalProjectWorkspace
                 opts.Password.RequireDigit = false;
             })
             .AddEntityFrameworkStores<AppDbContext>()
-            .AddDefaultTokenProviders();*/
+            .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IServiceProvider service)
@@ -72,6 +74,11 @@ namespace FinalProjectWorkspace
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            //Only need to seed ONCE
+            //Seeding.SeedIdentity.AddAdmin(service).Wait();
+            //Seeding.SeedEmployee.SeedEmployees(service).Wait();
+            //Seeding.SeedCustomer.SeedCustomers(service).Wait();
         }
     }
    

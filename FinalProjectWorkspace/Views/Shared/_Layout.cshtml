@@ -4,29 +4,37 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Home</a>
-            </div>
-            <div class="collapse navbar-collapse" id="nav-content">
+<body style="background-color:black">
+    <div>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand text-center" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" width="120" height="60" alt="Main St. Movies' Logo" title="Main St. Movies' Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     <!--The link to products is provided as an example.  You can add more links for additional pages-->
-                    <li class="nav-item"><a asp-controller="Products" asp-action="Index" class="nav-link">Products</a></li>
-                    <li class="nav-item"><a asp-controller="Home" asp-action="EmployeeHomeView" class="nav-link">Employee Home View</a></li>
-                    <li class="nav-item"><a asp-controller="Home" asp-action="ManagerHomeView" class="nav-link">Manager Home View</a></li>
-                    <li class="nav-item"><a asp-controller="Home" asp-action="OrderConfirmed" class="nav-link">Order Confirmed</a></li>
-                    <li class="nav-item"><a asp-controller="Home" asp-action="CancelledOrderConfirmed" class="nav-link">Cancelled Order Confirmed</a></li>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Browse</a></li>
+                    <li class="nav-item"><a asp-controller="Seed" asp-action="Index" class="nav-link">Seed Data</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
+
+            @await Html.PartialAsync("_LoginPartial")
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+
+            </form>
+
+
+        </nav>
+
+    </div>
+
 
     <div class="container">
         @RenderBody()
@@ -36,5 +44,20 @@
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     @RenderSection("Scripts", required: false)
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="text-center">
+        <a class="text-light text-center" href="https://www.google.com">&#169; Team 17 - 2020. All Rights Reserved.</a>
+    </div>
 </body>
 </html>
