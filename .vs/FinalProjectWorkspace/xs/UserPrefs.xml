@@ -1,23 +1,19 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Ticket.cs">
     <Files>
       <File FileName="FinalProjectWorkspace/Models/Genre.cs" Line="26" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="12" Column="46" />
       <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
       <File FileName="FinalProjectWorkspace/Models/Order.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="37" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Home/EmployeeHomeView.cshtml" Line="83" Column="15" />
-      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Home/OrderConfirmed.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="22" Column="69" />
+      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/EmployeeHomeView.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/OrderConfirmed.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" />
     </Files>
-=======
-  <MonoDevelop.Ide.Workbench>
->>>>>>> 444ef437653eaf37a3f51e0b858f9e45a0ae51cb
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -26,16 +22,11 @@
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="SVM" expanded="True" />
-<<<<<<< HEAD
+                <Node name="Ticket.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_Layout.cshtml" selected="True" />
-                </Node>
-=======
-                <Node name="Movie.cs" selected="True" />
->>>>>>> 444ef437653eaf37a3f51e0b858f9e45a0ae51cb
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>
