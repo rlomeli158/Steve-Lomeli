@@ -1,8 +1,13 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Home/Index.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="76" Column="38" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="28" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="204" Column="43" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="30" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/Prices.cs" Line="7" Column="2" />
+      <File FileName="FinalProjectWorkspace/Views/Home/SearchResults.cshtml" Line="3" Column="45" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Home/DetailedSearch.cshtml" Line="25" Column="110" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="24" Column="74" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,10 +19,10 @@
                 <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_Layout.cshtml" selected="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
                 </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>

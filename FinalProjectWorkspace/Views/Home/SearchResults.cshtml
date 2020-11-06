@@ -1,0 +1,83 @@
+@model IEnumerable<FinalProjectWorkspace.Models.Showing>
+
+@{ ViewData["Title"] = "Movie Search Results"; }
+
+<h1>Movies</h1>
+<!--
+<form asp-action="Index" asp-controller="Home" method="get">
+    <p class="form-group">
+        Search: <input name="SearchString" class="form-control" /><br />
+        <button type="submit" class="btn btn-primary">Search</button>
+        <a asp-action="DetailedSearch" class="btn btn-success">Detailed Search</a>
+        <a asp-action="Index" class="btn btn-danger">Show All</a>
+    </p>
+</form>
+    -->
+
+<p> Displaying @ViewBag.SelectedJobs of @ViewBag.AllJobs Job Postings</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Overview)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Tagline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.RunTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Actors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.MPAARating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowingDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Overview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Tagline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.RunTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Actors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.MPAARating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowingDate)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Movie.MovieID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
