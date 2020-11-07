@@ -1,0 +1,63 @@
+@model FinalProjectWorkspace.Models.Movie
+
+@{ ViewData["Title"] = "Details"; }
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Overview)
+        </dd>
+        <dd class="col-sm-3">
+            @Html.DisplayFor(model => model.Overview)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tagline)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.Tagline)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MPAARating)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.MPAARating)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.Genre)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Year)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+    </dl>
+</div>
+<table class="table table-sm table-primary">
+    <tr>
+        <th>Showings Near You</th>
+    </tr>
+    @foreach (Showing p in Model.Showings)
+    {
+<tr>
+    <td>@Html.DisplayFor(modelItem => p.ShowingDate)</td>
+</tr>
+}
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MovieID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -24,6 +24,7 @@ namespace FinalProjectWorkspace.Controllers
         public IActionResult Index()
         {
             ViewBag.AllMPAARatings = GetAllRatings(); //TODO: Delete this code once Steve transfers to detailed search      
+            SearchViewModel svm = new SearchViewModel();
             return View();
         }
 
@@ -124,30 +125,30 @@ namespace FinalProjectWorkspace.Controllers
         public IActionResult DisplaySearchResults(SearchViewModel svm)
         {
             //Initial query LINQ
-            var query = from m in _context.Showings select m;
+            var query = from m in _context.Movies select m;
 
             //If statements corresponding to each input form control
 
             if (svm.SelectedTitle != null && svm.SelectedTitle != "") //For title
             {
-                query = query.Where(m => m.Movie.Title.Contains(svm.SelectedTitle));
+                query = query.Where(m => m.Title.Contains(svm.SelectedTitle));
             }
 
             if (svm.SelectedOverview != null && svm.SelectedOverview != "") //For overview/description
             {
-                query = query.Where(m => m.Movie.Overview.Contains(svm.SelectedOverview));
+                query = query.Where(m => m.Overview.Contains(svm.SelectedOverview));
             }
 
             if (svm.SelectedGenreID != 0) //For genre
             {
                 Genre GenreToDisplay = _context.Genres.Find(svm.SelectedGenreID);
-                query = query.Where(m => m.Movie.Genre == GenreToDisplay);
+                query = query.Where(m => m.Genre == GenreToDisplay);
             }
 
             if (svm.SelectedMPAARating != 0) //For MPAARating
             {
                 string MPAARatingToDisplay = Enum.GetName(typeof(AllMPAARatings), svm.SelectedMPAARating);
-                query = query.Where(m => m.Movie.MPAARating.ToString() == MPAARatingToDisplay);
+                query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay);
             }
          
             if (svm.SelectedCustomerRating != null) //For rating 
@@ -155,10 +156,10 @@ namespace FinalProjectWorkspace.Controllers
                 switch (svm.SelectedSearchType)
                 {
                     case AllSearchTypes.GreaterThan:
-                        query = query.Where(m => m.Movie.MovieReviews.Average(r => r.Rating) >= Convert.ToDouble(svm.SelectedCustomerRating));
+                        query = query.Where(m => m.MovieReviews.Average(r => r.Rating) >= Convert.ToDouble(svm.SelectedCustomerRating));
                         break;
                     case AllSearchTypes.LessThan:
-                        query = query.Where(m => m.Movie.MovieReviews.Average(r => r.Rating) <= Convert.ToDouble(svm.SelectedCustomerRating)); 
+                        query = query.Where(m => m.MovieReviews.Average(r => r.Rating) <= Convert.ToDouble(svm.SelectedCustomerRating)); 
                         break;
                     default:
                         break;
@@ -169,13 +170,13 @@ namespace FinalProjectWorkspace.Controllers
             if (svm.SelectedYear != null) //For release year
             {
                 DateTime datSelectedDate = svm.SelectedYear ?? new DateTime(1900, 1, 1); 
-                query = query.Where(m => m.Movie.Year >= datSelectedDate);
+                query = query.Where(m => m.Year >= datSelectedDate);
             }
 
             if (svm.SelectedShowingDate != null) //For showing date ********
             {
                 DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Movie.Showings.Min(r => r.ShowingDate) >= datSelectedDate); //Same issue as above, get showing date from showings or rating from movie review.
+                query = query.Where(m => m.Showings.Min(r => r.ShowingDate) >= datSelectedDate); //Same issue as above, get showing date from showings or rating from movie review.
                                                                                                  //Should it even be min?
             }
 
@@ -194,7 +195,7 @@ namespace FinalProjectWorkspace.Controllers
 
                 //Execute query, include category with it
 
-                List<Showing> SelectedMovies = query.Include(m => m.Movie.Genre).ToList();
+                List<Movie> SelectedMovies = query.Include(m => m.Genre).ToList();
 
                 //Populate the view bag with a count of all job postings
                 ViewBag.AllMovies = _context.Movies.Count();
@@ -202,12 +203,31 @@ namespace FinalProjectWorkspace.Controllers
                 ViewBag.SelectedMovies = SelectedMovies.Count();
 
 
-                return View("SearchResults", SelectedMovies.OrderByDescending(m => m.Movie.Year)); //Put year in here right now, but it should be showtime, right? **********
+                return View("SearchResults", SelectedMovies.OrderByDescending(m => m.Year)); //Put year in here right now, but it should be showtime, right? **********
 
 
             }
 
             return View("DetailedSearch");
+        }
+
+        public async Task<IActionResult> MovieDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var movie = await _context.Movies
+                .Include(p => p.Showings)
+                .FirstOrDefaultAsync(m => m.MovieID == id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            return View(movie);
         }
 
         // Views Employee Home After Login
