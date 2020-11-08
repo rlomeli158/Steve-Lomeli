@@ -1,0 +1,82 @@
+@model FinalProjectWorkspace.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MovieNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Overview)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Overview)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tagline)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tagline)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RunTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RunTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Revenue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Revenue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Actors)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Actors)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MPAARating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MPAARating)
+        </dd>
+    </dl>
+</div>
+<table class="table table-sm table-primary">
+    <tr>
+        <th>Showings Near You</th>
+    </tr>
+    @foreach (Showing p in Model.Showings)
+    {
+<tr>
+    <td>@Html.DisplayFor(modelItem => p.ShowingDate)</td>
+</tr>}
+</table>
+<div >
+    <a asp-action="Edit" asp-route-id="@Model.MovieID" style="color:white">Edit</a> |
+    <a asp-action="Index" style="color:white">Back to List</a>
+</div>

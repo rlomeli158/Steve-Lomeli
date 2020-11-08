@@ -69,6 +69,7 @@ namespace FinalProjectWorkspace.Models
         public AllSearchTypes SelectedSearchType { get; set; } //Radio Button
 
         [Display(Name = "Search by Showing Date:")]
+        [DataType(DataType.Date)]
         public DateTime? SelectedShowingDate { get; set; } //Date selector
 
     }

@@ -18,17 +18,18 @@
                 <ul class="navbar-nav mr-auto">
                     <!--The link to products is provided as an example.  You can add more links for additional pages-->
                     <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Browse</a></li>
+                    <li class="nav-item"><a asp-controller="Movie" asp-action="Browse" class="nav-link">Browse</a></li>
                     <li class="nav-item"><a asp-controller="Seed" asp-action="Index" class="nav-link">Seed Data</a></li>
                 </ul>
             </div>
 
             @await Html.PartialAsync("_LoginPartial")
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-
+            <form asp-controller="Movie" asp-action="DisplaySearchResults" class="form-inline my-2 my-lg-0">
+                <input class="form-control" placeholder="Search Movies" />
+                <span class="text-danger"></span>
             </form>
+
 
 
         </nav>

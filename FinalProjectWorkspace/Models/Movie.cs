@@ -49,10 +49,6 @@ namespace FinalProjectWorkspace.Models
                 MovieReviews = new List<MovieReview>();
             }
 
-            /*
-             * Do we have to add a similar thing as above but for movie review?
-             */
-
         }
 
     }

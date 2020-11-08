@@ -24,6 +24,7 @@ namespace FinalProjectWorkspace.Controllers
         public IActionResult Index()
         {
             ViewBag.AllMPAARatings = GetAllRatings(); //TODO: Delete this code once Steve transfers to detailed search      
+            SearchViewModel svm = new SearchViewModel();
             return View();
         }
 
@@ -78,6 +79,7 @@ namespace FinalProjectWorkspace.Controllers
 
             //Populate view bag with list of categories
             ViewBag.AllGenres = GetAllGenres();
+            ViewBag.AllMPAARatings = GetAllRatings();
 
             //Set default properties
             SearchViewModel svm = new SearchViewModel();
@@ -148,8 +150,7 @@ namespace FinalProjectWorkspace.Controllers
                 string MPAARatingToDisplay = Enum.GetName(typeof(AllMPAARatings), svm.SelectedMPAARating);
                 query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay);
             }
-
-            
+         
             if (svm.SelectedCustomerRating != null) //For rating 
             {
                 switch (svm.SelectedSearchType)
@@ -202,12 +203,31 @@ namespace FinalProjectWorkspace.Controllers
                 ViewBag.SelectedMovies = SelectedMovies.Count();
 
 
-                return View("Index", SelectedMovies.OrderByDescending(m => m.Year)); //Put year in here right now, but it should be showtime, right? **********
+                return View("SearchResults", SelectedMovies.OrderByDescending(m => m.Year)); //Put year in here right now, but it should be showtime, right? **********
 
 
             }
 
             return View("DetailedSearch");
+        }
+
+        public async Task<IActionResult> MovieDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var movie = await _context.Movies
+                .Include(p => p.Showings)
+                .FirstOrDefaultAsync(m => m.MovieID == id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            return View(movie);
         }
 
         // Views Employee Home After Login

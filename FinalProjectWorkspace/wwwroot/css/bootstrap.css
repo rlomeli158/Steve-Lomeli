@@ -67,7 +67,7 @@ body {
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #c8cccf;
+    color: white;
     text-align: left;
     background-color: #fff;
 }
@@ -1847,7 +1847,7 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #55595c;
+  color: white;
 }
 
 .table th,
@@ -10752,3 +10752,8 @@ th {
     background-color: #fff !important;
     text-align: center;
 }
+
+#mydiv a {
+    color: white
+}
+
