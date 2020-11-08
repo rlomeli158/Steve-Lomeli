@@ -21,11 +21,32 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Index(String SearchString)
         {
-            ViewBag.AllMPAARatings = GetAllRatings(); //TODO: Delete this code once Steve transfers to detailed search      
-            SearchViewModel svm = new SearchViewModel();
-            return View();
+            //Initial query LINQ
+            var query = from m in _context.Showings select m;
+            var CurrentDate = System.DateTime.Now;
+
+            if (SearchString != null && SearchString != "")
+            {
+                query = query.Where(m => m.Movie.Title.Contains(SearchString) || m.Movie.Overview.Contains(SearchString));
+            }
+
+            else
+            {
+                query = query.Where(m => m.ShowingDate >= CurrentDate);
+            }
+
+            List<Showing> TodayShowing = query.Include(m => m.Movie).ToList();
+
+            ViewBag.AllShowings = _context.Showings.Count();
+            ViewBag.SelectedShowings = TodayShowing.Count();
+
+            return View(TodayShowing.OrderBy(m => m.ShowingDate));
+
+
+            //return View(await _context.Showings.ToListAsync());
+
         }
 
         // GET: /<controller>/

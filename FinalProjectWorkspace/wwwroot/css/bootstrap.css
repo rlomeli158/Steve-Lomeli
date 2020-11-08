@@ -10753,7 +10753,14 @@ th {
     text-align: center;
 }
 
-#mydiv a {
-    color: white
+
+div.video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
+.video {
+    width: 100% /* More than element */;
+}

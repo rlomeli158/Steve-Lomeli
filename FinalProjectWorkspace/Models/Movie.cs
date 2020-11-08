@@ -20,9 +20,9 @@ namespace FinalProjectWorkspace.Models
     {
         //Scalar properties
 
-        public Int32 MovieID { get; set; } //from 3001!
+        public Int32 MovieID { get; set; } 
 
-        public int MovieNumber { get; set; }
+        public int MovieNumber { get; set; } //from 3001!
         public String Title { get; set; }
         public String Overview { get; set; }
         public String Tagline { get; set; }
