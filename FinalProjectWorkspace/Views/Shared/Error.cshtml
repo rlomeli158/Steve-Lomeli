@@ -1,15 +1,18 @@
 ﻿@model IEnumerable<String>
 
-<h1>Error</h1>
+<br />
+<img class="w-100 h-auto rounded mx-auto d-block" src="/images/error.png" alt="Error" title="Error" />
 
-<p>Oops - something went wrong.</p>
-
-@if (Model != null)
-{
-    foreach (String message in Model)
+<div class="text-center">
+    @if (Model != null)
     {
-        <p><span class="text-danger">@message</span></p>
+        foreach (String message in Model)
+        {
+            <p><span class="text-danger">@message</span></p>
+        }
     }
-}
 
-<a asp-action="Index" asp-controller="Home" class="btn btn-success">Take me home!</a>
+
+    <a asp-action="Index" asp-controller="Home" class="btn btn-outline-success">Back to Safety</a>
+
+</div>
