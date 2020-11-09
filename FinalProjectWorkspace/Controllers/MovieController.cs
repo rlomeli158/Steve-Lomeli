@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using System.Collections;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -31,7 +32,7 @@ namespace FinalProjectWorkspace.Controllers
             //Are these here necessary?
             svm.SelectedGenreID = (int)AllGenres.Action;
             svm.SelectedSearchType = AllSearchTypes.GreaterThan;
-            //Add svm.SelectedMPAARatings = 0 although it may not work
+            //svm.SelectedMPAARating = 2; //although it may not work
 
             return View(svm);
         }
@@ -43,7 +44,7 @@ namespace FinalProjectWorkspace.Controllers
             List<Genre> genreList = _context.Genres.ToList();
 
             //add a dummy entry so the user can select all categories
-            Genre SelectNone = new Genre() { GenreID = 0, GenreName = "All Genres" };
+            Genre SelectNone = new Genre() { GenreID = 0, GenreName = "All" };
             genreList.Add(SelectNone);
 
             //convert the list to a SelectList by calling SelectList constructor
@@ -58,6 +59,7 @@ namespace FinalProjectWorkspace.Controllers
 
         public SelectList GetAllRatings()
         {
+
             var MPAASelectList = new SelectList(Enum.GetValues(typeof(AllMPAARatings)).Cast<AllMPAARatings>().Select(v => new SelectListItem
             {
                 Text = v.ToString(),
@@ -92,8 +94,10 @@ namespace FinalProjectWorkspace.Controllers
 
             if (svm.SelectedMPAARating != 0) //For MPAARating
             {
-                string MPAARatingToDisplay = Enum.GetName(typeof(AllMPAARatings), svm.SelectedMPAARating);
-                query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay);
+                string MPAAStringToDisplay = Enum.GetName(typeof(AllMPAARatings), svm.SelectedMPAARating);
+                MPAARatings MPAARatingsToDisplay = (MPAARatings)Enum.Parse(typeof(MPAARatings), MPAAStringToDisplay);
+                //query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay.ToString());
+                query = query.Where(m => m.MPAARating == MPAARatingsToDisplay);
             }
 
             if (svm.SelectedCustomerRating != null) //For rating 
@@ -121,8 +125,7 @@ namespace FinalProjectWorkspace.Controllers
             if (svm.SelectedShowingDate != null) //For showing date ********
             {
                 DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Showings.Min(r => r.ShowingDate) >= datSelectedDate); //Same issue as above, get showing date from showings or rating from movie review.
-                                                                                                 //Should it even be min?
+                query = query.Where(m => m.Showings.Max(r => r.ShowingDate) >= datSelectedDate); //TODO: Verify if Max is correct here or if something else should be used
             }
 
             if (query != null) //they searched for something
@@ -135,7 +138,7 @@ namespace FinalProjectWorkspace.Controllers
                     ViewBag.AllMPAARatings = GetAllRatings();
 
                     //View is returned with error messages
-                    return View("DetailedSearch", svm);
+                    return View("Browse", svm);
                 }
 
                 //Execute query, include category with it
@@ -153,7 +156,8 @@ namespace FinalProjectWorkspace.Controllers
 
             }
 
-            return View("DetailedSearch");
+            return View("Browse");
+
         }
 
         // GET: Movie

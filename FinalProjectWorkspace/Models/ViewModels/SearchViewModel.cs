@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,6 +30,8 @@ namespace FinalProjectWorkspace.Models
 
     public enum AllMPAARatings
     {
+        [Display(Name = "All MPAA Ratings")]
+        All,
         G,
         PG,
         [Display(Name = "PG-13")]

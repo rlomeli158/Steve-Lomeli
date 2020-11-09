@@ -26,13 +26,21 @@ namespace FinalProjectWorkspace.Models
         public String Title { get; set; }
         public String Overview { get; set; }
         public String Tagline { get; set; }
+
+        [Display(Name = "Run Time")]
         public Double RunTime { get; set; }
+
+        [Display(Name = "Release Date")]
+        [DisplayFormat(DataFormatString = "{0:MM/yyyy}")]
         public DateTime Year { get; set; } //reflect this change on Balsamiq model
         public Decimal Revenue { get; set; } //Add this to model
         public String Actors { get; set; }
+
+        [Display(Name = "MPAA Rating")]
         public MPAARatings MPAARating { get; set; } //As enum above
 
         //Navigational properties
+        [Display(Name = "Genre")]
         public Genre Genre { get; set; }
         public List<Showing> Showings { get; set; }
         public List<MovieReview> MovieReviews { get; set; }
