@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 //TODO: Change this using statement to match your project
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using Microsoft.EntityFrameworkCore;
 
 //TODO: Change this namespace to match your project
 namespace FinalProjectWorkspace.Controllers
@@ -62,7 +63,7 @@ namespace FinalProjectWorkspace.Controllers
                     State = rvm.FirstName,
                     Zip = rvm.FirstName,
                     Birthday = rvm.Birthday,
-                    PCPBalance = 0
+                    PCPBalance = rvm.PCPBalance,
                 };
 
                 //This code uses the UserManager object to create a new user with the specified password
@@ -155,11 +156,79 @@ namespace FinalProjectWorkspace.Controllers
             ivm.HasPassword = true;
             ivm.UserID = user.Id;
             ivm.UserName = user.UserName;
+            ivm.FirstName = user.FirstName;
+            ivm.MiddleInitial = user.MiddleInitial;
+            ivm.LastName = user.LastName;
+            ivm.Address = user.Address;
+            ivm.City = user.City;
+            ivm.State = user.State;
+            ivm.Zip = user.Zip;
+            ivm.Birthday = user.Birthday;
+            ivm.PhoneNumber = user.PhoneNumber;
+            ivm.PCPBalance = user.PCPBalance;
 
             //send data to the view
             return View(ivm);
         }
 
+
+        [Authorize]
+        public async Task<IActionResult> EditAccount(String id)
+        {
+            if (id == null)
+            {
+                return View("Error");
+            }
+            var appuser = await _userManager.FindByIdAsync(id);
+            if (appuser == null)
+            {
+                return NotFound();
+            }
+            return View(appuser);
+
+        }
+
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditAccount(String id, [Bind("FirstName,MiddleInitial,LastName,PhoneNumber,Address,City,State,Zip,Birthday")] AppUser appuser)
+        {
+            if (id == null)
+            {
+                return View("Error");
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _userManager.UpdateAsync(appuser);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!UserExists(appuser.Id))
+                    {
+                        return View("Error");
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            
+            return View(appuser);
+        }
+
+        private bool UserExists(String id)
+        {
+            return _context.Users.Any(e => e.Id == id);
+        }
 
 
         //Logic for change password
