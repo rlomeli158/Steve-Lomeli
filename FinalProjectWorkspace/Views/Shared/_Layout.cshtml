@@ -20,7 +20,20 @@
                     <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
                     <li class="nav-item"><a asp-controller="Movie" asp-action="Browse" class="nav-link">Browse</a></li>
                     <li class="nav-item"><a asp-controller="Seed" asp-action="Index" class="nav-link">Seed Data</a></li>
+<<<<<<< Updated upstream
                     <li class="nav-item"><a asp-controller="Home" asp-action="Seats" class="nav-link">Test Seats</a></li>
+=======
+                    <li class="nav-item"><a asp-controller="Orders" asp-action="Index" class="nav-link">Orders</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                        {
+                            <li class="nav-item">
+                                <a asp-controller="RoleAdmin" asp-action="Index" class="nav-link">Manage Users</a>
+                            </li>
+                        }
+                    }
+>>>>>>> Stashed changes
                 </ul>
             </div>
 

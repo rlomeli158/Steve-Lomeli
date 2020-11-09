@@ -314,6 +314,7 @@
 /Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Seed/Index.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Seed/Confirm.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Seed/Index.cshtml.g.cs
+<<<<<<< Updated upstream
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/MovieDetails.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.dll
@@ -475,3 +476,10 @@
 /Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Index.cshtml.g.cs
 /Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/SearchResults.cshtml.g.cs
 /Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/Seats.cshtml.g.cs
+=======
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/SearchResults.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/Browse.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/Browse.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/SearchResults.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Account/EditAccount.cshtml.g.cs
+>>>>>>> Stashed changes

@@ -13,7 +13,7 @@ using FinalProjectWorkspace.Models;
 namespace FinalProjectWorkspace.Controllers
 {
     //TODO: Uncomment this line once you have roles working correctly
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Manager,Employee")]
     public class RoleAdminController : Controller
     {
         //create private variables for the services needed in this controller
