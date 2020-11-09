@@ -28,6 +28,7 @@
                 <label asp-for="SelectedMPAARating" class="control-label"></label>
                 @Html.DropDownListFor(model => model.SelectedMPAARating, (SelectList)ViewBag.AllMPAARatings, new { @class = "form-control" })
                 <span asp-validation-for="SelectedMPAARating" class="text-danger"></span>
+
             </div>
             <div class="form-group">
                 <label asp-for="SelectedCustomerRating" class="control-label"></label>
