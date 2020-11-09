@@ -20,15 +20,17 @@
     -->
 <!--<p> Displaying ViewBag.SelectedJobs of ViewBag.AllJobs Job Postings</p>-->
 
-<table class="table" style="color:white">
+<table class="table table-hover text-center" >
     <thead>
-        <tr>
+        <tr class="text-light text-center">
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
+            <!--
             <th>
-                @Html.DisplayNameFor(model => model.Overview)
+        Html.DisplayNameFor(model => model.Overview)
             </th>
+            -->
             <th>
                 @Html.DisplayNameFor(model => model.Tagline)
             </th>
@@ -38,28 +40,34 @@
             <th>
                 @Html.DisplayNameFor(model => model.Year)
             </th>
+            <!--
             <th>
-                @Html.DisplayNameFor(model => model.Actors)
+                Html.DisplayNameFor(model => model.Actors)
             </th>
+            -->
             <th>
                 @Html.DisplayNameFor(model => model.MPAARating)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Genre.GenreName)
             </th>
-            <th></th>
+            <th>
+                Find Showings Now!
+            </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
+        <tr class="table-secondary text-center text-dark">
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
+            <!--
             <td>
-                @Html.DisplayFor(modelItem => item.Overview)
+                Html.DisplayFor(modelItem => item.Overview)
             </td>
+            -->
             <td>
                 @Html.DisplayFor(modelItem => item.Tagline)
             </td>
@@ -69,9 +77,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Year)
             </td>
+            <!--
             <td>
-                @Html.DisplayFor(modelItem => item.Actors)
+                Html.DisplayFor(modelItem => item.Actors)
             </td>
+            --->
             <td>
                 @Html.DisplayFor(modelItem => item.MPAARating)
             </td>
@@ -79,7 +89,7 @@
                 @Html.DisplayFor(modelItem => item.Genre.GenreName)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.MovieID }, new { Style = "color:white" })
+                @Html.ActionLink("Showing Times", "Details", new { id = item.MovieID }, new { style = "color:red" })
             </td>
         </tr>
 }
