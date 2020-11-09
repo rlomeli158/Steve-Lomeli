@@ -1,36 +1,41 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Order/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Home/OrderTotals.cshtml">
     <Files>
       <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="25" Column="58" />
       <File FileName="FinalProjectWorkspace/Views/Movie/Index.cshtml" />
       <File FileName="FinalProjectWorkspace/Program.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
       <File FileName="FinalProjectWorkspace/Models/Genre.cs" />
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
+      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Models/AppUser.cs" />
       <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" />
+      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="287" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="28" Column="92" />
       <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" />
       <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" />
       <File FileName="FinalProjectWorkspace/Migrations/20201106194352_Setup.cs" />
       <File FileName="FinalProjectWorkspace/wwwroot/css/bootstrap.css" />
-      <File FileName="FinalProjectWorkspace/Views/Home/MovieDetails.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/MovieDetails.cshtml" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Views/Movie/Edit.cshtml" />
       <File FileName="FinalProjectWorkspace/Views/Home/Seats.cshtml" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery/jquery.js" />
       <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery/general.js" />
       <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery.seat-charts.js" />
       <File FileName="FinalProjectWorkspace/Startup.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Index.cshtml" Line="10" Column="24" />
-      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Index.cshtml" Line="43" Column="18" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="51" Column="9" />
       <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Views/Order/Edit.cshtml" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Views/Order/Delete.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Create.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Create.cshtml" Line="28" Column="27" />
+      <File FileName="FinalProjectWorkspace/Views/Home/OrderConfirmed.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" Line="34" Column="56" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Delete.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Order/OrderCheckout.cshtml" Line="13" Column="52" />
+      <File FileName="FinalProjectWorkspace/Views/Home/OrderTotals.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -38,11 +43,12 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Order" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="OrderConfirmed.cshtml" selected="True" />
                 </Node>
+                <Node name="Order" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
             </Node>

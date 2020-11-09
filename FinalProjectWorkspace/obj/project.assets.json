@@ -8601,7 +8601,7 @@
       "outputPath": "/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/audreyhsien/.config/NuGet/NuGet.Config"
+        "/Users/audreyhsien/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
