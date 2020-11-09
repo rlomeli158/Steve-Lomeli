@@ -19,11 +19,11 @@
       <File FileName="FinalProjectWorkspace/wwwroot/css/bootstrap.css" />
       <File FileName="FinalProjectWorkspace/Views/Home/MovieDetails.cshtml" />
       <File FileName="FinalProjectWorkspace/Views/Movie/Edit.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Home/Seats.cshtml" Line="45" Column="27" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Seats.cshtml" />
       <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery/jquery.js" />
       <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery/general.js" />
-      <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery.seat-charts.js" Line="3" Column="23" />
-      <File FileName="FinalProjectWorkspace/Startup.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery.seat-charts.js" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
