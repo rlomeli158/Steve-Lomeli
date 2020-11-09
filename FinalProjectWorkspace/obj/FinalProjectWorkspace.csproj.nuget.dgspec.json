@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj": {}
+    "/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj": {}
   },
   "projects": {
-    "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj": {
+    "/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+        "projectUniqueName": "/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
         "projectName": "FinalProjectWorkspace",
-        "projectPath": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
-        "packagesPath": "/Users/guy/.nuget/packages/",
-        "outputPath": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/",
+        "projectPath": "/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+        "packagesPath": "/Users/audreyhsien/.nuget/packages/",
+        "outputPath": "/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/guy/.config/NuGet/NuGet.Config"
+          "/Users/audreyhsien/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -37,6 +37,10 @@
         "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.AspNetCore.Razor.Language": {
               "target": "Package",
               "version": "[3.1.9, )"
             },
@@ -77,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
@@ -17,6 +17,7 @@ namespace FinalProjectWorkspace.DAL
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Showing> Showings { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<FinalProjectWorkspace.Models.Order> Order { get; set; }
 
     }
 }
