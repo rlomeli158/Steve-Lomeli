@@ -247,7 +247,6 @@
     <Content Remove="wwwroot\lib\twitter-bootstrap\scss\utilities\_overflow.scss" />
     <Content Remove="wwwroot\lib\twitter-bootstrap\scss\vendor\_rfs.scss" />
     <Content Remove="wwwroot\lib\jquery\jquery.slim.min.js" />
-    <Content Remove="wwwroot\lib\jquery\jquery.slim.js" />
     <Content Remove="wwwroot\lib\jquery\jquery.min.js" />
     <Content Remove="wwwroot\lib\jquery\jquery.min.map" />
     <Content Remove="wwwroot\lib\jquery\jquery.slim.min.map" />
@@ -299,6 +298,5 @@
     <Content Remove="wwwroot\lib\font-awesome\sprites\brands.svg" />
     <Content Remove="wwwroot\lib\font-awesome\sprites\regular.svg" />
     <Content Remove="wwwroot\lib\font-awesome\sprites\solid.svg" />
-    <Content Remove="wwwroot\lib\jquery\jquery.js" />
   </ItemGroup>
 </Project>
