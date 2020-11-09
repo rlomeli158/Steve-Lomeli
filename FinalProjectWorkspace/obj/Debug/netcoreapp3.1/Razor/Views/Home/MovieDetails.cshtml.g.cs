@@ -3,7 +3,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Home/MovieDetails.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "05ca60f9b86f8144b74172030276ded501cf81f8"
+=======
+#pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Home/MovieDetails.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "f20e0a20f7db6e5d8cd411324052e42be964673e"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Home/MovieDetails.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "f20e0a20f7db6e5d8cd411324052e42be964673e"
 >>>>>>> Stashed changes
@@ -44,7 +48,11 @@ using FinalProjectWorkspace.Models;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"05ca60f9b86f8144b74172030276ded501cf81f8", @"/Views/Home/MovieDetails.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f20e0a20f7db6e5d8cd411324052e42be964673e", @"/Views/Home/MovieDetails.cshtml")]
+>>>>>>> Stashed changes
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f20e0a20f7db6e5d8cd411324052e42be964673e", @"/Views/Home/MovieDetails.cshtml")]
 >>>>>>> Stashed changes
@@ -102,7 +110,11 @@ using FinalProjectWorkspace.Models;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n<h1>Details</h1>\n\n<div class=\"card bg-secondary mb-3\" style=\"max-width: 20rem;\">\n    <div class=\"card-header\">");
+=======
+            WriteLiteral("\r\n<h1>Details</h1>\r\n\r\n<div class=\"card bg-secondary mb-3\" style=\"max-width: 20rem;\">\r\n    <div class=\"card-header\">");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n<h1>Details</h1>\r\n\r\n<div class=\"card bg-secondary mb-3\" style=\"max-width: 20rem;\">\r\n    <div class=\"card-header\">");
 >>>>>>> Stashed changes
@@ -130,7 +142,11 @@ using FinalProjectWorkspace.Models;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("</div>\n    <div class=\"card-body\">\n        <h4 class=\"card-title\">Secondary card title</h4>\n        <p class=\"card-text\">\n            ");
+=======
+            WriteLiteral("</div>\r\n    <div class=\"card-body\">\r\n        <h4 class=\"card-title\">Secondary card title</h4>\r\n        <p class=\"card-text\">\r\n            ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("</div>\r\n    <div class=\"card-body\">\r\n        <h4 class=\"card-title\">Secondary card title</h4>\r\n        <p class=\"card-text\">\r\n            ");
 >>>>>>> Stashed changes
@@ -175,7 +191,11 @@ using FinalProjectWorkspace.Models;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </h5>\n            <small>3 days ago</small>\n        </div>\n        <p class=\"mb-1\">\n            ");
+=======
+            WriteLiteral("\r\n            </h5>\r\n            <small>3 days ago</small>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </h5>\r\n            <small>3 days ago</small>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
 >>>>>>> Stashed changes
@@ -343,8 +363,13 @@ using FinalProjectWorkspace.Models;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("</table>\n<div>\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "05ca60f9b86f8144b74172030276ded501cf81f812551", async() => {
+=======
+            WriteLiteral("</table>\r\n<div>\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f20e0a20f7db6e5d8cd411324052e42be964673e12702", async() => {
+>>>>>>> Stashed changes
 =======
             WriteLiteral("</table>\r\n<div>\r\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f20e0a20f7db6e5d8cd411324052e42be964673e12702", async() => {
@@ -399,8 +424,13 @@ using FinalProjectWorkspace.Models;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral(" |\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "05ca60f9b86f8144b74172030276ded501cf81f814759", async() => {
+=======
+            WriteLiteral(" |\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f20e0a20f7db6e5d8cd411324052e42be964673e14912", async() => {
+>>>>>>> Stashed changes
 =======
             WriteLiteral(" |\r\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f20e0a20f7db6e5d8cd411324052e42be964673e14912", async() => {
