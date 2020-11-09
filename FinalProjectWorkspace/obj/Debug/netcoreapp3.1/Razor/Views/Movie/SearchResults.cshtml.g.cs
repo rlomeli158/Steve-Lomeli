@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "e84896debf7063d7e7ed932ef884b00d2134a81f"
+=======
+#pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "32642dd089e9206747651aa3399578ec10c59540"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "32642dd089e9206747651aa3399578ec10c59540"
 >>>>>>> Stashed changes
@@ -29,7 +33,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e84896debf7063d7e7ed932ef884b00d2134a81f", @"/Views/Movie/SearchResults.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"32642dd089e9206747651aa3399578ec10c59540", @"/Views/Movie/SearchResults.cshtml")]
+>>>>>>> Stashed changes
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"32642dd089e9206747651aa3399578ec10c59540", @"/Views/Movie/SearchResults.cshtml")]
 >>>>>>> Stashed changes
@@ -75,8 +83,13 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n<h1>Movies</h1>\n\n<div>\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e84896debf7063d7e7ed932ef884b00d2134a81f4157", async() => {
+=======
+            WriteLiteral("\r\n<h1>Movies</h1>\r\n\r\n<div>\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32642dd089e9206747651aa3399578ec10c595404167", async() => {
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n<h1>Movies</h1>\r\n\r\n<div>\r\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32642dd089e9206747651aa3399578ec10c595404167", async() => {
@@ -129,7 +142,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </th>\n            <!--\n            <th>\n        Html.DisplayNameFor(model => model.Overview)\n            </th>\n            -->\n            <th>\n                ");
+=======
+            WriteLiteral("\r\n            </th>\r\n            <!--\r\n            <th>\r\n        Html.DisplayNameFor(model => model.Overview)\r\n            </th>\r\n            -->\r\n            <th>\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </th>\r\n            <!--\r\n            <th>\r\n        Html.DisplayNameFor(model => model.Overview)\r\n            </th>\r\n            -->\r\n            <th>\r\n                ");
 >>>>>>> Stashed changes
@@ -161,7 +178,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </th>\n            <!--\n            <th>\n                Html.DisplayNameFor(model => model.Actors)\n            </th>\n            -->\n            <th>\n                ");
+=======
+            WriteLiteral("\r\n            </th>\r\n            <!--\r\n            <th>\r\n                Html.DisplayNameFor(model => model.Actors)\r\n            </th>\r\n            -->\r\n            <th>\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </th>\r\n            <!--\r\n            <th>\r\n                Html.DisplayNameFor(model => model.Actors)\r\n            </th>\r\n            -->\r\n            <th>\r\n                ");
 >>>>>>> Stashed changes
@@ -185,7 +206,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </th>\n            <th>\n                Find Showings Now!\n            </th>\n        </tr>\n    </thead>\n    <tbody>\n");
+=======
+            WriteLiteral("\r\n            </th>\r\n            <th>\r\n                Find Showings Now!\r\n            </th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </th>\r\n            <th>\r\n                Find Showings Now!\r\n            </th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n");
 >>>>>>> Stashed changes
@@ -202,7 +227,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("        <tr class=\"table-secondary text-center text-dark\">\n            <td>\n                ");
+=======
+            WriteLiteral("        <tr class=\"table-secondary text-center text-dark\">\r\n            <td>\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("        <tr class=\"table-secondary text-center text-dark\">\r\n            <td>\r\n                ");
 >>>>>>> Stashed changes
@@ -218,7 +247,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </td>\n            <!--\n            <td>\n                Html.DisplayFor(modelItem => item.Overview)\n            </td>\n            -->\n            <td>\n                ");
+=======
+            WriteLiteral("\r\n            </td>\r\n            <!--\r\n            <td>\r\n                Html.DisplayFor(modelItem => item.Overview)\r\n            </td>\r\n            -->\r\n            <td>\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </td>\r\n            <!--\r\n            <td>\r\n                Html.DisplayFor(modelItem => item.Overview)\r\n            </td>\r\n            -->\r\n            <td>\r\n                ");
 >>>>>>> Stashed changes
@@ -250,7 +283,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </td>\n            <!--\n            <td>\n                Html.DisplayFor(modelItem => item.Actors)\n            </td>\n            --->\n            <td>\n                ");
+=======
+            WriteLiteral("\r\n            </td>\r\n            <!--\r\n            <td>\r\n                Html.DisplayFor(modelItem => item.Actors)\r\n            </td>\r\n            --->\r\n            <td>\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </td>\r\n            <!--\r\n            <td>\r\n                Html.DisplayFor(modelItem => item.Actors)\r\n            </td>\r\n            --->\r\n            <td>\r\n                ");
 >>>>>>> Stashed changes
@@ -290,8 +327,13 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("    </tbody>\n</table>\n\n<div>\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e84896debf7063d7e7ed932ef884b00d2134a81f12609", async() => {
+=======
+            WriteLiteral("    </tbody>\r\n</table>\r\n\r\n<div>\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32642dd089e9206747651aa3399578ec10c5954012781", async() => {
+>>>>>>> Stashed changes
 =======
             WriteLiteral("    </tbody>\r\n</table>\r\n\r\n<div>\r\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32642dd089e9206747651aa3399578ec10c5954012781", async() => {

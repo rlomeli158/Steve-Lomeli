@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Movie/Details.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "e6c6d596c4e33e654e78cb86149b40161b55cb74"
+=======
+#pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Movie/Details.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "6e21159fd8a64ab8f85f7f4a119ea7b3effba7d4"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Movie/Details.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "6e21159fd8a64ab8f85f7f4a119ea7b3effba7d4"
 >>>>>>> Stashed changes
@@ -29,7 +33,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e6c6d596c4e33e654e78cb86149b40161b55cb74", @"/Views/Movie/Details.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6e21159fd8a64ab8f85f7f4a119ea7b3effba7d4", @"/Views/Movie/Details.cshtml")]
+>>>>>>> Stashed changes
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6e21159fd8a64ab8f85f7f4a119ea7b3effba7d4", @"/Views/Movie/Details.cshtml")]
 >>>>>>> Stashed changes
@@ -76,7 +84,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n<p></p>\n<h3>\n    ");
+=======
+            WriteLiteral("\r\n<p></p>\r\n<h3>\r\n    ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n<p></p>\r\n<h3>\r\n    ");
 >>>>>>> Stashed changes
@@ -92,7 +104,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n</h3>\n\n<div class=\"list-group\">\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\n        <div class=\"d-flex w-100 justify-content-between\">\n            <h5 class=\"mb-1\">\n                ");
+=======
+            WriteLiteral("\r\n</h3>\r\n\r\n<div class=\"list-group\">\r\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n        <div class=\"d-flex w-100 justify-content-between\">\r\n            <h5 class=\"mb-1\">\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n</h3>\r\n\r\n<div class=\"list-group\">\r\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n        <div class=\"d-flex w-100 justify-content-between\">\r\n            <h5 class=\"mb-1\">\r\n                ");
 >>>>>>> Stashed changes
@@ -108,7 +124,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </h5>\n            <small class=\"text-muted\">\n                Released in ");
+=======
+            WriteLiteral("\r\n            </h5>\r\n            <small class=\"text-muted\">\r\n                Released in ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </h5>\r\n            <small class=\"text-muted\">\r\n                Released in ");
 >>>>>>> Stashed changes
@@ -132,7 +152,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral(" \n            </small>\n        </div>\n        <p class=\"mb-1\">\n            ");
+=======
+            WriteLiteral(" \r\n            </small>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral(" \r\n            </small>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
 >>>>>>> Stashed changes
@@ -148,7 +172,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n        </p>\n    </a>\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\n        <div class=\"d-flex w-100 justify-content-between\">\n            <h5 class=\"mb-1\">\n                ");
+=======
+            WriteLiteral("\r\n        </p>\r\n    </a>\r\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n        <div class=\"d-flex w-100 justify-content-between\">\r\n            <h5 class=\"mb-1\">\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n        </p>\r\n    </a>\r\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n        <div class=\"d-flex w-100 justify-content-between\">\r\n            <h5 class=\"mb-1\">\r\n                ");
 >>>>>>> Stashed changes
@@ -164,7 +192,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </h5>\n        </div>\n        <p class=\"mb-1\">\n            ");
+=======
+            WriteLiteral("\r\n            </h5>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </h5>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
 >>>>>>> Stashed changes
@@ -180,7 +212,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n        </p>\n    </a>\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\n        <div class=\"d-flex w-100 justify-content-between\">\n            <h5 class=\"mb-1\">\n                ");
+=======
+            WriteLiteral("\r\n        </p>\r\n    </a>\r\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n        <div class=\"d-flex w-100 justify-content-between\">\r\n            <h5 class=\"mb-1\">\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n        </p>\r\n    </a>\r\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n        <div class=\"d-flex w-100 justify-content-between\">\r\n            <h5 class=\"mb-1\">\r\n                ");
 >>>>>>> Stashed changes
@@ -196,7 +232,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </h5>\n        </div>\n        <p class=\"mb-1\">\n            ");
+=======
+            WriteLiteral("\r\n            </h5>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </h5>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
 >>>>>>> Stashed changes
@@ -212,7 +252,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n        </p>\n    </a>\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\n        <div class=\"d-flex w-100 justify-content-between\">\n            <h5 class=\"mb-1\">\n                ");
+=======
+            WriteLiteral("\r\n        </p>\r\n    </a>\r\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n        <div class=\"d-flex w-100 justify-content-between\">\r\n            <h5 class=\"mb-1\">\r\n                ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n        </p>\r\n    </a>\r\n    <a class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n        <div class=\"d-flex w-100 justify-content-between\">\r\n            <h5 class=\"mb-1\">\r\n                ");
 >>>>>>> Stashed changes
@@ -236,7 +280,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n            </h5>\n        </div>\n        <p class=\"mb-1\">\n            ");
+=======
+            WriteLiteral("\r\n            </h5>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n            </h5>\r\n        </div>\r\n        <p class=\"mb-1\">\r\n            ");
 >>>>>>> Stashed changes
@@ -252,7 +300,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral(" and\n            ");
+=======
+            WriteLiteral(" and\r\n            ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral(" and\r\n            ");
 >>>>>>> Stashed changes
@@ -268,7 +320,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n        </p>\n        <p class=\"mb-1\">\n            ");
+=======
+            WriteLiteral("\r\n        </p>\r\n        <p class=\"mb-1\">\r\n            ");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n        </p>\r\n        <p class=\"mb-1\">\r\n            ");
 >>>>>>> Stashed changes
@@ -284,7 +340,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("\n        </p>\n    </a>\n</div>\n\n<table class=\"table table-hover text-center\">\n    <tr class=\"text-light text-center\">\n        <th>Showing Date</th>\n        <th>Start Time</th>\n        <th>End Time</th>\n        <th>Theatre</th>\n    </tr>\n");
+=======
+            WriteLiteral("\r\n        </p>\r\n    </a>\r\n</div>\r\n\r\n<table class=\"table table-hover text-center\">\r\n    <tr class=\"text-light text-center\">\r\n        <th>Showing Date</th>\r\n        <th>Start Time</th>\r\n        <th>End Time</th>\r\n        <th>Theatre</th>\r\n    </tr>\r\n");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("\r\n        </p>\r\n    </a>\r\n</div>\r\n\r\n<table class=\"table table-hover text-center\">\r\n    <tr class=\"text-light text-center\">\r\n        <th>Showing Date</th>\r\n        <th>Start Time</th>\r\n        <th>End Time</th>\r\n        <th>Theatre</th>\r\n    </tr>\r\n");
 >>>>>>> Stashed changes
@@ -301,7 +361,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("<tr class=\"table-secondary text-center text-dark\">\n    <td>");
+=======
+            WriteLiteral("<tr class=\"table-secondary text-center text-dark\">\r\n    <td>");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("<tr class=\"table-secondary text-center text-dark\">\r\n    <td>");
 >>>>>>> Stashed changes
@@ -317,7 +381,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("</td>\n    <td>");
+=======
+            WriteLiteral("</td>\r\n    <td>");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("</td>\r\n    <td>");
 >>>>>>> Stashed changes
@@ -333,7 +401,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("</td>\n    <td>");
+=======
+            WriteLiteral("</td>\r\n    <td>");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("</td>\r\n    <td>");
 >>>>>>> Stashed changes
@@ -349,7 +421,11 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("</td>\n    <td>");
+=======
+            WriteLiteral("</td>\r\n    <td>");
+>>>>>>> Stashed changes
 =======
             WriteLiteral("</td>\r\n    <td>");
 >>>>>>> Stashed changes
@@ -373,8 +449,13 @@ Write(Html.DisplayFor(model => model.Tagline));
 #nullable disable
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("</table>\n<div>\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6c6d596c4e33e654e78cb86149b40161b55cb7412870", async() => {
+=======
+            WriteLiteral("</table>\r\n<div>\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e21159fd8a64ab8f85f7f4a119ea7b3effba7d413015", async() => {
+>>>>>>> Stashed changes
 =======
             WriteLiteral("</table>\r\n<div>\r\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e21159fd8a64ab8f85f7f4a119ea7b3effba7d413015", async() => {
@@ -415,8 +496,13 @@ Write(Html.DisplayFor(model => model.Tagline));
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral(" |\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6c6d596c4e33e654e78cb86149b40161b55cb7415156", async() => {
+=======
+            WriteLiteral(" |\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e21159fd8a64ab8f85f7f4a119ea7b3effba7d415303", async() => {
+>>>>>>> Stashed changes
 =======
             WriteLiteral(" |\r\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e21159fd8a64ab8f85f7f4a119ea7b3effba7d415303", async() => {
