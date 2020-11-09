@@ -474,3 +474,4 @@
 /Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Edit.cshtml.g.cs
 /Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Index.cshtml.g.cs
 /Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/SearchResults.cshtml.g.cs
+/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/Seats.cshtml.g.cs

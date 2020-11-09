@@ -276,5 +276,10 @@ namespace FinalProjectWorkspace.Controllers
         {
             return View();
         }
+
+        public IActionResult Seats()
+        {
+            return View();
+        }
     }
 }
