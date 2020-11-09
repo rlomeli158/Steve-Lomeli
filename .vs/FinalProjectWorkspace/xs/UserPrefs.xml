@@ -3,9 +3,12 @@
     <Files>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="67" Column="43" />
       <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" Line="29" Column="115" />
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" Line="24" Column="133" />
@@ -13,6 +16,9 @@
       <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="232" Column="26" />
       <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="12" Column="10" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -52,7 +58,11 @@
     <BreakpointStore>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/MovieController.cs" relfile="FinalProjectWorkspace/Controllers/MovieController.cs" line="98" column="1" />
+=======
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/MovieController.cs" relfile="FinalProjectWorkspace/Controllers/MovieController.cs" line="93" column="1" />
+>>>>>>> Stashed changes
 =======
       <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/MovieController.cs" relfile="FinalProjectWorkspace/Controllers/MovieController.cs" line="93" column="1" />
 >>>>>>> Stashed changes
