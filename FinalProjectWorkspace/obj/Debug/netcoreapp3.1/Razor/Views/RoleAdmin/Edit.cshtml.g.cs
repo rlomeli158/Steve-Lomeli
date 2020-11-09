@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "f9695e2c03d6f1ec3a0e7f26a829b3f3bef16ba2"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "f9695e2c03d6f1ec3a0e7f26a829b3f3bef16ba2"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "f9695e2c03d6f1ec3a0e7f26a829b3f3bef16ba2"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.RoleAdmin
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -59,7 +67,11 @@ using FinalProjectWorkspace.Models;
         {
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -72,7 +84,11 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("\n<h2>Edit Role: ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 6 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 6 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 6 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -84,7 +100,11 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("</h2>\n\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 8 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 8 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 8 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -96,7 +116,11 @@ Write(Html.ValidationSummary());
             WriteLiteral("\n\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 10 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 10 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 10 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -110,7 +134,11 @@ Write(Html.ValidationSummary());
             BeginWriteAttribute("value", " value=\"", 193, "\"", 217, 1);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 12 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 12 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 12 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -123,7 +151,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
             WriteLiteral(" />\n    <div class=\"panel panel-primary\">\n        <div class=\"panel-heading\">Add To ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 14 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 14 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 14 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -135,7 +167,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
             WriteLiteral("</div>\n        <table class=\"table table-striped\">\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 16 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 16 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 16 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -148,7 +184,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
             WriteLiteral("                <tr>\n                    <td colspan=\"3\">All Users Are Members</td>\n                </tr>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 21 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 21 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 21 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -171,7 +211,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
 ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 33 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 33 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 33 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -184,7 +228,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
             WriteLiteral("                    <tr>\n                        <!--TODO: Add additional fields here-->\n                        <!--FirstName is included as an example-->\n                        <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 38 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 38 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 38 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -196,7 +244,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
             WriteLiteral("</td>\n                        <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 39 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 39 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 39 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -208,7 +260,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
             WriteLiteral("</td>\n                        <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 40 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 40 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 40 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -220,7 +276,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
             WriteLiteral("</td>\n                        <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 41 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 41 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 41 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -233,7 +293,11 @@ WriteAttributeValue("", 201, Model.Role.Name, 201, 16, false);
             BeginWriteAttribute("value", " value=\"", 1476, "\"", 1492, 1);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 43 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 43 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 43 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -246,7 +310,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             WriteLiteral(" />\n                        </td>\n                    </tr>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 46 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 46 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 46 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -260,7 +328,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             WriteLiteral("    <div class=\"panel panel-primary\">\n        <div class=\"panel-heading\">Remove from ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 52 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 52 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 52 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -272,7 +344,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             WriteLiteral("</div>\n        <table class=\"table table-striped\">\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 54 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 54 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 54 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -285,7 +361,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             WriteLiteral("                <tr>\n                    <td colspan=\"3\">No Users Are Members</td>\n                </tr>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 59 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 59 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 59 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -308,7 +388,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
 ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 71 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 71 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 71 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -321,7 +405,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             WriteLiteral("                    <tr>\n                        <!--TODO: Add additional fields here-->\n                        <!--FirstName is included as an example-->\n                        <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 76 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 76 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 76 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -333,7 +421,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             WriteLiteral("</td>\n                        <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 77 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 77 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 77 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -345,7 +437,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             WriteLiteral("</td>\n                        <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 78 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 78 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 78 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -357,7 +453,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             WriteLiteral("</td>\n                        <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 79 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 79 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 79 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -370,7 +470,11 @@ WriteAttributeValue("", 1484, user.Id, 1484, 8, false);
             BeginWriteAttribute("value", " value=\"", 2874, "\"", 2890, 1);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 81 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 81 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 81 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -383,7 +487,11 @@ WriteAttributeValue("", 2882, user.Id, 2882, 8, false);
             WriteLiteral(" />\n                        </td>\n                    </tr>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 84 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 84 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 84 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes
@@ -396,7 +504,11 @@ WriteAttributeValue("", 2882, user.Id, 2882, 8, false);
             WriteLiteral("        </table>\n    </div>\n");
             WriteLiteral("    <button type=\"submit\" class=\"btn btn-danger\">Save</button>\n    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9695e2c03d6f1ec3a0e7f26a829b3f3bef16ba213540", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9695e2c03d6f1ec3a0e7f26a829b3f3bef16ba212757", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9695e2c03d6f1ec3a0e7f26a829b3f3bef16ba212757", async() => {
 >>>>>>> Stashed changes
@@ -418,7 +530,11 @@ WriteAttributeValue("", 2882, user.Id, 2882, 8, false);
             WriteLiteral("\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 91 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+=======
+#line 91 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 91 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml"
 >>>>>>> Stashed changes

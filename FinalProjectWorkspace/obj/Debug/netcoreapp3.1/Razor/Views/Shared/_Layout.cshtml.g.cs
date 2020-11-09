@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "2fda489ca0edd5e3217c60a196c05d71941b5ee7"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "57423f7a44cb192acb00502d930a2c0f8c7c56b0"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "57423f7a44cb192acb00502d930a2c0f8c7c56b0"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Shared
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -28,7 +36,11 @@ using FinalProjectWorkspace.Models;
 #line hidden
 #nullable disable
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2fda489ca0edd5e3217c60a196c05d71941b5ee7", @"/Views/Shared/_Layout.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"57423f7a44cb192acb00502d930a2c0f8c7c56b0", @"/Views/Shared/_Layout.cshtml")]
+>>>>>>> Stashed changes
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"57423f7a44cb192acb00502d930a2c0f8c7c56b0", @"/Views/Shared/_Layout.cshtml")]
 >>>>>>> Stashed changes
@@ -66,6 +78,9 @@ using FinalProjectWorkspace.Models;
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_16 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/lib/popper/popper.js/popper.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_17 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/lib/bootstrap/js/bootstrap.bundle.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_18 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("background-color:black"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         #line hidden
         #pragma warning disable 0649
@@ -98,10 +113,17 @@ using FinalProjectWorkspace.Models;
         {
             WriteLiteral("<!DOCTYPE html>\n\n<html>\n");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee710888", async() => {
                 WriteLiteral("\n    <meta name=\"viewport\" content=\"width=device-width\" />\n    <title>");
 #nullable restore
 #line 6 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b010223", async() => {
+                WriteLiteral("\n    <meta name=\"viewport\" content=\"width=device-width\" />\n    <title>");
+#nullable restore
+#line 6 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b010223", async() => {
                 WriteLiteral("\n    <meta name=\"viewport\" content=\"width=device-width\" />\n    <title>");
@@ -115,7 +137,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
                 WriteLiteral("</title>\n    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2fda489ca0edd5e3217c60a196c05d71941b5ee711498", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "57423f7a44cb192acb00502d930a2c0f8c7c56b010804", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "57423f7a44cb192acb00502d930a2c0f8c7c56b010804", async() => {
 >>>>>>> Stashed changes
@@ -146,15 +172,21 @@ using FinalProjectWorkspace.Models;
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee713350", async() => {
                 WriteLiteral("\n    <div>\n        <nav class=\"navbar navbar-expand-md navbar-light bg-light\">\n            ");
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee713699", async() => {
                     __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2fda489ca0edd5e3217c60a196c05d71941b5ee713919", async() => {
 =======
+=======
+>>>>>>> Stashed changes
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b012656", async() => {
                 WriteLiteral("\n    <div>\n        <nav class=\"navbar navbar-expand-md navbar-light bg-light\">\n            ");
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b013005", async() => {
                     __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "57423f7a44cb192acb00502d930a2c0f8c7c56b013225", async() => {
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                     }
                     );
@@ -198,7 +230,11 @@ using FinalProjectWorkspace.Models;
                     <!--The link to products is provided as an example.  You can add more links for additional pages-->
                     <li class=""nav-item"">");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee717180", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b016486", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b016486", async() => {
 >>>>>>> Stashed changes
@@ -221,7 +257,11 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\n                    <li class=\"nav-item\">");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee718727", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b018033", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b018033", async() => {
 >>>>>>> Stashed changes
@@ -267,11 +307,16 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\n                    <li class=\"nav-item\">");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee721834", async() => {
                     WriteLiteral("Test Seats");
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b021136", async() => {
                     WriteLiteral("Orders");
+>>>>>>> Stashed changes
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b019582", async() => {
+                    WriteLiteral("Seed Data");
 >>>>>>> Stashed changes
                 }
                 );
@@ -297,6 +342,7 @@ using FinalProjectWorkspace.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 WriteLiteral("</li>\n                </ul>\n            </div>\n\n            ");
 #nullable restore
 #line 27 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
@@ -312,6 +358,38 @@ using FinalProjectWorkspace.Models;
 #line hidden
 #nullable disable
 #nullable restore
+=======
+                WriteLiteral("</li>\n                    <li class=\"nav-item\">");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b021136", async() => {
+                    WriteLiteral("Orders");
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = (string)__tagHelperAttribute_12.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_12);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_9.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_10);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral("</li>\n");
+#nullable restore
+#line 24 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
+                     if (User.Identity.IsAuthenticated)
+                    {
+                        
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+>>>>>>> Stashed changes
 #line 26 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
                          if (User.IsInRole("Manager") || User.IsInRole("Employee"))
                         {
@@ -357,6 +435,9 @@ using FinalProjectWorkspace.Models;
                 WriteLiteral("                </ul>\n            </div>\n\n            ");
 #nullable restore
 #line 36 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
        Write(await Html.PartialAsync("_LoginPartial"));
 
@@ -365,9 +446,12 @@ using FinalProjectWorkspace.Models;
 #nullable disable
                 WriteLiteral("\n\n            ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee723715", async() => {
                     WriteLiteral("\n                <input class=\"form-control\" placeholder=\"Search Movies\" />\n                <span class=\"text-danger\"></span>\n            ");
 =======
+=======
+>>>>>>> Stashed changes
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b025676", async() => {
                     WriteLiteral("\n                <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n\n            ");
 >>>>>>> Stashed changes
@@ -378,11 +462,15 @@ using FinalProjectWorkspace.Models;
                 __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Controller = (string)__tagHelperAttribute_11.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_11);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Action = (string)__tagHelperAttribute_15.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_15);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+=======
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_14);
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_14);
 >>>>>>> Stashed changes
@@ -396,7 +484,11 @@ using FinalProjectWorkspace.Models;
                 WriteLiteral("\n\n\n\n        </nav>\n\n    </div>\n\n\n    <div class=\"container\">\n        ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 42 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
+=======
+#line 50 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 50 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
 >>>>>>> Stashed changes
@@ -407,7 +499,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
                 WriteLiteral("\n    </div>\n    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee726004", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b027476", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b027476", async() => {
 >>>>>>> Stashed changes
@@ -416,7 +512,11 @@ using FinalProjectWorkspace.Models;
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_17);
+=======
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
 >>>>>>> Stashed changes
@@ -429,7 +529,11 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee727089", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b028561", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b028561", async() => {
 >>>>>>> Stashed changes
@@ -438,7 +542,11 @@ using FinalProjectWorkspace.Models;
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_18);
+=======
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
 >>>>>>> Stashed changes
@@ -451,7 +559,11 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fda489ca0edd5e3217c60a196c05d71941b5ee728174", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b029646", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57423f7a44cb192acb00502d930a2c0f8c7c56b029646", async() => {
 >>>>>>> Stashed changes
@@ -460,7 +572,11 @@ using FinalProjectWorkspace.Models;
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_19);
+=======
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_17);
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_17);
 >>>>>>> Stashed changes
@@ -474,7 +590,11 @@ using FinalProjectWorkspace.Models;
                 WriteLiteral("\n\n    ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 48 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
+=======
+#line 56 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 56 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_Layout.cshtml"
 >>>>>>> Stashed changes
@@ -489,7 +609,11 @@ Write(RenderSection("Scripts", required: false));
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_BodyTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_Razor_TagHelpers_BodyTagHelper);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_20);
+=======
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_18);
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_18);
 >>>>>>> Stashed changes

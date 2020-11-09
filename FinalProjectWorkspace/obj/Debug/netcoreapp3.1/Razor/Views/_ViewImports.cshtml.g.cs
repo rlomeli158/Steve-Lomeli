@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "3077373090091c5850da6e8c6a3970a3b8885491"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "3077373090091c5850da6e8c6a3970a3b8885491"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "3077373090091c5850da6e8c6a3970a3b8885491"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes

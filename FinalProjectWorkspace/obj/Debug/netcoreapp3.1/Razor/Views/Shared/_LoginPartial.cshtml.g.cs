@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e592"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e592"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e592"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Shared
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -29,7 +37,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 1 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+=======
+#line 1 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 1 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
 >>>>>>> Stashed changes
@@ -82,7 +94,11 @@ using Microsoft.AspNetCore.Identity;
         {
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
 >>>>>>> Stashed changes
@@ -94,12 +110,21 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
             WriteLiteral("    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e5927699", async() => {
                 WriteLiteral("\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li>\n                ");
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e5928039", async() => {
                     WriteLiteral("Hello ");
 #nullable restore
 #line 7 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e5927583", async() => {
+                WriteLiteral("\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li>\n                ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e5927923", async() => {
+                    WriteLiteral("Hello ");
+#nullable restore
+#line 7 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e5927583", async() => {
                 WriteLiteral("\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li>\n                ");
@@ -159,7 +184,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 12 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+=======
+#line 12 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 12 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
 >>>>>>> Stashed changes
@@ -172,7 +201,11 @@ else
 #nullable disable
             WriteLiteral("    <ul class=\"nav navbar-nav navbar-right\">\n        <li>");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e59212504", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e59212330", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e59212330", async() => {
 >>>>>>> Stashed changes
@@ -196,7 +229,11 @@ else
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n        <li>");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e59214029", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e59213855", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58b6dd7dd9fcef6d97d9da69ee4035adb3d6e59213855", async() => {
 >>>>>>> Stashed changes
@@ -221,7 +258,11 @@ else
             WriteLiteral("</li>\n    </ul>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 19 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+=======
+#line 19 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 19 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/_LoginPartial.cshtml"
 >>>>>>> Stashed changes

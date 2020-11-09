@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "19add15452cfb04803cd892199781067a6a1c06a"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "19add15452cfb04803cd892199781067a6a1c06a"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "19add15452cfb04803cd892199781067a6a1c06a"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.RoleAdmin
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -29,7 +37,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 1 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 1 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 1 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -48,7 +60,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 4 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 4 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 4 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -73,7 +89,11 @@ using Microsoft.AspNetCore.Identity;
 ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 19 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 19 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 19 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -86,7 +106,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("            <tr>\n                <td colspan=\"4\" class=\"text-center\">No roles</td>\n            </tr>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 24 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 24 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 24 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -102,7 +126,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("                <tr>\n                    <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 30 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 30 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 30 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -114,7 +142,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("</td>\n                    <td>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 31 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 31 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 31 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -126,7 +158,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("</td>\n                    <td>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 33 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 33 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 33 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -140,7 +176,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral(" No Users in role\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 36 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 36 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 36 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -154,7 +194,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("                            <p>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 39 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 39 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 39 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -166,7 +210,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("</p>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 40 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 40 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 40 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -178,7 +226,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("                    </td>\n                    <td>\n                        ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 43 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 43 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 43 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -190,7 +242,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\n                    </td>\n                </tr>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 46 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 46 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 46 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes
@@ -203,7 +259,11 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("    </table>\n</div>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 50 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+=======
+#line 50 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 50 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Index.cshtml"
 >>>>>>> Stashed changes

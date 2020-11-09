@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "53f387642f51183827d0cb96e4791312097da410"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "53f387642f51183827d0cb96e4791312097da410"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "53f387642f51183827d0cb96e4791312097da410"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Account
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -71,7 +79,11 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 3 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 3 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 3 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -83,9 +95,15 @@ using FinalProjectWorkspace.Models;
 #nullable disable
             WriteLiteral("\n<h1>ChangePassword</h1>\n\n<hr />\n<div class=\"row\">\n    <div class=\"col-md-4\">\n        ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da4106550", async() => {
                 WriteLiteral("\n            ");
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da4106816", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da4106463", async() => {
+                WriteLiteral("\n            ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da4106729", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da4106463", async() => {
                 WriteLiteral("\n            ");
@@ -97,7 +115,11 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 13 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 13 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 13 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -117,7 +139,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n            <div class=\"form-group\">\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da4108574", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da4108458", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da4108458", async() => {
 >>>>>>> Stashed changes
@@ -127,7 +153,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 15 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 15 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 15 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -147,7 +177,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41010208", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41010063", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41010063", async() => {
 >>>>>>> Stashed changes
@@ -157,7 +191,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 16 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 16 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 16 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -177,7 +215,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41011837", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41011663", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41011663", async() => {
 >>>>>>> Stashed changes
@@ -187,7 +229,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 17 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 17 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 17 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -207,7 +253,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n            </div>\n            <div class=\"form-group\">\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41013602", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41013399", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41013399", async() => {
 >>>>>>> Stashed changes
@@ -217,7 +267,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 20 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 20 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 20 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -237,7 +291,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41015237", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41015005", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41015005", async() => {
 >>>>>>> Stashed changes
@@ -247,7 +305,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 21 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 21 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 21 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -267,7 +329,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41016866", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41016605", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41016605", async() => {
 >>>>>>> Stashed changes
@@ -277,7 +343,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 22 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 22 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 22 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -297,7 +367,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n            </div>\n            <div class=\"form-group\">\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41018631", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41018341", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41018341", async() => {
 >>>>>>> Stashed changes
@@ -307,7 +381,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 25 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 25 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 25 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -327,7 +405,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41020270", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41019951", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53f387642f51183827d0cb96e4791312097da41019951", async() => {
 >>>>>>> Stashed changes
@@ -337,7 +419,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 26 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 26 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 26 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -357,7 +443,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41021903", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41021555", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41021555", async() => {
 >>>>>>> Stashed changes
@@ -367,7 +457,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 27 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+=======
+#line 27 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 27 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/ChangePassword.cshtml"
 >>>>>>> Stashed changes
@@ -405,7 +499,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n    </div>\n</div>\n\n<div>\n    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41025165", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41024788", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53f387642f51183827d0cb96e4791312097da41024788", async() => {
 >>>>>>> Stashed changes

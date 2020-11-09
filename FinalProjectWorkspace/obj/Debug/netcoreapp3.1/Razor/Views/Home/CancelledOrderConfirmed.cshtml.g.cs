@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Home
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -61,7 +69,11 @@ using FinalProjectWorkspace.Models;
         {
             WriteLiteral("<!DOCTYPE html>\n<html>\n");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe4027", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe3969", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe3969", async() => {
 >>>>>>> Stashed changes
@@ -79,7 +91,11 @@ using FinalProjectWorkspace.Models;
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe5161", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe5103", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe5103", async() => {
 >>>>>>> Stashed changes
@@ -112,7 +128,11 @@ using FinalProjectWorkspace.Models;
             <center>
                 ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe6905", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe6847", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c8ad8863dda7308fb9f254a2b1d32d186aa7efe6847", async() => {
 >>>>>>> Stashed changes

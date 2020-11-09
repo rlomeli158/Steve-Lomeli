@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "b7be58d0018cf2cd64ac63d3efe103695d3cc574"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "7153201049d8ad2997c884377636fa08a5f46861"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "7153201049d8ad2997c884377636fa08a5f46861"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Shared
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -31,6 +39,9 @@ using FinalProjectWorkspace.Models;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b7be58d0018cf2cd64ac63d3efe103695d3cc574", @"/Views/Shared/Error.cshtml")]
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7153201049d8ad2997c884377636fa08a5f46861", @"/Views/Shared/Error.cshtml")]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3077373090091c5850da6e8c6a3970a3b8885491", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<String>>
@@ -65,9 +76,12 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("\n<br />\n<img class=\"w-100 h-auto rounded mx-auto d-block\" src=\"/images/error.png\" alt=\"Error\" title=\"Error\" />\n\n<div class=\"text-center\">\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 7 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml"
      if (Model != null)
 =======
+=======
+>>>>>>> Stashed changes
 #line 7 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml"
  if (Model != null)
 {
@@ -83,9 +97,12 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("            <p><span class=\"text-danger\">");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 11 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml"
                                     Write(message);
 =======
+=======
+>>>>>>> Stashed changes
 #line 11 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml"
                                 Write(message);
 >>>>>>> Stashed changes
@@ -96,8 +113,12 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("</span></p>\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 12 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml"
         }
+=======
+#line 12 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 12 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Shared/Error.cshtml"
 >>>>>>> Stashed changes

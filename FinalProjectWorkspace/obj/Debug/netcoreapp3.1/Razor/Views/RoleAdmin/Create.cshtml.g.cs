@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "357a64dc204dd5bedb350cdd994297e6e3fb3da0"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "357a64dc204dd5bedb350cdd994297e6e3fb3da0"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "357a64dc204dd5bedb350cdd994297e6e3fb3da0"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.RoleAdmin
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -61,7 +69,11 @@ using FinalProjectWorkspace.Models;
         {
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml"
 >>>>>>> Stashed changes
@@ -74,7 +86,11 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("\n<h2>Create Role</h2>\n\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 8 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml"
+=======
+#line 8 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 8 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml"
 >>>>>>> Stashed changes
@@ -85,11 +101,19 @@ Write(Html.ValidationSummary(true));
 #nullable disable
             WriteLiteral("\n\n");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "357a64dc204dd5bedb350cdd994297e6e3fb3da04502", async() => {
                 WriteLiteral("\n{ \n    <div class=\"form-group\">\n        <label>Name</label>\n        <input name=\"name\"");
                 BeginWriteAttribute("value", " value=\"", 201, "\"", 215, 1);
 #nullable restore
 #line 14 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml"
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "357a64dc204dd5bedb350cdd994297e6e3fb3da04386", async() => {
+                WriteLiteral("\n{ \n    <div class=\"form-group\">\n        <label>Name</label>\n        <input name=\"name\"");
+                BeginWriteAttribute("value", " value=\"", 201, "\"", 215, 1);
+#nullable restore
+#line 14 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/RoleAdmin/Create.cshtml"
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "357a64dc204dd5bedb350cdd994297e6e3fb3da04386", async() => {
                 WriteLiteral("\n{ \n    <div class=\"form-group\">\n        <label>Name</label>\n        <input name=\"name\"");
@@ -105,7 +129,11 @@ WriteAttributeValue("", 209, Model, 209, 6, false);
                 EndWriteAttribute();
                 WriteLiteral(" class=\"form-control\" />\n    </div>\n    \n    <button type=\"submit\" class=\"btn btn-primary\">Create</button>\n    \n    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "357a64dc204dd5bedb350cdd994297e6e3fb3da05385", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "357a64dc204dd5bedb350cdd994297e6e3fb3da05240", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "357a64dc204dd5bedb350cdd994297e6e3fb3da05240", async() => {
 >>>>>>> Stashed changes

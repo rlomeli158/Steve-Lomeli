@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Seed/Confirm.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "abf8fa13df146414294094866b90619110977d5f"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Seed/Confirm.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "00e5a1778310dc120e1065336cbacb62b714e052"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Seed/Confirm.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "00e5a1778310dc120e1065336cbacb62b714e052"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Seed
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -28,7 +36,11 @@ using FinalProjectWorkspace.Models;
 #line hidden
 #nullable disable
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abf8fa13df146414294094866b90619110977d5f", @"/Views/Seed/Confirm.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"00e5a1778310dc120e1065336cbacb62b714e052", @"/Views/Seed/Confirm.cshtml")]
+>>>>>>> Stashed changes
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"00e5a1778310dc120e1065336cbacb62b714e052", @"/Views/Seed/Confirm.cshtml")]
 >>>>>>> Stashed changes
@@ -63,8 +75,13 @@ using FinalProjectWorkspace.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             WriteLiteral("<h1 class=\"text-center\">Congratulations!!</h1>\n<p class=\"text-center\">The data has been seeded!!</p>\n<br />\n<br />\n<div class=\"text-center\">\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "abf8fa13df146414294094866b90619110977d5f4122", async() => {
+=======
+            WriteLiteral("<h1 class=\"text-center\">Congratulations!!</h1>\r\n<p class=\"text-center\">The data has been seeded!!</p>\r\n<br />\r\n<br />\r\n<div class=\"text-center\">\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00e5a1778310dc120e1065336cbacb62b714e0524074", async() => {
+>>>>>>> Stashed changes
 =======
             WriteLiteral("<h1 class=\"text-center\">Congratulations!!</h1>\r\n<p class=\"text-center\">The data has been seeded!!</p>\r\n<br />\r\n<br />\r\n<div class=\"text-center\">\r\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00e5a1778310dc120e1065336cbacb62b714e0524074", async() => {

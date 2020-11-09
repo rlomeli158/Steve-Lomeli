@@ -5,8 +5,13 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/guy/.nuget/packages/</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/guy/.nuget/packages/</NuGetPackageFolders>
+=======
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/jennifertruong/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/jennifertruong/.nuget/packages/</NuGetPackageFolders>
+>>>>>>> Stashed changes
 =======
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/jennifertruong/.nuget/packages/</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/jennifertruong/.nuget/packages/</NuGetPackageFolders>
@@ -25,7 +30,11 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/guy/.nuget/packages/microsoft.codeanalysis.analyzers/2.9.4</PkgMicrosoft_CodeAnalysis_Analyzers>
+=======
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">/Users/jennifertruong/.nuget/packages/newtonsoft.json/10.0.1</PkgNewtonsoft_Json>
+>>>>>>> Stashed changes
 =======
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">/Users/jennifertruong/.nuget/packages/newtonsoft.json/10.0.1</PkgNewtonsoft_Json>
 >>>>>>> Stashed changes

@@ -482,4 +482,7 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/Browse.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/SearchResults.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Account/EditAccount.cshtml.g.cs
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

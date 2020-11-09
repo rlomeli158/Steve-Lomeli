@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "5e43eac6b1de83fb8e4cded6a0bc2008ee5b76f5"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "7bf7f4e73b5475293662d7340e317ca82f7f569a"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "7bf7f4e73b5475293662d7340e317ca82f7f569a"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Account
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -28,7 +36,11 @@ using FinalProjectWorkspace.Models;
 #line hidden
 #nullable disable
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5e43eac6b1de83fb8e4cded6a0bc2008ee5b76f5", @"/Views/Account/Index.cshtml")]
+=======
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7bf7f4e73b5475293662d7340e317ca82f7f569a", @"/Views/Account/Index.cshtml")]
+>>>>>>> Stashed changes
 =======
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7bf7f4e73b5475293662d7340e317ca82f7f569a", @"/Views/Account/Index.cshtml")]
 >>>>>>> Stashed changes
@@ -63,7 +75,11 @@ using FinalProjectWorkspace.Models;
         {
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -76,7 +92,11 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("\n<h2>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 6 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 6 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 6 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -88,7 +108,11 @@ Write(ViewBag.Title);
             WriteLiteral("</h2>\n\n<div>\n    <hr />\n    <dl class=\"dl-horizontal\">\n        <dt>User Name:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 13 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 12 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 12 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -100,7 +124,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>Popcorn Points:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 16 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 15 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 15 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -112,7 +140,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>Email:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 19 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 18 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 18 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -132,7 +164,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>First Name:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 22 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 24 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 24 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -144,7 +180,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>Middle Initial:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 25 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 27 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 27 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -156,7 +196,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>Last Name:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 28 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 30 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 30 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -168,7 +212,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>Address:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 31 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 33 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 33 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -180,7 +228,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>City:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 34 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 36 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 36 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -192,7 +244,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>State:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 37 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 39 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 39 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -204,7 +260,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>Zip:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 40 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 42 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 42 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -216,7 +276,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>Birthday:</dt>\n        <dd>");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 43 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 45 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 45 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes
@@ -228,7 +292,11 @@ Write(ViewBag.Title);
             WriteLiteral("</dd>\n\n        <dt>Password:</dt>\n        <dd>\n            [");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 47 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+=======
+#line 49 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 49 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Account/Index.cshtml"
 >>>>>>> Stashed changes

@@ -1,6 +1,7 @@
 {
   "version": 2,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "dgSpecHash": "Zv77XAIdTlW0yDrqETDuw4thW2oreIfpVYZMxDVBaUJYEXbNmEhSJ79UutU6UWLzey7Hk7Ad8tCDJiWaWN/K4Q==",
   "success": true,
   "projectFilePath": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
@@ -173,6 +174,12 @@
   "success": true,
   "projectFilePath": "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
   "expectedPackageFiles": [
+=======
+  "dgSpecHash": "ljY94+mpJO3SB58p9U7MiWF9Um/aq0ZaYfh8UxGftK0ZxkQePDNuvjHk40mr98zJtiI0CiF2Jiwiuy6mYakxhg==",
+  "success": true,
+  "projectFilePath": "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+  "expectedPackageFiles": [
+>>>>>>> Stashed changes
     "/Users/jennifertruong/.nuget/packages/microsoft.aspnetcore.cryptography.internal/3.1.9/microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "/Users/jennifertruong/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/3.1.9/microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",
     "/Users/jennifertruong/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/3.1.9/microsoft.aspnetcore.identity.entityframeworkcore.3.1.9.nupkg.sha512",
@@ -277,6 +284,9 @@
     "/Users/jennifertruong/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/Users/jennifertruong/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
     "/Users/jennifertruong/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   ],
   "logs": []

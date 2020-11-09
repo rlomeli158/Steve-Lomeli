@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Home/Index.cshtml">
     <Files>
@@ -16,6 +17,26 @@
       <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" />
       <File FileName="FinalProjectWorkspace/Startup.cs" />
       <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" />
+=======
+﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Startup.cs">
+    <Files>
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Register.cshtml" Line="10" Column="18" />
+      <File FileName="FinalProjectWorkspace/DAL/AppDbContext.cs" Line="18" Column="38" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" />
+      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="200" Column="14" />
+      <File FileName="FinalProjectWorkspace/Controllers/RoleAdminController.cs" Line="16" Column="44" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/AccountViewModels.cs" Line="44" Column="96" />
+      <File FileName="FinalProjectWorkspace/Views/RoleAdmin/Edit.cshtml" Line="39" Column="53" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" Line="2" Column="3" />
+      <File FileName="FinalProjectWorkspace/Views/Account/EditAccount.cshtml" Line="28" Column="37" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="10" Column="6" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" Line="51" Column="70" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="28" Column="50" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedIdentity.cs" Line="55" Column="65" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" Line="21" Column="173" />
+>>>>>>> Stashed changes
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,6 +58,10 @@
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True" />
+<<<<<<< Updated upstream
+=======
+              <Node name="Startup.cs" selected="True" />
+>>>>>>> Stashed changes
             </Node>
           </Node>
         </State>

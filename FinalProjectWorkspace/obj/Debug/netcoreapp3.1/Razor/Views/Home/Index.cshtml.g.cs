@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "4e0820a3889d9e90d0587189a46cb2d029e775ff"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "eed59bbea791e8bac057998cf22e1f638e70abff"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "eed59bbea791e8bac057998cf22e1f638e70abff"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Home
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -76,7 +84,11 @@ using FinalProjectWorkspace.Models;
             WriteLiteral("<!--Delete this line above, just used it for testing purposes-->\n\n");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 4 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml"
+=======
+#line 4 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 4 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml"
 >>>>>>> Stashed changes
@@ -88,7 +100,11 @@ using FinalProjectWorkspace.Models;
 #nullable disable
             WriteLiteral("\n\n<!DOCTYPE html>\n\n<html>\n");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e0820a3889d9e90d0587189a46cb2d029e775ff6446", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eed59bbea791e8bac057998cf22e1f638e70abff6010", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eed59bbea791e8bac057998cf22e1f638e70abff6010", async() => {
 >>>>>>> Stashed changes
@@ -105,6 +121,7 @@ using FinalProjectWorkspace.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n");
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e0820a3889d9e90d0587189a46cb2d029e775ff7457", async() => {
                 WriteLiteral(@"
@@ -163,6 +180,8 @@ using FinalProjectWorkspace.Models;
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n            </p>\n        ");
 =======
+=======
+>>>>>>> Stashed changes
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eed59bbea791e8bac057998cf22e1f638e70abff7021", async() => {
                 WriteLiteral("\n    <div class=\"text-center\">\n        <h1>Now Playing</h1>\n\n        <h2>Coming Soon! Explore Main Street Movies.</h2>\n    </div>\n\n\n    <div class=\"text-center\">\n        ");
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eed59bbea791e8bac057998cf22e1f638e70abff7456", async() => {
@@ -239,9 +258,12 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 WriteLiteral(" out of ");
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 53 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml"
                                                    Write(ViewBag.AllShowings);
 =======
+=======
+>>>>>>> Stashed changes
 #line 33 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml"
    Write(Html.DropDownList("selectedMPAASelectList", (SelectList)ViewBag.AllMPAARatings,"All MPAA Ratings"));
 >>>>>>> Stashed changes
@@ -384,9 +406,12 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
                 BeginWriteTagHelperAttribute();
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 100 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml"
                                                                              WriteLiteral(item.Movie.MovieID);
 =======
+=======
+>>>>>>> Stashed changes
 #line 37 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = Html.GetEnumSelectList<AllMPAARatings>();
 >>>>>>> Stashed changes

@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "117238a2e24d7fc7263a87aeda4579659072c13c"
+=======
+#pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "117238a2e24d7fc7263a87aeda4579659072c13c"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "117238a2e24d7fc7263a87aeda4579659072c13c"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ namespace FinalProjectWorkspace.Views.Home
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 2 "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+=======
+#line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
+>>>>>>> Stashed changes
 =======
 #line 2 "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/Views/_ViewImports.cshtml"
 >>>>>>> Stashed changes
@@ -66,7 +74,11 @@ using FinalProjectWorkspace.Models;
         {
             WriteLiteral("<!DOCTYPE html>\n<html>\n");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c5528", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c5470", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c5470", async() => {
 >>>>>>> Stashed changes
@@ -84,7 +96,11 @@ using FinalProjectWorkspace.Models;
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c6662", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c6604", async() => {
+>>>>>>> Stashed changes
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c6604", async() => {
 >>>>>>> Stashed changes
@@ -109,7 +125,11 @@ using FinalProjectWorkspace.Models;
                     <p class=""sansserif"" style=""color:darksalmon;"">Edit Customer Profile</p>
                     ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c7437", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c7379", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c7379", async() => {
 >>>>>>> Stashed changes
@@ -130,7 +150,11 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                </div>\n                <div class=\"col mb-4\">\n                    <p class=\"sansserif\" style=\"color:darksalmon;\">Sell Tickets</p>\n                    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c8915", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c8857", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c8857", async() => {
 >>>>>>> Stashed changes
@@ -151,7 +175,11 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                </div>\n                <div class=\"col mb-4\">\n                    <p class=\"sansserif\" style=\"color:darksalmon;\">Movie Search</p>\n                    ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c10383", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c10325", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c10325", async() => {
 >>>>>>> Stashed changes
@@ -183,7 +211,11 @@ using FinalProjectWorkspace.Models;
                         <p class=""sansserif"" style=""color:darksalmon;"">Edit Reviews</p>
                         ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c12010", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c11952", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c11952", async() => {
 >>>>>>> Stashed changes
@@ -204,7 +236,11 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                    </div>\n                    <div class=\"col mb-4\">\n                        <p class=\"sansserif\" style=\"color:darksalmon;\">Edit Profile</p>\n                        ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c13495", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c13437", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c13437", async() => {
 >>>>>>> Stashed changes
@@ -225,7 +261,11 @@ using FinalProjectWorkspace.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                    </div>\n                    <div class=\"col mb-4\">\n                        <p class=\"sansserif\" style=\"color:darksalmon;\">Movie Schedule</p>\n                        ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c14982", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c14924", async() => {
+>>>>>>> Stashed changes
 =======
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "117238a2e24d7fc7263a87aeda4579659072c13c14924", async() => {
 >>>>>>> Stashed changes

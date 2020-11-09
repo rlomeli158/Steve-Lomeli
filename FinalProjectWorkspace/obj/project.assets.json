@@ -8589,7 +8589,11 @@
   },
   "packageFolders": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "/Users/guy/.nuget/packages/": {}
+=======
+    "/Users/jennifertruong/.nuget/packages/": {}
+>>>>>>> Stashed changes
 =======
     "/Users/jennifertruong/.nuget/packages/": {}
 >>>>>>> Stashed changes
@@ -8597,6 +8601,7 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       "projectUniqueName": "/Users/guy/Documents/School/Year 3/Fall 2020/MIS 333K/Final Project/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
       "projectName": "FinalProjectWorkspace",
@@ -8607,6 +8612,8 @@
       "configFilePaths": [
         "/Users/guy/.config/NuGet/NuGet.Config"
 =======
+=======
+>>>>>>> Stashed changes
       "projectUniqueName": "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
       "projectName": "FinalProjectWorkspace",
       "projectPath": "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
@@ -8615,6 +8622,9 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/jennifertruong/.config/NuGet/NuGet.Config"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       ],
       "originalTargetFrameworks": [
