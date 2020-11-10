@@ -18,6 +18,7 @@ namespace FinalProjectWorkspace.DAL
         public DbSet<Showing> Showings { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<FinalProjectWorkspace.Models.Order> Order { get; set; }
+        public DbSet<FinalProjectWorkspace.Models.Ticket> Ticket { get; set; }
 
     }
 }
