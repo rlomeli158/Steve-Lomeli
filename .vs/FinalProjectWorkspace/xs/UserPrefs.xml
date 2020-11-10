@@ -1,22 +1,42 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../usr/local/share/dotnet/sdk/3.1.401/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets">
+    <Files>
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Register.cshtml" />
+      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="8" Column="58" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" Line="51" Column="27" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/AccountViewModels.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedCustomers.cs" Line="50" Column="28" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/3.1.401/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="241" Column="5" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Seeding" expanded="True">
-                <Node name="SeedEmployees.cs" selected="True" />
+                <Node name="SeedCustomers.cs" selected="True" />
               </Node>
-              <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
-                <Node name="Order" expanded="True" />
+                <Node name="Movie" expanded="True" />
+                <Node name="RoleAdmin" expanded="True" />
+                <Node name="Seed" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="lib" expanded="True">
+                  <Node name="jquery" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -28,9 +48,7 @@
   <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="225" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
