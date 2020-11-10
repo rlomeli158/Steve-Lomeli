@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/AppUser.cs">
-    <Files>
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="17" Column="56" />
-      <File FileName="FinalProjectWorkspace/Utilities/GenerateNextOrderNumber.cs" Line="54" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="AppUser.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="OrderController.cs" selected="True" />
               </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Order" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

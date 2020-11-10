@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -20,9 +21,21 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Order
-        public async Task<IActionResult> Index()
+        [Authorize]
+        public IActionResult Index()
         {
-            return View(await _context.Order.ToListAsync());
+            List<Order> Orders = new List<Order>();
+            if (User.IsInRole("Manager"))
+            {
+                Orders = _context.Order.Include(o => o.Tickets).ToList();
+            }
+            else //user is a customer
+            {
+                Orders = _context.Order.Where(o => o.Recipient.UserName == User.Identity.Name
+                                                || o.Purchaser.UserName == User.Identity.Name).Include(ord => ord.Tickets).ToList();
+            }
+
+            return View(Orders);
         }
 
         // GET: Order/Details/5
@@ -44,6 +57,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Order/Create
+        [Authorize(Roles = "Customer")]
         public IActionResult Create()
         {
             return View();
@@ -52,17 +66,41 @@ namespace FinalProjectWorkspace.Controllers
         // POST: Order/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Customer")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderID,TransactionNumber,OrderDate,OrderStatus")] Order order)
         {
-            if (ModelState.IsValid)
+            //Set order number automatically
+            //order.OrderNumber = Utilities.GenerateNextOrderNumber.GetNextOrderNumber(_context);
+
+            //Set order date to right now
+            order.OrderDate = DateTime.Now;
+
+            //Associate order with the logged in customer
+            order.Purchaser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+
+            order.OrderStatus = true;
+
+            //make sure all properties are valid
+            if (ModelState.IsValid == false)
             {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View(order);
             }
-            return View(order);
+
+            //if code gets this far, add the registration to the database
+            _context.Add(order);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+
+            /*
+            //send the user on to the action that will allow them to 
+            //create a registration detail.  Be sure to pass along the RegistrationID
+            //that you created when you added the registration to the database above
+            return RedirectToAction("Create", "OrderDetails", new { orderID = order.OrderID });
+            */
+
         }
 
         // GET: Order/Edit/5
