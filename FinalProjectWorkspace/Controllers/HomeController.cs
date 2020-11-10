@@ -251,6 +251,7 @@ namespace FinalProjectWorkspace.Controllers
             return View(movie);
         }
 
+
         // Views Employee Home After Login
         public IActionResult EmployeeHomeView()
         {
@@ -263,6 +264,32 @@ namespace FinalProjectWorkspace.Controllers
             return View();
         }
 
+        // this action displays the OrderCheckout view
+        public IActionResult OrderCheckout()
+        {
+            return View();
+        }
+
+        // GET: /<controller>/
+        [HttpGet]
+        //this method makes sure the grade follows our business rules
+        public IActionResult OrderTotals(Order order)
+        {
+            //Validate the model
+            TryValidateModel(order);
+
+            //something is wrong
+            if (ModelState.IsValid == false)
+            {
+                //send user back to inputs page
+                return View("OrderCheckout");
+            }
+
+
+            //send user to results page
+            return View("OrderTotals", order);
+
+        }
 
         // Views Order Confirmed
         public IActionResult OrderConfirmed()
