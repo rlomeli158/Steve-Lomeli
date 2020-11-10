@@ -5,9 +5,22 @@
         <State name="__root__">
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
-            <Node name="FinalProjectWorkspace" expanded="True" selected="True">
-              <Node name="Controllers" expanded="True" />
+            <Node name="FinalProjectWorkspace" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="TicketController.cs" selected="True" />
+              </Node>
+              <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Movie" expanded="True" />
+                <Node name="Order" expanded="True" />
+                <Node name="Showing" expanded="True" />
+                <Node name="Ticket" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

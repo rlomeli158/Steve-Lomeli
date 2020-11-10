@@ -5,31 +5,107 @@
 }
 
 <h1>Details</h1>
+<div class="list-group">
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.TransactionNumber)
+            </h5>
+        </div>
+        <p class="mb-1">
+            @Html.DisplayFor(model => model.TransactionNumber)
+        </p>
+    </a>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </h5>
+        </div>
+        <p class="mb-1">
+            @Html.DisplayFor(model => model.OrderDate)
+        </p>
+    </a>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </h5>
+        </div>
+        <p class="mb-1">
+            @if (Model.OrderStatus == true)
+            {
+                @:Active
+            }else
+            {
+                @:Inactive
+            }
+        </p>
+    </a>
+</div>
 
 <div>
-    <h4>Order</h4>
-    <hr />
+    <hr style="border:1px solid white" />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TransactionNumber)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TransactionNumber)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OrderDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OrderDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OrderStatus)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OrderStatus)
         </dd>
     </dl>
 </div>
+
+<h5>Tickets on this Order</h5>
+<table class="table table-hover text-center">
+    <tr class="text-light text-center">
+        <th>Movie Title</th>
+        <th>Seat Number</th>
+        <th>Ticket Price</th>
+        <th>Total Cost</th>
+    </tr>
+    @foreach (Ticket t in Model.Tickets)
+    {
+        <tr class="table-secondary text-center text-dark">
+            <td>@Html.DisplayFor(ModelItem => t.Showing.Movie.Title)</td>
+            <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
+            <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
+            <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
+        </tr>
+}
+</table>
+
+<h5>Order Summary</h5>
+<table class="table-secondary text-dark" style="width:30%">
+        <tr >
+            <th colspan="2" style="text-align:center">Order Summary</th>
+        </tr>
+        <tr >
+            <td>Order Subtotal:</td>
+            <td>@Html.DisplayFor(model => model.OrderSubtotal)</td>
+        </tr>
+        <tr>
+            <td>Taxes:</td>
+            <td>@Html.DisplayFor(model => model.Taxes)</td>
+        </tr>
+        <tr >
+            <td>Order Total:</td>
+            <td>@Html.DisplayFor(model => model.OrderTotal)</td>
+        </tr>
+
+</table>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.OrderID">Edit</a> |
     <a asp-action="Index">Back to List</a>
