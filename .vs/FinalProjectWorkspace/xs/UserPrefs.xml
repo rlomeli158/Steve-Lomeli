@@ -5,13 +5,17 @@
         <State name="__root__">
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="OrderController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
               </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="Seeding" expanded="True" />
+              <Node name="Seeding" expanded="True">
+                <Node name="SeedEmployees.cs" selected="True" />
+              </Node>
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
                 <Node name="Order" expanded="True" />
               </Node>
             </Node>
@@ -24,7 +28,9 @@
   <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="225" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
