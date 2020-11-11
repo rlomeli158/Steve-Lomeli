@@ -53,6 +53,7 @@
         <th>Movie Title</th>
         <th>Seat Number</th>
         <th>Ticket Price</th>
+        <th>Discount Amount</th>
         <th>Total Cost</th>
     </tr>
     @foreach (Ticket t in Model.Tickets)
@@ -61,6 +62,7 @@
             <td>@Html.DisplayFor(ModelItem => t.Showing.Movie.Title)</td>
             <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
             <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
+            <td>@Html.DisplayFor(ModelItem => t.DiscountAmount)</td>
             <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
         </tr>
     }

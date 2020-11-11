@@ -13,6 +13,7 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @Html.HiddenFor(model => model.Order.OrderID)
+            @Html.HiddenFor(model => model.Order.Purchaser)
             <div class="form-group">
                 <label class="control-label">Showing:</label>
                 @Html.DropDownList("SelectedShowing", (SelectList)ViewBag.AllShowings, new { @class = "form-control" })
