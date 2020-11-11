@@ -125,7 +125,7 @@ namespace FinalProjectWorkspace.Controllers
 
             //Find order in database that corresponds to user
             Order order = _context.Order
-                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing)
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
                 .Include(ord => ord.Recipient)
                 .Include(ord => ord.Purchaser)
                 .FirstOrDefault(o => o.OrderID == id);

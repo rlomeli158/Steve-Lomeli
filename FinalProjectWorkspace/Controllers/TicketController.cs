@@ -166,9 +166,10 @@ namespace FinalProjectWorkspace.Controllers
 
                 //update the scalar properties
                 //dbT.Quantity = orderDetail.Quantity;
+                dbT.SeatNumber = ticket.SeatNumber;
                 dbT.TicketPrice = ticket.TicketPrice; //if error, change from ticket.TicketPrice to dbT.TicketPrice
                 //dbT.ExtendedPrice = dbT.Quantity * dbT.ProductPrice;
-                dbT.TotalCost = dbT.TicketPrice;
+                dbT.TotalCost = ticket.TicketPrice - (decimal)ticket.DiscountAmount; //Set discount amount as not null, just set to 0
 
                 //save changes
                 _context.Update(dbT);
@@ -180,7 +181,7 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             //if code gets this far, go back to the registration details index page
-            return RedirectToAction("Details", "Orders", new { id = dbT.Order.OrderID });
+            return RedirectToAction("Details", "Order", new { id = dbT.Order.OrderID });
         }
 
         // GET: Ticket/Delete/5

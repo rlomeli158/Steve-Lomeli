@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectWorkspace.Models
 {
-	public class Prices
+	public class Price
 	{
 		/*
 		//Constants for tax_rate of 8.75% 
@@ -25,7 +25,7 @@ namespace FinalProjectWorkspace.Models
 		const Decimal WEEKENDREGULAR_PRICE = 12.00m;
 		*/
 		
-		public Int32 PricesID { get; set; }
+		public Int32 PriceID { get; set; }
 
 		public String PriceName { get; set; }
 
