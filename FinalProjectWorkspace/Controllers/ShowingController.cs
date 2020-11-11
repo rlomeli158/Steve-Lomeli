@@ -45,21 +45,19 @@ namespace FinalProjectWorkspace.Controllers
             return View(showing);
         }
 
-        private MultiSelectList GetAllMovies()
+        private SelectList GetAllMovies()
         {
             //Get the list of suppliers from the database
             List<Movie> movieList = _context.Movies.ToList();
 
-            /*
             //add a dummy entry so the user can select all suppliers
-            Supplier SelectNone = new Supplier() { SupplierID = 0, SupplierName = "All Suppliers" };
-            supplierList.Add(SelectNone);
-            */
+            Movie SelectNone = new Movie() { MovieID = 0, Title = "Select A Movie" };
+            movieList.Add(SelectNone);
 
             //convert the list to a SelectList by calling SelectList constructor
             //SupplierID and SupplierName are the names of the properties on the Supplier class
             //SupplierID is the primary key
-            MultiSelectList movieSelectList = new MultiSelectList(movieList.OrderBy(s => s.MovieID), "MovieID", "Title");
+            SelectList movieSelectList = new SelectList(movieList.OrderBy(s => s.MovieID), "MovieID", "Title");
 
             //return the MultiSelectList
             return movieSelectList;
@@ -77,7 +75,7 @@ namespace FinalProjectWorkspace.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int[] SelectedMovies)
+        public async Task<IActionResult> Create([Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int SelectedMovies)
         {
             //This code has been modified so that if the model state is not valid
             //we immediately go to the "sad path" and give the user a chance to try again
@@ -92,34 +90,14 @@ namespace FinalProjectWorkspace.Controllers
             //if code gets to this point, we know the model is valid and
             //we can add the showing to the database
 
+            Movie dbMovie = _context.Movies.Find(SelectedMovies);
+            showing.Movie = dbMovie;
+
             //add the showing to the database and save changes
             _context.Add(showing);
             await _context.SaveChangesAsync();
 
-            //add the associated departments to the course
-            //loop through the list of deparment ids selected by the user
-            foreach (int movieID in SelectedMovies)
-            {
-                /*TODO: Figure out what to do about all this here
-                //find the department associated with that id
-                Movie dbMovie = _context.Movies.Find(movieID);
-
-                //create a new ProductSuppliers object to make the association
-                ProductSupplier ps = new ProductSupplier();
-
-                //set the properties of the ProductSuppliers object
-                ps.Product = product; //this is the course object that was passed into
-                                      //the method as part of the HTTP reqest
-
-                ps.Supplier = dbSupplier; //this is the supplier we found above
-
-                //add the ProductSuppliers to the database and save changes
-                _context.ProductSuppliers.Add(ps);
-                _context.SaveChanges();
-                */
-            }
-
-            //Send the user to the page with all the departments
+            //Send the user to the page with all the showings
             return RedirectToAction(nameof(Index));
         }
 
@@ -142,45 +120,41 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         /*
-        private MultiSelectList GetAllMovies(int showingID)
+        private SelectList GetAllMovies(int showingID)
         {
             //Create a new list of departments and get the list of the departments
             //from the database
             List<Movie> allMovies = _context.Movies.ToList();
 
-            
+
             //Find all of the course departments currently associated with this course
-            List<Movie> movies = _context.Movies
-                                         .Include(p => p.Showings)
-                                         .Where(p => p.Showings == showingID)
+            List<Showing> movies = _context.Showings
+                                         .Include(p => p.Movie)
                                          .ToList();
 
-            //loop through the list of course departments to find a list of department ids
-            //create a list to store the department ids
-            List<Int32> selectedMoviesID = new List<Int32>();
+            List<Movie> movies2 = _context.Movies
+                                         .Include(p => p.Showings)
+                                         .ToList();
 
-            //Loop through the list to find the DepartmentIDs
-            foreach (MovieShowing p in movieShowing)
-            {
-                selectedMoviesID.Add(p.Movie.MovieID);
-            }
+            Int32 selectedMovieID = movies2.Where(r => r.Showings.Min(rp => rp.ShowingID) == showingID);
+
 
             //use the MultiSelectList constructor method to get a new MultiSelectList
-            MultiSelectList mslAllMovies = new MultiSelectList(allMovies.OrderBy(d => d.Title), "MovieID", "Title", selectedMoviesID);
-            
+            SelectList slAllMovies = new SelectList(allMovies.OrderBy(d => d.Title), "MovieID", "Title", selectedMovieID);
+
 
             //return the MultiSelectList
-            return mslAllMovies;
-            
-        }
+            return slAllMovies;
 
-        
+        }
+        */
+
         // POST: Showing/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int[] SelectedMovies)
+        public IActionResult Edit(int id, [Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int[] SelectedMovies)
         {
             //this is a security check to see if the user is trying to modify
             //a different record.  Show an error message
@@ -191,7 +165,7 @@ namespace FinalProjectWorkspace.Controllers
 
             if (ModelState.IsValid == false) //there is something wrong
             {
-                ViewBag.AllMovies = GetAllMovies(showing.ShowingID);
+                ViewBag.AllMovies = GetAllMovies(); //TODO: Add int to bring back dropdown with movie already selected
                 return View(showing);
             }
 
@@ -204,54 +178,16 @@ namespace FinalProjectWorkspace.Controllers
                     .Include(cd => cd.Movie)
                     .FirstOrDefault(c => c.ShowingID == showing.ShowingID);
 
-                //create a list of departments that need to be removed
-                List<Movie> MoviesToRemove = new List<Movie>();
-
-                //find the departments that should no longer be selected because the
-                //user removed them
-                //remember, SelectedDepartments = the list from the HTTP request (listbox)
-                foreach (Movie cd in dbShowing.Movie)
-                {
-                    //see if the new list contains the department id from the old list
-                    if (SelectedMovies.Contains(cd.MovieID) == false)//this department is not on the new list
-                    {
-                        MoviesToRemove.Add(cd);
-                    }
-                }
-
-                //remove the departments you found in the list above
-                //this has to be 2 separate steps because you can't iterate (loop)
-                //over a list that you are removing things from
-                foreach (ProductSupplier cd in SuppliersToRemove)
-                {
-                    //remove this course department from the database
-                    _context.ProductSuppliers.Remove(cd);
-                    _context.SaveChanges();
-                }
-
-                //add the departments that aren't already there
-                foreach (int supplierID in SelectedSuppliers)
-                {
-                    if (dbProduct.ProductSuppliers.Any(d => d.Supplier.SupplierID == supplierID) == false)//this department is NOT already associated with this course
-                    {
-                        //create a new instance of the bridge table class
-                        ProductSupplier cd = new ProductSupplier();
-                        cd.Supplier = _context.Suppliers.Find(supplierID);
-                        cd.Product = dbProduct;
-
-                        //add the new instance to the database
-                        _context.ProductSuppliers.Add(cd);
-                        _context.SaveChanges();
-                    }
-                }
-
                 //update the course's scalar properties
-                dbProduct.Price = product.Price;
-                dbProduct.Name = product.Name;
-                dbProduct.Description = product.Description;
+                dbShowing.ShowingDate = showing.ShowingDate;
+                dbShowing.StartTime = showing.StartTime;
+                dbShowing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
+                dbShowing.Theatre = showing.Theatre;
+                dbShowing.SeatsAvailable = showing.SeatsAvailable;
+                dbShowing.SpecialEvent = showing.SpecialEvent;
 
                 //save the changes
-                _context.Products.Update(dbProduct);
+                _context.Showings.Update(dbShowing);
                 _context.SaveChanges();
 
             }

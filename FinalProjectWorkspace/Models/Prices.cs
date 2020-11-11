@@ -8,6 +8,7 @@ namespace FinalProjectWorkspace.Models
 {
 	public class Prices
 	{
+		/*
 		//Constants for tax_rate of 8.75% 
 		const Decimal SALES_TAX_RATE = 0.0875m;
 
@@ -22,8 +23,14 @@ namespace FinalProjectWorkspace.Models
 
 		//Constants for Weekend - all shows on weekends (Friday after 12:00 noon and all day Saturday and Sunday)
 		const Decimal WEEKENDREGULAR_PRICE = 12.00m;
+		*/
+		
+		public Int32 PricesID { get; set; }
 
+		public String PriceName { get; set; }
 
+		public Decimal PriceAmount { get; set; }
+		
 
 	}
 }
