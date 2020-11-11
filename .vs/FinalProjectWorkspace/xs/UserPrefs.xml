@@ -10,7 +10,6 @@
                 <Node name="TicketController.cs" selected="True" />
               </Node>
               <Node name="DAL" expanded="True" />
-              <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />

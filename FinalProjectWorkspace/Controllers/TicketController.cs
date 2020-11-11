@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using System.Globalization;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -39,7 +40,7 @@ namespace FinalProjectWorkspace.Controllers
             //the user MUST select a course, so you don't need a dummy option for no course
 
             //use the constructor on select list to create a new select list with the options
-            SelectList slAllShowings = new SelectList(allShowings, nameof(Showing.ShowingID), nameof(Showing.ShowingDate));
+            SelectList slAllShowings = new SelectList(allShowings, nameof(Showing.ShowingID), nameof(Showing.StartTime));
 
             return slAllShowings;
         }
@@ -61,6 +62,76 @@ namespace FinalProjectWorkspace.Controllers
 
             //pass the newly created registration detail to the view
             return View(t);
+        }
+
+        private Decimal GetPrice(String showingDay, DateTime showingTime)
+        {
+            Decimal showingPrice = 0.00m;
+
+            var weekDays = new List<string>()
+            {
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            };
+
+            //Important Times
+            DateTime compareTimeNoon = new DateTime(showingTime.Year, showingTime.Month, showingTime.Day, 12, 00, 00);
+
+            DateTime compareTimeFive = new DateTime(showingTime.Year, showingTime.Month, showingTime.Day, 17, 00, 00);
+
+
+            //set the registration detail's price equal to the course price
+            //this will allow us to to store the price that the user paid
+            //TODO: Get ticket price from prices table
+            if (weekDays.Contains(showingDay))
+            {
+
+                if (showingTime < compareTimeNoon)
+                {
+                    String price = _context.Prices
+                                    .Where(p => p.PriceName == "MATINEE_PRICE")
+                                    .Select(p => p.PriceAmount).First().ToString();
+
+                    showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                }
+                else if (showingDay == "Tuesday" && showingTime < compareTimeFive) //WORKS
+                {
+                    String price = _context.Prices
+                                    .Where(p => p.PriceName == "DISCOUNT_TUESDAY_PRICE")
+                                    .Select(p => p.PriceAmount).First().ToString();
+
+                    showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                }
+                else if (showingDay != "Friday") //WORKS FOR WEEKDAYS AFTER 5, WORKS FOR TUESDAY AFTER 5
+                {
+                    String price = _context.Prices
+                                    .Where(p => p.PriceName == "WEEKDAY_REGULAR_PRICE")
+                                    .Select(p => p.PriceAmount).First().ToString();
+
+                    showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                }
+                else if (showingTime > compareTimeNoon) //WORKS FOR FRIDAY
+                {
+                    String price = _context.Prices
+                                    .Where(p => p.PriceName == "WEEKEND_REGULAR_PRICE")
+                                    .Select(p => p.PriceAmount).First().ToString();
+
+                    showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                }
+            }
+            else
+            {
+                String price = _context.Prices
+                                                    .Where(p => p.PriceName == "WEEKEND_REGULAR_PRICE")
+                                                    .Select(p => p.PriceAmount).First().ToString();
+
+                showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+            }
+
+            return showingPrice;
         }
 
         // POST: Ticket/Create
@@ -91,10 +162,12 @@ namespace FinalProjectWorkspace.Controllers
             //set the registration on the registration detail equal to the registration that we just found
             ticket.Order = dbOrder;
 
-            //set the registration detail's price equal to the course price
-            //this will allow us to to store the price that the user paid
-            //TODO: Get ticket price from prices table
-            ticket.TicketPrice = 10;
+            //Get showing day and showing time
+            String showingDay = dbShowing.ShowingDate.ToString("dddd");
+            DateTime showingTime = dbShowing.StartTime;
+
+            //Get prices depending on day and time
+            ticket.TicketPrice = GetPrice(showingDay, showingTime);
 
             //calculate the extended price for the registration detail
             //TODO: Calculate total cost by number of tickets * price per ticket?
@@ -165,11 +238,22 @@ namespace FinalProjectWorkspace.Controllers
                       .FirstOrDefault(rd => rd.TicketID == ticket.TicketID);
 
                 //update the scalar properties
+
+                //Get new showing day and showing time
+                String showingDay = ticket.Showing.ShowingDate.ToString("dddd");
+                DateTime showingTime = ticket.Showing.StartTime;
+
+                //Apply new ticket price
+                dbT.TicketPrice = GetPrice(showingDay, showingTime);
+
+                dbT.TotalCost = ticket.TicketPrice - ticket.DiscountAmount; //Set discount amount as not null, just set to 0
+
                 //dbT.Quantity = orderDetail.Quantity;
                 dbT.SeatNumber = ticket.SeatNumber;
-                dbT.TicketPrice = ticket.TicketPrice; //if error, change from ticket.TicketPrice to dbT.TicketPrice
                 //dbT.ExtendedPrice = dbT.Quantity * dbT.ProductPrice;
-                dbT.TotalCost = ticket.TicketPrice - (decimal)ticket.DiscountAmount; //Set discount amount as not null, just set to 0
+
+                dbT.TransactionPopcornPoints = dbT.TicketPrice;
+
 
                 //save changes
                 _context.Update(dbT);
