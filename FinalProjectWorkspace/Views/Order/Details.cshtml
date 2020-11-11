@@ -36,7 +36,8 @@
             @if (Model.OrderStatus == true)
             {
                 @:Active
-            }else
+            }
+            else
             {
                 @:Inactive
             }
@@ -44,29 +45,7 @@
     </a>
 </div>
 
-<div>
-    <hr style="border:1px solid white" />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TransactionNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TransactionNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.OrderDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderStatus)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.OrderStatus)
-        </dd>
-    </dl>
-</div>
+<hr style="border:1px solid white" />
 
 <h5>Tickets on this Order</h5>
 <table class="table table-hover text-center">
@@ -84,26 +63,26 @@
             <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
             <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
         </tr>
-}
+    }
 </table>
 
 <h5>Order Summary</h5>
-<table class="table-secondary text-dark" style="width:30%">
-        <tr >
-            <th colspan="2" style="text-align:center">Order Summary</th>
-        </tr>
-        <tr >
-            <td>Order Subtotal:</td>
-            <td>@Html.DisplayFor(model => model.OrderSubtotal)</td>
-        </tr>
-        <tr>
-            <td>Taxes:</td>
-            <td>@Html.DisplayFor(model => model.Taxes)</td>
-        </tr>
-        <tr >
-            <td>Order Total:</td>
-            <td>@Html.DisplayFor(model => model.OrderTotal)</td>
-        </tr>
+<table class="table-secondary text-dark" style="width:40%; padding:10px">
+    <tr>
+        <th colspan="2" style="text-align:center">Order Summary</th>
+    </tr>
+    <tr>
+        <td>Order Subtotal:</td>
+        <td>@Html.DisplayFor(model => model.OrderSubtotal)</td>
+    </tr>
+    <tr>
+        <td>Taxes:</td>
+        <td>@Html.DisplayFor(model => model.Taxes)</td>
+    </tr>
+    <tr>
+        <td>Order Total:</td>
+        <td>@Html.DisplayFor(model => model.OrderTotal)</td>
+    </tr>
 
 </table>
 <div>

@@ -13,8 +13,10 @@ namespace FinalProjectWorkspace.Models
 
         public Int32 OrderID { get; set; }
 
+        [Display(Name ="Transaction Number")]
         public Int32 TransactionNumber { get; set; } //Will we need this?
 
+        [Display(Name = "Order Date")]
         public DateTime OrderDate { get; set; }
 
         public Decimal OrderSubtotal
@@ -32,6 +34,7 @@ namespace FinalProjectWorkspace.Models
             get { return OrderSubtotal + Taxes; }
         }
 
+        [Display(Name = "Status")]
         public Boolean OrderStatus { get; set; } //Active or inactive in case it was cancelled
 
         public List<Ticket> Tickets { get; set; }
