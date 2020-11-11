@@ -85,7 +85,7 @@ namespace FinalProjectWorkspace.Controllers
         public async Task<IActionResult> Create([Bind("OrderID,TransactionNumber,OrderDate,OrderStatus")] Order order)
         {
             //TODO: Set order number automatically
-            //order.OrderNumber = Utilities.GenerateNextOrderNumber.GetNextOrderNumber(_context);
+            order.TransactionNumber = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
 
             //Set order date to right now
             order.OrderDate = DateTime.Now;
@@ -116,7 +116,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Order/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {

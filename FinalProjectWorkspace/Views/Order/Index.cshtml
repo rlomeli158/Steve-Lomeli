@@ -7,11 +7,11 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" >Create New</a>
 </p>
-<table class="table">
+<table class="table table-hover text-center">
     <thead>
-        <tr>
+        <tr class="text-light text-center">
             <th>
                 @Html.DisplayNameFor(model => model.TransactionNumber)
             </th>
@@ -26,7 +26,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr  class="table-secondary text-center text-dark">
             <td>
                 @Html.DisplayFor(modelItem => item.TransactionNumber)
             </td>
@@ -34,7 +34,14 @@
                 @Html.DisplayFor(modelItem => item.OrderDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OrderStatus)
+                @if (item.OrderStatus == true)
+                {
+                    @:Active
+                }
+                else
+                {
+                    @:Inactive
+                }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.OrderID">Edit</a> |
