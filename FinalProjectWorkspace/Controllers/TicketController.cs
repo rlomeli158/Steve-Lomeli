@@ -64,13 +64,60 @@ namespace FinalProjectWorkspace.Controllers
             return View(t);
         }
 
-        private Decimal GetPrice(Ticket ticket)
+        private Decimal GetPrice(Ticket ticketIn)
         {
+            Ticket ticket = _context.Ticket
+                                    .Include(rd => rd.Showing)
+                                    .Include(rd => rd.Order)
+                                    .ThenInclude(rd => rd.Purchaser)
+                                    .FirstOrDefault(rd => rd.TicketID == ticketIn.TicketID);
+            /*
+            Ticket ticket = _context.Ticket
+                        .Include(rd => rd.Showing)
+                        .Include(rd => rd.Order).ThenInclude(rd => rd.Purchaser)
+                        .FirstOrDefault(rd => rd.Order.OrderID == ticketIn.Order.OrderID);
+            */
+            String showingDay;
+            DateTime showingTime;
+            Order order;
+            TimeSpan age;
+
+            if (ticket == null)
+            {
+                order = _context.Order.Find(ticketIn.Order.OrderID);
+
+                order = _context.Order
+                                .Include(o => o.Purchaser)
+                                .Where(o => o.OrderID == ticketIn.Order.OrderID)
+                                .First();
+                showingDay = ticketIn.Showing.ShowingDate.ToString("dddd");
+                showingTime = ticketIn.Showing.StartTime;
+                age = DateTime.Now - order.Purchaser.Birthday;
+
+            }
+            else
+            {
+                showingDay = ticket.Showing.ShowingDate.ToString("dddd");
+                showingTime = ticket.Showing.StartTime;
+                age = DateTime.Now - ticket.Order.Purchaser.Birthday;
+
+            }
+
+            /* TODO: For Edit
+            Ticket ticket = _context.Ticket
+                                    .Include(rd => rd.Showing)
+                                    .Include(rd => rd.Order)
+                                    .ThenInclude(rd => rd.Purchaser)
+                                    .FirstOrDefault(rd => rd.TicketID == ticketIn.TicketID);
+            */
+
             Decimal showingPrice = 0.00m;
 
+            /* TODO: For edit
             //Get showing day and showing time
             String showingDay = ticket.Showing.ShowingDate.ToString("dddd");
             DateTime showingTime = ticket.Showing.StartTime;
+            */
 
             var weekDays = new List<string>()
             {
@@ -107,7 +154,7 @@ namespace FinalProjectWorkspace.Controllers
 
                     Decimal normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
-                    ticket.DiscountAmount = normalPrice - showingPrice;
+                    ticketIn.DiscountAmount = normalPrice - showingPrice;
                 }
                 else if (showingDay == "Tuesday" && showingTime < compareTimeFive) //WORKS
                 {
@@ -124,7 +171,7 @@ namespace FinalProjectWorkspace.Controllers
 
                     Decimal normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
-                    ticket.DiscountAmount = normalPrice - showingPrice;
+                    ticketIn.DiscountAmount = normalPrice - showingPrice;
                 }
                 else if (showingDay != "Friday") //WORKS FOR WEEKDAYS AFTER 12, WORKS FOR TUESDAY AFTER 5
                 {
@@ -152,18 +199,13 @@ namespace FinalProjectWorkspace.Controllers
                 showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
             }
 
-            /*
             //Age Discount
-            DateTime today = DateTime.Now;
-            DateTime dateOfBirth = ticket.Order.Purchaser.Birthday;
-            TimeSpan age = ticket.Order.Purchaser.Birthday - today;
-
-            if ((age.TotalDays / 365) >= 60)
+            Double ageInYears = age.TotalDays / 365;
+            if (ageInYears >= 60)
             {
                 showingPrice -= 2;
-                ticket.DiscountAmount += 2;
+                ticketIn.DiscountAmount += 2;
             }
-            */
 
             return showingPrice;
         }
@@ -241,7 +283,7 @@ namespace FinalProjectWorkspace.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TicketID,TicketPrice,DiscountAmount,TotalCost,SeatNumber,TransactionPopcornPoints")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Order, TicketID,TicketPrice,DiscountAmount,TotalCost,SeatNumber,TransactionPopcornPoints")] Ticket ticket)
         {
             //this is a security check to make sure they are editing the correct record
             if (id != ticket.TicketID)
@@ -274,8 +316,7 @@ namespace FinalProjectWorkspace.Controllers
                 dbT.DiscountAmount = 0;
                 dbT.TotalCost = GetPrice(ticket);
                 dbT.DiscountAmount = ticket.DiscountAmount;
-
-                dbT.TicketPrice = ticket.TotalCost + ticket.DiscountAmount;
+                dbT.TicketPrice = dbT.TotalCost + ticket.DiscountAmount;
 
                 //dbT.Quantity = orderDetail.Quantity;
                 dbT.SeatNumber = ticket.SeatNumber;
