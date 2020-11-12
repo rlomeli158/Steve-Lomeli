@@ -71,12 +71,6 @@ namespace FinalProjectWorkspace.Controllers
                                     .Include(rd => rd.Order)
                                     .ThenInclude(rd => rd.Purchaser)
                                     .FirstOrDefault(rd => rd.TicketID == ticketIn.TicketID);
-            /*
-            Ticket ticket = _context.Ticket
-                        .Include(rd => rd.Showing)
-                        .Include(rd => rd.Order).ThenInclude(rd => rd.Purchaser)
-                        .FirstOrDefault(rd => rd.Order.OrderID == ticketIn.Order.OrderID);
-            */
             String showingDay;
             DateTime showingTime;
             Order order;
@@ -103,21 +97,7 @@ namespace FinalProjectWorkspace.Controllers
 
             }
 
-            /* TODO: For Edit
-            Ticket ticket = _context.Ticket
-                                    .Include(rd => rd.Showing)
-                                    .Include(rd => rd.Order)
-                                    .ThenInclude(rd => rd.Purchaser)
-                                    .FirstOrDefault(rd => rd.TicketID == ticketIn.TicketID);
-            */
-
             Decimal showingPrice = 0.00m;
-
-            /* TODO: For edit
-            //Get showing day and showing time
-            String showingDay = ticket.Showing.ShowingDate.ToString("dddd");
-            DateTime showingTime = ticket.Showing.StartTime;
-            */
 
             var weekDays = new List<string>()
             {
@@ -155,6 +135,7 @@ namespace FinalProjectWorkspace.Controllers
                     Decimal normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
                     ticketIn.DiscountAmount = normalPrice - showingPrice;
+                    ticketIn.DiscountName = DiscountNames.Manitee;
                 }
                 else if (showingDay == "Tuesday" && showingTime < compareTimeFive) //WORKS
                 {
@@ -172,6 +153,8 @@ namespace FinalProjectWorkspace.Controllers
                     Decimal normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
                     ticketIn.DiscountAmount = normalPrice - showingPrice;
+                    ticketIn.DiscountName = DiscountNames.Tuesday_Discount;
+
                 }
                 else if (showingDay != "Friday") //WORKS FOR WEEKDAYS AFTER 12, WORKS FOR TUESDAY AFTER 5
                 {
@@ -205,6 +188,18 @@ namespace FinalProjectWorkspace.Controllers
             {
                 showingPrice -= 2;
                 ticketIn.DiscountAmount += 2;
+
+                if (ticketIn.DiscountName == DiscountNames.Manitee)
+                {
+                    ticketIn.DiscountName = DiscountNames.Manitee_and_Senior;
+                }
+                else if (ticketIn.DiscountName == DiscountNames.Tuesday_Discount)
+                {
+                    ticketIn.DiscountName = DiscountNames.Tuesday_and_Senior;
+                } else
+                {
+                    ticketIn.DiscountName = DiscountNames.Senior_Discounts;
+                }
             }
 
             return showingPrice;
@@ -370,7 +365,7 @@ namespace FinalProjectWorkspace.Controllers
             _context.Ticket.Remove(ticket);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Details", "Orders", new { id = ticket.Order.OrderID });
+            return RedirectToAction("Details", "Order", new { id = ticket.Order.OrderID });
         }
 
         private bool TicketExists(int id)

@@ -8734,7 +8734,7 @@
       "outputPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/slomeli/.config/NuGet/NuGet.Config"
+        "/Users/slomeli/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

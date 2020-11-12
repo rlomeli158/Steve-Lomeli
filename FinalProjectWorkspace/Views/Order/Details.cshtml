@@ -54,6 +54,7 @@
         <th>Seat Number</th>
         <th>Ticket Price</th>
         <th>Discount Amount</th>
+        <th>Discount Name</th>
         <th>Total Cost</th>
     </tr>
     @foreach (Ticket t in Model.Tickets)
@@ -63,6 +64,25 @@
             <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
             <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
             <td>@Html.DisplayFor(ModelItem => t.DiscountAmount)</td>
+            @if (t.DiscountName == DiscountNames.Manitee)
+            {
+                <td>Manitee</td>
+            } else if (t.DiscountName == DiscountNames.Tuesday_Discount)
+            {
+                <td>Discount Tuesday</td>
+            } else if (t.DiscountName == DiscountNames.Senior_Discounts)
+            {
+                <td>Senior</td>
+            } else if (t.DiscountName == DiscountNames.Manitee_and_Senior)
+            {
+                <td>Manitee &amp; Senior</td>
+            } else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
+            {
+                <td>Discount Tuesday &amp; Senior</td>
+            } else
+            {
+                <td>None</td>
+            }
             <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
         </tr>
     }
@@ -85,7 +105,6 @@
         <td>Order Total:</td>
         <td>@Html.DisplayFor(model => model.OrderTotal)</td>
     </tr>
-
 </table>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.OrderID">Edit</a> |
