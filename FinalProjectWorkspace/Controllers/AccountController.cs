@@ -172,25 +172,102 @@ namespace FinalProjectWorkspace.Controllers
         }
 
 
-        [Authorize]
-        public async Task<IActionResult> EditAccount(String id)
+        [Authorize]
+        public IActionResult EditAccount(String id)
         {
             if (id == null)
             {
                 return View("Error");
             }
-            var appuser = await _userManager.FindByIdAsync(id);
-            if (appuser == null)
+
+            EditViewModel evm = new EditViewModel();
+
+            //get user info
+            id = User.Identity.Name;
+            AppUser user = _context.Users.FirstOrDefault(u => u.UserName == id);
+
+            //populate the view model
+            //(i.e. map the domain model to the view model)
+            evm.Email = user.UserName;
+            evm.UserID = user.Id;
+            evm.FirstName = user.FirstName;
+            evm.MiddleInitial = user.MiddleInitial;
+            evm.LastName = user.LastName;
+            evm.Address = user.Address;
+            evm.City = user.City;
+            evm.State = user.State;
+            evm.Zip = user.Zip;
+            evm.Birthday = user.Birthday;
+            evm.PhoneNumber = user.PhoneNumber;
+            evm.PCPBalance = user.PCPBalance;
+
+
+            if (user == null)
             {
                 return NotFound();
             }
-            return View(appuser);
+            return View(evm);
 
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditAccount(EditViewModel evm)
+        {
+            if (evm.UserID == null)
+            {
+                return View("Error");
+            }
 
+            if (ModelState.IsValid)
+            {
+                AppUser user = _context.Users.FirstOrDefault(u => u.Id == evm.UserID);
+
+                user.Email = evm.Email;
+                user.Id = evm.UserID;
+                user.FirstName = evm.FirstName;
+                user.MiddleInitial = evm.MiddleInitial;
+                user.LastName = evm.LastName;
+                user.Address = evm.Address;
+                user.City = evm.City;
+                user.State = evm.State;
+                user.Zip = evm.Zip;
+                user.Birthday = evm.Birthday;
+                user.PhoneNumber = evm.PhoneNumber;
+                user.PCPBalance = evm.PCPBalance;
+
+                await _userManager.UpdateAsync(user);
+                await _context.SaveChangesAsync();
+                /*
+                try
+                {
+                    AppUser user = _context.Users.FirstOrDefault(u => u.Id == evm.UserID);
+
+                    await _userManager.UpdateAsync(user);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!UserExists(user.Id))
+                    {
+                        return View("Error");
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                */
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(evm);
+        }
+
+        /*
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
@@ -205,6 +282,8 @@ namespace FinalProjectWorkspace.Controllers
             {
                 try
                 {
+
+
                     await _userManager.UpdateAsync(appuser);
                     await _context.SaveChangesAsync();
                 }
@@ -224,6 +303,7 @@ namespace FinalProjectWorkspace.Controllers
             
             return View(appuser);
         }
+        */
 
         private bool UserExists(String id)
         {

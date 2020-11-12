@@ -51,7 +51,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser2, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser2, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser2, "Customer");
 			}
 			db.SaveChanges();
 
@@ -85,7 +85,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser3, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser3, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser3, "Customer");
 			}
 			db.SaveChanges();
 
@@ -119,7 +119,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser4, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser4, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser4, "Customer");
 			}
 			db.SaveChanges();
 
@@ -153,7 +153,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser5, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser5, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser5, "Customer");
 			}
 			db.SaveChanges();
 
@@ -187,7 +187,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser6, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser6, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser6, "Customer");
 			}
 			db.SaveChanges();
 
@@ -221,7 +221,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser7, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser7, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser7, "Customer");
 			}
 			db.SaveChanges();
 
@@ -255,7 +255,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser8, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser8, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser8, "Customer");
 			}
 			db.SaveChanges();
 
@@ -289,7 +289,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser9, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser9, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser9, "Customer");
 			}
 			db.SaveChanges();
 
@@ -323,7 +323,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser10, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser10, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser10, "Customer");
 			}
 			db.SaveChanges();
 
@@ -357,7 +357,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser11, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser11, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser11, "Customer");
 			}
 			db.SaveChanges();
 
@@ -391,7 +391,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser12, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser12, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser12, "Customer");
 			}
 			db.SaveChanges();
 
@@ -425,7 +425,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser13, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser13, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser13, "Customer");
 			}
 			db.SaveChanges();
 
@@ -459,7 +459,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser14, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser14, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser14, "Customer");
 			}
 			db.SaveChanges();
 
@@ -493,7 +493,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser15, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser15, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser15, "Customer");
 			}
 			db.SaveChanges();
 
@@ -527,7 +527,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser16, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser16, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser16, "Customer");
 			}
 			db.SaveChanges();
 
@@ -561,7 +561,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser17, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser17, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser17, "Customer");
 			}
 			db.SaveChanges();
 
@@ -595,7 +595,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser18, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser18, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser18, "Customer");
 			}
 			db.SaveChanges();
 
@@ -629,7 +629,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser19, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser19, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser19, "Customer");
 			}
 			db.SaveChanges();
 
@@ -663,7 +663,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser20, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser20, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser20, "Customer");
 			}
 			db.SaveChanges();
 
@@ -697,7 +697,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser21, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser21, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser21, "Customer");
 			}
 			db.SaveChanges();
 
@@ -731,7 +731,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser22, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser22, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser22, "Customer");
 			}
 			db.SaveChanges();
 
@@ -765,7 +765,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser23, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser23, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser23, "Customer");
 			}
 			db.SaveChanges();
 
@@ -799,7 +799,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser24, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser24, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser24, "Customer");
 			}
 			db.SaveChanges();
 
@@ -833,7 +833,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser25, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser25, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser25, "Customer");
 			}
 			db.SaveChanges();
 
@@ -867,7 +867,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser26, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser26, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser26, "Customer");
 			}
 			db.SaveChanges();
 
@@ -901,7 +901,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser27, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser27, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser27, "Customer");
 			}
 			db.SaveChanges();
 
@@ -935,7 +935,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser28, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser28, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser28, "Customer");
 			}
 			db.SaveChanges();
 
@@ -969,7 +969,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser29, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser29, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser29, "Customer");
 			}
 			db.SaveChanges();
 
@@ -1003,7 +1003,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser30, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser30, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser30, "Customer");
 			}
 			db.SaveChanges();
 
@@ -1037,7 +1037,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser31, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser31, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser31, "Customer");
 			}
 			db.SaveChanges();
 
@@ -1071,7 +1071,7 @@ namespace FinalProjectWorkspace.Seeding
 			}
 			if (await _userManager.IsInRoleAsync(newCustUser32, "Customer") == false)
 			{
-				await _userManager.IsInRoleAsync(newCustUser32, "Customer");
+				await _userManager.AddToRoleAsync(newCustUser32, "Customer");
 			}
 			db.SaveChanges();
 		}

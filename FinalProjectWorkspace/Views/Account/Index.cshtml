@@ -49,5 +49,7 @@
             [@Html.ActionLink("Change your password", "ChangePassword")]
         </dd>
         <a asp-action="EditAccount" asp-route-id="@Model.UserID" class="btn btn-outline-primary text-center">Edit Account</a>
+        <a asp-action="ChangePassword" asp-route-id="@Model.UserID" class="btn btn-outline-primary text-center">Change password</a>
+
     </dl>
 </div>

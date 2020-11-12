@@ -10764,3 +10764,20 @@ div.video {
 .video {
     width: 100% /* More than element */;
 }
+
+/* USE THESE 4 TO CHANGE LINK COLORS*/
+a {
+    color: green;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: green;
+}

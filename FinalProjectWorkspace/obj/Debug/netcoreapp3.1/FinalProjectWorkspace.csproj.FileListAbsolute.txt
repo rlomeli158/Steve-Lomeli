@@ -114,8 +114,6 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Data.SqlClient.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -124,9 +122,7 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Core.dll
@@ -148,13 +144,6 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/sni.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/sni.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/sni.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
-/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
@@ -253,8 +242,6 @@
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Data.SqlClient.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -263,9 +250,7 @@
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Core.dll
@@ -287,13 +272,6 @@
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/sni.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/sni.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/sni.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Account/ChangePassword.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Account/Index.cshtml.g.cs
@@ -302,7 +280,6 @@
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/CancelledOrderConfirmed.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/EmployeeHomeView.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/ManagerHomeView.cshtml.g.cs
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderConfirmed.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/RoleAdmin/Create.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/RoleAdmin/Edit.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/RoleAdmin/Index.cshtml.g.cs
@@ -660,3 +637,138 @@
 /Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderConfirmed.cshtml.g.cs
 /Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderCheckout.cshtml.g.cs
 /Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderTotals.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Account/EditAccount.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderCheckout.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderTotals.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Create.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Delete.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Details.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Edit.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Index.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Humanizer.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.Razor.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.Workspaces.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/dotnet-aspnet-codegenerator-design.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/NuGet.Frameworks.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.ComponentModel.Annotations.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Composition.AttributedModel.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Composition.Convention.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Composition.Hosting.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Composition.Runtime.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Composition.TypedParts.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Account/EditAccount.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/MovieDetails.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderCheckout.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/OrderTotals.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Home/Seats.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Browse.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Create.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Delete.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Details.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Edit.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/Index.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/SearchResults.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Create.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Delete.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Details.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Edit.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Index.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Humanizer.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.ComponentModel.Annotations.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Create.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Delete.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Details.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Edit.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Index.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Showing/Create.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Showing/Delete.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Showing/Details.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Showing/Edit.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Showing/Index.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/CompleteOrder.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Confirmed.cshtml.g.cs

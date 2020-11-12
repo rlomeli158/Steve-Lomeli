@@ -6,13 +6,26 @@ using System.Threading.Tasks;
 
 namespace FinalProjectWorkspace.Models
 {
+    public enum DiscountNames
+    {
+        None,
+        Manitee,
+        Tuesday_Discount,
+        Senior_Discounts,
+        Tuesday_and_Senior,
+        Manitee_and_Senior
+    }
+
     //Should be individual tickets
     public class Ticket
     {
         public Int32 TicketID { get; set; }
 
         public Decimal TicketPrice { get; set; }
-        public Decimal? DiscountAmount { get; set; } //This is how you set a field as nullable, right? Because
+
+        public DiscountNames DiscountName { get; set; }
+
+        public Decimal DiscountAmount { get; set; } //This is how you set a field as nullable, right? Because
                                                      //some people won't have discounts?
         public Decimal TotalCost { get; set; }
 
