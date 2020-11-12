@@ -1,33 +1,54 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Order/CompleteOrder.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Order/Details.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Showing/Details.cshtml" Line="58" Column="81" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="112" Column="2" />
-      <File FileName="FinalProjectWorkspace/Views/Order/CompleteOrder.cshtml" Line="108" Column="7" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="25" Column="58" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Index.cshtml" />
+      <File FileName="FinalProjectWorkspace/Program.cs" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Genre.cs" />
+      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" />
+      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" />
+      <File FileName="FinalProjectWorkspace/Migrations/20201106194352_Setup.cs" />
+      <File FileName="FinalProjectWorkspace/wwwroot/css/bootstrap.css" />
+      <File FileName="FinalProjectWorkspace/Views/Home/MovieDetails.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Edit.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Seats.cshtml" />
+      <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery/jquery.js" />
+      <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery/general.js" />
+      <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery.seat-charts.js" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Index.cshtml" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" />
+      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Edit.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Delete.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Create.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Delete.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Home/OrderTotals.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="DAL" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="MovieController.cs" selected="True" />
               </Node>
-              <Node name="Seeding" expanded="True" />
-              <Node name="Utilities" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Order" expanded="True">
-                  <Node name="CompleteOrder.cshtml" selected="True" />
-                </Node>
-                <Node name="Showing" expanded="True" />
-                <Node name="Ticket" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
+                <Node name="Movie" expanded="True" />
+                <Node name="Order" expanded="True" />
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -36,7 +57,6 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
