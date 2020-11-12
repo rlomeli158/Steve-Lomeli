@@ -45,8 +45,30 @@ namespace FinalProjectWorkspace.Controllers
             return slAllShowings;
         }
 
+        private SelectList GetAllShowingsWithID(int showingID)
+        {
+            //create a list for all the courses
+            List<Showing> allShowings = _context.Showings.Include(s => s.Movie).ToList();
+
+            //All showings that match the showing ID passed in
+            List<Showing> possibleShowings = _context.Showings.Where(sh => sh.ShowingID == showingID).ToList();
+
+            //the user MUST select a course, so you don't need a dummy option for no course
+            Int32 selectedShowingID = 0;
+
+            foreach (Showing s in possibleShowings)
+            {
+                selectedShowingID = s.ShowingID;
+            }
+
+            //use the constructor on select list to create a new select list with the options
+            SelectList slAllShowings = new SelectList(allShowings, nameof(Showing.ShowingID), nameof(Showing.StartTime), selectedShowingID);
+
+            return slAllShowings;
+        }
+
         // GET: Ticket/Create
-        public IActionResult Create(int orderID)
+        public IActionResult Create(int orderID, int? showingID)
         {
             //create a new instance of the RegistrationDetail class
             Ticket t = new Ticket();
@@ -57,8 +79,16 @@ namespace FinalProjectWorkspace.Controllers
             //set the new registration detail's registration equal to the registration you just found
             t.Order = dbOrder;
 
-            //populate the ViewBag with a list of existing courses
-            ViewBag.AllShowings = GetAllShowings();
+            if (showingID == null)
+            {
+                //populate the ViewBag with a list of existing courses
+                ViewBag.AllShowings = GetAllShowings();
+            }
+            else
+            {
+                //populate the ViewBag with a list of existing courses
+                ViewBag.AllShowings = GetAllShowingsWithID((int)showingID);
+            }
 
             //pass the newly created registration detail to the view
             return View(t);

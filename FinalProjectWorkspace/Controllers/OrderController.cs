@@ -71,8 +71,10 @@ namespace FinalProjectWorkspace.Controllers
 
         // GET: Order/Create
         [Authorize(Roles = "Customer")]
-        public IActionResult Create()
+        public IActionResult Create(int? showingID)
         {
+
+
             return View();
         }
 
@@ -82,7 +84,7 @@ namespace FinalProjectWorkspace.Controllers
         [Authorize(Roles = "Customer")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OrderID,TransactionNumber,OrderDate,OrderStatus")] Order order)
+        public async Task<IActionResult> Create([Bind("OrderID,TransactionNumber,OrderDate,OrderStatus")] Order order, int? showingID)
         {
             //TODO: Set order number automatically
             order.TransactionNumber = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
@@ -111,8 +113,15 @@ namespace FinalProjectWorkspace.Controllers
             //send the user on to the action that will allow them to 
             //create a registration detail.  Be sure to pass along the RegistrationID
             //that you created when you added the registration to the database above
-            return RedirectToAction("Create", "Ticket", new { orderID = order.OrderID });
-           
+            if (showingID == null)
+            {
+                return RedirectToAction("Create", "Ticket", new { orderID = order.OrderID});
+
+            } else
+            {
+                return RedirectToAction("Create", "Ticket", new { orderID = order.OrderID, showingID });
+            }
+
         }
 
         // GET: Order/Edit/5

@@ -55,6 +55,10 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ShowingID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.ShowingID" class="btn btn-success">Edit</a> 
+    <form asp-controller="Order" asp-action="Create" method="post">
+        <input type="hidden" asp-for="ShowingID" />
+        <input type="submit" value="Create" class="btn btn-info" />
+    </form>
+    <a asp-action="Index" class="btn btn-danger">Back to List</a>
 </div>
