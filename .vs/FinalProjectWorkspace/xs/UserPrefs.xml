@@ -1,12 +1,6 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Price.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="169" Column="38" />
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Ticket/Create.cshtml" Line="16" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Ticket/Edit.cshtml" Line="15" Column="52" />
       <File FileName="FinalProjectWorkspace/Models/Price.cs" Line="1" Column="1" />
     </Files>
     <Pads>
@@ -18,6 +12,7 @@
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
                 <Node name="Price.cs" selected="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
@@ -39,10 +34,7 @@
   <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/OrderController.cs" relfile="FinalProjectWorkspace/Controllers/OrderController.cs" line="94" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/OrderController.cs" relfile="FinalProjectWorkspace/Controllers/OrderController.cs" line="96" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
