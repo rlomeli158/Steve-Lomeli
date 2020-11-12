@@ -42,5 +42,15 @@ namespace FinalProjectWorkspace.Models
 
         public Movie Movie { get; set; }
         public List<Ticket> Tickets { get; set; }
+
+        public Showing()
+        {
+            if (Tickets == null)
+            {
+                Tickets = new List<Ticket>();
+            }
+
+        }
     }
+
 }

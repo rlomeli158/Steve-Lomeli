@@ -1,0 +1,70 @@
+@model IEnumerable<FinalProjectWorkspace.Models.Showing>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover text-center">
+    <thead>
+        <tr class="text-light text-center">
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Theatre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatsAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialEvent)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-secondary text-center text-dark">
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Theatre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatsAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialEvent)
+            </td>
+            <td>
+                <span style="color:white">
+                    <a asp-action="Edit" asp-route-id="@item.ShowingID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ShowingID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ShowingID">Delete</a>
+                </span>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

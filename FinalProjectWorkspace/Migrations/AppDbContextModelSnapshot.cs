@@ -15,9 +15,9 @@ namespace FinalProjectWorkspace.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.0");
 
             modelBuilder.Entity("FinalProjectWorkspace.Models.AppUser", b =>
                 {
@@ -43,8 +43,8 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(256)")
-                        .HasMaxLength(256);
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -68,12 +68,12 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(256)")
-                        .HasMaxLength(256);
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(256)")
-                        .HasMaxLength(256);
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<int>("PCPBalance")
                         .HasColumnType("int");
@@ -98,8 +98,8 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(256)")
-                        .HasMaxLength(256);
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Zip")
                         .IsRequired()
@@ -108,11 +108,11 @@ namespace FinalProjectWorkspace.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
-                        .HasName("EmailIndex");
+                        .HasDatabaseName("EmailIndex");
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasName("UserNameIndex")
+                        .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
@@ -123,7 +123,7 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("GenreID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("GenreName")
                         .HasColumnType("nvarchar(max)");
@@ -138,7 +138,7 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("MovieID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("Actors")
                         .HasColumnType("nvarchar(max)");
@@ -182,7 +182,7 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("MovieReviewID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<bool>("ApprovalStatus")
                         .HasColumnType("bit");
@@ -216,7 +216,7 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("OrderID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
@@ -224,8 +224,8 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("OrderStatus")
-                        .HasColumnType("bit");
+                    b.Property<string>("OrderStatus")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PurchaserId")
                         .HasColumnType("nvarchar(450)");
@@ -247,12 +247,30 @@ namespace FinalProjectWorkspace.Migrations
                     b.ToTable("Order");
                 });
 
+            modelBuilder.Entity("FinalProjectWorkspace.Models.Price", b =>
+                {
+                    b.Property<int>("PriceID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<decimal>("PriceAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("PriceName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PriceID");
+
+                    b.ToTable("Prices");
+                });
+
             modelBuilder.Entity("FinalProjectWorkspace.Models.Showing", b =>
                 {
                     b.Property<int>("ShowingID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
@@ -287,13 +305,16 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("TicketID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<decimal?>("DiscountAmount")
+                    b.Property<decimal>("DiscountAmount")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("DiscountName")
+                        .HasColumnType("int");
 
                     b.Property<int?>("OrderID")
                         .HasColumnType("int");
@@ -334,18 +355,18 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(256)")
-                        .HasMaxLength(256);
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedName")
-                        .HasColumnType("nvarchar(256)")
-                        .HasMaxLength(256);
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasName("RoleNameIndex")
+                        .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
@@ -356,7 +377,7 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -380,7 +401,7 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -460,6 +481,8 @@ namespace FinalProjectWorkspace.Migrations
                     b.HasOne("FinalProjectWorkspace.Models.Genre", "Genre")
                         .WithMany("Movies")
                         .HasForeignKey("GenreID");
+
+                    b.Navigation("Genre");
                 });
 
             modelBuilder.Entity("FinalProjectWorkspace.Models.MovieReview", b =>
@@ -471,6 +494,10 @@ namespace FinalProjectWorkspace.Migrations
                     b.HasOne("FinalProjectWorkspace.Models.AppUser", "User")
                         .WithMany("MovieReviews")
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Movie");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("FinalProjectWorkspace.Models.Order", b =>
@@ -486,6 +513,10 @@ namespace FinalProjectWorkspace.Migrations
                     b.HasOne("FinalProjectWorkspace.Models.AppUser", "Recipient")
                         .WithMany("OrdersReceived")
                         .HasForeignKey("RecipientId");
+
+                    b.Navigation("Purchaser");
+
+                    b.Navigation("Recipient");
                 });
 
             modelBuilder.Entity("FinalProjectWorkspace.Models.Showing", b =>
@@ -493,6 +524,8 @@ namespace FinalProjectWorkspace.Migrations
                     b.HasOne("FinalProjectWorkspace.Models.Movie", "Movie")
                         .WithMany("Showings")
                         .HasForeignKey("MovieID");
+
+                    b.Navigation("Movie");
                 });
 
             modelBuilder.Entity("FinalProjectWorkspace.Models.Ticket", b =>
@@ -508,6 +541,10 @@ namespace FinalProjectWorkspace.Migrations
                     b.HasOne("FinalProjectWorkspace.Models.Showing", "Showing")
                         .WithMany("Tickets")
                         .HasForeignKey("ShowingID");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Showing");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -559,6 +596,41 @@ namespace FinalProjectWorkspace.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FinalProjectWorkspace.Models.AppUser", b =>
+                {
+                    b.Navigation("MovieReviews");
+
+                    b.Navigation("Orders");
+
+                    b.Navigation("OrdersPurchased");
+
+                    b.Navigation("OrdersReceived");
+
+                    b.Navigation("Tickets");
+                });
+
+            modelBuilder.Entity("FinalProjectWorkspace.Models.Genre", b =>
+                {
+                    b.Navigation("Movies");
+                });
+
+            modelBuilder.Entity("FinalProjectWorkspace.Models.Movie", b =>
+                {
+                    b.Navigation("MovieReviews");
+
+                    b.Navigation("Showings");
+                });
+
+            modelBuilder.Entity("FinalProjectWorkspace.Models.Order", b =>
+                {
+                    b.Navigation("Tickets");
+                });
+
+            modelBuilder.Entity("FinalProjectWorkspace.Models.Showing", b =>
+                {
+                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }

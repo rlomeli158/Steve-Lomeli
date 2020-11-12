@@ -5,32 +5,115 @@
 }
 
 <h1>Details</h1>
-
-<div>
-    <h4>Order</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TransactionNumber)
-        </dt>
-        <dd class = "col-sm-10">
+<div class="list-group">
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.TransactionNumber)
+            </h5>
+        </div>
+        <p class="mb-1">
             @Html.DisplayFor(model => model.TransactionNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderDate)
-        </dt>
-        <dd class = "col-sm-10">
+        </p>
+    </a>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </h5>
+        </div>
+        <p class="mb-1">
             @Html.DisplayFor(model => model.OrderDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderStatus)
-        </dt>
-        <dd class = "col-sm-10">
+        </p>
+    </a>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </h5>
+        </div>
+        <p class="mb-1">
             @Html.DisplayFor(model => model.OrderStatus)
-        </dd>
-    </dl>
+        </p>
+    </a>
 </div>
+
+<hr style="border:1px solid white" />
+
+<h5>Tickets on this Order</h5>
+<table class="table table-hover text-center">
+    <tr class="text-light text-center">
+        <th>Movie Title</th>
+        <th>Seat Number</th>
+        <th>Ticket Price</th>
+        <th>Discount Amount</th>
+        <th>Discount Name</th>
+        <th>Total Cost</th>
+    </tr>
+    @foreach (Ticket t in Model.Tickets)
+    {
+        <tr class="table-secondary text-center text-dark">
+            <td>@Html.DisplayFor(ModelItem => t.Showing.Movie.Title)</td>
+            <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
+            <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
+            <td>@Html.DisplayFor(ModelItem => t.DiscountAmount)</td>
+            @if (t.DiscountName == DiscountNames.Manitee)
+            {
+                <td>Manitee</td>
+            }
+            else if (t.DiscountName == DiscountNames.Tuesday_Discount)
+            {
+                <td>Discount Tuesday</td>
+            }
+            else if (t.DiscountName == DiscountNames.Senior_Discounts)
+            {
+                <td>Senior</td>
+            }
+            else if (t.DiscountName == DiscountNames.Manitee_and_Senior)
+            {
+                <td>Manitee &amp; Senior</td>
+            }
+            else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
+            {
+                <td>Discount Tuesday &amp; Senior</td>
+            }
+            else
+            {
+                <td>None</td>
+            }
+            <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
+        </tr>
+    }
+</table>
+
+<h5>Order Summary</h5>
+<table class="table-secondary text-dark" style="width:40%; padding:10px">
+    <tr>
+        <th colspan="2" style="text-align:center">Order Summary</th>
+    </tr>
+    <tr>
+        <td>Order Subtotal:</td>
+        <td>@Html.DisplayFor(model => model.OrderSubtotal)</td>
+    </tr>
+    <tr>
+        <td>Taxes:</td>
+        <td>@Html.DisplayFor(model => model.Taxes)</td>
+    </tr>
+    <tr>
+        <td>Order Total:</td>
+        <td>@Html.DisplayFor(model => model.OrderTotal)</td>
+    </tr>
+</table>
+
+@if (Model.OrderStatus == "Active")
+{
+    <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit</a> @:|
+    <a asp-action="CompleteOrder" asp-route-id="@Model.OrderID" class="btn btn-success" >Complete Order</a> @:|
+}
+else
+{
+    <a asp-action="Delete" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a> @:|
+}
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.OrderID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-warning">Back to List</a>
 </div>

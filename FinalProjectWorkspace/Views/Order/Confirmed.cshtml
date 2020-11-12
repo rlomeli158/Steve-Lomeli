@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model FinalProjectWorkspace.Models.Order
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width">
@@ -24,7 +26,9 @@
                 <h5 style="color:darksalmon;">information for future reference.</h5>
                 <br />
                 <br />
-                <h5 style="color:darksalmon;">Confirmation Number: 10001</h5>
+                <h5 style="color:darksalmon;">
+                    @Html.DisplayFor(model => model.TransactionNumber)
+                </h5>
             </center>
         </div>
         <br />
