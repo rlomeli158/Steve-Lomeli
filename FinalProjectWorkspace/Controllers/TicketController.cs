@@ -254,58 +254,42 @@ namespace FinalProjectWorkspace.Controllers
             //find the order on the database that has the correct order id
             //unfortunately, the HTTP request will not contain the entire order object, 
             //just the order id, so we have to find the actual object in the database
-            Order dbOrder = _context.Order.Find(ticket.Order.OrderID);
+            //Order dbOrder = _context.Order.Find(ticket.Order.OrderID);
+
+            //Get tickets, showings, movies
+            Order dbOrder = _context.Order.Include(o => o.Tickets)
+                                          .ThenInclude(o => o.Showing)
+                                          .ThenInclude(o => o.Movie)
+                                          .FirstOrDefault(o => o.OrderID == ticket.Order.OrderID);
+
+            Showing selectedShowing = _context.Showings.Include(s => s.Movie)
+                                                .FirstOrDefault(s => s.ShowingID == SelectedShowing);
+
+            //The selected showing is already on the order
+            if (dbOrder.Tickets.Any(t => t.Showing.Movie == selectedShowing.Movie))
+            {
+                //Finding all the tickets that have the same movie
+                List<Ticket> ticketList = dbOrder.Tickets.Where(t => t.Showing.Movie == selectedShowing.Movie).ToList();
+
+                //The order already contains tickets to this showing
+                if(ticketList.Any(t => t.Showing.ShowingID != selectedShowing.ShowingID))
+                {
+                    return View("Error", new String[] { "There's already a ticket for a different showing on your order!" });
+                }
+
+            }
+
+            //Showings are good, add tickets
+            ticket.Showing = selectedShowing;
 
             //set the registration on the registration detail equal to the registration that we just found
             ticket.Order = dbOrder;
 
             //find the course to be associated with this order
-            Showing dbShowing = _context.Showings.Find(SelectedShowing);
-            Int32 ticketCount = _context.Ticket.Include(t => t.Order).Where(t => t.Order.OrderID == ticket.Order.OrderID).Count();
+            //Showing dbShowing = _context.Showings.Find(SelectedShowing);
+            //TODO: Here is the code to count tickets
+            //Int32 ticketCount = _context.Ticket.Include(t => t.Order).Where(t => t.Order.OrderID == ticket.Order.OrderID).Count();
 
-            if (ticketCount > 1)
-            {
-                dbShowing = _context.Showings.Include(s => s.Movie).Where(s => s.ShowingID == SelectedShowing).First();
-
-                //Movie you're trying to watch
-                Movie dbMovie = _context.Movies.Find(dbShowing.Movie.MovieID);
-
-                //Movies already on the order
-                List<Movie> moviesOnOrder = _context.Movies.Include(m => m.Showings).ThenInclude(m => m.Tickets).ThenInclude(m => m.Order).ToList();
-                moviesOnOrder = _context.Movies.Where(m => m.Showings.Any(s => s.Tickets.Any(t => t.Order.OrderID == dbOrder.OrderID))).ToList();
-
-                if (moviesOnOrder.Contains(dbMovie))
-                {
-                    moviesOnOrder = _context.Movies.Where(m => m.MovieID == dbMovie.MovieID).ToList();
-                    Movie movieToCompare = moviesOnOrder.First();
-                    DateTime movieDate = movieToCompare.Showings.Min(s => s.ShowingDate);
-
-                    if (dbShowing.ShowingDate == movieDate)
-                    {
-                        //set the registration detail's course to be equal to the one we just found
-                        ticket.Showing = dbShowing;
-                    }
-                    else
-                    {
-                        return View("Error", new String[] { "You already have that movie in your cart. Try again!" });
-                    }
-                }else
-                {
-                    //set the registration detail's course to be equal to the one we just found
-                    ticket.Showing = dbShowing;
-                }
-
-            }
-            else
-            {
-                //set the registration detail's course to be equal to the one we just found
-                ticket.Showing = dbShowing;
-            }
-
-
-
-            //set the registration detail's course to be equal to the one we just found
-            //ticket.Showing = dbShowing;
 
             //Get prices depending on day and time
             ticket.DiscountAmount = 0;
