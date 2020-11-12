@@ -35,7 +35,7 @@ namespace FinalProjectWorkspace.Models
         }
 
         [Display(Name = "Status")]
-        public Boolean OrderStatus { get; set; } //Active or inactive in case it was cancelled
+        public String OrderStatus { get; set; } //Active or inactive in case it was cancelled
 
         public List<Ticket> Tickets { get; set; }
 

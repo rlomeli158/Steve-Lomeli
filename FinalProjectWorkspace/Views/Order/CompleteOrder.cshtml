@@ -33,7 +33,7 @@
             </h5>
         </div>
         <p class="mb-1">
-            @Html.DisplayFor(model => model.OrderStatus)
+            @Html.DisplayFor(model => model.OrderDate)
         </p>
     </a>
 </div>
@@ -60,24 +60,19 @@
             @if (t.DiscountName == DiscountNames.Manitee)
             {
                 <td>Manitee</td>
-            }
-            else if (t.DiscountName == DiscountNames.Tuesday_Discount)
+            } else if (t.DiscountName == DiscountNames.Tuesday_Discount)
             {
                 <td>Discount Tuesday</td>
-            }
-            else if (t.DiscountName == DiscountNames.Senior_Discounts)
+            } else if (t.DiscountName == DiscountNames.Senior_Discounts)
             {
                 <td>Senior</td>
-            }
-            else if (t.DiscountName == DiscountNames.Manitee_and_Senior)
+            } else if (t.DiscountName == DiscountNames.Manitee_and_Senior)
             {
                 <td>Manitee &amp; Senior</td>
-            }
-            else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
+            } else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
             {
                 <td>Discount Tuesday &amp; Senior</td>
-            }
-            else
+            } else
             {
                 <td>None</td>
             }
@@ -104,16 +99,10 @@
         <td>@Html.DisplayFor(model => model.OrderTotal)</td>
     </tr>
 </table>
-
-@if (Model.OrderStatus == "Active")
-{
-    <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit</a> @:|
-    <a asp-action="CompleteOrder" asp-route-id="@Model.OrderID" class="btn btn-success" >Complete Order</a> @:|
-}
-else
-{
-    <a asp-action="Delete" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a> @:|
-}
 <div>
+    <form asp-action="CompleteOrder" method="post">
+        <input type="hidden" asp-for="OrderID" />
+        <input type="submit" value="Click here to confirm your Order" class="btn btn-success" />
+    </form>
     <a asp-action="Index" class="btn btn-warning">Back to List</a>
 </div>

@@ -95,7 +95,7 @@ namespace FinalProjectWorkspace.Controllers
             //Associate order with the logged in customer TODO: add logic here for gifting?
             order.Purchaser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
 
-            order.OrderStatus = true;
+            order.OrderStatus = "Active";
 
             //make sure all properties are valid
             if (ModelState.IsValid == false)
@@ -184,6 +184,54 @@ namespace FinalProjectWorkspace.Controllers
 
             //send the user to the Orders Index page.
             return RedirectToAction(nameof(Index));
+        }
+
+        // GET: Order/Edit/5
+        public IActionResult CompleteOrder(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            //Find order in database that corresponds to user
+            Order order = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .FirstOrDefault(o => o.OrderID == id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+            return View(order);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CompleteOrderAsync(Order orderIn)
+        {
+            //Find order in database that corresponds to user
+            Order order = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .FirstOrDefault(o => o.OrderID == orderIn.OrderID);
+
+            order.OrderStatus = "Paid";
+
+            _context.Update(order);
+            await _context.SaveChangesAsync();
+
+            //send the user to the Orders Index page.
+            return RedirectToAction(nameof(Confirmed),order);
+        }
+
+        // GET: Order/Edit/5
+        public IActionResult Confirmed(Order order)
+        { 
+            return View(order);
         }
 
         private bool OrderExists(int id)

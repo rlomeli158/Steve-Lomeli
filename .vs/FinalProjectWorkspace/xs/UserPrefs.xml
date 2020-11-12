@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{AE165347-F329-4DBA-9127-2245C429F13D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Order/CompleteOrder.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="143" Column="114" />
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="118" Column="90" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="90" Column="76" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Delete.cshtml" Line="52" Column="5" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Details.cshtml" Line="58" Column="81" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="112" Column="2" />
+      <File FileName="FinalProjectWorkspace/Views/Order/CompleteOrder.cshtml" Line="108" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,9 +11,7 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="TicketController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
@@ -22,7 +19,10 @@
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Order" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Order" expanded="True">
+                  <Node name="CompleteOrder.cshtml" selected="True" />
+                </Node>
                 <Node name="Showing" expanded="True" />
                 <Node name="Ticket" expanded="True" />
               </Node>

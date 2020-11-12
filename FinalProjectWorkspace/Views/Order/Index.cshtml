@@ -34,14 +34,7 @@
                 @Html.DisplayFor(modelItem => item.OrderDate)
             </td>
             <td>
-                @if (item.OrderStatus == true)
-                {
-                    @:Active
-                }
-                else
-                {
-                    @:Inactive
-                }
+                @Html.DisplayFor(modelItem => item.OrderStatus)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.OrderID">Edit</a> |
