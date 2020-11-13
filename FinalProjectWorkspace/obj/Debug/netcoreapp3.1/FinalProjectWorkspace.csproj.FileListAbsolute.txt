@@ -817,3 +817,8 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Details.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Edit.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Index.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Create.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Delete.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Details.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Edit.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Index.cshtml.g.cs
