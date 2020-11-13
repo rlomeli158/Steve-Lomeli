@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Movie/Details.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Showing/Details.cshtml">
     <Files>
       <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="22" Column="114" IsPinned="True" />
       <File FileName="FinalProjectWorkspace/Views/Order/Create.cshtml" Line="1" Column="1" IsPinned="True" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" Line="17" Column="31" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="21" Column="19" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" Line="32" Column="19" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="33" Column="19" />
       <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" Line="15" Column="36" />
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="135" Column="52" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="112" Column="1" />
       <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="65" Column="37" />
       <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="37" Column="31" />
       <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="1" Column="1" />
@@ -15,6 +15,8 @@
       <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" Line="1" Column="1" />
       <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="20" Column="18" />
       <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="24" Column="60" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Details.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,15 +28,17 @@
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
+              <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
-                <Node name="Movie" expanded="True">
-                  <Node name="Details.cshtml" selected="True" />
-                </Node>
+                <Node name="Movie" expanded="True" />
                 <Node name="MovieReview" expanded="True" />
                 <Node name="Order" expanded="True" />
-                <Node name="Showing" expanded="True" />
+                <Node name="Seed" expanded="True" />
+                <Node name="Showing" expanded="True">
+                  <Node name="Details.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

@@ -31,12 +31,6 @@
                 <span asp-validation-for="StartTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndTime" class="control-label"></label>
-                <input asp-for="EndTime" class="form-control" />
-                <span asp-validation-for="EndTime" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
                 <label asp-for="Theatre" class="control-label"></label>
                 @Html.DropDownList("SelectedTheatre", (SelectList)ViewBag.AllTheatres, new { @class = "form-control" })
                 <span asp-validation-for="Theatre" class="text-danger"></span>

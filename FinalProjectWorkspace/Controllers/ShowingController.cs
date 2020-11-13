@@ -108,6 +108,7 @@ namespace FinalProjectWorkspace.Controllers
 
             Movie dbMovie = _context.Movies.Find(SelectedMovie);
             showing.Movie = dbMovie;
+            showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
 
             //add the showing to the database and save changes
             _context.Add(showing);
@@ -198,7 +199,7 @@ namespace FinalProjectWorkspace.Controllers
                 //update the course's scalar properties
                 dbShowing.ShowingDate = showing.ShowingDate;
                 dbShowing.StartTime = showing.StartTime;
-                dbShowing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
+                dbShowing.EndTime = showing.StartTime.AddMinutes(dbShowing.Movie.RunTime);
                 dbShowing.Theatre = showing.Theatre;
                 dbShowing.SeatsAvailable = showing.SeatsAvailable;
                 dbShowing.SpecialEvent = showing.SpecialEvent;
