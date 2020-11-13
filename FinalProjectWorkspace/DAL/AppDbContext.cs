@@ -20,6 +20,7 @@ namespace FinalProjectWorkspace.DAL
         public DbSet<Price> Prices { get; set; }
         public DbSet<FinalProjectWorkspace.Models.Order> Order { get; set; }
         public DbSet<FinalProjectWorkspace.Models.Ticket> Ticket { get; set; }
+        public DbSet<FinalProjectWorkspace.Models.MovieReview> MovieReview { get; set; }
 
     }
 }
