@@ -1,30 +1,40 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/MovieReview/Edit.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Movie/Details.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" Line="45" Column="41" />
-      <File FileName="FinalProjectWorkspace/Views/Account/Register.cshtml" />
-      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/AccountViewModels.cs" />
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="17" Column="47" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieReviewController.cs" Line="65" Column="52" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Create.cshtml" Line="15" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Edit.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="22" Column="114" IsPinned="True" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Create.cshtml" Line="1" Column="1" IsPinned="True" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" Line="17" Column="31" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="21" Column="19" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" Line="15" Column="36" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="135" Column="52" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="65" Column="37" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="37" Column="31" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/DAL/AppDbContext.cs" Line="15" Column="55" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Create.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="20" Column="18" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
+              </Node>
               <Node name="Views" expanded="True">
-                <Node name="MovieReview" expanded="True">
-                  <Node name="Edit.cshtml" selected="True" />
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Movie" expanded="True">
+                  <Node name="Details.cshtml" selected="True" />
                 </Node>
+                <Node name="MovieReview" expanded="True" />
+                <Node name="Order" expanded="True" />
+                <Node name="Showing" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -33,7 +43,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

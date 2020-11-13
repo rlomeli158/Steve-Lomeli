@@ -10,6 +10,7 @@ using FinalProjectWorkspace.Models;
 
 namespace FinalProjectWorkspace.Controllers
 {
+
     public class ShowingController : Controller
     {
         private readonly AppDbContext _context;
@@ -66,22 +67,37 @@ namespace FinalProjectWorkspace.Controllers
         // GET: Showing/Create
         public IActionResult Create()
         {
+            ViewBag.AllTheatres = GetAllTheatres();
             ViewBag.AllMovies = GetAllMovies();
             return View();
         }
+
+        public SelectList GetAllTheatres()
+        {
+
+            var TheatreSelectList = new SelectList(Enum.GetValues(typeof(Theatre)).Cast<Theatre>().Select(v => new SelectListItem
+            {
+                Text = v.ToString(),
+                Value = ((int)v).ToString()
+            }).ToList(), "Value", "Text");
+
+            return TheatreSelectList;
+        }
+
 
         // POST: Showing/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int SelectedMovies)
+        public async Task<IActionResult> Create([Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int SelectedMovie, int SelectedTheatre)
         {
             //This code has been modified so that if the model state is not valid
             //we immediately go to the "sad path" and give the user a chance to try again
             if (ModelState.IsValid == false)
             {
                 //re-populate the view bag with the departments
+                ViewBag.AllTheatres = GetAllTheatres();
                 ViewBag.AllMovies = GetAllMovies();
                 //go back to the Create view to try again
                 return View(showing);
@@ -90,7 +106,7 @@ namespace FinalProjectWorkspace.Controllers
             //if code gets to this point, we know the model is valid and
             //we can add the showing to the database
 
-            Movie dbMovie = _context.Movies.Find(SelectedMovies);
+            Movie dbMovie = _context.Movies.Find(SelectedMovie);
             showing.Movie = dbMovie;
 
             //add the showing to the database and save changes
@@ -115,7 +131,8 @@ namespace FinalProjectWorkspace.Controllers
                 return NotFound();
             }
 
-            //ViewBag.AllMovies = GetAllMovies(showing.ShowingID);
+            ViewBag.AllMovies = GetAllMovies();
+            ViewBag.AllTheatres = GetAllTheatres();
             return View(showing);
         }
 
@@ -154,7 +171,7 @@ namespace FinalProjectWorkspace.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int[] SelectedMovies)
+        public IActionResult Edit(int id, [Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int SelectedMovie, int SelectedTheatre)
         {
             //this is a security check to see if the user is trying to modify
             //a different record.  Show an error message

@@ -817,3 +817,29 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Details.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Edit.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/Index.cshtml.g.cs
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Create.cshtml.g.cs
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Delete.cshtml.g.cs
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Details.cshtml.g.cs
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Edit.cshtml.g.cs
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Index.cshtml.g.cs
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Data.Sqlite.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Sqlite.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyModel.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/SQLitePCLRaw.batteries_v2.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/SQLitePCLRaw.nativelibrary.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/SQLitePCLRaw.core.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/SQLitePCLRaw.provider.dynamic_cdecl.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/System.Text.Json.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/alpine-x64/native/libe_sqlite3.so
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/linux-arm/native/libe_sqlite3.so
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/linux-arm64/native/libe_sqlite3.so
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/linux-armel/native/libe_sqlite3.so
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/linux-musl-x64/native/libe_sqlite3.so
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/linux-x64/native/libe_sqlite3.so
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/linux-x86/native/libe_sqlite3.so
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/osx-x64/native/libe_sqlite3.dylib
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm/native/e_sqlite3.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/e_sqlite3.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/e_sqlite3.dll
+/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/e_sqlite3.dll
