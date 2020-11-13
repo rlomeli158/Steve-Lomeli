@@ -1,26 +1,26 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Showing/Details.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="15" Column="16" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieReviewController.cs" Line="29" Column="43" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Create.cshtml" Line="16" Column="21" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Edit.cshtml" Line="9" Column="7" />
-      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="44" Column="42" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Index.cshtml" Line="35" Column="58" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Details.cshtml" Line="9" Column="6" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="68" Column="58" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="108" Column="50" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="62" Column="64" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Delete.cshtml" Line="5" Column="2" />
-      <File FileName="FinalProjectWorkspace/Program.cs" Line="16" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="22" Column="114" IsPinned="True" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Create.cshtml" Line="1" Column="1" IsPinned="True" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" Line="32" Column="19" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="33" Column="19" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" Line="15" Column="36" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="112" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="65" Column="37" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="37" Column="31" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/DAL/AppDbContext.cs" Line="15" Column="55" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Create.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="20" Column="18" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="24" Column="60" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Details.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
@@ -28,12 +28,17 @@
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
+              <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
                 <Node name="Movie" expanded="True" />
                 <Node name="MovieReview" expanded="True" />
+                <Node name="Order" expanded="True" />
+                <Node name="Seed" expanded="True" />
+                <Node name="Showing" expanded="True">
+                  <Node name="Details.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -42,7 +47,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
