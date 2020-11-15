@@ -257,6 +257,41 @@ namespace FinalProjectWorkspace.Controllers
             return View(order);
         }
 
+        public async Task<IActionResult> Cancelled(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+
+            //Find order in database that corresponds to user
+            Order order = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .FirstOrDefault(o => o.OrderID == id);
+
+            //if code gets this far, update the record
+            try
+            {
+                //find the record in the database
+                //Order dbOrder = _context.Order.Find(order.OrderID);
+
+                //update the order status to cancelled
+                order.OrderStatus = "Cancelled";
+
+                _context.Update(order);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was an error updating this order!", ex.Message });
+            }
+
+            //send the user to the Orders Index page.
+            return View(order);
+        }
+
         private bool OrderExists(int id)
         {
             return _context.Order.Any(e => e.OrderID == id);

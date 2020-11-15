@@ -1,9 +1,14 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Order/Details.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="216" Column="17" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="120" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="260" Column="51" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="144" Column="29" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Home/CancelledOrderConfirmed.cshtml" Line="37" Column="79" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Confirmed.cshtml" Line="40" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Index.cshtml" Line="44" Column="113" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,10 +19,11 @@
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Order" expanded="True">
-                  <Node name="Details.cshtml" selected="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Order" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
                 </Node>
-                <Node name="Shared" expanded="True" />
                 <Node name="Ticket" expanded="True" />
               </Node>
             </Node>

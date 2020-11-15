@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model FinalProjectWorkspace.Models.Order
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width">
@@ -21,17 +23,18 @@
                 <br />
                 <br />
                 <h5 style="color:darksalmon;">Your tickets are now cancelled! Please keep the following</h5>
-                <h5 style="color:darksalmon;">information for future reference.</h5>
+                <h5 style="color:darksalmon;">transaction number for future reference.</h5>
                 <br />
                 <br />
-                <h5 style="color:darksalmon;">Confirmation Number: 10001</h5>
+                <h5 style="color:darksalmon;">Transaction Number: @Html.DisplayFor(model => model.TransactionNumber)</h5>
             </center>
         </div>
         <br />
         <br />
         <div>
             <center>
-                <a class="btn btn-primary" asp-action="Index">Go Back to Home</a>
+                <a class="btn btn-primary" asp-controller="Order" asp-action="Index">Go Back to Orders</a>
+                <a class="btn btn-primary" asp-action="Index">Go Back Home</a>
             </center>
         </div>
 

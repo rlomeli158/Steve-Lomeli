@@ -37,9 +37,12 @@
                 @Html.DisplayFor(modelItem => item.OrderStatus)
             </td>
             <td>
-                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.OrderID">Edit</a>
-                <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.OrderID">Details</a>
-                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.OrderID">Delete</a>
+                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.OrderID">Edit Tickets</a>
+                <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.OrderID">View</a>
+                @if (item.OrderStatus == "Paid")
+                {
+                    <a class="btn btn-outline-danger" asp-action="Cancelled" asp-route-id="@item.OrderID">Cancel</a>
+                }
             </td>
         </tr>
 }

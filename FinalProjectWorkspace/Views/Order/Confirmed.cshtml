@@ -27,7 +27,7 @@
                 <br />
                 <br />
                 <h5 style="color:darksalmon;">
-                    @Html.DisplayFor(model => model.TransactionNumber)
+                    Transaction Number: @Html.DisplayFor(model => model.TransactionNumber)
                 </h5>
             </center>
         </div>
@@ -35,7 +35,9 @@
         <br />
         <div class="text-center">
             <center>
-                <a class="btn btn-outline-primary" asp-action="Index">Go Back to Home</a>
+                <a class="btn btn-primary" asp-controller="Order" asp-action="Index">Go Back to Orders</a>
+                <a class="btn btn-primary" asp-action="Index">Go Back Home</a>
+
             </center>
         </div>
 
