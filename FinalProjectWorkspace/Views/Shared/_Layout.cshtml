@@ -26,10 +26,22 @@
                     <li class="nav-item"><a asp-controller="Home" asp-action="OrderCheckout" class="nav-link">OrderCheckout</a></li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                        @if (User.IsInRole("Manager"))
                         {
                             <li class="nav-item">
                                 <a asp-controller="RoleAdmin" asp-action="Index" class="nav-link">Manage Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Home" asp-action="ManagerHomeView" class="nav-link">Manager Home</a>
+                            </li>
+                        }
+                        else if (User.IsInRole("Employee"))
+                        {
+                            <li class="nav-item">
+                                <a asp-controller="RoleAdmin" asp-action="Index" class="nav-link">Manage Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Home" asp-action="EmployeeHomeView" class="nav-link">Employee Home</a>
                             </li>
                         }
                     }
@@ -39,10 +51,14 @@
 
             @await Html.PartialAsync("_LoginPartial")
 
-            <form asp-controller="Movie" asp-action="DisplaySearchResults" class="form-inline my-2 my-lg-0">
+            <!--
+                <form asp-controller="Movie" asp-action="DisplaySearchResults" class="form-inline my-2 my-lg-0">
                 <input class="form-control" placeholder="Search Movies" />
                 <span class="text-danger"></span>
-            </form>
+                </form>
+
+                -->
+
 
 
 

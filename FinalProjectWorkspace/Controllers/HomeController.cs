@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -253,12 +254,14 @@ namespace FinalProjectWorkspace.Controllers
 
 
         // Views Employee Home After Login
+        [Authorize(Roles = "Manager,Employee")]
         public IActionResult EmployeeHomeView()
         {
             return View();
         }
 
         // Views Manager Home After Login
+        [Authorize(Roles = "Manager")]
         public IActionResult ManagerHomeView()
         {
             return View();

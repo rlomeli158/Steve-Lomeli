@@ -44,6 +44,10 @@ namespace FinalProjectWorkspace.Models
         [Required(ErrorMessage = "Please enter your birthday!")]
         public DateTime Birthday { get; set; }
 
+
+        [Display(Name = "Account State")]
+        public bool AccountStatus { get; set; }
+
         //do not store password since it is inherited
 
         [Display(Name = "Popcorn Point Balance")]

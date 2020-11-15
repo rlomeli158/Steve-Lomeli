@@ -120,12 +120,16 @@ namespace FinalProjectWorkspace.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        [Display(Name = "Account State")]
+        public bool AccountStatus { get; set; }
     }
 
     //NOTE: This is the view model used to allow the user to 
     //change their password
     public class ChangePasswordViewModel
     {
+        public String UserID { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]
@@ -167,6 +171,8 @@ namespace FinalProjectWorkspace.Models
         public DateTime Birthday { get; set; }
         [Display(Name = "Popcorn Points Balance")]
         public Int32 PCPBalance { get; set; }
+        [Display(Name = "Account State")]
+        public bool AccountStatus { get; set; }
     }
 
     public class EditViewModel
@@ -219,6 +225,9 @@ namespace FinalProjectWorkspace.Models
         [Required(ErrorMessage = "Please enter your birthday!")]
         [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
         public DateTime Birthday { get; set; }
+
+        [Display(Name = "Account State")]
+        public bool AccountStatus { get; set; }
 
         [Display(Name = "Popcorn Point Balance")]
         public Int32 PCPBalance { get; set; }
