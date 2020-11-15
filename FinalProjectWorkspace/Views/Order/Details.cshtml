@@ -120,23 +120,25 @@
 @if (Model.OrderStatus == "Active")
 {
     <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit</a>
-    @if (Model.OrderTotal > 0)
+    @if (Model.OrderTotal > 0 && Model.OrderStatus != "Paid")
     {
-        <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
-            <input type="hidden" asp-for="OrderID" />
-                @Html.Hidden("PaidWithPopcornPoints", false)
-                @{Model.PaidWithPopcornPoints = false;}
-            <input type="submit" value="Click here to pay with cash" class="btn btn-success" />
-        </form>
-        @if (Model.Purchaser.PCPBalance >= Model.OrderTotal && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
-        {
-            <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
-                <input type="hidden" asp-for="OrderID" />
-                @Html.Hidden("PaidWithPopcornPoints", true)
-                @{Model.PaidWithPopcornPoints = true;}
-                <input type="submit" value="Click here to pay with popcorn points" class="btn btn-success" />
-            </form>
-        }
+    <br />
+    <div class="float-right">
+    <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
+        <input type="hidden" asp-for="OrderID" />
+        <label asp-for="Recipient.UserName" class="control-label">Email of Gift Recipient</label>
+        <input asp-for="Recipient.UserName" class="form-control" placeholder="Recipient's Email" />
+        <div class="float-left">
+            @if (Model.Purchaser.PCPBalance >= Model.OrderTotal && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
+            {
+                <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
+                <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true checked="checked" /> @:Popcorn Points<br />
+                <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false /> @:Cash<br />
+            }
+            <input type="submit" value="Pay" class="btn btn-success" />
+        </div>
+    </form>
+    </div>
     }
 }
 else
@@ -144,5 +146,5 @@ else
     <a asp-action="Cancelled" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a> @:|
 }
 <div>
-    <a asp-action="Index" class="btn btn-warning">Back to List</a>
+    <a asp-action="Index" class="btn btn-warning">Back to Order History</a>
 </div>

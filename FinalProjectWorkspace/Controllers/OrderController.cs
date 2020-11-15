@@ -61,7 +61,7 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             //make sure a customer isn't trying to look at someone else's order
-            if (User.IsInRole("Manager") == false && order.Purchaser.UserName != User.Identity.Name)
+            if (User.IsInRole("Manager") == false && order.Purchaser.UserName != User.Identity.Name && order.Recipient.UserName != User.Identity.Name)
             {
                 return View("Error", new string[] { "You are not authorized to edit this order!" });
             }
@@ -187,6 +187,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Order/Edit/5
+        [HttpGet, ActionName("CompleteOrder")]
         public async Task<IActionResult> CompleteOrderAsync(Order orderIn)
         {
             if (orderIn.OrderID == 0)
@@ -217,9 +218,21 @@ namespace FinalProjectWorkspace.Controllers
             {
                 order.PopcornPoints = (int)order.Tickets.Sum(t => t.TransactionPopcornPoints);
                 order.Purchaser.PCPBalance = order.Purchaser.PCPBalance + order.PopcornPoints;
-                _ = order.Purchaser.PCPBalance;
             }
 
+            if (orderIn.Recipient.UserName != null)
+            {
+                AppUser user = _context.Users.Where(u => u.UserName == orderIn.Recipient.UserName).FirstOrDefault();
+                if (user != null)
+                {
+                    order.Recipient = user;
+                } else
+                {
+                    return View("Error", new String[] { "This user doesn't have a Main Street Movies account! Please have them create one before gifting them tickets."});
+                }
+            }
+
+            //TODO: If we uncomment this, then popcorn points get deducted successfully. We would have to remove "Return To Index" on the confirmation page.s
             _context.Update(order);
             await _context.SaveChangesAsync();
 
