@@ -187,7 +187,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Order/Edit/5
-        public IActionResult CompleteOrder(Order orderIn)
+        public async Task<IActionResult> CompleteOrderAsync(Order orderIn)
         {
             if (orderIn.OrderID == 0)
             {
@@ -216,9 +216,12 @@ namespace FinalProjectWorkspace.Controllers
             else
             {
                 order.PopcornPoints = (int)order.Tickets.Sum(t => t.TransactionPopcornPoints);
-                order.Purchaser.PCPBalance += order.PopcornPoints;
+                order.Purchaser.PCPBalance = order.Purchaser.PCPBalance + order.PopcornPoints;
+                _ = order.Purchaser.PCPBalance;
             }
 
+            _context.Update(order);
+            await _context.SaveChangesAsync();
 
             if (order == null)
             {
@@ -230,7 +233,7 @@ namespace FinalProjectWorkspace.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CompleteOrderAsync(Order orderIn)
+        public async Task<IActionResult> CompleteOrder(Order orderIn)
         {
             //Find order in database that corresponds to user
             Order order = _context.Order

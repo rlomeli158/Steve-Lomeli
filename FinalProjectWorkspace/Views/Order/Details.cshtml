@@ -87,6 +87,10 @@
 </table>
 
 <h5>Order Summary</h5>
+@if (Model.Tickets.Any(t => t.Showing.SpecialEvent == true))
+{
+    <p class="text-info">NOTE: There is a special event showing in the order that is ineligbile for any discounts or popcorn point redemptions!</p>
+}
 <table class="table-secondary text-dark" style="width:40%; padding:10px">
     <tr>
         <th colspan="2" style="text-align:center">Order Summary</th>
@@ -115,21 +119,24 @@
 
 @if (Model.OrderStatus == "Active")
 {
-    <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit</a> @:|
-    <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
-        <input type="hidden" asp-for="OrderID" />
-            @Html.Hidden("PaidWithPopcornPoints", false)
-            @{Model.PaidWithPopcornPoints = false;}
-        <input type="submit" value="Click here to pay with cash" class="btn btn-success" />
-    </form>
-    @if (Model.Purchaser.PCPBalance >= Model.OrderTotal)
+    <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit</a>
+    @if (Model.OrderTotal > 0)
     {
         <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
             <input type="hidden" asp-for="OrderID" />
-            @Html.Hidden("PaidWithPopcornPoints", true)
-            @{Model.PaidWithPopcornPoints = true;}
-            <input type="submit" value="Click here to pay with popcorn points" class="btn btn-success" />
+                @Html.Hidden("PaidWithPopcornPoints", false)
+                @{Model.PaidWithPopcornPoints = false;}
+            <input type="submit" value="Click here to pay with cash" class="btn btn-success" />
         </form>
+        @if (Model.Purchaser.PCPBalance >= Model.OrderTotal && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
+        {
+            <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
+                <input type="hidden" asp-for="OrderID" />
+                @Html.Hidden("PaidWithPopcornPoints", true)
+                @{Model.PaidWithPopcornPoints = true;}
+                <input type="submit" value="Click here to pay with popcorn points" class="btn btn-success" />
+            </form>
+        }
     }
 }
 else

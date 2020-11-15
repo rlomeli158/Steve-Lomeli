@@ -105,9 +105,21 @@ namespace FinalProjectWorkspace.Controllers
             DateTime showingTime;
             Order order;
             TimeSpan age;
+            Decimal showingPrice = 0.00m;
 
             if (ticket == null)
             {
+                //SPECIAL EVENT PRICING
+                if (ticketIn.Showing.SpecialEvent == true)
+                {
+                    String price = _context.Prices
+                    .Where(p => p.PriceName == "SPECIAL_EVENT_PRICE")
+                    .Select(p => p.PriceAmount).First().ToString();
+
+                    ticketIn.DiscountAmount = 0;
+                    return showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                }
+
                 order = _context.Order.Find(ticketIn.Order.OrderID);
 
                 order = _context.Order
@@ -123,13 +135,20 @@ namespace FinalProjectWorkspace.Controllers
             }
             else
             {
+                //SPECIAL EVENT PRICING
+                if (ticket.Showing.SpecialEvent == true)
+                {
+                    String price = _context.Prices
+                                        .Where(p => p.PriceName == "SPECIAL_EVENT_PRICE")
+                                        .Select(p => p.PriceAmount).First().ToString();
+                    ticketIn.DiscountAmount = 0;
+                    return showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                }
                 showingDay = ticket.Showing.ShowingDate.ToString("dddd");
                 showingTime = ticket.Showing.StartTime;
                 age = DateTime.Now - ticket.Order.Purchaser.Birthday;
 
             }
-
-            Decimal showingPrice = 0.00m;
 
             var weekDays = new List<string>()
             {
