@@ -37,6 +37,10 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Status")]
         public String OrderStatus { get; set; } //Active or inactive in case it was cancelled
 
+        public Int32 PopcornPoints { get; set; }
+
+        public Boolean PaidWithPopcornPoints { get; set; }
+
         public List<Ticket> Tickets { get; set; }
 
         public AppUser Purchaser { get; set; } //Customer that purchased

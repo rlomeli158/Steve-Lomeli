@@ -98,12 +98,33 @@
         <td>Order Total:</td>
         <td>@Html.DisplayFor(model => model.OrderTotal)</td>
     </tr>
+    @if (Model.Tickets.Sum(t => t.DiscountAmount) > 0)
+    {
+        <tr>
+            <td>Amount Saved With Discounts:</td>
+            @{ Decimal discountSaved = Model.Tickets.Sum(t => t.DiscountAmount);}
+            <td>$@discountSaved</td>
+        </tr>
+    }
+    @if (Model.PaidWithPopcornPoints == true)
+    {
+        <tr>
+            <td>Popcorn Points Used:</td>
+            <td>@Html.DisplayFor(model => model.PopcornPoints)</td>
+        </tr>
+        <tr>
+            <td>Amount Saved With Popcorn Points:</td>
+            @{ Decimal popcornSaved = Model.Tickets.Sum(t => t.TicketPrice) - Model.Tickets.Sum(t => t.DiscountAmount);}
+            <td>$@popcornSaved</td>
+        </tr>
+    }
 </table>
 <div>
     <form asp-action="CompleteOrder" method="post">
         <input type="hidden" asp-for="OrderID" />
-        <input type="submit" value="Click here to confirm your Order" class="btn btn-outline-success" />
-        <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+        <input type="submit" value="Click here to confirm your Order" class="btn btn-success" />
     </form>
-    
+    <form asp-action="Details" asp-route-id="@Model.OrderID">
+        <input type="submit" value="Click here to return to your Order" class="btn btn-warning" />
+    </form>
 </div>

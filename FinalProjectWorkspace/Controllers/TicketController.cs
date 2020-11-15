@@ -299,7 +299,7 @@ namespace FinalProjectWorkspace.Controllers
             //calculate the extended price for the registration detail
             //TODO: Calculate total cost by number of tickets * price per ticket?
 
-            ticket.TransactionPopcornPoints = ticket.TicketPrice;
+            ticket.TransactionPopcornPoints = Math.Truncate(ticket.TotalCost);
 
             //add the registration detail to the database
             _context.Add(ticket);
