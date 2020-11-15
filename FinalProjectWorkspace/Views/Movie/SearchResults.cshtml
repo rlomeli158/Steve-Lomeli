@@ -52,6 +52,12 @@
                 @Html.DisplayNameFor(model => model.Genre.GenreName)
             </th>
             <th>
+                Average Review Rating
+            </th>
+            <th>
+                See Reviews Here
+            </th>
+            <th>
                 Find Showings Now!
             </th>
         </tr>
@@ -89,7 +95,13 @@
                 @Html.DisplayFor(modelItem => item.Genre.GenreName)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.MovieID }, new { @class= "btn btn-outline-info" })
+                @Html.DisplayFor(modelItem => item.AverageReviewRating)
+            </td>
+            <td>
+                @Html.ActionLink("Index", "MovieReview", new { id = item.MovieID }, new { style = "color:red" })
+            </td>
+            <td>
+                @Html.ActionLink("Showing Times", "Details", new { id = item.MovieID }, new { style = "color:red" })
             </td>
         </tr>
 }

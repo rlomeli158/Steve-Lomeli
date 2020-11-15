@@ -111,9 +111,11 @@ namespace FinalProjectWorkspace.Controllers
                 order = _context.Order.Find(ticketIn.Order.OrderID);
 
                 order = _context.Order
+                                .Include(o => o.Tickets).ThenInclude(o => o.Showing)
                                 .Include(o => o.Purchaser)
                                 .Where(o => o.OrderID == ticketIn.Order.OrderID)
                                 .First();
+
                 showingDay = ticketIn.Showing.ShowingDate.ToString("dddd");
                 showingTime = ticketIn.Showing.StartTime;
                 age = DateTime.Now - order.Purchaser.Birthday;
@@ -249,19 +251,45 @@ namespace FinalProjectWorkspace.Controllers
                 return View(ticket);
             }
 
-            //find the course to be associated with this order
-            Showing dbShowing = _context.Showings.Find(SelectedShowing);
-
-            //set the registration detail's course to be equal to the one we just found
-            ticket.Showing = dbShowing;
-
             //find the order on the database that has the correct order id
             //unfortunately, the HTTP request will not contain the entire order object, 
             //just the order id, so we have to find the actual object in the database
-            Order dbOrder = _context.Order.Find(ticket.Order.OrderID);
+            //Order dbOrder = _context.Order.Find(ticket.Order.OrderID);
+
+            //Get tickets, showings, movies
+            Order dbOrder = _context.Order.Include(o => o.Tickets)
+                                          .ThenInclude(o => o.Showing)
+                                          .ThenInclude(o => o.Movie)
+                                          .FirstOrDefault(o => o.OrderID == ticket.Order.OrderID);
+
+            Showing selectedShowing = _context.Showings.Include(s => s.Movie)
+                                                .FirstOrDefault(s => s.ShowingID == SelectedShowing);
+
+            //The selected showing is already on the order
+            if (dbOrder.Tickets.Any(t => t.Showing.Movie == selectedShowing.Movie))
+            {
+                //Finding all the tickets that have the same movie
+                List<Ticket> ticketList = dbOrder.Tickets.Where(t => t.Showing.Movie == selectedShowing.Movie).ToList();
+
+                //The order already contains tickets to this showing
+                if(ticketList.Any(t => t.Showing.ShowingID != selectedShowing.ShowingID))
+                {
+                    return View("Error", new String[] { "There's already a ticket for a different showing on your order!" });
+                }
+
+            }
+
+            //Showings are good, add tickets
+            ticket.Showing = selectedShowing;
 
             //set the registration on the registration detail equal to the registration that we just found
             ticket.Order = dbOrder;
+
+            //find the course to be associated with this order
+            //Showing dbShowing = _context.Showings.Find(SelectedShowing);
+            //TODO: Here is the code to count tickets
+            //Int32 ticketCount = _context.Ticket.Include(t => t.Order).Where(t => t.Order.OrderID == ticket.Order.OrderID).Count();
+
 
             //Get prices depending on day and time
             ticket.DiscountAmount = 0;

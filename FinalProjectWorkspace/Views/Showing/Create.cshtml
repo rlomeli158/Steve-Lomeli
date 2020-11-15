@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Add Movie</h1>
 
 <h4>Showing</h4>
 <hr />
@@ -12,6 +12,14 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Movie" class="control-label">Movie Title</label>
+                @Html.DropDownList("SelectedMovie", (SelectList)ViewBag.AllMovies, new { @class = "form-control" })
+                <span asp-validation-for="Movie" class="text-danger"></span>
+
+            </div>
+
             <div class="form-group">
                 <label asp-for="ShowingDate" class="control-label"></label>
                 <input asp-for="ShowingDate" class="form-control" />
@@ -23,15 +31,12 @@
                 <span asp-validation-for="StartTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndTime" class="control-label"></label>
-                <input asp-for="EndTime" class="form-control" />
-                <span asp-validation-for="EndTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Theatre" class="control-label"></label>
-                <select asp-for="Theatre" class="form-control"></select>
+                @Html.DropDownList("SelectedTheatre", (SelectList)ViewBag.AllTheatres, new { @class = "form-control" })
                 <span asp-validation-for="Theatre" class="text-danger"></span>
+
             </div>
+
             <div class="form-group">
                 <label asp-for="SeatsAvailable" class="control-label"></label>
                 <input asp-for="SeatsAvailable" class="form-control" />
