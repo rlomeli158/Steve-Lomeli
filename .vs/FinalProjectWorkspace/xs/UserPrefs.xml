@@ -1,28 +1,19 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/OrderController.cs">
-    <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="208" Column="52" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="126" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Ticket/Create.cshtml" Line="23" Column="68" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Confirmed.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Order/CompleteOrder.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="OrderController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Views" expanded="True">
-                <Node name="Order" expanded="True" />
+                <Node name="Order" expanded="True">
+                  <Node name="Details.cshtml" selected="True" />
+                </Node>
                 <Node name="Ticket" expanded="True" />
               </Node>
             </Node>
@@ -40,10 +31,8 @@
       <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="117" column="1" />
       <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="120" column="1" />
       <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="27" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/OrderController.cs" relfile="FinalProjectWorkspace/Controllers/OrderController.cs" line="251" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/OrderController.cs" relfile="FinalProjectWorkspace/Controllers/OrderController.cs" line="224" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/OrderController.cs" relfile="FinalProjectWorkspace/Controllers/OrderController.cs" line="225" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/OrderController.cs" relfile="FinalProjectWorkspace/Controllers/OrderController.cs" line="222" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/OrderController.cs" relfile="FinalProjectWorkspace/Controllers/OrderController.cs" line="252" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/OrderController.cs" relfile="FinalProjectWorkspace/Controllers/OrderController.cs" line="258" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
