@@ -64,13 +64,28 @@ namespace FinalProjectWorkspace.Controllers
                     Zip = rvm.FirstName,
                     Birthday = rvm.Birthday,
                     PCPBalance = rvm.PCPBalance,
+                    AccountStatus = rvm.AccountStatus,
                 };
 
                 //This code uses the UserManager object to create a new user with the specified password
                 IdentityResult result = await _userManager.CreateAsync(newUser, rvm.Password);
 
                 //If the add user operation was successful, we need to do a few more things
-                if (result.Succeeded)
+                if (result.Succeeded && User.IsInRole("Manager"))
+                {
+                    //TODO: Add user to desired role. This example adds the user to the customer role
+                    await _userManager.AddToRoleAsync(newUser, "Employee");
+
+                    //NOTE: This code logs the user into the account that they just created
+                    //You may or may not want to log a user in directly after they register - check
+                    //the business rules!
+                    //Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
+
+                    //Send the user to the home page
+                    return RedirectToAction("Index", "Home");
+                }
+
+                if (result.Succeeded != User.IsInRole("Manager"))
                 {
                     //TODO: Add user to desired role. This example adds the user to the customer role
                     await _userManager.AddToRoleAsync(newUser, "Customer");
@@ -83,6 +98,7 @@ namespace FinalProjectWorkspace.Controllers
                     //Send the user to the home page
                     return RedirectToAction("Index", "Home");
                 }
+
                 else  //the add user operation didn't work, and we need to show an error message
                 {
                     foreach (IdentityError error in result.Errors)
@@ -125,30 +141,91 @@ namespace FinalProjectWorkspace.Controllers
             //attempt to sign the user in using the SignInManager
             Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(lvm.Email, lvm.Password, lvm.RememberMe, lockoutOnFailure: false);
 
-            //if the login worked, take the user to either the url
-            //they requested OR the homepage if there isn't a specific url
+            
+
             if (result.Succeeded)
             {
-                //return ?? "/" means if returnUrl is null, substitute "/" (home)
-                return Redirect(returnUrl ?? "/");
+                
+                AppUser userLoggedIn = _context.Users.FirstOrDefault(u => u.Email == lvm.Email);
+
+                if (await _userManager.IsInRoleAsync(userLoggedIn, "Manager") && userLoggedIn.AccountStatus == true)
+                {
+                    return RedirectToAction("ManagerHomeView", "Home");
+                }
+
+                else if (await _userManager.IsInRoleAsync(userLoggedIn, "Employee") && userLoggedIn.AccountStatus == true)
+                {
+                    return RedirectToAction("EmployeeHomeView", "Home");
+                }
+
+                else if (await _userManager.IsInRoleAsync(userLoggedIn, "Employee") && userLoggedIn.AccountStatus == false)
+                {
+                    //return ?? "/" means if returnUrl is null, substitute "/" (home)
+                    await _signInManager.SignOutAsync();
+                    ModelState.AddModelError("", "Access is denied.");
+                    //send user back to login page to try again
+                    return View(lvm);
+                }
+
+                else if (await _userManager.IsInRoleAsync(userLoggedIn, "Customer") && userLoggedIn.AccountStatus == true)
+                {
+                    //return ?? "/" means if returnUrl is null, substitute "/" (home)
+                    return RedirectToAction("Index", "Home");
+                }
+
+                else if (await _userManager.IsInRoleAsync(userLoggedIn, "Customer") && userLoggedIn.AccountStatus == false)
+                {
+                    //return ?? "/" means if returnUrl is null, substitute "/" (home)
+                    await _signInManager.SignOutAsync();
+                    ModelState.AddModelError("", "Access is denied.");
+                    //send user back to login page to try again
+                    return View(lvm);
+                    
+
+                }
+
             }
-            else //log in was not successful
-            {
-                //add an error to the model to show invalid attempt
-                ModelState.AddModelError("", "Invalid login attempt.");
-                //send user back to login page to try again
-                return View(lvm);
-            }
+
+            //log in was not successful
+
+            //add an error to the model to show invalid attempt
+            ModelState.AddModelError("", "Invalid login attempt.");
+            //send user back to login page to try again
+            return View(lvm);
+
+
         }
+                   
 
         //GET: Account/Index
-        public IActionResult Index()
+        public IActionResult Index(String id)
         {
             IndexViewModel ivm = new IndexViewModel();
 
+            AppUser user;
+
             //get user info
-            String id = User.Identity.Name;
-            AppUser user = _context.Users.FirstOrDefault(u => u.UserName == id);
+            if (id != null) //(id != null)
+            {
+                user = _context.Users.FirstOrDefault(u => u.Id == id);
+                //id = User.Identity.Name;
+                //user = _context.Users.FirstOrDefault(u => u.UserName == id);
+            }
+            else //if 
+            {
+                id = User.Identity.Name;
+                user = _context.Users.FirstOrDefault(u => u.UserName == id);
+                //user = _context.Users.FirstOrDefault(u => u.Id == id);
+            }
+            /*
+             *
+             *User.IsInRole("Manager") && 
+            else
+            {
+                user = _context.Users.FirstOrDefault(u => u.Id == id);
+            }
+            */
+
 
             //populate the view model
             //(i.e. map the domain model to the view model)
@@ -166,6 +243,7 @@ namespace FinalProjectWorkspace.Controllers
             ivm.Birthday = user.Birthday;
             ivm.PhoneNumber = user.PhoneNumber;
             ivm.PCPBalance = user.PCPBalance;
+            ivm.AccountStatus = user.AccountStatus;
 
             //send data to the view
             return View(ivm);
@@ -183,8 +261,9 @@ namespace FinalProjectWorkspace.Controllers
             EditViewModel evm = new EditViewModel();
 
             //get user info
-            id = User.Identity.Name;
-            AppUser user = _context.Users.FirstOrDefault(u => u.UserName == id);
+            //id = User.Identity.Name;
+            //AppUser user = _context.Users.FindAsync(evm.UserID);
+            AppUser user = _context.Users.FirstOrDefault(u => u.Id == id);
 
             //populate the view model
             //(i.e. map the domain model to the view model)
@@ -200,7 +279,7 @@ namespace FinalProjectWorkspace.Controllers
             evm.Birthday = user.Birthday;
             evm.PhoneNumber = user.PhoneNumber;
             evm.PCPBalance = user.PCPBalance;
-
+            evm.AccountStatus = user.AccountStatus;
 
             if (user == null)
             {
@@ -238,6 +317,7 @@ namespace FinalProjectWorkspace.Controllers
                 user.Birthday = evm.Birthday;
                 user.PhoneNumber = evm.PhoneNumber;
                 user.PCPBalance = evm.PCPBalance;
+                user.AccountStatus = evm.AccountStatus;
 
                 await _userManager.UpdateAsync(user);
                 await _context.SaveChangesAsync();
@@ -261,7 +341,8 @@ namespace FinalProjectWorkspace.Controllers
                     }
                 }
                 */
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(Index, new { id = evm.UserID });
+                return RedirectToAction("Index", "Account", new { id = evm.UserID });
             }
 
             return View(evm);
@@ -323,7 +404,7 @@ namespace FinalProjectWorkspace.Controllers
         // POST: /Account/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel cpvm)
+        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel cpvm, String id)
         {
             //if user forgot a field, send them back to 
             //change password page to try again
@@ -333,11 +414,41 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             //Find the logged in user using the UserManager
-            AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
+            //AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
+            AppUser userLoggedIn = await _userManager.FindByIdAsync(id);
 
-            //Attempt to change the password using the UserManager
-            var result = await _userManager.ChangePasswordAsync(userLoggedIn, cpvm.OldPassword, cpvm.NewPassword);
+            if (User.IsInRole("Manager"))
+            {
+                var resetpswd = await _userManager.GeneratePasswordResetTokenAsync(userLoggedIn);
+                var outcome = await _userManager.ResetPasswordAsync(userLoggedIn, resetpswd, cpvm.NewPassword);
 
+                if (outcome.Succeeded)
+                {
+                    //sign in the user with the new password
+                    //await _signInManager.SignInAsync(userLoggedIn, isPersistent: false);
+
+                    //send the user back to the home page
+                    return RedirectToAction("ManagerHomeView", "Home");
+                }
+                else //attempt to change the password didn't work
+                {
+                    //Add all the errors from the result to the model state
+                    foreach (var error in outcome.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+
+                    //send the user back to the change password page to try again
+                    return View(cpvm);
+                }
+
+
+            }
+           
+            
+             //Attempt to change the password using the UserManager
+             var result = await _userManager.ChangePasswordAsync(userLoggedIn, cpvm.OldPassword, cpvm.NewPassword);
+                
             //if the attempt to change the password worked
             if (result.Succeeded)
             {
@@ -345,7 +456,7 @@ namespace FinalProjectWorkspace.Controllers
                 await _signInManager.SignInAsync(userLoggedIn, isPersistent: false);
 
                 //send the user back to the home page
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Account");
             }
             else //attempt to change the password didn't work
             {

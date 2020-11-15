@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using System.Collections;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -161,6 +162,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Movie
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Movies.ToListAsync());
@@ -188,6 +190,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Movie/Create
+        [Authorize(Roles = "Manager")]
         public IActionResult Create()
         {
             return View();
@@ -197,6 +200,7 @@ namespace FinalProjectWorkspace.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Manager")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Revenue,Actors,MPAARating")] Movie movie)
         {
@@ -210,6 +214,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Movie/Edit/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -230,6 +235,7 @@ namespace FinalProjectWorkspace.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(int id, [Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Revenue,Actors,MPAARating")] Movie movie)
         {
             if (id != movie.MovieID)
@@ -261,6 +267,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Movie/Delete/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -280,6 +287,7 @@ namespace FinalProjectWorkspace.Controllers
 
         // POST: Movie/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Manager")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

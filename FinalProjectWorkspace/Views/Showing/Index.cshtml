@@ -7,13 +7,16 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-outline-primary" asp-action="Create">Create New</a>
 </p>
 <table class="table table-hover text-center">
     <thead>
         <tr class="text-light text-center">
             <th>
                 @Html.DisplayNameFor(model => model.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.Showings)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.StartTime)
@@ -58,10 +61,18 @@
                 @Html.DisplayFor(modelItem => item.SpecialEvent)
             </td>
             <td>
-                <span style="color:white">
-                    <a asp-action="Edit" asp-route-id="@item.ShowingID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ShowingID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ShowingID">Delete</a>
+                <span>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Manager"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.ShowingID">Edit | </a>
+                            <a asp-action="Delete" asp-route-id="@item.ShowingID">Delete</a>
+                        }
+                    }
+
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ShowingID">Details</a>
+
                 </span>
             </td>
         </tr>

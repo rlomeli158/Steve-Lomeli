@@ -70,7 +70,17 @@
     <td>@Html.DisplayFor(modelItem => p.Theatre)</td>
 </tr>}
 </table>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.MovieID" style="color:white">Edit</a> |
-    <a asp-action="Index" style="color:white">Back to List</a>
+<div class="text-center">
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        @if (User.IsInRole("Manager"))
+        {
+            <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@Model.MovieID">Edit</a>
+        }
+    }
+
+
+
+    <a class="btn btn-outline-primary" asp-action="DisplaySearchResults">Back to List</a>
 </div>

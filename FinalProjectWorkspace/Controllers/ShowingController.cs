@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -64,6 +65,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Showing/Create
+        [Authorize(Roles = "Manager")]
         public IActionResult Create()
         {
             ViewBag.AllMovies = GetAllMovies();
@@ -102,6 +104,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Showing/Edit/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -154,6 +157,7 @@ namespace FinalProjectWorkspace.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Manager")]
         public IActionResult Edit(int id, [Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int[] SelectedMovies)
         {
             //this is a security check to see if the user is trying to modify
@@ -202,6 +206,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Showing/Delete/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -221,6 +226,7 @@ namespace FinalProjectWorkspace.Controllers
 
         // POST: Showing/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Manager")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

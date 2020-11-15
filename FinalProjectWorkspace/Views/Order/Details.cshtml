@@ -104,16 +104,19 @@
         <td>@Html.DisplayFor(model => model.OrderTotal)</td>
     </tr>
 </table>
+<div class="text-center">
+    <br/>
 
-@if (Model.OrderStatus == "Active")
-{
-    <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit</a> @:|
-    <a asp-action="CompleteOrder" asp-route-id="@Model.OrderID" class="btn btn-success" >Complete Order</a> @:|
-}
-else
-{
-    <a asp-action="Delete" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a> @:|
-}
-<div>
-    <a asp-action="Index" class="btn btn-warning">Back to List</a>
+    @if (Model.OrderStatus == "Active")
+    {
+        <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-outline-info">Edit</a>
+        <a asp-action="CompleteOrder" asp-route-id="@Model.OrderID" class="btn btn-outline-success">Complete Order</a>
+        <a asp-action="Index" class="btn btn-outline-primary">Back to List</a>
+    }
+    else
+    {
+        <a asp-action="Delete" asp-route-id="@Model.OrderID" class="btn btn-outline-danger">Cancel Order</a>
+        <a asp-action="Index" class="btn btn-outline-primary">Back to List</a>
+    }
+
 </div>

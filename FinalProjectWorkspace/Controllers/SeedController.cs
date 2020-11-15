@@ -1,10 +1,12 @@
 ﻿using FinalProjectWorkspace.DAL;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 
 namespace FinalProjectWorkspace.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class SeedController : Controller
     {
         //You will need an instance of the AppDbContext class for this code to work
