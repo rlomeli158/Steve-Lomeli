@@ -187,9 +187,9 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Order/Edit/5
-        public IActionResult CompleteOrder(int? id)
+        public IActionResult CompleteOrder(Order orderIn)
         {
-            if (id == null)
+            if (orderIn.OrderID == 0)
             {
                 return NotFound();
             }
@@ -199,12 +199,32 @@ namespace FinalProjectWorkspace.Controllers
                 .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
                 .Include(ord => ord.Recipient)
                 .Include(ord => ord.Purchaser)
-                .FirstOrDefault(o => o.OrderID == id);
+                .FirstOrDefault(o => o.OrderID == orderIn.OrderID);
+
+            order.PaidWithPopcornPoints = orderIn.PaidWithPopcornPoints;
+
+            if (order.PaidWithPopcornPoints == true)
+            {
+                foreach (Ticket t in order.Tickets)
+                {
+                    t.TotalCost = 0;
+                    t.TransactionPopcornPoints = -100.00m;
+                }
+                order.PopcornPoints = order.Tickets.Count() * -100;
+                order.Purchaser.PCPBalance -= Math.Abs(order.PopcornPoints);
+            }
+            else
+            {
+                order.PopcornPoints = (int)order.Tickets.Sum(t => t.TransactionPopcornPoints);
+                order.Purchaser.PCPBalance += order.PopcornPoints;
+            }
+
 
             if (order == null)
             {
                 return NotFound();
             }
+
             return View(order);
         }
 

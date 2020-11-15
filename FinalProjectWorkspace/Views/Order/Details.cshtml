@@ -103,12 +103,34 @@
         <td>Order Total:</td>
         <td>@Html.DisplayFor(model => model.OrderTotal)</td>
     </tr>
+    @if (Model.Tickets.Sum(t => t.DiscountAmount) > 0)
+    {
+        <tr>
+            <td>Amount Saved With Discounts:</td>
+            @{ Decimal discountSaved = Model.Tickets.Sum(t => t.DiscountAmount);}
+            <td>$@discountSaved</td>
+        </tr>
+    }
 </table>
 
 @if (Model.OrderStatus == "Active")
 {
     <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit</a> @:|
-    <a asp-action="CompleteOrder" asp-route-id="@Model.OrderID" class="btn btn-success" >Complete Order</a> @:|
+    <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
+        <input type="hidden" asp-for="OrderID" />
+            @Html.Hidden("PaidWithPopcornPoints", false)
+            @{Model.PaidWithPopcornPoints = false;}
+        <input type="submit" value="Click here to pay with cash" class="btn btn-success" />
+    </form>
+    @if (Model.Purchaser.PCPBalance >= Model.OrderTotal)
+    {
+        <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
+            <input type="hidden" asp-for="OrderID" />
+            @Html.Hidden("PaidWithPopcornPoints", true)
+            @{Model.PaidWithPopcornPoints = true;}
+            <input type="submit" value="Click here to pay with popcorn points" class="btn btn-success" />
+        </form>
+    }
 }
 else
 {
