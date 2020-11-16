@@ -125,21 +125,29 @@
     {
     <br />
     <div class="float-right">
-    <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
-        <input type="hidden" asp-for="OrderID" />
-        <label asp-for="Recipient.UserName" class="control-label">Email of Gift Recipient</label>
-        <input asp-for="Recipient.UserName" class="form-control" placeholder="Recipient's Email" />
-        <div class="float-left">
-            <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
-            <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false checked="checked"/>Cash<br />
-            @if (Model.Purchaser.PCPBalance >= (Model.Tickets.Count() * 100) && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
-            {
+        <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
+            <input type="hidden" asp-for="OrderID" />
+            <div>
+                <label class="form-check-label">
+                    Is this a gift?
+                <input type="checkbox" id="myCheck" onclick="myFunction()" />
+                </label>
+            </div>
+            <div id="text" style="display:none">
+                <label asp-for="Recipient.UserName" class="control-label">Email of Gift Recipient</label>
+                <input id="textInput" asp-for="Recipient.UserName" class="form-control" placeholder="Recipient's Email" />
+            </div>
+            <div class="float-left">
                 <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
-                <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true  /> @:Popcorn Points<br />
-            }
-            <input type="submit" value="Pay" class="btn btn-success" />
-        </div>
-    </form>
+                <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false checked="checked" />Cash<br />
+                @if (Model.Purchaser.PCPBalance >= (Model.Tickets.Count() * 100) && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
+                {
+                    <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
+                    <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true /> @:Popcorn Points<br />
+                }
+                <input type="submit" value="Pay" class="btn btn-success" onclick="viewText" />
+            </div>
+        </form>
     </div>
     }
 }
@@ -150,3 +158,33 @@ else
 <div>
     <a asp-action="Index" class="btn btn-warning">Back to Order History</a>
 </div>
+
+<script>
+    function myFunction() {
+        // Get the checkbox
+        var checkBox = document.getElementById("myCheck");
+        // Get the output text
+        var text = document.getElementById("text");
+
+        //If the checkbox is checked, display the output text
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+
+        }
+    }
+
+    function viewText() {
+        // Get the checkbox
+        var checkBox = document.getElementById("myCheck");
+        // Get the output text
+        var text = document.getElementById("textInput");
+
+        //If the checkbox is checked, display the output text
+        if (checkBox.checked == false) {
+            text.value = null;
+
+        }
+    }
+</script>
