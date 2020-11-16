@@ -1,10 +1,11 @@
 @model FinalProjectWorkspace.Models.Order
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Shopping Cart";
 }
-
-<h1>Details</h1>
+<div class="text-center">
+    <h1>Shopping Cart</h1>
+</div>
 <div class="list-group">
     <a class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
@@ -119,7 +120,7 @@
 
 @if (Model.OrderStatus == "Active")
 {
-    <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit</a>
+    <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Add or Remove Tickets</a>
     @if (Model.OrderTotal > 0 && Model.OrderStatus != "Paid")
     {
     <br />
@@ -129,11 +130,12 @@
         <label asp-for="Recipient.UserName" class="control-label">Email of Gift Recipient</label>
         <input asp-for="Recipient.UserName" class="form-control" placeholder="Recipient's Email" />
         <div class="float-left">
-            @if (Model.Purchaser.PCPBalance >= Model.OrderTotal && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
+            <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
+            <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false checked="checked"/>Cash<br />
+            @if (Model.Purchaser.PCPBalance >= (Model.Tickets.Count() * 100) && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
             {
                 <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
-                <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true checked="checked" /> @:Popcorn Points<br />
-                <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false /> @:Cash<br />
+                <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true  /> @:Popcorn Points<br />
             }
             <input type="submit" value="Pay" class="btn btn-success" />
         </div>
