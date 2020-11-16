@@ -22,8 +22,7 @@
         <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
         <br />
 
-        <a asp-controller="Showing" asp-action="Index" type="button" class="btn btn-outline-primary">See All Showings</a>
-
+       
 
         <h2 class="text-danger">Main St. Original: The Last Search</h2>
 
@@ -47,6 +46,8 @@
                 Search Movie Showings: <input name="SearchString" class="form-control" placeholder="Search Showtimes" /><br />
                 <button type="submit" class="btn btn-outline-primary">Search</button>
                 <a asp-controller="Movie" asp-action="Browse" type="button" class="btn btn-outline-danger">Search All Movies</a>
+                <a asp-controller="Showing" asp-action="Index" type="button" class="btn btn-outline-primary">See All Showings</a>
+
             </p>
         </form>
     </div>
@@ -99,7 +100,7 @@
                             @Html.DisplayFor(modelItem => item.Theatre)
                         </td>
                         <td>
-                            <a asp-controller="Movie" asp-action="Details" asp-route-id="@item.Movie.MovieID">Details</a>
+                            <a class="btn btn-outline-info" asp-controller="Movie" asp-action="Details" asp-route-id="@item.Movie.MovieID">Details</a>
                         </td>
 
                     </tr>

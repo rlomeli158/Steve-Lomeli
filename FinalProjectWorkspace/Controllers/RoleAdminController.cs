@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 //TODO: Change these using statements to match your project
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using System.Linq;
+using System;
 
 //TODO: Change this namespace to match your project
 namespace FinalProjectWorkspace.Controllers
@@ -28,7 +30,9 @@ namespace FinalProjectWorkspace.Controllers
             //populate the values of the variables passed into the controller
             _context = appDbContext;
             _userManager = userManager;
-            _roleManager = roleManager;
+            _roleManager =  roleManager;
+            //var roleListWithoutAdmin = .Where(f => f != "Admin");
+            //role = await _roleManager.GetRoleNameAsync("Customer");
         }
 
         // GET: /RoleAdmin/
@@ -36,55 +40,117 @@ namespace FinalProjectWorkspace.Controllers
         {
             //Create a list of roles that will need to be edited
             List<RoleEditModel> roles = new List<RoleEditModel>();
-            
-            //loop through each of the existing roles
-            foreach (IdentityRole role in _roleManager.Roles)
+
+
+            if (User.IsInRole("Manager"))
             {
-                //this is a list of all the users who ARE in this role (members)
-                List<AppUser> members = new List<AppUser>();
-
-                //this is a list of all the users who ARE NOT in this role (non-members)
-                List<AppUser> nonMembers = new List<AppUser>();
-
-                //loop through ALL the users and decide if they are in the role(member) or not (non-member)
-                //every user will be evaluated for every role, so this is a SLOW chunk of code because
-                //it accesses the database so many times
-                foreach (AppUser user in _userManager.Users)
+                //loop through each of the existing roles
+                foreach (IdentityRole role in _roleManager.Roles)
                 {
-                    if (await _userManager.IsInRoleAsync(user, role.Name) == true) //user is in the role
+                    //this is a list of all the users who ARE in this role (members)
+                    List<AppUser> members = new List<AppUser>();
+
+                    //this is a list of all the users who ARE NOT in this role (non-members)
+                    List<AppUser> nonMembers = new List<AppUser>();
+
+                    //loop through ALL the users and decide if they are in the role(member) or not (non-member)
+                    //every user will be evaluated for every role, so this is a SLOW chunk of code because
+                    //it accesses the database so many times
+                    foreach (AppUser user in _userManager.Users)
                     {
-                        //add user to list of members
-                        members.Add(user);
+                        if (await _userManager.IsInRoleAsync(user, role.Name)) //user is in the role
+                        {
+                            //add user to list of members
+                            members.Add(user);
+                        }
+                        else //user is NOT in the role
+                        {
+                            //add user to list of non-members
+                            nonMembers.Add(user);
+                        }
                     }
-                    else //user is NOT in the role
-                    {
-                        //add user to list of non-members
-                        nonMembers.Add(user);
-                    }
+
+                    //create a new instance of the role edit model
+                    RoleEditModel rem = new RoleEditModel();
+
+                    //populate the properties of the role edit model
+                    rem.Role = role; //role from database
+                    rem.Members = members; //list of users in this role
+                    rem.NonMembers = nonMembers; //list of users NOT in this role
+
+                    //var roleListWithoutAdmin = nonMembers.Where(r => r != "Manager");
+                    //add this role to the list of role edit models
+                    roles.Add(rem);
                 }
 
-                //create a new instance of the role edit model
-                RoleEditModel rem = new RoleEditModel();
-
-                //populate the properties of the role edit model
-                rem.Role = role; //role from database
-                rem.Members = members; //list of users in this role
-                rem.NonMembers = nonMembers; //list of users NOT in this role
-                
-                //add this role to the list of role edit models
-                roles.Add(rem);  
+                //pass the list of roles to the view
+                return View(roles);
             }
 
-            //pass the list of roles to the view
-            return View(roles);
+
+
+            else
+            {
+
+                //loop through each of the existing roles
+                foreach (IdentityRole role in _roleManager.Roles.Where(r => r.Name == "Customer"))
+                {
+                    //this is a list of all the users who ARE in this role (members)
+                    List<AppUser> members = new List<AppUser>();
+
+                    //this is a list of all the users who ARE NOT in this role (non-members)
+                    List<AppUser> nonMembers = new List<AppUser>();
+
+                    //loop through ALL the users and decide if they are in the role(member) or not (non-member)
+                    //every user will be evaluated for every role, so this is a SLOW chunk of code because
+                    //it accesses the database so many times
+                    foreach (AppUser user in _userManager.Users)
+                    {
+                        if (await _userManager.IsInRoleAsync(user, role.Name)) //user is in the role
+                        {
+                            //add user to list of members
+                            members.Add(user);
+                        }
+                        else //user is NOT in the role
+                        {
+                            //add user to list of non-members
+                            nonMembers.Add(user);
+                        }
+                    }
+
+                    //create a new instance of the role edit model
+                    RoleEditModel rem = new RoleEditModel();
+
+                    //populate the properties of the role edit model
+                    rem.Role = role; //role from database
+                    rem.Members = members; //list of users in this role
+                    rem.NonMembers = nonMembers; //list of users NOT in this role
+
+                    //var roleListWithoutAdmin = nonMembers.Where(r => r != "Manager");
+                    //add this role to the list of role edit models
+                    roles.Add(rem);
+                }
+
+                //pass the list of roles to the view
+                return View(roles);
+            }
+
+        }
+        
+
+        private Func<AppUser, bool> IdentityRole(string v)
+        {
+            throw new NotImplementedException();
         }
 
+        [Authorize(Roles = "Manager")]
         public ActionResult Create() 
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Manager")]
         public async Task<ActionResult> Create([Required] string name)
         {
             if (ModelState.IsValid)

@@ -73,13 +73,29 @@
                 <input asp-for="ConfirmPassword" class="form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Manager"))
+                {
+                    <div class="form-group">
+                        <div class="custom-control custom-switch">
+                            <input asp-for="AccountStatus" type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                            <label asp-validation-for="AccountStatus" class="custom-control-label" for="customSwitch1">Active Status</label>
+                        </div>
+                    </div>
+                }
+            }
+            
             <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-primary" />
+                <input type="submit" value="Register" class="btn btn-outline-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-controller="Home" asp-action="Index">Home</a>
+<div class="text-center">
+    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Home</a>
 </div>
+
+

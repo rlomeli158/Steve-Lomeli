@@ -21,13 +21,13 @@
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
+                <input type="submit" value="Login" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-controller="Home" asp-action="Index">Home</a> |
-    <a asp-controller="Account" asp-action="Register">Register a New User</a>
+<div class="text-center">
+    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Home</a>
+    <a class="btn btn-outline-warning" asp-controller="Account" asp-action="Register">Register as New User</a>
 </div>

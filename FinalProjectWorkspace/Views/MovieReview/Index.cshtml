@@ -4,19 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Movie Reviews</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-hover text-center" >
     <thead>
-        <tr>
+        <tr class="text-light text-center">
             <th>
                 @Html.DisplayNameFor(model => model.ReviewDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ApprovalStatus)
+                @Html.DisplayNameFor(model => model.Movie.Title)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Rating)
@@ -24,23 +24,29 @@
             <th>
                 @Html.DisplayNameFor(model => model.ReviewDescription)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovalStatus)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="table-secondary text-center text-dark">
             <td>
                 @Html.DisplayFor(modelItem => item.ReviewDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ApprovalStatus)
+                @Html.DisplayFor(modelItem => item.Movie.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ReviewDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovalStatus)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.MovieReviewID">Edit</a> |

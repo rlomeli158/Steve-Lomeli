@@ -27,6 +27,9 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<bool>("AccountStatus")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -226,6 +229,12 @@ namespace FinalProjectWorkspace.Migrations
 
                     b.Property<string>("OrderStatus")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PaidWithPopcornPoints")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PopcornPoints")
+                        .HasColumnType("int");
 
                     b.Property<string>("PurchaserId")
                         .HasColumnType("nvarchar(450)");

@@ -61,7 +61,7 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             //make sure a customer isn't trying to look at someone else's order
-            if (User.IsInRole("Manager") == false && order.Purchaser.UserName != User.Identity.Name)
+            if (User.IsInRole("Manager") == false && order.Purchaser.UserName != User.Identity.Name && order.Recipient.UserName != User.Identity.Name)
             {
                 return View("Error", new string[] { "You are not authorized to edit this order!" });
             }
@@ -69,13 +69,52 @@ namespace FinalProjectWorkspace.Controllers
             return View(order);
         }
 
+        // GET: Order/Details/5
+        public IActionResult ActiveOrder(int? id)
+        {
+            //Find order in database that corresponds to user
+            Order order = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .Where(ord => ord.OrderStatus == "Active")
+                .FirstOrDefault(o => o.Purchaser.UserName == User.Identity.Name);
+
+            //if registration wasn't found
+            if (order == null)
+            {
+                return View("Error", new String[] { "There is no active order!" });
+            }
+
+            //make sure a customer isn't trying to look at someone else's order
+            if (User.IsInRole("Manager") == false && order.Purchaser.UserName != User.Identity.Name && order.Recipient.UserName != User.Identity.Name)
+            {
+                return View("Error", new string[] { "You are not authorized to edit this order!" });
+            }
+
+            return View("Details",order);
+        }
+
+
         // GET: Order/Create
         [Authorize(Roles = "Customer")]
         public IActionResult Create(int? showingID)
         {
+            //Find order in database that corresponds to user
+            Order orderInDB = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .Where(ord => ord.OrderStatus == "Active")
+                .FirstOrDefault(o => o.Purchaser.UserName == User.Identity.Name);
 
+            if (orderInDB != null)
+            {
+                return RedirectToAction("Details", "Order", new { id = orderInDB.OrderID });
+                //return View("Error", new string[] { "You already have an active cart! Click the cart in the upper right corner to add tickets or view our showings now." });
+            }
 
-            return View();
+            return View(showingID);
         }
 
         // POST: Order/Create
@@ -86,29 +125,50 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderID,TransactionNumber,OrderDate,OrderStatus")] Order order, int? showingID)
         {
-            //TODO: Set order number automatically
-            order.TransactionNumber = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
+            //Find order in database that corresponds to user
 
-            //Set order date to right now
-            order.OrderDate = DateTime.Now;
+            //Checks if there's an active order
+            Order orderInDB = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .Where(ord => ord.OrderStatus == "Active")
+                .FirstOrDefault(o => o.Purchaser.UserName == User.Identity.Name);
 
-            //Associate order with the logged in customer TODO: add logic here for gifting?
-            order.Purchaser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-
-            order.OrderStatus = "Active";
-
-            //make sure all properties are valid
-            if (ModelState.IsValid == false)
+            if (orderInDB != null)
             {
-                return View(order);
+                order = orderInDB;
+
+                //make sure all properties are valid
+                if (ModelState.IsValid == false)
+                {
+                    return View(order);
+                }
             }
+            else
+            {
+                //TODO: Set order number automatically
+                order.TransactionNumber = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
 
-            //if code gets this far, add the registration to the database
-            _context.Add(order);
-            await _context.SaveChangesAsync();
+                //Set order date to right now
+                order.OrderDate = DateTime.Now;
 
-            //return RedirectToAction(nameof(Index));
+                //Associate order with the logged in customer TODO: add logic here for gifting?
+                order.Purchaser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
 
+                order.OrderStatus = "Active";
+
+                //make sure all properties are valid
+                if (ModelState.IsValid == false)
+                {
+                    return View(order);
+                }
+
+                //if code gets this far, add the registration to the database
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+
+            }
             
             //send the user on to the action that will allow them to 
             //create a registration detail.  Be sure to pass along the RegistrationID
@@ -187,9 +247,10 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Order/Edit/5
-        public IActionResult CompleteOrder(int? id)
+        [HttpGet, ActionName("CompleteOrder")]
+        public async Task<IActionResult> CompleteOrderAsync(Order orderIn)
         {
-            if (id == null)
+            if (orderIn.OrderID == 0)
             {
                 return NotFound();
             }
@@ -199,18 +260,53 @@ namespace FinalProjectWorkspace.Controllers
                 .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
                 .Include(ord => ord.Recipient)
                 .Include(ord => ord.Purchaser)
-                .FirstOrDefault(o => o.OrderID == id);
+                .FirstOrDefault(o => o.OrderID == orderIn.OrderID);
+
+            order.PaidWithPopcornPoints = orderIn.PaidWithPopcornPoints;
+
+            if (order.PaidWithPopcornPoints == true)
+            {
+                foreach (Ticket t in order.Tickets)
+                {
+                    t.TotalCost = 0;
+                    t.TransactionPopcornPoints = -100.00m;
+                }
+                order.PopcornPoints = order.Tickets.Count() * -100;
+                order.Purchaser.PCPBalance -= Math.Abs(order.PopcornPoints);
+            }
+            else
+            {
+                order.PopcornPoints = (int)order.Tickets.Sum(t => t.TransactionPopcornPoints);
+                order.Purchaser.PCPBalance = order.Purchaser.PCPBalance + order.PopcornPoints;
+            }
+
+            if (orderIn.Recipient.UserName != null)
+            {
+                AppUser user = _context.Users.Where(u => u.UserName == orderIn.Recipient.UserName).FirstOrDefault();
+                if (user != null)
+                {
+                    order.Recipient = user;
+                } else
+                {
+                    return View("Error", new String[] { "This user doesn't have a Main Street Movies account! Please have them create one before gifting them tickets."});
+                }
+            }
+
+            //TODO: If we uncomment this, then popcorn points get deducted successfully. We would have to remove "Return To Index" on the confirmation page.s
+            _context.Update(order);
+            await _context.SaveChangesAsync();
 
             if (order == null)
             {
                 return NotFound();
             }
+
             return View(order);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CompleteOrderAsync(Order orderIn)
+        public async Task<IActionResult> CompleteOrder(Order orderIn)
         {
             //Find order in database that corresponds to user
             Order order = _context.Order
@@ -231,6 +327,41 @@ namespace FinalProjectWorkspace.Controllers
         // GET: Order/Edit/5
         public IActionResult Confirmed(Order order)
         { 
+            return View(order);
+        }
+
+        public async Task<IActionResult> Cancelled(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+
+            //Find order in database that corresponds to user
+            Order order = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .FirstOrDefault(o => o.OrderID == id);
+
+            //if code gets this far, update the record
+            try
+            {
+                //find the record in the database
+                //Order dbOrder = _context.Order.Find(order.OrderID);
+
+                //update the order status to cancelled
+                order.OrderStatus = "Cancelled";
+
+                _context.Update(order);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was an error updating this order!", ex.Message });
+            }
+
+            //send the user to the Orders Index page.
             return View(order);
         }
 

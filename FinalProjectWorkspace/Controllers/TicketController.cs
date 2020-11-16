@@ -103,11 +103,24 @@ namespace FinalProjectWorkspace.Controllers
                                     .FirstOrDefault(rd => rd.TicketID == ticketIn.TicketID);
             String showingDay;
             DateTime showingTime;
-            Order order;
+            Order order = _context.Order.Where(o => o.OrderID != ticketIn.Order.OrderID).FirstOrDefault();
+            Order badOrder = order;
             TimeSpan age;
+            Decimal showingPrice = 0.00m;
 
             if (ticket == null)
             {
+                //SPECIAL EVENT PRICING
+                if (ticketIn.Showing.SpecialEvent == true)
+                {
+                    String price = _context.Prices
+                    .Where(p => p.PriceName == "SPECIAL_EVENT_PRICE")
+                    .Select(p => p.PriceAmount).First().ToString();
+
+                    ticketIn.DiscountAmount = 0;
+                    return showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                }
+
                 order = _context.Order.Find(ticketIn.Order.OrderID);
 
                 order = _context.Order
@@ -123,13 +136,20 @@ namespace FinalProjectWorkspace.Controllers
             }
             else
             {
+                //SPECIAL EVENT PRICING
+                if (ticket.Showing.SpecialEvent == true)
+                {
+                    String price = _context.Prices
+                                        .Where(p => p.PriceName == "SPECIAL_EVENT_PRICE")
+                                        .Select(p => p.PriceAmount).First().ToString();
+                    ticketIn.DiscountAmount = 0;
+                    return showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                }
                 showingDay = ticket.Showing.ShowingDate.ToString("dddd");
                 showingTime = ticket.Showing.StartTime;
                 age = DateTime.Now - ticket.Order.Purchaser.Birthday;
 
             }
-
-            Decimal showingPrice = 0.00m;
 
             var weekDays = new List<string>()
             {
@@ -218,6 +238,27 @@ namespace FinalProjectWorkspace.Controllers
             Double ageInYears = age.TotalDays / 365;
             if (ageInYears >= 60)
             {
+                if (order != badOrder)
+                {
+                    if (order.Tickets
+                            .Where(t => t.DiscountName == DiscountNames.Senior_Discounts
+                                       || t.DiscountName == DiscountNames.Manitee_and_Senior
+                                       || t.DiscountName == DiscountNames.Tuesday_and_Senior).Count() >= 2 && ticket == null)
+                    {
+                        return showingPrice;
+                    }
+                }
+
+                if (ticket != null)
+                {
+                    if (ticket.Order.Tickets.Where(t => t.DiscountName == DiscountNames.Senior_Discounts
+                            || t.DiscountName == DiscountNames.Manitee_and_Senior
+                            || t.DiscountName == DiscountNames.Tuesday_and_Senior).Count() >= 2)
+                    {
+                        return showingPrice;
+                    }
+                }
+                
                 showingPrice -= 2;
                 ticketIn.DiscountAmount += 2;
 
@@ -299,7 +340,7 @@ namespace FinalProjectWorkspace.Controllers
             //calculate the extended price for the registration detail
             //TODO: Calculate total cost by number of tickets * price per ticket?
 
-            ticket.TransactionPopcornPoints = ticket.TicketPrice;
+            ticket.TransactionPopcornPoints = Math.Truncate(ticket.TotalCost);
 
             //add the registration detail to the database
             _context.Add(ticket);

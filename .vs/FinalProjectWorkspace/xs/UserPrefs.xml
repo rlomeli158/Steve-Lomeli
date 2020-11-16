@@ -1,26 +1,8 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/OrderController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="22" Column="114" IsPinned="True" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Create.cshtml" IsPinned="True" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" />
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Showing.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Movie.cs" />
-      <File FileName="FinalProjectWorkspace/DAL/AppDbContext.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Create.cshtml" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Details.cshtml" />
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" />
+      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="85" Column="14" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="278" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,7 +10,7 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="OrderController.cs" selected="True" />
+                <Node name="TicketController.cs" selected="True" />
               </Node>
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
@@ -36,13 +18,18 @@
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
-                <Node name="Movie" expanded="True" />
-                <Node name="MovieReview" expanded="True" />
                 <Node name="Order" expanded="True" />
-                <Node name="Seed" expanded="True" />
+                <Node name="Shared" expanded="True" />
                 <Node name="Showing" expanded="True" />
+                <Node name="Ticket" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="lib" expanded="True">
+                  <Node name="jquery" expanded="True">
+                    <Node name="jquery.js" expanded="True" />
+                  </Node>
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -51,10 +38,14 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="116" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="117" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="120" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

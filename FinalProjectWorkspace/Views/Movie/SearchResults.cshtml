@@ -5,7 +5,7 @@
 <h1>Movies</h1>
 
 <div>
-    <a asp-action="Browse" style="color:white">Back to Search</a>
+    <a class="btn btn-outline-primary" asp-action="Browse">Back to Search</a>
 </div>
 
 <!--
@@ -52,7 +52,13 @@
                 @Html.DisplayNameFor(model => model.Genre.GenreName)
             </th>
             <th>
-                Find Showings Now!
+                Review Rating
+            </th>
+            <th>
+                See Reviews
+            </th>
+            <th>
+                Movie Details
             </th>
         </tr>
     </thead>
@@ -89,14 +95,21 @@
                 @Html.DisplayFor(modelItem => item.Genre.GenreName)
             </td>
             <td>
-                @Html.ActionLink("Showing Times", "Details", new { id = item.MovieID }, new { style = "color:red" })
+                Review Here
+                <!--Html.DisplayFor(modelItem => item.AverageReviewRating)-->
+            </td>
+            <td>
+                @Html.ActionLink("All Reviews", "MovieReview", new { id = item.MovieID }, new { style = "color:red" })
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
 
-<div>
-    <a asp-action="Browse" style="color:white">Back to Search</a>
+<div class="text-center">
+    <a class="btn btn-outline-primary" asp-action="Browse">Back to Search</a>
 </div>
 
