@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/OrderController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="6" Column="25" />
-      <File FileName="FinalProjectWorkspace/Views/Order/CompleteOrder.cshtml" Line="122" Column="68" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Index.cshtml" Line="35" Column="27" />
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="85" Column="14" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="278" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +10,7 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="OrderController.cs" selected="True" />
+                <Node name="TicketController.cs" selected="True" />
               </Node>
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
