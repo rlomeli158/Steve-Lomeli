@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x2sd5UDoGf+QuL70nQMW+QOhrnNJFlLaFddCD7Dt+SSkAlI1vpZVQfH+D1cJFe4am7VakLiMZfX5fFsPmUaW0Q==",
+  "dgSpecHash": "9fWNdCCCoWj2XUqIQSRWuD5zSro6wtSV9m0nLNevvWwSakTEuk9SHIsAdAcLi7QU1Pms05Vw+0RMXbJuTFZCSQ==",
   "success": true,
-  "projectFilePath": "/Users/audreyhsien/Desktop/Fall 2020/MIS 333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+  "projectFilePath": "/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
   "expectedPackageFiles": [
     "/Users/audreyhsien/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/audreyhsien/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.0/microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",
