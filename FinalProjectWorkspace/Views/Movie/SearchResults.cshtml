@@ -95,11 +95,10 @@
                 @Html.DisplayFor(modelItem => item.Genre.GenreName)
             </td>
             <td>
-                Review Here
-                <!--Html.DisplayFor(modelItem => item.AverageReviewRating)-->
+                @Html.DisplayFor(modelItem => item.AverageReviewRating)
             </td>
             <td>
-                @Html.ActionLink("All Reviews", "MovieReview", new { id = item.MovieID }, new { style = "color:red" })
+                <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">All Reviews</a>
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>

@@ -39,14 +39,14 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "MPAA Rating")]
         public MPAARatings MPAARating { get; set; } //As enum above
 
-        /* TODO: Uncomment this when you work on ratings/reviews
+        //TODO: Uncomment this when you work on ratings/reviews
         [Display(Name = "Average Review Rating")]
         [DisplayFormat(DataFormatString = "{0:C",NullDisplayText = "No Ratings Yet")]
-        public Double AverageReviewRating
+        public Double? AverageReviewRating
         {
             get { return MovieReviews.Average(mr => mr.Rating); }
         }
-        */
+        
 
         //Navigational properties
         [Display(Name = "Genre")]

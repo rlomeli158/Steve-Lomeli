@@ -76,9 +76,31 @@ namespace FinalProjectWorkspace.Controllers
 
         // GET: MovieReview/Create
         [Authorize(Roles = "Customer")]
-        public IActionResult Create()
+        public IActionResult Create(int? movieid)
         {
-            ViewBag.AllMovies = GetAllMovies();
+            
+            if (movieid != null)
+            {
+                Movie movie = _context.Movies.Find(movieid);
+                var query = from m in _context.MovieReview select m;
+                query = query.Where(m => m.Movie.MovieID == movieid);
+                //query = query.Where(m => m.MovieReview.MovieID == movieid);
+                List<MovieReview> movieReviews = query.Include(m => m.Movie).ToList();
+                if (movieReviews.Any())
+                {
+                    return View("Error", new string[] { "You have already reviewed this movie!" });
+                }
+
+                IList<Movie> movieList = new List<Movie>()
+                    {
+                        new Movie() { MovieID=movie.MovieID, Title=movie.Title }
+                    };
+                SelectList slMovies = new SelectList(movieList, nameof(Movie.MovieID), nameof(Movie.Title));
+                ViewBag.AllMovies = slMovies;
+                return View();
+
+            }
+            ViewBag.AllMovies = GetTicketMovies();
             return View();
         }
 
@@ -105,7 +127,7 @@ namespace FinalProjectWorkspace.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Details", "MovieReview", new { id = movieReview.MovieReviewID });
             }
-            ViewBag.AllMovies = GetAllMovies();
+            ViewBag.AllMovies = GetTicketMovies();
             return View(movieReview);
         }
 
@@ -125,7 +147,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 return NotFound();
             }
-            ViewBag.AllMovies = GetAllMovies();
+            ViewBag.AllMovies = GetTicketMovies();
             return View(movieReview);
         }
 
@@ -172,7 +194,7 @@ namespace FinalProjectWorkspace.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.AllMovies = GetAllMovies();
+            ViewBag.AllMovies = GetTicketMovies();
             return View(movieReview);
         }
 
@@ -209,17 +231,17 @@ namespace FinalProjectWorkspace.Controllers
         {
             return _context.MovieReview.Any(e => e.MovieReviewID == id);
         }
-        private SelectList GetAllMovies()
+        private SelectList GetTicketMovies()
         {
             //create a list for all the courses
-            List<Movie> allMovies = _context.Movies.ToList();
+            List<Movie> ticketMovies = _context.Movies.Include(mr => mr.MovieReviews).ThenInclude(mr => mr.User).ThenInclude(mr => mr.Orders).ToList();
 
             //the user MUST select a course, so you don't need a dummy option for no course
 
             //use the constructor on select list to create a new select list with the options
-            SelectList slAllMovies = new SelectList(allMovies, nameof(Movie.MovieID), nameof(Movie.Title));
+            SelectList slTicketMovies = new SelectList(ticketMovies, nameof(Movie.MovieID), nameof(Movie.Title));
 
-            return slAllMovies;
+            return slTicketMovies;
         }
     }
 }
