@@ -1,0 +1,45 @@
+@model FinalProjectWorkspace.Models.Movie
+
+@{
+    ViewData["Title"] = "Copy Schedule";
+}
+
+<h1>Copy Schedule</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CopySchedule">
+            <div style="display:inline-flex; grid-column-gap:30px">
+                <p class="form-group">
+                    What date would you like to copy this schedule from?:<input name="originalDate" class="form-control" type="date" /><br />
+                    <div style="width:300px">
+                        Select the Theatre to Copy From: <br />
+                        <input type="radio" id="originaltheatre1" name="originalTheatre" value="theatre1">
+                        <label for="theatre1">Theatre 1</label><br>
+                        <input type="radio" id="originialtheatre2" name="originalTheatre" value="theatre2">
+                        <label for="theatre2">Theatre 2</label><br>
+                    </div>
+                </p>
+            </div>
+            <div style="display:inline-flex; grid-column-gap:30px">
+
+                <p class="form-group">
+                    When date would you like to copy this schedule to?:<input name="newDate" class="form-control" type="date" /><br />
+                    <div style="width:300px">
+                        Select the Theatre to Copy To: <br />
+                        <input type="radio" id="new2" name="copyTheater" value="0">
+                        <label for="copyTheater1">Theatre 1</label><br>
+                        <input type="radio" id="new2" name="copyTheater" value="1">
+                        <label for="copyTheater2">Theatre 2</label><br>
+                    </div>
+                </p>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+</div>
+

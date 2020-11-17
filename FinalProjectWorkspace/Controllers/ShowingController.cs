@@ -165,6 +165,15 @@ namespace FinalProjectWorkspace.Controllers
                 return View(showing);
             }
 
+            if (SelectedTheatre == 0)
+            {
+                showing.Theatre = Theatre.Theatre1;
+            }
+            else if (SelectedTheatre == 1)
+            {
+                showing.Theatre = Theatre.Theatre2;
+            }
+
             //if code gets to this point, we know the model is valid (except for the showing time) and
             //we can add the showing to the database once we check showing
             Movie dbMovie = _context.Movies.Find(SelectedMovie);
@@ -174,6 +183,7 @@ namespace FinalProjectWorkspace.Controllers
                 showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
             showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
 
+            //Compare showing you want to add to the other showings on the same date
             List<Showing> showingsToCompare = _context.Showings
                                             .Where(s => s.ShowingDate == showing.ShowingDate)
                                             .Where(s => s.Theatre == showing.Theatre).ToList();
@@ -219,15 +229,6 @@ namespace FinalProjectWorkspace.Controllers
                 }
             }
 
-            if (SelectedTheatre == 0)
-            {
-                showing.Theatre = Theatre.Theatre1;
-            }
-            else if (SelectedTheatre == 1)
-            {
-                showing.Theatre = Theatre.Theatre2;
-            }
-
             //add the showing to the database and save changes
             _context.Add(showing);
             await _context.SaveChangesAsync();
@@ -236,16 +237,70 @@ namespace FinalProjectWorkspace.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult GetShowingsToCopy(DateTime originalDate, String originalTheatre, DateTime newDate, String newTheatre)
+
+        public IActionResult CopySchedule()
         {
-            /*
-            List<Showing> originalShowings = _context.Showings
-                                            .Where(s => s.ShowingDate == originalDate)
-                                            .Where(s => s.Theatre == originalTheatre).ToList();
-            */
-
-
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CopySchedule(DateTime originalDate, int originalTheatre, DateTime newDate, int copyTheater)
+        {
+            Theatre ogTheatre = Theatre.Theatre1;
+            Theatre newTheatreEnum = Theatre.Theatre1;
+
+            if (originalTheatre == 1)
+            {
+                ogTheatre = Theatre.Theatre2;
+            }
+
+            if (copyTheater == 1)
+            {
+                newTheatreEnum = Theatre.Theatre2;
+            }
+
+            List<Showing> originalShowings = _context.Showings
+                                            .Include(s => s.Movie)
+                                            .Where(s => s.ShowingDate == originalDate)
+                                            .Where(s => s.Theatre == ogTheatre).ToList();
+
+            List<Showing> showingsToCompareForOtherTheatre = _context.Showings
+                                .Where(s => s.ShowingDate == newDate)
+                                .Where(s => s.Theatre != newTheatreEnum).ToList();
+
+            foreach (Showing s in originalShowings)
+            {
+                Showing showing = new Showing();
+                Movie dbMovie = _context.Movies.Find(s.Movie.MovieID);
+                showing.Movie = dbMovie;
+                showing.ShowingDate = newDate;
+                showing.Status = "Unpublished";
+                showing.StartTime = new DateTime(showing.ShowingDate.Year, showing.ShowingDate.Month, showing.ShowingDate.Day,
+                    s.StartTime.Hour, s.StartTime.Minute, s.StartTime.Millisecond);
+                showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
+                showing.Theatre = newTheatreEnum;
+                showing.SeatsAvailable = s.SeatsAvailable;
+                showing.SpecialEvent = s.SpecialEvent;
+
+                foreach (Showing theaterShowing in showingsToCompareForOtherTheatre)
+                {
+                    if (theaterShowing.Movie == showing.Movie)
+                    {
+                        if (theaterShowing.StartTime == showing.StartTime)
+                        {
+                            return View("Error", new string[]
+                            { showing.Movie.Title + " is being shown at the same time at another theatre." });
+                        }
+                    }
+                }
+
+                //add the showing to the database and save changes
+                _context.Add(showing);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("Index","Showing", new { theatre = copyTheater, ShowingDate = newDate} );
         }
 
         public IActionResult GetUnpublishedShowings()
