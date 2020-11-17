@@ -58,6 +58,8 @@ namespace FinalProjectWorkspace.Controllers
             return genreSelectList;
         }
 
+       
+
         public SelectList GetAllRatings()
         {
 
@@ -69,6 +71,8 @@ namespace FinalProjectWorkspace.Controllers
 
             return MPAASelectList;
         }
+
+        
 
         public IActionResult DisplaySearchResults(SearchViewModel svm)
         {
@@ -135,7 +139,7 @@ namespace FinalProjectWorkspace.Controllers
                 if (ModelState.IsValid == false)
                 {
                     //re-populate ViewBag to have list of all categories & MPAA Ratings
-                    ViewBag.AllCategories = GetAllGenres();
+                    ViewBag.AllGenres = GetAllGenres();
                     ViewBag.AllMPAARatings = GetAllRatings();
 
                     //View is returned with error messages
@@ -193,8 +197,12 @@ namespace FinalProjectWorkspace.Controllers
         [Authorize(Roles = "Manager")]
         public IActionResult Create()
         {
+            ViewBag.AllGenres = GetAllGenres();
+            ViewBag.AllMPAARatings = GetAllRatings();
             return View();
         }
+
+        
 
         // POST: Movie/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -202,14 +210,35 @@ namespace FinalProjectWorkspace.Controllers
         [HttpPost]
         [Authorize(Roles = "Manager")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Revenue,Actors,MPAARating")] Movie movie)
+        public async Task<IActionResult> Create([Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Genre,Revenue,Actors,MPAARating")] Movie movie, int SelectedGenre, int SelectedMPAARating)
         {
-            if (ModelState.IsValid)
+            //Find the next Movie Number from the utilities class
+            //movie.MovieNumber = Utilities.GenerateNextMovieNumber.GetNextMovieNumber(_context);
+
+            
+
+         
+
+            if (ModelState.IsValid && SelectedGenre > 0 && SelectedMPAARating > 0 )
             {
+
+                Genre dbGenre = _context.Genres.Find(SelectedGenre);
+
+                movie.Genre = dbGenre;
+
+                string MPAAStringToDisplay = Enum.GetName(typeof(AllMPAARatings), SelectedMPAARating);
+                MPAARatings MPAARatingsToDisplay = (MPAARatings)Enum.Parse(typeof(MPAARatings), MPAAStringToDisplay);
+                movie.MPAARating = MPAARatingsToDisplay;
+               
+
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+
+            ViewBag.AllGenres = GetAllGenres();
+            ViewBag.AllMPAARatings = GetAllRatings();
             return View(movie);
         }
 
@@ -227,6 +256,9 @@ namespace FinalProjectWorkspace.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.AllGenres = GetAllGenres();
+            ViewBag.AllMPAARatings = GetAllRatings();
             return View(movie);
         }
 
@@ -236,17 +268,25 @@ namespace FinalProjectWorkspace.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Manager")]
-        public async Task<IActionResult> Edit(int id, [Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Revenue,Actors,MPAARating")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Revenue,Actors,MPAARating")] Movie movie, int SelectedGenre, int SelectedMPAARating)
         {
             if (id != movie.MovieID)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && SelectedGenre > 0 && SelectedMPAARating > 0)
             {
                 try
                 {
+                    Genre dbGenre = _context.Genres.Find(SelectedGenre);
+
+                    movie.Genre = dbGenre;
+
+                    string MPAAStringToDisplay = Enum.GetName(typeof(AllMPAARatings), SelectedMPAARating);
+                    MPAARatings MPAARatingsToDisplay = (MPAARatings)Enum.Parse(typeof(MPAARatings), MPAAStringToDisplay);
+                    movie.MPAARating = MPAARatingsToDisplay;
+
                     _context.Update(movie);
                     await _context.SaveChangesAsync();
                 }
@@ -263,6 +303,9 @@ namespace FinalProjectWorkspace.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewBag.AllGenres = GetAllGenres();
+            ViewBag.AllMPAARatings = GetAllRatings();
             return View(movie);
         }
 

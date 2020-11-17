@@ -1,36 +1,38 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Program.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="85" Column="14" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="278" Column="33" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="10" Column="77" />
+      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" Line="35" Column="103" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" Line="33" Column="36" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="186" Column="76" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="213" Column="112" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Create.cshtml" Line="45" Column="82" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Edit.cshtml" Line="16" Column="13" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="63" Column="56" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Utilities/GenerateNextCustomerID.cs" Line="12" Column="35" />
+      <File FileName="FinalProjectWorkspace/Utilities/GenerateNextTransactionNumber.cs" Line="16" Column="38" />
+      <File FileName="FinalProjectWorkspace/Program.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="TicketController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Seeding" expanded="True" />
+              <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
-                <Node name="Order" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Movie" expanded="True" />
                 <Node name="Showing" expanded="True" />
-                <Node name="Ticket" expanded="True" />
               </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="lib" expanded="True">
-                  <Node name="jquery" expanded="True">
-                    <Node name="jquery.js" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -42,9 +44,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="116" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="117" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="120" column="1" />
+      <Breakpoint file="/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/Controllers/MovieController.cs" relfile="FinalProjectWorkspace/Controllers/MovieController.cs" line="221" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

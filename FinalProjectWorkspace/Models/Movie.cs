@@ -23,20 +23,30 @@ namespace FinalProjectWorkspace.Models
         public Int32 MovieID { get; set; } 
 
         public int MovieNumber { get; set; } //from 3001!
+
+        [Required(ErrorMessage = "Movie Title is required!")]
         public String Title { get; set; }
+
+        [Required(ErrorMessage = "Movie Overview is required!")]
         public String Overview { get; set; }
         public String Tagline { get; set; }
 
+       
         [Display(Name = "Run Time")]
+        [Required(ErrorMessage = "Movie Run Time is required!")]
         public Double RunTime { get; set; }
 
         [Display(Name = "Release Date")]
+        [Required(ErrorMessage = "Movie Release Date is required!")]
         [DisplayFormat(DataFormatString = "{0:MM/yyyy}")]
         public DateTime Year { get; set; } //reflect this change on Balsamiq model
         public Decimal Revenue { get; set; } //Add this to model
+
+        [Required(ErrorMessage = "At least one actor is required!")]
         public String Actors { get; set; }
 
         [Display(Name = "MPAA Rating")]
+        [Required(ErrorMessage = "MPAA Rating is required!")]
         public MPAARatings MPAARating { get; set; } //As enum above
 
         /* TODO: Uncomment this when you work on ratings/reviews
@@ -50,6 +60,7 @@ namespace FinalProjectWorkspace.Models
 
         //Navigational properties
         [Display(Name = "Genre")]
+        //[Required(ErrorMessage = "Genre is required!")]
         public Genre Genre { get; set; }
         public List<Showing> Showings { get; set; }
         public List<MovieReview> MovieReviews { get; set; }

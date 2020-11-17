@@ -24,15 +24,15 @@
 
                 <div class="col mb-4">
                     <p class="sansserif" style="color:darksalmon;">Edit Customer Profile</p>
-                    <a class="btn btn-primary" asp-action="EditCustomerProfile">Edit Customer Profiles</a>
+                    <a class="btn btn-primary" asp-controller="RoleAdmin" asp-action="Index">Edit Customer Profiles</a>
                 </div>
                 <div class="col mb-4">
                     <p class="sansserif" style="color:darksalmon;">Sell Tickets</p>
-                    <a class="btn btn-primary" asp-action="SellTickets">Sell Tickets</a>
+                    <a class="btn btn-primary" asp-controller="Ticket" asp-action="Index">Sell Tickets</a>
                 </div>
                 <div class="col mb-4">
                     <p class="sansserif" style="color:darksalmon;">Movie Search</p>
-                    <a class="btn btn-primary" asp-action="MovieSearch">Movie Search</a>
+                    <a class="btn btn-primary" asp-controller="Movie" asp-action="Browse">Movie Search</a>
                 </div>
             </div>
         </center>
@@ -43,15 +43,15 @@
 
                     <div class="col mb-4">
                         <p class="sansserif" style="color:darksalmon;">Edit Reviews</p>
-                        <a class="btn btn-primary" asp-action="EditReviews">Edit Reviews</a>
+                        <a class="btn btn-primary" asp-controller="MovieReview" asp-action="Index">Edit Reviews</a>
                     </div>
                     <div class="col mb-4">
                         <p class="sansserif" style="color:darksalmon;">Edit Profile</p>
-                        <a class="btn btn-primary" asp-action="EditProfile">Edit Profile</a>
+                        <a class="btn btn-primary" asp-controller="Account" asp-action="Index">Edit Accounts</a>
                     </div>
                     <div class="col mb-4">
                         <p class="sansserif" style="color:darksalmon;">Movie Schedule</p>
-                        <a class="btn btn-primary" asp-action="MovieSchedule">Movie Schedule</a>
+                        <a class="btn btn-primary" asp-controller="Showing" asp-action="Index">Movie Schedule</a>
                     </div>
                 </div>
             </center>
