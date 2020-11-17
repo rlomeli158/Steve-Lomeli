@@ -45,21 +45,18 @@
 <table class="table table-hover text-center">
     <tr class="text-light text-center">
         <th>Movie Title</th>
-        <th>Seat Number</th>
-        <th>Ticket Price</th>
-        <th>Discount Amount</th>
+        <th>Date</th>
+        <th>Seat</th>
+        <th>Price</th>
+        <th>Discount</th>
         <th>Discount Name</th>
-        <th>Total Cost</th>
-        @if (Model.OrderStatus == "Paid")
-        {
-            <th>Write a Review!</th>
-        }
-        
+        <th>Total</th>
     </tr>
     @foreach (Ticket t in Model.Tickets)
     {
 <tr class="table-secondary text-center text-dark">
     <td>@Html.DisplayFor(ModelItem => t.Showing.Movie.Title)</td>
+    <td>@Html.DisplayFor(ModelItem => t.Showing.ShowingDate) @Html.DisplayFor(ModelItem => t.Showing.StartTime)</td>
     <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
     <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
     <td>@Html.DisplayFor(ModelItem => t.DiscountAmount)</td>
@@ -88,75 +85,103 @@
         <td>None</td>
     }
     <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
-    @if (Model.OrderStatus == "Paid")
-    {
-        <td><a asp-action="Create" asp-controller="MovieReview" asp-route-movieid="@t.Showing.Movie.MovieID" class="btn btn-outline-info">Add Review</a></td>
-    }
-       
 </tr>
     }
 </table>
 
-<h5>Order Summary</h5>
-@if (Model.Tickets.Any(t => t.Showing.SpecialEvent == true))
-{
-    <p class="text-info">NOTE: There is a special event showing in the order that is ineligbile for any discounts or popcorn point redemptions!</p>
-}
-<table class="table-secondary text-dark" style="width:40%; padding:10px">
-    <tr>
-        <th colspan="2" style="text-align:center">Order Summary</th>
-    </tr>
-    <tr>
-        <td>Order Subtotal:</td>
-        <td>@Html.DisplayFor(model => model.OrderSubtotal)</td>
-    </tr>
-    <tr>
-        <td>Taxes:</td>
-        <td>@Html.DisplayFor(model => model.Taxes)</td>
-    </tr>
-    <tr>
-        <td>Order Total:</td>
-        <td>@Html.DisplayFor(model => model.OrderTotal)</td>
-    </tr>
-    @if (Model.Tickets.Sum(t => t.DiscountAmount) > 0)
-    {
-        <tr>
-            <td>Amount Saved With Discounts:</td>
-            @{ Decimal discountSaved = Model.Tickets.Sum(t => t.DiscountAmount);}
-            <td>$@discountSaved</td>
-        </tr>
-    }
-</table>
-
-@if (Model.OrderStatus == "Active")
-{
-    <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Add or Remove Tickets</a>
+<div style="display:inline-flex;">
+    <div>
+        <h5>Order Summary</h5>
+        @if (Model.Tickets.Any(t => t.Showing.SpecialEvent == true))
+        {
+            <p class="text-info">NOTE: There is a special event showing in the order that is ineligbile for any discounts or popcorn point redemptions!</p>
+        }
+        <table class="table-secondary text-dark" style="width:100%; padding:40px; margin-right:250px;">
+            <tr>
+                <th colspan="2" style="text-align:center">Order Summary</th>
+            </tr>
+            <tr>
+                <td>Order Subtotal:</td>
+                <td>@Html.DisplayFor(model => model.OrderSubtotal)</td>
+            </tr>
+            <tr>
+                <td>Taxes:</td>
+                <td>@Html.DisplayFor(model => model.Taxes)</td>
+            </tr>
+            <tr>
+                <td>Order Total:</td>
+                <td>@Html.DisplayFor(model => model.OrderTotal)</td>
+            </tr>
+            @if (Model.Tickets.Sum(t => t.DiscountAmount) > 0)
+            {
+                <tr>
+                    <td>Amount Saved With Discounts:</td>
+                    @{ Decimal discountSaved = Model.Tickets.Sum(t => t.DiscountAmount);}
+                    <td>$@discountSaved</td>
+                </tr>
+            }
+        </table>
+    </div>
     @if (Model.OrderTotal > 0 && Model.OrderStatus != "Paid")
     {
-    <br />
-    <div class="float-right">
-    <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
-        <input type="hidden" asp-for="OrderID" />
-        <label asp-for="Recipient.UserName" class="control-label">Email of Gift Recipient</label>
-        <input asp-for="Recipient.UserName" class="form-control" placeholder="Recipient's Email" />
-        <div class="float-left">
-            <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
-            <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false checked="checked"/>Cash<br />
-            @if (Model.Purchaser.PCPBalance >= (Model.Tickets.Count() * 100) && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
-            {
-                <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
-                <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true  /> @:Popcorn Points<br />
-            }
-            <input type="submit" value="Pay" class="btn btn-success" />
+        <div style="margin-top:25px ;margin-left:450px;width:100%">
+            <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
+                <input type="hidden" asp-for="OrderID" />
+                <div>
+                    <label class="form-check-label">
+                        Is this a gift?
+                        <input type="checkbox" id="myCheck" onclick="myFunction()" />
+                    </label>
+                </div>
+                <div id="text" style="display:none">
+                    <label asp-for="Recipient.UserName" class="control-label">Email of Gift Recipient</label>
+                    <input id="textInput" asp-for="Recipient.UserName" class="form-control" placeholder="Recipient's Email" />
+                </div>
+                <div>
+                    <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
+                    <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false checked="checked" /> Cash<br />
+                    @if (Model.Purchaser.PCPBalance >= (Model.Tickets.Count() * 100) && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
+                    {
+                        <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true /> @:Popcorn Points<br />
+                    }
+                    <input style="margin-top:10px" type="submit" value="Check Out" class="btn btn-success" onclick="viewText()" />
+                </div>
+            </form>
         </div>
-    </form>
-    </div>
     }
-}
-else
-{
-    <a asp-action="Cancelled" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a> @:|
-}
-<div>
-    <a asp-action="Index" class="btn btn-warning">Back to Order History</a>
 </div>
+
+<br />
+<div style="display:inline-flex; grid-column-gap:15px" class="text-left">
+    <!--<a asp-action="Index" class="btn btn-warning">Back to Order History</a>-->
+    @if (Model.OrderStatus == "Active")
+    {
+        <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Add or Remove Tickets</a>
+    }
+    else
+    {
+        <a asp-action="Cancelled" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a>
+    }
+</div>
+
+<script>function myFunction() {
+        var checkBox = document.getElementById("myCheck");
+        var text = document.getElementById("text");
+
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+
+        }
+    }
+
+    function viewText() {
+        var checkBox = document.getElementById("myCheck");
+        var text = document.getElementById("textInput");
+
+        if (checkBox.checked == false) {
+            text.value = null;
+
+        }
+    }</script>
