@@ -78,6 +78,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             //Initial query LINQ
             var query = from m in _context.Movies select m;
+            query = query.Include(m => m.MovieReviews);
 
             //If statements corresponding to each input form control
 
@@ -110,10 +111,10 @@ namespace FinalProjectWorkspace.Controllers
                 switch (svm.SelectedSearchType)
                 {
                     case AllSearchTypes.GreaterThan:
-                        query = query.Where(m => m.MovieReviews.Average(r => r.Rating) >= Convert.ToDouble(svm.SelectedCustomerRating));
+                        query = query.Where(m => m.MovieReviews.Where(r => r.ApprovalStatus == true).Average(r => r.Rating) >= Convert.ToDouble(svm.SelectedCustomerRating));
                         break;
                     case AllSearchTypes.LessThan:
-                        query = query.Where(m => m.MovieReviews.Average(r => r.Rating) <= Convert.ToDouble(svm.SelectedCustomerRating));
+                        query = query.Where(m => m.MovieReviews.Where(r => r.ApprovalStatus == true).Average(r => r.Rating) <= Convert.ToDouble(svm.SelectedCustomerRating));
                         break;
                     default:
                         break;
