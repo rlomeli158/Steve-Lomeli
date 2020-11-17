@@ -22,9 +22,45 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Showing
-        public async Task<IActionResult> Index()
+        public IActionResult Index(DateTime StartingShowingDate, String theatre, DateTime ShowingDate)
         {
-            return View(await _context.Showings.Include(s => s.Movie).ToListAsync());
+            //LINQ to query job postings
+            var query = from jp in _context.Showings select jp;
+            query = query.Include(s => s.Movie);
+
+            if (StartingShowingDate != new DateTime(01, 01, 0001))
+            {
+                if (StartingShowingDate.DayOfWeek != DayOfWeek.Friday)
+                {
+                    return View("Error", new string[]
+                    { "The starting date you selected isn't on a Friday! Please select a Friday to view the entire schedule week." });
+                }
+                DateTime EndShowingDate = StartingShowingDate.AddDays(6);
+                query = query.Where(s => s.ShowingDate >= StartingShowingDate && s.ShowingDate <= EndShowingDate);
+
+            }
+
+            if(ShowingDate != new DateTime(01, 01, 0001))
+            {
+                query = query.Where(s => s.ShowingDate == ShowingDate);
+            }
+
+            if (theatre != "Both" && theatre != null)
+            {
+                if (theatre == "theatre1")
+                {
+                    query = query.Where(s => s.Theatre == Theatre.Theatre1);
+                }
+                else if (theatre == "theatre2")
+                {
+                    query = query.Where(s => s.Theatre == Theatre.Theatre2);
+                }
+            }
+
+            List<Showing> SelectedShowings = query.ToList();
+            return View(SelectedShowings.OrderBy(s => s.ShowingDate));
+
+            //return View(await _context.Showings.Include(s => s.Movie).ToListAsync());
         }
 
         // GET: Showing/Details/5
@@ -63,6 +99,30 @@ namespace FinalProjectWorkspace.Controllers
 
             //return the MultiSelectList
             return movieSelectList;
+        }
+
+        private SelectList GetAllDays()
+        {
+            //Get the list of suppliers from the database
+            List<string> weekDays = new List<string>()
+            {
+                "Select a Day",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            };
+
+            //convert the list to a SelectList by calling SelectList constructor
+            //SupplierID and SupplierName are the names of the properties on the Supplier class
+            //SupplierID is the primary key
+            SelectList weekDaySelectList = new SelectList(weekDays, "ID", "day");
+
+            //return the MultiSelectList
+            return weekDaySelectList;
         }
 
         // GET: Showing/Create
@@ -105,12 +165,58 @@ namespace FinalProjectWorkspace.Controllers
                 return View(showing);
             }
 
-            //if code gets to this point, we know the model is valid and
-            //we can add the showing to the database
-
             Movie dbMovie = _context.Movies.Find(SelectedMovie);
             showing.Movie = dbMovie;
             showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
+
+            List<Showing> showingsToCompare = _context.Showings
+                                            .Where(s => s.ShowingDate == showing.ShowingDate)
+                                            .Where(s => s.Theatre == showing.Theatre).ToList();
+
+            foreach(Showing s in showingsToCompare)
+            {
+                if(showing.StartTime > s.StartTime)
+                {
+                    if (showing.StartTime > s.EndTime.AddMinutes(25))
+                    {
+                        //good
+                    }
+                    else
+                    {
+                        return View("Error", new string[] { "Showing is too close to the end of another movie." });
+                    }
+                }
+                else
+                {
+                    if(s.StartTime > showing.EndTime.AddMinutes(25))
+                    {
+                        //good
+                    }
+                    else
+                    {
+                        return View("Error", new string[] { "Showing is too close to the start of another movie." });
+                    }
+                }
+            }
+
+            //if code gets to this point, we know the model is valid and
+            //we can add the showing to the database
+
+            if (SelectedTheatre == 0)
+            {
+                showing.Theatre = Theatre.Theatre1;
+            }
+            else if (SelectedTheatre == 1)
+            {
+                showing.Theatre = Theatre.Theatre2;
+            }
+
+            /*
+            Movie dbMovie = _context.Movies.Find(SelectedMovie);
+
+            showing.Movie = dbMovie;
+            showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
+            */
 
             //add the showing to the database and save changes
             _context.Add(showing);
@@ -201,11 +307,23 @@ namespace FinalProjectWorkspace.Controllers
                     .Include(cd => cd.Movie)
                     .FirstOrDefault(c => c.ShowingID == showing.ShowingID);
 
+                Movie dbMovie = _context.Movies.Find(SelectedMovie);
+
+                if (SelectedTheatre == 0)
+                {
+                    dbShowing.Theatre = Theatre.Theatre1;
+                }
+                else if (SelectedTheatre == 1)
+                {
+                    dbShowing.Theatre = Theatre.Theatre2;
+                }
+
+
                 //update the course's scalar properties
+                dbShowing.Movie = dbMovie;
                 dbShowing.ShowingDate = showing.ShowingDate;
                 dbShowing.StartTime = showing.StartTime;
                 dbShowing.EndTime = showing.StartTime.AddMinutes(dbShowing.Movie.RunTime);
-                dbShowing.Theatre = showing.Theatre;
                 dbShowing.SeatsAvailable = showing.SeatsAvailable;
                 dbShowing.SpecialEvent = showing.SpecialEvent;
 
