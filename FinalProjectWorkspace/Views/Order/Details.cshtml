@@ -51,6 +51,10 @@
         <th>Discount</th>
         <th>Discount Name</th>
         <th>Total</th>
+        @if (Model.OrderStatus == "Paid")
+        {
+            <th>Write a Review!</th>
+        }
     </tr>
     @foreach (Ticket t in Model.Tickets)
     {
@@ -85,6 +89,10 @@
         <td>None</td>
     }
     <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
+    @if (Model.OrderStatus == "Paid")
+    {
+        <td><a asp-action="Create" asp-controller="MovieReview" asp-route-movieid="@t.Showing.Movie.MovieID" class="btn btn-outline-info">Add Review</a></td>
+    }
 </tr>
     }
 </table>

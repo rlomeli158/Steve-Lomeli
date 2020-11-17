@@ -95,7 +95,16 @@
                 @Html.DisplayFor(modelItem => item.Genre.GenreName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AverageReviewRating)
+                @{Double? avgReview = item.MovieReviews.Where(r => r.ApprovalStatus == true).Average(m => m.Rating);}
+                @if (avgReview != null)
+                {
+                    @avgReview
+                }
+                else
+                {
+                    @:No Rating yet
+                }
+
             </td>
             <td>
                 <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">All Reviews</a>

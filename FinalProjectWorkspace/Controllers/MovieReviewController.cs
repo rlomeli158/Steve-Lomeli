@@ -84,7 +84,6 @@ namespace FinalProjectWorkspace.Controllers
                 Movie movie = _context.Movies.Find(movieid);
                 var query = from m in _context.MovieReview select m;
                 query = query.Where(m => m.Movie.MovieID == movieid);
-                //query = query.Where(m => m.MovieReview.MovieID == movieid);
                 List<MovieReview> movieReviews = query.Include(m => m.Movie).ToList();
                 if (movieReviews.Any())
                 {
