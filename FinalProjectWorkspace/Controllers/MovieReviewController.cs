@@ -52,7 +52,7 @@ namespace FinalProjectWorkspace.Controllers
                                           .ToList();
                 return View(mrs);
             }
-            return View();
+            
             }
 
         // GET: MovieReview/Details/5
