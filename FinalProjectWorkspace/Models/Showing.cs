@@ -40,6 +40,8 @@ namespace FinalProjectWorkspace.Models
         public Int32 SeatsAvailable { get; set; } // You take the difference of all seats and seats purchased
         public Boolean SpecialEvent { get; set; }
 
+        public String Status { get; set; }
+
         public Movie Movie { get; set; }
         public List<Ticket> Tickets { get; set; }
 

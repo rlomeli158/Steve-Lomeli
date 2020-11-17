@@ -165,8 +165,13 @@ namespace FinalProjectWorkspace.Controllers
                 return View(showing);
             }
 
+            //if code gets to this point, we know the model is valid (except for the showing time) and
+            //we can add the showing to the database once we check showing
             Movie dbMovie = _context.Movies.Find(SelectedMovie);
             showing.Movie = dbMovie;
+            showing.Status = "Unpublished";
+            showing.StartTime = new DateTime(showing.ShowingDate.Year, showing.ShowingDate.Month, showing.ShowingDate.Day,
+                showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
             showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
 
             List<Showing> showingsToCompare = _context.Showings
@@ -199,8 +204,20 @@ namespace FinalProjectWorkspace.Controllers
                 }
             }
 
-            //if code gets to this point, we know the model is valid and
-            //we can add the showing to the database
+            List<Showing> showingsToCompareForOtherTheatre = _context.Showings
+                                            .Where(s => s.ShowingDate == showing.ShowingDate)
+                                            .Where(s => s.Theatre != showing.Theatre).ToList();
+
+            foreach(Showing s in showingsToCompareForOtherTheatre)
+            {
+                if(s.Movie == showing.Movie)
+                {
+                    if (s.StartTime == showing.StartTime)
+                    {
+                        return View("Error", new string[] { "This is being shown at the same time at another theatre." });
+                    }
+                }
+            }
 
             if (SelectedTheatre == 0)
             {
@@ -211,13 +228,6 @@ namespace FinalProjectWorkspace.Controllers
                 showing.Theatre = Theatre.Theatre2;
             }
 
-            /*
-            Movie dbMovie = _context.Movies.Find(SelectedMovie);
-
-            showing.Movie = dbMovie;
-            showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
-            */
-
             //add the showing to the database and save changes
             _context.Add(showing);
             await _context.SaveChangesAsync();
@@ -226,6 +236,74 @@ namespace FinalProjectWorkspace.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult GetShowingsToCopy(DateTime originalDate, String originalTheatre, DateTime newDate, String newTheatre)
+        {
+            /*
+            List<Showing> originalShowings = _context.Showings
+                                            .Where(s => s.ShowingDate == originalDate)
+                                            .Where(s => s.Theatre == originalTheatre).ToList();
+            */
+
+
+            return View();
+        }
+
+        public IActionResult GetUnpublishedShowings()
+        {
+            List<Showing> showings = _context.Showings.Include(s => s.Movie).Where(s => s.Status == "Unpublished").ToList();
+
+            return RedirectToAction("Publish", "Showing", new { showings });
+        }
+
+        public IActionResult Publish()
+        {
+            List<Showing> showings = _context.Showings.Include(s => s.Movie).Where(s => s.Status == "Unpublished").ToList();
+
+            showings.OrderBy(s => s.ShowingDate);
+
+            //Use this to check if movie runs past 9:30 PM
+            DateTime compareTime;
+
+            //Use this as a counter to ensure at least one movie ends past 9:30 PM
+            Int32 movieEndPastNine = 0;
+
+            //Use this to check if the start time of the current movie
+            //is no more than 45 minutes past the end time of previous movie
+            //DateTime goodEndTime = new DateTime(1900, 1, 1, 0, 0, 0);
+
+            //Orders showing by showing date
+            showings = showings.OrderBy(s => s.StartTime).ToList();
+
+            _ = showings;
+
+            DateTime goodEndTime = showings.Select(s => s.EndTime).First();
+
+            foreach (Showing s in showings)
+            {
+                //Checks if a movie runs past 9:30 PM
+                compareTime = new DateTime(s.EndTime.Year, s.EndTime.Month, s.EndTime.Day, 21, 30,00);
+                if (s.EndTime > compareTime)
+                {
+                    movieEndPastNine += 1;
+                }
+
+                //Checks if start time is no more than 45 minutes after previous movie's end time, enters if bad
+                if(s.StartTime > goodEndTime.AddMinutes(45))
+                {
+                    return View("Error", new string[]
+                    {  s.Movie.Title + " (ID: "+ s.ShowingID + ") " + "showing at " + s.StartTime + " is more than 45 minutes after the previous showing." });
+                }
+
+                goodEndTime = s.EndTime;
+            }
+
+            if (movieEndPastNine < 1)
+            {
+                return View("Error", new string[] { "There is no movie that runs past 9:30 PM. Please add one." });
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
         // GET: Showing/Edit/5
         [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(int? id)
@@ -241,40 +319,28 @@ namespace FinalProjectWorkspace.Controllers
                 return NotFound();
             }
 
-            ViewBag.AllMovies = GetAllMovies();
+            ViewBag.AllMovies = GetAllMovies(showing.ShowingID);
             ViewBag.AllTheatres = GetAllTheatres();
             return View(showing);
         }
 
-        /*
         private SelectList GetAllMovies(int showingID)
         {
+            Showing showing = _context.Showings.Include(s => s.Movie).Where(s => s.ShowingID == showingID).First();
+
+            Int32 selectedMovieID = showing.Movie.MovieID;
+
             //Create a new list of departments and get the list of the departments
             //from the database
-            List<Movie> allMovies = _context.Movies.ToList();
-
-
-            //Find all of the course departments currently associated with this course
-            List<Showing> movies = _context.Showings
-                                         .Include(p => p.Movie)
-                                         .ToList();
-
-            List<Movie> movies2 = _context.Movies
-                                         .Include(p => p.Showings)
-                                         .ToList();
-
-            Int32 selectedMovieID = movies2.Where(r => r.Showings.Min(rp => rp.ShowingID) == showingID);
-
+            List<Movie> allMovies = _context.Movies.Include(m => m.Showings).ToList();
 
             //use the MultiSelectList constructor method to get a new MultiSelectList
             SelectList slAllMovies = new SelectList(allMovies.OrderBy(d => d.Title), "MovieID", "Title", selectedMovieID);
-
 
             //return the MultiSelectList
             return slAllMovies;
 
         }
-        */
 
         // POST: Showing/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -282,7 +348,7 @@ namespace FinalProjectWorkspace.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Manager")]
-        public IActionResult Edit(int id, [Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent")] Showing showing, int SelectedMovie, int SelectedTheatre)
+        public IActionResult Edit(int id, [Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent,Status")] Showing showing, int SelectedMovie, int SelectedTheatre)
 
         {
             //this is a security check to see if the user is trying to modify
@@ -322,10 +388,12 @@ namespace FinalProjectWorkspace.Controllers
                 //update the course's scalar properties
                 dbShowing.Movie = dbMovie;
                 dbShowing.ShowingDate = showing.ShowingDate;
-                dbShowing.StartTime = showing.StartTime;
-                dbShowing.EndTime = showing.StartTime.AddMinutes(dbShowing.Movie.RunTime);
+                dbShowing.StartTime = new DateTime(showing.ShowingDate.Year, showing.ShowingDate.Month, showing.ShowingDate.Day,
+                showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
+                dbShowing.EndTime = dbShowing.StartTime.AddMinutes(dbShowing.Movie.RunTime);
                 dbShowing.SeatsAvailable = showing.SeatsAvailable;
                 dbShowing.SpecialEvent = showing.SpecialEvent;
+                dbShowing.Status = showing.Status;
 
                 //save the changes
                 _context.Showings.Update(dbShowing);
