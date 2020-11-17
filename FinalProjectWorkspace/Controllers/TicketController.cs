@@ -103,7 +103,8 @@ namespace FinalProjectWorkspace.Controllers
                                     .FirstOrDefault(rd => rd.TicketID == ticketIn.TicketID);
             String showingDay;
             DateTime showingTime;
-            Order order;
+            Order order = _context.Order.Where(o => o.OrderID != ticketIn.Order.OrderID).FirstOrDefault();
+            Order badOrder = order;
             TimeSpan age;
             Decimal showingPrice = 0.00m;
 
@@ -237,6 +238,27 @@ namespace FinalProjectWorkspace.Controllers
             Double ageInYears = age.TotalDays / 365;
             if (ageInYears >= 60)
             {
+                if (order != badOrder)
+                {
+                    if (order.Tickets
+                            .Where(t => t.DiscountName == DiscountNames.Senior_Discounts
+                                       || t.DiscountName == DiscountNames.Manitee_and_Senior
+                                       || t.DiscountName == DiscountNames.Tuesday_and_Senior).Count() >= 2 && ticket == null)
+                    {
+                        return showingPrice;
+                    }
+                }
+
+                if (ticket != null)
+                {
+                    if (ticket.Order.Tickets.Where(t => t.DiscountName == DiscountNames.Senior_Discounts
+                            || t.DiscountName == DiscountNames.Manitee_and_Senior
+                            || t.DiscountName == DiscountNames.Tuesday_and_Senior).Count() >= 2)
+                    {
+                        return showingPrice;
+                    }
+                }
+                
                 showingPrice -= 2;
                 ticketIn.DiscountAmount += 2;
 

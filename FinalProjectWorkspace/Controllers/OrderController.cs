@@ -69,13 +69,52 @@ namespace FinalProjectWorkspace.Controllers
             return View(order);
         }
 
+        // GET: Order/Details/5
+        public IActionResult ActiveOrder(int? id)
+        {
+            //Find order in database that corresponds to user
+            Order order = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .Where(ord => ord.OrderStatus == "Active")
+                .FirstOrDefault(o => o.Purchaser.UserName == User.Identity.Name);
+
+            //if registration wasn't found
+            if (order == null)
+            {
+                return View("Error", new String[] { "There is no active order!" });
+            }
+
+            //make sure a customer isn't trying to look at someone else's order
+            if (User.IsInRole("Manager") == false && order.Purchaser.UserName != User.Identity.Name && order.Recipient.UserName != User.Identity.Name)
+            {
+                return View("Error", new string[] { "You are not authorized to edit this order!" });
+            }
+
+            return View("Details",order);
+        }
+
+
         // GET: Order/Create
         [Authorize(Roles = "Customer")]
         public IActionResult Create(int? showingID)
         {
+            //Find order in database that corresponds to user
+            Order orderInDB = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .Where(ord => ord.OrderStatus == "Active")
+                .FirstOrDefault(o => o.Purchaser.UserName == User.Identity.Name);
 
+            if (orderInDB != null)
+            {
+                return RedirectToAction("Details", "Order", new { id = orderInDB.OrderID });
+                //return View("Error", new string[] { "You already have an active cart! Click the cart in the upper right corner to add tickets or view our showings now." });
+            }
 
-            return View();
+            return View(showingID);
         }
 
         // POST: Order/Create
@@ -86,29 +125,50 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderID,TransactionNumber,OrderDate,OrderStatus")] Order order, int? showingID)
         {
-            //TODO: Set order number automatically
-            order.TransactionNumber = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
+            //Find order in database that corresponds to user
 
-            //Set order date to right now
-            order.OrderDate = DateTime.Now;
+            //Checks if there's an active order
+            Order orderInDB = _context.Order
+                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Recipient)
+                .Include(ord => ord.Purchaser)
+                .Where(ord => ord.OrderStatus == "Active")
+                .FirstOrDefault(o => o.Purchaser.UserName == User.Identity.Name);
 
-            //Associate order with the logged in customer TODO: add logic here for gifting?
-            order.Purchaser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-
-            order.OrderStatus = "Active";
-
-            //make sure all properties are valid
-            if (ModelState.IsValid == false)
+            if (orderInDB != null)
             {
-                return View(order);
+                order = orderInDB;
+
+                //make sure all properties are valid
+                if (ModelState.IsValid == false)
+                {
+                    return View(order);
+                }
             }
+            else
+            {
+                //TODO: Set order number automatically
+                order.TransactionNumber = Utilities.GenerateNextTransactionNumber.GetNextTransactionNumber(_context);
 
-            //if code gets this far, add the registration to the database
-            _context.Add(order);
-            await _context.SaveChangesAsync();
+                //Set order date to right now
+                order.OrderDate = DateTime.Now;
 
-            //return RedirectToAction(nameof(Index));
+                //Associate order with the logged in customer TODO: add logic here for gifting?
+                order.Purchaser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
 
+                order.OrderStatus = "Active";
+
+                //make sure all properties are valid
+                if (ModelState.IsValid == false)
+                {
+                    return View(order);
+                }
+
+                //if code gets this far, add the registration to the database
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+
+            }
             
             //send the user on to the action that will allow them to 
             //create a registration detail.  Be sure to pass along the RegistrationID

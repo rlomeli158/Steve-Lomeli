@@ -52,13 +52,13 @@
                 @Html.DisplayNameFor(model => model.Genre.GenreName)
             </th>
             <th>
-                Average Review Rating
+                Review Rating
             </th>
             <th>
-                See Reviews Here
+                See Reviews
             </th>
             <th>
-                Find Showings Now!
+                Movie Details
             </th>
         </tr>
     </thead>
@@ -98,10 +98,10 @@
                 @Html.DisplayFor(modelItem => item.AverageReviewRating)
             </td>
             <td>
-                @Html.ActionLink("Index", "MovieReview", new { id = item.MovieID }, new { style = "color:red" })
+                <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">All Reviews</a>
             </td>
             <td>
-                @Html.ActionLink("Showing Times", "Details", new { id = item.MovieID }, new { style = "color:red" })
+                <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
             </td>
         </tr>
 }
