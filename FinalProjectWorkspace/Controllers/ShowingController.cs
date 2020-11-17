@@ -322,15 +322,11 @@ namespace FinalProjectWorkspace.Controllers
             //Use this as a counter to ensure at least one movie ends past 9:30 PM
             Int32 movieEndPastNine = 0;
 
-            //Use this to check if the start time of the current movie
-            //is no more than 45 minutes past the end time of previous movie
-            //DateTime goodEndTime = new DateTime(1900, 1, 1, 0, 0, 0);
-
             //Orders showing by showing date
             showings = showings.OrderBy(s => s.StartTime).ToList();
 
-            _ = showings;
-
+            //Use this to check if the start time of the current movie
+            //is no more than 45 minutes past the end time of previous movie
             DateTime goodEndTime = showings.Select(s => s.EndTime).First();
 
             foreach (Showing s in showings)
@@ -355,6 +351,12 @@ namespace FinalProjectWorkspace.Controllers
             if (movieEndPastNine < 1)
             {
                 return View("Error", new string[] { "There is no movie that runs past 9:30 PM. Please add one." });
+            } else
+            {
+                foreach (Showing s in showings)
+                {
+                    s.Status = "Published";
+                }
             }
 
             return RedirectToAction(nameof(Index));
