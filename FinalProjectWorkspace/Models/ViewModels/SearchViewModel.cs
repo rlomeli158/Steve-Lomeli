@@ -25,7 +25,7 @@ namespace FinalProjectWorkspace.Models
         Thriller,
         War,
         Western
-        
+
     }
 
     public enum AllMPAARatings

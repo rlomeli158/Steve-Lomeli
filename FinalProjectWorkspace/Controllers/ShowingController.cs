@@ -22,11 +22,18 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Showing
-        public IActionResult Index(DateTime StartingShowingDate, String theatre, DateTime ShowingDate)
+        public IActionResult Index(DateTime StartingShowingDate, String theatre, DateTime ShowingDate, String status)
         {
             //LINQ to query job postings
             var query = from jp in _context.Showings select jp;
             query = query.Include(s => s.Movie);
+
+            if(status == "Unpublished")
+            {
+                query = query.Where(s => s.Status == status);
+                List<Showing> SelectedUnpublishedShowings = query.ToList();
+                return View(SelectedUnpublishedShowings.OrderBy(s => s.StartTime));
+            }
 
             if (StartingShowingDate != new DateTime(01, 01, 0001))
             {
@@ -58,7 +65,7 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             List<Showing> SelectedShowings = query.ToList();
-            return View(SelectedShowings.OrderBy(s => s.ShowingDate));
+            return View(SelectedShowings.OrderBy(s => s.StartTime));
 
             //return View(await _context.Showings.Include(s => s.Movie).ToListAsync());
         }
@@ -101,30 +108,6 @@ namespace FinalProjectWorkspace.Controllers
             return movieSelectList;
         }
 
-        private SelectList GetAllDays()
-        {
-            //Get the list of suppliers from the database
-            List<string> weekDays = new List<string>()
-            {
-                "Select a Day",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            };
-
-            //convert the list to a SelectList by calling SelectList constructor
-            //SupplierID and SupplierName are the names of the properties on the Supplier class
-            //SupplierID is the primary key
-            SelectList weekDaySelectList = new SelectList(weekDays, "ID", "day");
-
-            //return the MultiSelectList
-            return weekDaySelectList;
-        }
-
         // GET: Showing/Create
         [Authorize(Roles = "Manager")]
         public IActionResult Create()
@@ -158,13 +141,14 @@ namespace FinalProjectWorkspace.Controllers
             //we immediately go to the "sad path" and give the user a chance to try again
             if (ModelState.IsValid == false)
             {
-                //re-populate the view bag with the departments
+                //re-populate the view bag with the theaters and movies
                 ViewBag.AllTheatres = GetAllTheatres();
                 ViewBag.AllMovies = GetAllMovies();
                 //go back to the Create view to try again
                 return View(showing);
             }
 
+            //Get the correct theater enum based on the selected theater on the create view
             if (SelectedTheatre == 0)
             {
                 showing.Theatre = Theatre.Theatre1;
@@ -175,7 +159,7 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             //if code gets to this point, we know the model is valid (except for the showing time) and
-            //we can add the showing to the database once we check showing
+            //we can add the showing to the database once we check showing against business rules
             Movie dbMovie = _context.Movies.Find(SelectedMovie);
             showing.Movie = dbMovie;
             showing.Status = "Unpublished";
@@ -183,53 +167,70 @@ namespace FinalProjectWorkspace.Controllers
                 showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
             showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
 
-            //Compare showing you want to add to the other showings on the same date
+            //Compare showing you want to add to the other showings on the same date for business rules
             List<Showing> showingsToCompare = _context.Showings
                                             .Where(s => s.ShowingDate == showing.ShowingDate)
                                             .Where(s => s.Theatre == showing.Theatre).ToList();
 
+            //for each showing on the same day
             foreach(Showing s in showingsToCompare)
             {
+                //if the showing you want to create starts before a showing on the same day,
+                //you must check that its end time is at least 25 minutes before the other show starts
                 if(showing.StartTime > s.StartTime)
                 {
+                    //if the other showing starts at least 25 minutes after the showing you're creating, then it's good
                     if (showing.StartTime > s.EndTime.AddMinutes(25))
                     {
                         //good
                     }
+                    //this means the other showing starts less than 25 minutes after the showing you want to put in
                     else
                     {
-                        return View("Error", new string[] { "Showing is too close to the end of another movie." });
+                        return View("Error", new string[]
+                        { "The showing you're wanting to create is too close to the start of another showing." });
                     }
                 }
+                //if the showing you want to add starts after another showing on the same day
+                //you must check that its start time is at least 25 minutes after the other showing's end time
                 else
                 {
+                    //if the showing you're creating's start time is 25 minutes after the end of another movie, it's good
                     if(s.StartTime > showing.EndTime.AddMinutes(25))
                     {
                         //good
                     }
+                    //this means the showing's start time is less than 25 minutes after the end of another movie
                     else
                     {
-                        return View("Error", new string[] { "Showing is too close to the start of another movie." });
+                        return View("Error", new string[]
+                        { "The showing you're wanting to create is too close to the end of another showing." });
                     }
                 }
             }
 
+            //Pull showings to compare that are from another theater
+            //Because you cannot play the same movie at the same time at the other theater, they must be different times
             List<Showing> showingsToCompareForOtherTheatre = _context.Showings
                                             .Where(s => s.ShowingDate == showing.ShowingDate)
                                             .Where(s => s.Theatre != showing.Theatre).ToList();
 
+            //For each showing in the opposite theater
             foreach(Showing s in showingsToCompareForOtherTheatre)
             {
+                //If the same movie is being shown as the one we want to add
                 if(s.Movie == showing.Movie)
                 {
+                    //And if their start times are the same
                     if (s.StartTime == showing.StartTime)
                     {
-                        return View("Error", new string[] { "This is being shown at the same time at another theatre." });
+                        //This is not allowed, send this error
+                        return View("Error", new string[] { showing.Movie.Title + " is being shown at the same time at the other theatre." });
                     }
                 }
             }
 
-            //add the showing to the database and save changes
+            //everything checked out, add the showing to the database and save changes
             _context.Add(showing);
             await _context.SaveChangesAsync();
 
@@ -240,57 +241,62 @@ namespace FinalProjectWorkspace.Controllers
 
         public IActionResult CopySchedule()
         {
-            return View();
+            CopyViewModel cvm = new CopyViewModel();
+            return View(cvm);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CopySchedule(DateTime originalDate, int originalTheatre, DateTime newDate, int copyTheater)
+        public async Task<IActionResult> CopySchedule(CopyViewModel cvm)
         {
-            Theatre ogTheatre = Theatre.Theatre1;
-            Theatre newTheatreEnum = Theatre.Theatre1;
-
-            if (originalTheatre == 1)
+            //This code has been modified so that if the model state is not valid
+            //we immediately go to the "sad path" and give the user a chance to try again
+            if (ModelState.IsValid == false)
             {
-                ogTheatre = Theatre.Theatre2;
+                return View(cvm);
             }
 
-            if (copyTheater == 1)
-            {
-                newTheatreEnum = Theatre.Theatre2;
-            }
-
+            //Get the showings you're copying from
             List<Showing> originalShowings = _context.Showings
                                             .Include(s => s.Movie)
-                                            .Where(s => s.ShowingDate == originalDate)
-                                            .Where(s => s.Theatre == ogTheatre).ToList();
+                                            .Where(s => s.ShowingDate == cvm.SelectedCopyDate)
+                                            .Where(s => s.Theatre == cvm.SelectedCopyTheatre).ToList();
 
+            //Get the showings from the other theater on the day you're trying to copy to
             List<Showing> showingsToCompareForOtherTheatre = _context.Showings
-                                .Where(s => s.ShowingDate == newDate)
-                                .Where(s => s.Theatre != newTheatreEnum).ToList();
+                                .Where(s => s.ShowingDate == cvm.SelectedToDate)
+                                .Where(s => s.Theatre != cvm.SelectedToTheatre).ToList();
 
+            //For each showing you're copying from
             foreach (Showing s in originalShowings)
             {
+                //Create a new showing, assign the exact same values to all the properties
                 Showing showing = new Showing();
                 Movie dbMovie = _context.Movies.Find(s.Movie.MovieID);
                 showing.Movie = dbMovie;
-                showing.ShowingDate = newDate;
+                showing.ShowingDate = (DateTime)cvm.SelectedToDate;
+
+                //Default to unpublished
                 showing.Status = "Unpublished";
                 showing.StartTime = new DateTime(showing.ShowingDate.Year, showing.ShowingDate.Month, showing.ShowingDate.Day,
                     s.StartTime.Hour, s.StartTime.Minute, s.StartTime.Millisecond);
                 showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
-                showing.Theatre = newTheatreEnum;
+                showing.Theatre = cvm.SelectedToTheatre;
                 showing.SeatsAvailable = s.SeatsAvailable;
                 showing.SpecialEvent = s.SpecialEvent;
 
+                //for every showing on the same day of the showing you're copying to
                 foreach (Showing theaterShowing in showingsToCompareForOtherTheatre)
                 {
+                    //if the opposite theater is showing the same movie you're wanting to add
                     if (theaterShowing.Movie == showing.Movie)
                     {
+                        //and it also starts at the same time
                         if (theaterShowing.StartTime == showing.StartTime)
                         {
+                            //this is not allowed, throw an error for the whole thing
                             return View("Error", new string[]
-                            { showing.Movie.Title + " is being shown at the same time at another theatre." });
+                            { showing.Movie.Title + " is being shown at the same time at the other theatre. " });
                         }
                     }
                 }
@@ -300,21 +306,41 @@ namespace FinalProjectWorkspace.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction("Index","Showing", new { theatre = copyTheater, ShowingDate = newDate} );
-        }
-
-        public IActionResult GetUnpublishedShowings()
-        {
-            List<Showing> showings = _context.Showings.Include(s => s.Movie).Where(s => s.Status == "Unpublished").ToList();
-
-            return RedirectToAction("Publish", "Showing", new { showings });
+            //Return to index, showing only the copied showings
+            return RedirectToAction("Index","Showing", new { theatre = cvm.SelectedToTheatre, ShowingDate = cvm.SelectedToDate} );
         }
 
         public IActionResult Publish()
         {
-            List<Showing> showings = _context.Showings.Include(s => s.Movie).Where(s => s.Status == "Unpublished").ToList();
+            PublishViewModel pvm = new PublishViewModel();
+            return View(pvm);
+        }
 
-            showings.OrderBy(s => s.ShowingDate);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Publish(PublishViewModel pvm)
+        {
+            //This code has been modified so that if the model state is not valid
+            //we immediately go to the "sad path" and give the user a chance to try again
+            if (ModelState.IsValid == false)
+            {
+                return View(pvm);
+            }
+
+            //Get all showings that are currently unpublished for the selected date and selected theater
+            List<Showing> showings = _context.Showings
+                .Include(s => s.Movie)
+                .Where(s => s.Status == "Unpublished")
+                .Where(s => s.ShowingDate == pvm.SelectedShowingDate)
+                .Where(s => s.Theatre == pvm.SelectedTheatre)
+                .ToList();
+
+            //If there are no showings on this day, throw an error
+            if (!showings.Any())
+            {
+                return View("Error", new string[]
+                { "There are no movies on this date or in this theater! Please verify both and try again." });
+            }
 
             //Use this to check if movie runs past 9:30 PM
             DateTime compareTime;
@@ -322,40 +348,53 @@ namespace FinalProjectWorkspace.Controllers
             //Use this as a counter to ensure at least one movie ends past 9:30 PM
             Int32 movieEndPastNine = 0;
 
-            //Orders showing by showing date
+            //Sort the orders and put them in order of start time for that day
             showings = showings.OrderBy(s => s.StartTime).ToList();
 
             //Use this to check if the start time of the current movie
             //is no more than 45 minutes past the end time of previous movie
+            //At first, set this to the first movie in the showings list
             DateTime goodEndTime = showings.Select(s => s.EndTime).First();
 
             foreach (Showing s in showings)
             {
                 //Checks if a movie runs past 9:30 PM
                 compareTime = new DateTime(s.EndTime.Year, s.EndTime.Month, s.EndTime.Day, 21, 30,00);
+
+                //If it does, then add one to the counter. 
                 if (s.EndTime > compareTime)
                 {
                     movieEndPastNine += 1;
                 }
 
-                //Checks if start time is no more than 45 minutes after previous movie's end time, enters if bad
+                //Checks if start time is no more than 45 minutes after previous movie's end time, enters the if statement if movies are too spaced out
                 if(s.StartTime > goodEndTime.AddMinutes(45))
                 {
                     return View("Error", new string[]
                     {  s.Movie.Title + " (ID: "+ s.ShowingID + ") " + "showing at " + s.StartTime + " is more than 45 minutes after the previous showing." });
                 }
+                //TODO: If we have to add validation for a movie starting as close to 9 AM as possible, I think we would add another if statement here along
+                //with a counter, similar to how we have a movie that ends past 9
 
+                //set the good end time to the end time of the current showing for the next loop
                 goodEndTime = s.EndTime;
             }
 
+            //if there wasn't a movie that ended past nine, you have to add one
             if (movieEndPastNine < 1)
             {
                 return View("Error", new string[] { "There is no movie that runs past 9:30 PM. Please add one." });
-            } else
+            }
+            //otherwise, you are set to go, and you can set each showing to publish and update the DB
+            else
             {
                 foreach (Showing s in showings)
                 {
                     s.Status = "Published";
+
+                    //save the changes
+                    _context.Showings.Update(s);
+                    _context.SaveChanges();
                 }
             }
 
@@ -374,6 +413,11 @@ namespace FinalProjectWorkspace.Controllers
             if (showing == null)
             {
                 return NotFound();
+            }
+
+            if(DateTime.Now >= showing.StartTime)
+            {
+                return View("Error", new string[] { "The movie has already started or has completed. You are unable to change this showing." });
             }
 
             ViewBag.AllMovies = GetAllMovies(showing.ShowingID);
@@ -430,8 +474,10 @@ namespace FinalProjectWorkspace.Controllers
                     .Include(cd => cd.Movie)
                     .FirstOrDefault(c => c.ShowingID == showing.ShowingID);
 
+                //Find the movie the person wants to watch in the database
                 Movie dbMovie = _context.Movies.Find(SelectedMovie);
 
+                //assign the new theater based off of the enum the person selected
                 if (SelectedTheatre == 0)
                 {
                     dbShowing.Theatre = Theatre.Theatre1;
@@ -441,20 +487,94 @@ namespace FinalProjectWorkspace.Controllers
                     dbShowing.Theatre = Theatre.Theatre2;
                 }
 
-
                 //update the course's scalar properties
                 dbShowing.Movie = dbMovie;
                 dbShowing.ShowingDate = showing.ShowingDate;
                 dbShowing.StartTime = new DateTime(showing.ShowingDate.Year, showing.ShowingDate.Month, showing.ShowingDate.Day,
                 showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
                 dbShowing.EndTime = dbShowing.StartTime.AddMinutes(dbShowing.Movie.RunTime);
+                //TODO: When we find out seats, change this
                 dbShowing.SeatsAvailable = showing.SeatsAvailable;
                 dbShowing.SpecialEvent = showing.SpecialEvent;
+                //TODO: If the showing was published before, should it still be published, or should it go to unpublished?
                 dbShowing.Status = showing.Status;
+
+
+                //TODO: If we don't delete showings when they're cancelled, then add code here to check if status = inactive/cancelled
+                //If so, then send customers emails, see if we have to set tickets to inactive anywhere *i don't think so*
+                //because its not in the requirements.
+                //TODO: if a ticket that was cancelled was paid for with popcorn points, then completely refund them the popcorn points
+
+
+
+                //Compare showing you want to add to the other showings on the same date for business rules
+                List<Showing> showingsToCompare = _context.Showings
+                                                .Where(s => s.ShowingDate == dbShowing.ShowingDate)
+                                                .Where(s => s.Theatre == dbShowing.Theatre).ToList();
+
+                //for each showing on the same day
+                foreach (Showing s in showingsToCompare)
+                {
+                    //if the showing you want to create starts before a showing on the same day,
+                    //you must check that its end time is at least 25 minutes before the other show starts
+                    if (dbShowing.StartTime > s.StartTime)
+                    {
+                        //if the other showing starts at least 25 minutes after the showing you're creating, then it's good
+                        if (dbShowing.StartTime > s.EndTime.AddMinutes(25))
+                        {
+                            //good
+                        }
+                        //this means the other showing starts less than 25 minutes after the showing you want to put in
+                        else
+                        {
+                            return View("Error", new string[]
+                            { "The showing you're wanting to create is too close to the start of another showing." });
+                        }
+                    }
+                    //if the showing you want to add starts after another showing on the same day
+                    //you must check that its start time is at least 25 minutes after the other showing's end time
+                    else
+                    {
+                        //if the showing you're creating's start time is 25 minutes after the end of another movie, it's good
+                        if (s.StartTime > dbShowing.EndTime.AddMinutes(25))
+                        {
+                            //good
+                        }
+                        //this means the showing's start time is less than 25 minutes after the end of another movie
+                        else
+                        {
+                            return View("Error", new string[]
+                            { "The showing you're wanting to create is too close to the end of another showing." });
+                        }
+                    }
+                }
+
+                //Pull showings to compare that are from another theater
+                //Because you cannot play the same movie at the same time at the other theater, they must be different times
+                List<Showing> showingsToCompareForOtherTheatre = _context.Showings
+                                                .Where(s => s.ShowingDate == dbShowing.ShowingDate)
+                                                .Where(s => s.Theatre != dbShowing.Theatre).ToList();
+
+                //For each showing in the opposite theater
+                foreach (Showing s in showingsToCompareForOtherTheatre)
+                {
+                    //If the same movie is being shown as the one we want to add
+                    if (s.Movie == dbShowing.Movie)
+                    {
+                        //And if their start times are the same
+                        if (s.StartTime == dbShowing.StartTime)
+                        {
+                            //This is not allowed, send this error
+                            return View("Error", new string[] { dbShowing.Movie.Title + " is being shown at the same time at the other theatre." });
+                        }
+                    }
+                }
 
                 //save the changes
                 _context.Showings.Update(dbShowing);
                 _context.SaveChanges();
+
+                //TODO: Add code here for emailing customers and letting them know that their movie has been rescheduled
 
             }
             catch (Exception ex)

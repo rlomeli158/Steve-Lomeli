@@ -9,8 +9,7 @@
 <p>
     <a class="btn btn-outline-primary" asp-action="Create">Add Movie Showing</a>
     <a class="btn btn-outline-primary" asp-controller="Movie" asp-action="Create">Create New Movie</a>
-    <a class="btn btn-outline-primary"
-       asp-action="Publish">Publish all unpublished showings</a>
+    <a class="btn btn-outline-primary" asp-action="Publish">Publish Schedules</a>
     <a class="btn btn-outline-primary" asp-action="CopySchedule">Copy Schedules</a>
 
 
@@ -18,9 +17,8 @@
 
 <form asp-action="Index" method="get">
     <p class="form-group">
-        First Schedule Day: <input name="StartingShowingDate" class="form-control" type="date" /><br />
-        Select a Date to View Showings: <input name="ShowingDate" class="form-control" type="date" /><br />
-
+        Select a Friday to View Showings for the Entire Week: <input name="StartingShowingDate" class="form-control" type="date" /><br />
+        Select a Date to View Showings: <input name="ShowingDate" class="form-control" type="date" />
         <div>
             Select the Theatre: <br />
             <input type="radio" id="theatre1" name="theatre" value="theatre1">
@@ -30,8 +28,9 @@
             <input type="radio" id="all" name="theatre" value="Both">
             <label for="Both">Both</label><br>
         </div>
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-success">Search</button>
         <a asp-action="Index" class="btn btn-danger">Show All</a>
+        <a class="btn btn-secondary" href=@Url.Action("Index", "Showing", new { status = "Unpublished" })>Show Unpublished</a>
     </p>
 </form>
 
@@ -59,11 +58,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.SpecialEvent)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th></th>
-        </tr>
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Manager"))
+                {
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    }
+                }
+                    <th></th>
+                </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
@@ -89,25 +94,31 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SpecialEvent)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <span>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        @if (User.IsInRole("Manager"))
-                        {
-                            <a asp-action="Edit" asp-route-id="@item.ShowingID">Edit | </a>
-                            <a asp-action="Delete" asp-route-id="@item.ShowingID">Delete</a>
-                        }
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Manager"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
                     }
+                }
+                    <td>
+                        <span>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("Manager"))
+                                {
+                                    <a asp-action="Edit" asp-route-id="@item.ShowingID">Edit | </a>
+                                    <a asp-action="Delete" asp-route-id="@item.ShowingID">Delete</a>
+                                }
+                            }
 
-                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ShowingID">Details</a>
+                            <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ShowingID">Details</a>
 
-                </span>
-            </td>
-        </tr>
+                        </span>
+                    </td>
+                </tr>
 }
     </tbody>
 </table>

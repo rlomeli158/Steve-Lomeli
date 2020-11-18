@@ -1,4 +1,4 @@
-@model FinalProjectWorkspace.Models.Movie
+@model FinalProjectWorkspace.Models.CopyViewModel
 
 @{
     ViewData["Title"] = "Copy Schedule";
@@ -10,29 +10,38 @@
     <div class="col-md-4">
         <form asp-action="CopySchedule">
             <div style="display:inline-flex; grid-column-gap:30px">
-                <p class="form-group">
-                    What date would you like to copy this schedule from?:<input name="originalDate" class="form-control" type="date" /><br />
-                    <div style="width:300px">
-                        Select the Theatre to Copy From: <br />
-                        <input type="radio" id="originaltheatre1" name="originalTheatre" value="theatre1">
-                        <label for="theatre1">Theatre 1</label><br>
-                        <input type="radio" id="originialtheatre2" name="originalTheatre" value="theatre2">
-                        <label for="theatre2">Theatre 2</label><br>
-                    </div>
-                </p>
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedCopyDate" class="control-label"></label>
+                    <input asp-for="SelectedCopyDate" class="form-control" />
+                    <span asp-validation-for="SelectedCopyDate" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedCopyTheatre" class="control-label"></label><br />&nbsp;
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.SelectedCopyTheatre, Theatre.Theatre1) Theater 1 &nbsp; &nbsp;
+                    </label>
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.SelectedCopyTheatre, Theatre.Theatre2) Theater 2
+                    </label>
+                    <span asp-validation-for="SelectedCopyTheatre" class="text-danger"></span>
+                </div>
             </div>
             <div style="display:inline-flex; grid-column-gap:30px">
-
-                <p class="form-group">
-                    When date would you like to copy this schedule to?:<input name="newDate" class="form-control" type="date" /><br />
-                    <div style="width:300px">
-                        Select the Theatre to Copy To: <br />
-                        <input type="radio" id="new2" name="copyTheater" value="0">
-                        <label for="copyTheater1">Theatre 1</label><br>
-                        <input type="radio" id="new2" name="copyTheater" value="1">
-                        <label for="copyTheater2">Theatre 2</label><br>
-                    </div>
-                </p>
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedToDate" class="control-label"></label>
+                    <input asp-for="SelectedToDate" class="form-control" />
+                    <span asp-validation-for="SelectedToDate" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedToTheatre" class="control-label"></label><br />&nbsp;
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.SelectedToTheatre, Theatre.Theatre1) Theater 1 &nbsp; &nbsp;
+                    </label>
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.SelectedToTheatre, Theatre.Theatre2) Theater 2
+                    </label>
+                    <span asp-validation-for="SelectedToTheatre" class="text-danger"></span>
+                </div>
             </div>
             <button type="submit" class="btn btn-outline-primary">Submit</button>
         </form>
