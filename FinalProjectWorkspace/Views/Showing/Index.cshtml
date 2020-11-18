@@ -9,7 +9,32 @@
 <p>
     <a class="btn btn-outline-primary" asp-action="Create">Add Movie Showing</a>
     <a class="btn btn-outline-primary" asp-controller="Movie" asp-action="Create">Create New Movie</a>
+    <a class="btn btn-outline-primary"
+       asp-action="Publish">Publish all unpublished showings</a>
+    <a class="btn btn-outline-primary" asp-action="CopySchedule">Copy Schedules</a>
+
+
 </p>
+
+<form asp-action="Index" method="get">
+    <p class="form-group">
+        First Schedule Day: <input name="StartingShowingDate" class="form-control" type="date" /><br />
+        Select a Date to View Showings: <input name="ShowingDate" class="form-control" type="date" /><br />
+
+        <div>
+            Select the Theatre: <br />
+            <input type="radio" id="theatre1" name="theatre" value="theatre1">
+            <label for="theatre1">Theatre 1</label><br>
+            <input type="radio" id="theatre2" name="theatre" value="theatre2">
+            <label for="theatre2">Theatre 2</label><br>
+            <input type="radio" id="all" name="theatre" value="Both">
+            <label for="Both">Both</label><br>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+        <a asp-action="Index" class="btn btn-danger">Show All</a>
+    </p>
+</form>
+
 <table class="table table-hover text-center">
     <thead>
         <tr class="text-light text-center">
@@ -19,9 +44,6 @@
             <td>
                 @Html.DisplayNameFor(model => model.ShowingDate)
             </td>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie.Showings)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.StartTime)
             </th>
@@ -36,6 +58,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SpecialEvent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
             </th>
             <th></th>
         </tr>
@@ -63,6 +88,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SpecialEvent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <span>

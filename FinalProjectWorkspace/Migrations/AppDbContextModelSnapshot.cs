@@ -144,6 +144,7 @@ namespace FinalProjectWorkspace.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Actors")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("GenreID")
@@ -156,6 +157,7 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Overview")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Revenue")
@@ -168,6 +170,7 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Year")
@@ -193,14 +196,15 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<int?>("MovieID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Rating")
+                    b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ReviewDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ReviewDescription")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(280)
+                        .HasColumnType("nvarchar(280)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -298,6 +302,9 @@ namespace FinalProjectWorkspace.Migrations
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Theatre")
                         .HasColumnType("int");
