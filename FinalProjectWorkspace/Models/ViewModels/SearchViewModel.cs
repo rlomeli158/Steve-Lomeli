@@ -45,7 +45,11 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Greater Than")]
         GreaterThan,
         [Display(Name = "Less Than")]
-        LessThan
+        LessThan,
+        [Display(Name = "Before")]
+        Before,
+        [Display(Name = "After")]
+        After
     }
 
     public class SearchViewModel

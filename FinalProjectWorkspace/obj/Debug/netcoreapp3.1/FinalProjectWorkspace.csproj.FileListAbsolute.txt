@@ -874,3 +874,5 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/MovieReview/Index.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/Cancelled.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/ReportIndex.cshtml.g.cs
+/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Ticket/RevenueReportSearch.cshtml.g.cs

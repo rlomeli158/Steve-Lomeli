@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using System.Globalization;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -30,6 +32,12 @@ namespace FinalProjectWorkspace.Controllers
                                        .ToList();
 
             return View(t);
+        }
+
+        public IActionResult ReportIndex()
+        {
+            
+            return View();
         }
 
         private SelectList GetAllShowings()
@@ -65,6 +73,36 @@ namespace FinalProjectWorkspace.Controllers
             SelectList slAllShowings = new SelectList(allShowings, nameof(Showing.ShowingID), nameof(Showing.StartTime), selectedShowingID);
 
             return slAllShowings;
+        }
+
+        public SelectList GetAllRatings()
+        {
+
+            var MPAASelectList = new SelectList(Enum.GetValues(typeof(AllMPAARatings)).Cast<AllMPAARatings>().Select(v => new SelectListItem
+            {
+                Text = v.ToString(),
+                Value = ((int)v).ToString()
+            }).ToList(), "Value", "Text");
+
+            return MPAASelectList;
+        }
+
+        public SelectList GetAllMovies()
+        {
+            //Get the list of suppliers from the database
+            List<Movie> movieList = _context.Movies.ToList();
+
+            //add a dummy entry so the user can select all suppliers
+            Movie SelectNone = new Movie() { MovieID = 0, Title = "Select A Movie" };
+            movieList.Add(SelectNone);
+
+            //convert the list to a SelectList by calling SelectList constructor
+            //SupplierID and SupplierName are the names of the properties on the Supplier class
+            //SupplierID is the primary key
+            SelectList movieSelectList = new SelectList(movieList.OrderBy(s => s.MovieID), "MovieID", "Title");
+
+            //return the MultiSelectList
+            return movieSelectList;
         }
 
         // GET: Ticket/Create
@@ -470,6 +508,106 @@ namespace FinalProjectWorkspace.Controllers
         private bool TicketExists(int id)
         {
             return _context.Ticket.Any(e => e.TicketID == id);
+        }
+
+        [Authorize(Roles="Manager")]
+        public IActionResult RevenueReportSearch()
+        {
+
+            //Populate view bag with list of categories
+            ViewBag.AllMPAARatings = GetAllRatings();
+            ViewBag.AllMovies = GetAllMovies();
+
+
+            //Set default properties
+            RevenueSearchViewModel rsvm = new RevenueSearchViewModel();
+            //Are these here necessary?
+            //svm.SelectedGenreID = (int)AllGenres.Action;
+            //svm.SelectedSearchType = AllSearchTypes.GreaterThan;
+            //svm.SelectedMPAARating = 2; //although it may not work
+
+            return View(rsvm);
+        }
+
+        [Authorize(Roles = "Manager")]
+        public IActionResult DisplayRevenueReportResults(RevenueSearchViewModel rsvm)
+        {
+            //Initial query LINQ
+            var query = from m in _context.Ticket select m;
+            query = query.Include(m => m.Showing).ThenInclude(m => m.Movie);
+
+            //If statements corresponding to each input form control
+
+            if (rsvm.SelectedStartingDate != null) //For date
+            {
+                DateTime datSelectedStartingDate = rsvm.SelectedStartingDate ?? new DateTime(1900, 1, 1);
+                query = query.Where(m => m.Showing.ShowingDate >= datSelectedStartingDate);
+            }
+
+            if (rsvm.SelectedEndingDate != null) //For date
+            {
+                DateTime datSelectedEndingDate = rsvm.SelectedEndingDate ?? new DateTime(1900, 1, 1);
+                query = query.Where(m => m.Showing.ShowingDate <= datSelectedEndingDate);
+            }
+
+            if (rsvm.SelectedMovie != 0) //For movie name
+            {
+                Movie movie = _context.Movies.Find(rsvm.SelectedMovie);
+                query = query.Where(m => m.Showing.Movie == movie);
+            }
+
+            if (rsvm.SelectedMPAARating != 0) //For MPAARating
+            {
+                string MPAAStringToDisplay = Enum.GetName(typeof(AllMPAARatings), rsvm.SelectedMPAARating);
+                MPAARatings MPAARatingsToDisplay = (MPAARatings)Enum.Parse(typeof(MPAARatings), MPAAStringToDisplay);
+                //query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay.ToString());
+                query = query.Where(m => m.Showing.Movie.MPAARating == MPAARatingsToDisplay);
+            }
+
+            if (rsvm.SelectedTime != null) //For showing time ********
+            {
+                DateTime timSelectedTime = rsvm.SelectedTime ?? new DateTime(1900, 1, 1);
+                switch (rsvm.SelectedSearchType)
+                {
+                    case AllSearchTypes.Before:
+                        query = query.Where(m => m.Showing.ShowingDate <= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
+                        break;
+                    case AllSearchTypes.After:
+                        query = query.Where(m => m.Showing.ShowingDate >= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (query != null) //they searched for something
+            {
+                TryValidateModel(rsvm);
+                if (ModelState.IsValid == false)
+                {
+                    //re-populate ViewBag to have list of all categories & MPAA Ratings
+                    ViewBag.AllMPAARatings = GetAllRatings();
+                    ViewBag.AllMovies = GetAllMovies();
+
+
+                    //View is returned with error messages
+                    return View("Browse", rsvm);
+                }
+
+                //Execute query, include category with it
+
+                List<Ticket> SelectedTickets = query.ToList();
+
+
+                return View("SearchResults", SelectedTickets); //Put year in here right now, but it should be showtime, right? **********
+
+
+            }
+
+            return View("RevenueReportBrowse");
+
+
+
         }
     }
 }
