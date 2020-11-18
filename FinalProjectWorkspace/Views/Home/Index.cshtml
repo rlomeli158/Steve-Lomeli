@@ -18,11 +18,13 @@
         <h1>Welcome to Main St. Movies!</h1>
     </div>
 
+    <a asp-controller="Ticket" asp-action="GetSeatsAvailable" type="button" class="btn btn-outline-primary">Get all seats available</a>
+
     <div class="text-center">
         <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
         <br />
 
-       
+
 
         <h2 class="text-danger">Main St. Original: The Last Search</h2>
 
@@ -35,10 +37,10 @@
     </div>
 
     <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
-        <br />
+    <br />
 
-        
-        <h2 class="text-danger text-center">Current Showings</h2>
+
+    <h2 class="text-danger text-center">Current Showings</h2>
 
     <div>
         <form asp-action="Index" asp-controller="Home" method="get">

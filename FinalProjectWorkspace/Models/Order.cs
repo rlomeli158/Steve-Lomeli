@@ -19,16 +19,19 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Order Date")]
         public DateTime OrderDate { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal OrderSubtotal
         {
             get { return Tickets.Sum(t => t.TotalCost); } //** We have to take off discount amount? 
         }
 
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Taxes
         {
             get { return OrderSubtotal * SALES_TAX_RATE; }
         }
 
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal OrderTotal
         {
             get { return OrderSubtotal + Taxes; }

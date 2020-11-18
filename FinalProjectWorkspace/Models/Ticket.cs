@@ -21,12 +21,16 @@ namespace FinalProjectWorkspace.Models
     {
         public Int32 TicketID { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal TicketPrice { get; set; }
 
         public DiscountNames DiscountName { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal DiscountAmount { get; set; } //This is how you set a field as nullable, right? Because
-                                                     //some people won't have discounts?
+                                                    //some people won't have discounts?
+
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal TotalCost { get; set; }
 
         //Seats purchased

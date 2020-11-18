@@ -40,6 +40,46 @@ namespace FinalProjectWorkspace.Controllers
             return View();
         }
 
+        public List<string> GetSeatsAvailable(int showingID)
+        {
+            List<string> allSeats = new List<string>()
+             {
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5"
+             };
+
+            List<string> seatsTaken = _context.Ticket
+                .Include(t => t.Order)
+                .Include(t => t.Showing)
+                .Where(t => t.Showing.ShowingID == showingID)
+                .Where(t => t.Order.OrderStatus != "Cancelled")
+                .Select(t => t.SeatNumber).ToList();
+
+            List<string> seatsAvailable = allSeats.Except(seatsTaken).ToList();
+
+            //SelectList slSeatsAvailable = new SelectList(seatsAvailable, nameof(Showing.ShowingID), nameof(Showing.StartTime));
+
+            return seatsAvailable;
+        }
+
         private SelectList GetAllShowings()
         {
             //create a list for all the courses
@@ -117,15 +157,18 @@ namespace FinalProjectWorkspace.Controllers
             //set the new registration detail's registration equal to the registration you just found
             t.Order = dbOrder;
 
+            //it should always go to the else because they need to buy a ticket from a showing
             if (showingID == null)
             {
                 //populate the ViewBag with a list of existing courses
                 ViewBag.AllShowings = GetAllShowings();
+                //ViewBag.AllSeatsAvailable = GetSeatsAvailable();
             }
             else
             {
                 //populate the ViewBag with a list of existing courses
                 ViewBag.AllShowings = GetAllShowingsWithID((int)showingID);
+                ViewBag.AllSeatsAvailable = GetSeatsAvailable((int)showingID);
             }
 
             //pass the newly created registration detail to the view
@@ -141,7 +184,16 @@ namespace FinalProjectWorkspace.Controllers
                                     .FirstOrDefault(rd => rd.TicketID == ticketIn.TicketID);
             String showingDay;
             DateTime showingTime;
-            Order order = _context.Order.Where(o => o.OrderID != ticketIn.Order.OrderID).FirstOrDefault();
+
+            Order order = _context.Order.FirstOrDefault();
+            if (ticket != null)
+            {
+                order = _context.Order.Where(o => o.OrderID != ticket.Order.OrderID).FirstOrDefault();
+            } else
+            {
+                order = _context.Order.Where(o => o.OrderID != ticketIn.Order.OrderID).FirstOrDefault();
+
+            }
             Order badOrder = order;
             TimeSpan age;
             Decimal showingPrice = 0.00m;
@@ -358,6 +410,12 @@ namespace FinalProjectWorkspace.Controllers
 
             }
 
+            List<string> seatsAvailable = GetSeatsAvailable(selectedShowing.ShowingID);
+            if (!seatsAvailable.Contains(ticket.SeatNumber))
+            {
+                return View("Error", new String[] { "This seat is taken." });
+            }
+
             //Showings are good, add tickets
             ticket.Showing = selectedShowing;
 
@@ -451,6 +509,12 @@ namespace FinalProjectWorkspace.Controllers
                 dbT.TicketPrice = dbT.TotalCost + ticket.DiscountAmount;
 
                 //dbT.Quantity = orderDetail.Quantity;
+
+                List<string> seatsAvailable = GetSeatsAvailable(dbT.Showing.ShowingID);
+                if (!seatsAvailable.Contains(ticket.SeatNumber))
+                {
+                    return View("Error", new String[] { "This seat is taken." });
+                } 
                 dbT.SeatNumber = ticket.SeatNumber;
                 //dbT.ExtendedPrice = dbT.Quantity * dbT.ProductPrice;
 

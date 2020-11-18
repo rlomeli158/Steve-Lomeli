@@ -36,8 +36,11 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Theatre")]
         public Theatre Theatre { get; set; }
 
+        //public List<string> SeatsAvailable { get; set; }
+
         [Display(Name = "Seats Available")]
         public Int32 SeatsAvailable { get; set; } // You take the difference of all seats and seats purchased
+
         public Boolean SpecialEvent { get; set; }
 
         public String Status { get; set; }

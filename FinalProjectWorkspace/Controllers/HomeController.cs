@@ -311,5 +311,10 @@ namespace FinalProjectWorkspace.Controllers
         {
             return View();
         }
+
+        public IActionResult TestSeats()
+        {
+            return View();
+        }
     }
 }
