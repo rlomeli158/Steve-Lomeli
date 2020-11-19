@@ -60,6 +60,9 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Search by Overview:")]
         public String SelectedOverview { get; set; } //Textbox
 
+        [Display(Name = "Search by Actor:")]
+        public String SelectedActor { get; set; }
+
         [Display(Name = "Search by Genre:")]
         public Int32 SelectedGenreID { get; set; } //Dropdown
 

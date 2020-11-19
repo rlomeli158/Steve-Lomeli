@@ -1,7 +1,12 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Ticket/Create.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Ticket/Create.cshtml" Line="7" Column="4" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="95" Column="83" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" Line="25" Column="56" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" Line="63" Column="41" />
+      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="43" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Home/Index.cshtml" Line="54" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,15 +15,17 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
+              </Node>
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Order" expanded="True" />
+                <Node name="Movie" expanded="True">
+                  <Node name="SearchResults.cshtml" selected="True" />
+                </Node>
                 <Node name="Shared" expanded="True" />
                 <Node name="Showing" expanded="True" />
-                <Node name="Ticket" expanded="True">
-                  <Node name="Create.cshtml" selected="True" />
-                </Node>
+                <Node name="Ticket" expanded="True" />
               </Node>
             </Node>
           </Node>

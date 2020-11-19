@@ -49,7 +49,7 @@ namespace FinalProjectWorkspace.Controllers
 
             //Find order in database that corresponds to user
             Order order = _context.Order
-                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Tickets.OrderBy(t => t.Showing.StartTime)).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
                 .Include(ord => ord.Recipient)
                 .Include(ord => ord.Purchaser)
                 .FirstOrDefault(o => o.OrderID == id);
@@ -74,7 +74,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             //Find order in database that corresponds to user
             Order order = _context.Order
-                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Tickets.OrderBy(t => t.Showing.StartTime)).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
                 .Include(ord => ord.Recipient)
                 .Include(ord => ord.Purchaser)
                 .Where(ord => ord.OrderStatus == "Active")
@@ -194,7 +194,7 @@ namespace FinalProjectWorkspace.Controllers
 
             //Find order in database that corresponds to user
             Order order = _context.Order
-                .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                .Include(ord => ord.Tickets.OrderBy(t => t.Showing.StartTime)).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
                 .Include(ord => ord.Recipient)
                 .Include(ord => ord.Purchaser)
                 .FirstOrDefault(o => o.OrderID == id);

@@ -43,7 +43,7 @@ namespace FinalProjectWorkspace.Controllers
             ViewBag.AllShowings = _context.Showings.Count();
             ViewBag.SelectedShowings = TodayShowing.Count();
 
-            return View(TodayShowing.OrderBy(m => m.ShowingDate));
+            return View(TodayShowing.OrderBy(m => m.StartTime));
 
 
             //return View(await _context.Showings.ToListAsync());

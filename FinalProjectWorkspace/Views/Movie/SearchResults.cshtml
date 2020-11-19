@@ -7,6 +7,12 @@
 <div>
     <a class="btn btn-outline-primary" asp-action="Browse">Back to Search</a>
 </div>
+<br />
+<div>
+    <p>
+        Displaying @ViewBag.SelectedMovies out of @ViewBag.AllMovies All Movies
+    </p>
+</div>
 
 <!--
 <form asp-action="Index" asp-controller="Home" method="get">
@@ -20,17 +26,17 @@
     -->
 <!--<p> Displaying ViewBag.SelectedJobs of ViewBag.AllJobs Job Postings</p>-->
 
-<table class="table table-hover text-center" >
+<table class="table table-hover text-center">
     <thead>
         <tr class="text-light text-center">
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <!--
-            <th>
-        Html.DisplayNameFor(model => model.Overview)
-            </th>
-            -->
+                <th>
+            Html.DisplayNameFor(model => model.Overview)
+                </th>
+                -->
             <th>
                 @Html.DisplayNameFor(model => model.Tagline)
             </th>
@@ -65,55 +71,55 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr class="table-secondary text-center text-dark">
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <!--
-            <td>
-                Html.DisplayFor(modelItem => item.Overview)
-            </td>
-            -->
-            <td>
-                @Html.DisplayFor(modelItem => item.Tagline)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RunTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <!--
-            <td>
-                Html.DisplayFor(modelItem => item.Actors)
-            </td>
-            --->
-            <td>
-                @Html.DisplayFor(modelItem => item.MPAARating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre.GenreName)
-            </td>
-            <td>
-                @{Double? avgReview = item.MovieReviews.Where(r => r.ApprovalStatus == true).Average(m => m.Rating);}
-                @if (avgReview != null)
-                {
-                    @avgReview
-                }
-                else
-                {
-                    @:No Rating yet
-                }
+            <tr class="table-secondary text-center text-dark">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <!--
+                <td>
+                    Html.DisplayFor(modelItem => item.Overview)
+                </td>
+                -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tagline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RunTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <!--
+                <td>
+                    Html.DisplayFor(modelItem => item.Actors)
+                </td>
+                --->
+                <td>
+                    @Html.DisplayFor(modelItem => item.MPAARating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre.GenreName)
+                </td>
+                <td>
+                    @{Double? avgReview = item.MovieReviews.Where(r => r.ApprovalStatus == true).Average(m => m.Rating);}
+                    @if (avgReview != null)
+                    {
+                        @avgReview
+                    }
+                    else
+                    {
+                        @:No Rating yet
+                    }
 
-            </td>
-            <td>
-                <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">All Reviews</a>
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
-            </td>
-        </tr>
-}
+                </td>
+                <td>
+                    <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">Reviews</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 

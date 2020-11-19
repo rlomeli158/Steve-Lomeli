@@ -92,6 +92,11 @@ namespace FinalProjectWorkspace.Controllers
                 query = query.Where(m => m.Overview.Contains(svm.SelectedOverview));
             }
 
+            if (svm.SelectedActor != null && svm.SelectedActor != "") //For actors
+            {
+                query = query.Where(m => m.Actors.Contains(svm.SelectedActor));
+            }
+
             if (svm.SelectedGenreID != 0) //For genre
             {
                 Genre GenreToDisplay = _context.Genres.Find(svm.SelectedGenreID);
@@ -157,7 +162,7 @@ namespace FinalProjectWorkspace.Controllers
                 ViewBag.SelectedMovies = SelectedMovies.Count();
 
 
-                return View("SearchResults", SelectedMovies.OrderByDescending(m => m.Year)); //Put year in here right now, but it should be showtime, right? **********
+                return View("SearchResults", SelectedMovies.OrderBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
 
 
             }

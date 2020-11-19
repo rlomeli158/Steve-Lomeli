@@ -28,6 +28,8 @@ namespace FinalProjectWorkspace.Controllers
             //limit the list to only the registration details that belong to this registration
             List<Ticket> t = _context.Ticket
                                        .Include(rd => rd.Showing)
+                                       .ThenInclude(rd => rd.Movie)
+                                       .Include(rd => rd.Order)
                                        .Where(rd => rd.Order.OrderID == orderID)
                                        .ToList();
 
