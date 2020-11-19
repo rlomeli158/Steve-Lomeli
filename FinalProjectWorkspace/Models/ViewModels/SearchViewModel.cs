@@ -37,7 +37,9 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "PG-13")]
         PG13,
         R,
-        Unrated
+        Unrated,
+        [Display(Name = "NC-17")]
+        NC17
     }
 
     public enum AllSearchTypes

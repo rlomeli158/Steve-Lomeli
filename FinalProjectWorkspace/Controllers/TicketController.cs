@@ -383,6 +383,7 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Order, Users, User, Purchaser, TicketID, SeatNumber")] Ticket ticket, int SelectedShowing)
         {
+
             //if user has not entered all fields, send them back to try again
             if (ModelState.IsValid == false)
             {
@@ -396,13 +397,15 @@ namespace FinalProjectWorkspace.Controllers
             //Order dbOrder = _context.Order.Find(ticket.Order.OrderID);
 
             //Get tickets, showings, movies
-            Order dbOrder = _context.Order.Include(o => o.Tickets)
+            Order dbOrder = _context.Order.Include(o => o.Purchaser)
+                                          .Include(o => o.Tickets)
                                           .ThenInclude(o => o.Showing)
                                           .ThenInclude(o => o.Movie)
                                           .FirstOrDefault(o => o.OrderID == ticket.Order.OrderID);
 
             Showing selectedShowing = _context.Showings.Include(s => s.Movie)
                                                 .FirstOrDefault(s => s.ShowingID == SelectedShowing);
+
 
             //The selected showing is already on the order
             if (dbOrder.Tickets.Any(t => t.Showing.Movie == selectedShowing.Movie))
@@ -429,6 +432,15 @@ namespace FinalProjectWorkspace.Controllers
 
             //set the registration on the registration detail equal to the registration that we just found
             ticket.Order = dbOrder;
+
+            if (ticket.Showing.Movie.MPAARating == MPAARatings.R || ticket.Showing.Movie.MPAARating == MPAARatings.NC17)
+            {
+                if (ticket.Order.Purchaser.Birthday.AddYears(18) >= DateTime.Now)
+                {
+                    return View("Error", new String[]
+                    { "You are too young to see this movie. Please find another one!" });
+                }
+            }
 
             //find the course to be associated with this order
             //Showing dbShowing = _context.Showings.Find(SelectedShowing);

@@ -13,7 +13,8 @@ namespace FinalProjectWorkspace.Models
         PG,
         PG13,
         R,
-        Unrated
+        Unrated,
+        NC17
     }
 
     public class Movie

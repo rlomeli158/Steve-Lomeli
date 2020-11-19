@@ -285,6 +285,19 @@ namespace FinalProjectWorkspace.Controllers
                 AppUser user = _context.Users.Where(u => u.UserName == orderIn.Recipient.UserName).FirstOrDefault();
                 if (user != null)
                 {
+                    List<Movie> movies = order.Tickets.Select(t => t.Showing.Movie).ToList();
+
+                    foreach(Movie m in movies)
+                    {
+                        if(user.Birthday.AddYears(18) >= DateTime.Now)
+                        {
+                            if(m.MPAARating == MPAARatings.R || m.MPAARating == MPAARatings.NC17)
+                            {
+                                return View("Error", new String[]
+                                { "The recipient is under 18 and they cannot be gifted a showing to " + m.Title + "."});
+                            }
+                        }
+                    }
                     order.Recipient = user;
                 } else
                 {
