@@ -154,7 +154,7 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         // GET: Ticket/Create
-        public IActionResult Create(int orderID, int? showingID)
+        public async Task<IActionResult> CreateAsync(int orderID, int? showingID)
         {
             //create a new instance of the RegistrationDetail class
             Ticket t = new Ticket();
@@ -176,7 +176,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 //populate the ViewBag with a list of existing courses
                 ViewBag.AllShowings = GetAllShowingsWithID((int)showingID);
-                ViewBag.AllSeatsAvailable = GetSeatsAvailableAsync((int)showingID);
+                ViewBag.AllSeatsAvailable = await GetSeatsAvailableAsync((int)showingID);
             }
 
             //pass the newly created registration detail to the view

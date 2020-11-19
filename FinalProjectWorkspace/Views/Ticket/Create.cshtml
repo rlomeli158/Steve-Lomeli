@@ -5,6 +5,8 @@
 }
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+@{List<string> seatsAvailable = ViewBag.AllSeatsAvailable;}
+
 <h1>Create</h1>
 
 <h4>Ticket</h4>
@@ -21,35 +23,55 @@
             </div>
             <div>
                 <div style="display:inline-flex;grid-column-gap:15px">
-                    <input type="button" id="A1" value="A1" onclick="moveSeatNumber(this.value)">
-                    <input type="button" id="A2" value="A2" onclick="moveSeatNumber(this.value)">
-                    <input type="button" id="A3" value="A3">
-                    <input type="button" id="A4" value="A4">
-                    <input type="button" id="A5" value="A5">
+                    <input type="button" id="A1" value="A1"
+                           class="btn btn-@(seatsAvailable.Contains("A1") ? "success" : "danger")">
+                    <input type="button" id="A2" value="A2"
+                           class="btn btn-@(seatsAvailable.Contains("A2") ? "success" : "danger")">
+                    <input type="button" id="A3" value="A3"
+                           class="btn btn-@(seatsAvailable.Contains("A3") ? "success" : "danger")">
+                    <input type="button" id="A4" value="A4"
+                           class="btn btn-@(seatsAvailable.Contains("A4") ? "success" : "danger")">
+                    <input type="button" id="A5" value="A5"
+                           class="btn btn-@(seatsAvailable.Contains("A5") ? "success" : "danger")">
                 </div>
                 <br />
                 <div style="display:inline-flex;grid-column-gap:15px">
-                    <input type="button" id="B1" value="B1">
-                    <input type="button" id="B2" value="B2">
-                    <input type="button" id="B3" value="B3">
-                    <input type="button" id="B4" value="B4">
-                    <input type="button" id="B5" value="B5">
+                    <input type="button" id="B1" value="B1"
+                           class="btn btn-@(seatsAvailable.Contains("B1") ? "success" : "danger")">
+                    <input type="button" id="B2" value="B2"
+                           class="btn btn-@(seatsAvailable.Contains("B2") ? "success" : "danger")">
+                    <input type="button" id="B3" value="B3"
+                           class="btn btn-@(seatsAvailable.Contains("B3") ? "success" : "danger")">
+                    <input type="button" id="B4" value="B4"
+                           class="btn btn-@(seatsAvailable.Contains("B4") ? "success" : "danger")">
+                    <input type="button" id="B5" value="B5"
+                           class="btn btn-@(seatsAvailable.Contains("B5") ? "success" : "danger")">
                 </div>
                 <br />
                 <div style="display:inline-flex;grid-column-gap:15px">
-                    <input type="button" id="C1" value="C1">
-                    <input type="button" id="C2" value="C2">
-                    <input type="button" id="C3" value="C3">
-                    <input type="button" id="C4" value="C4">
-                    <input type="button" id="C5" value="C5">
+                    <input type="button" id="C1" value="C1"
+                           class="btn btn-@(seatsAvailable.Contains("C1") ? "success" : "danger")">
+                    <input type="button" id="C2" value="C2"
+                           class="btn btn-@(seatsAvailable.Contains("C2") ? "success" : "danger")">
+                    <input type="button" id="C3" value="C3"
+                           class="btn btn-@(seatsAvailable.Contains("C3") ? "success" : "danger")">
+                    <input type="button" id="C4" value="C4"
+                           class="btn btn-@(seatsAvailable.Contains("C4") ? "success" : "danger")">
+                    <input type="button" id="C5" value="C5"
+                           class="btn btn-@(seatsAvailable.Contains("C5") ? "success" : "danger")">
                 </div>
                 <br />
                 <div style="display:inline-flex;grid-column-gap:15px">
-                    <input type="button" id="D1" value="D1">
-                    <input type="button" id="D2" value="D2">
-                    <input type="button" id="D3" value="D3">
-                    <input type="button" id="D4" value="D4">
-                    <input type="button" id="D5" value="D5">
+                    <input type="button" id="D1" value="D1"
+                           class="btn btn-@(seatsAvailable.Contains("D1") ? "success" : "danger")">
+                    <input type="button" id="D2" value="D2"
+                           class="btn btn-@(seatsAvailable.Contains("D2") ? "success" : "danger")">
+                    <input type="button" id="D3" value="D3"
+                           class="btn btn-@(seatsAvailable.Contains("D3") ? "success" : "danger")">
+                    <input type="button" id="D4" value="D4"
+                           class="btn btn-@(seatsAvailable.Contains("D4") ? "success" : "danger")">
+                    <input type="button" id="D5" value="D5"
+                           class="btn btn-@(seatsAvailable.Contains("D5") ? "success" : "danger")">
                 </div>
                 <br />
                 <label asp-for="SeatNumber" class="control-label"></label>
@@ -154,7 +176,13 @@
         $('#output').val($(this).val());
         console.log($(this).val());
     })
+    $('#A1').click(function () {
+        var $this = $(this);
+        if ($this.hasClass('btn btn-success')) {
+            $('#A1').removeClass('btn btn-success')
+            $this.addClass('btn btn-info');
 
+        })
 
     </script>
 
