@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 
-
+/*
 namespace FinalProjectWorkspace.Seeding
 {
 	public static class SeedMovieSchedule
@@ -975,3 +975,4 @@ namespace FinalProjectWorkspace.Seeding
 		}
 	}
 }
+*/

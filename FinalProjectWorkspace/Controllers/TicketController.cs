@@ -42,7 +42,7 @@ namespace FinalProjectWorkspace.Controllers
             return View();
         }
 
-        public List<string> GetSeatsAvailable(int showingID)
+        public async Task<List<string>> GetSeatsAvailableAsync(int showingID)
         {
             List<string> allSeats = new List<string>()
              {
@@ -76,6 +76,12 @@ namespace FinalProjectWorkspace.Controllers
                 .Select(t => t.SeatNumber).ToList();
 
             List<string> seatsAvailable = allSeats.Except(seatsTaken).ToList();
+
+            //Update the showing in the database
+            Showing showing = _context.Showings.Where(s => s.ShowingID == showingID).First();
+            showing.SeatsAvailable = seatsAvailable;
+            _context.Update(showing);
+            await _context.SaveChangesAsync();
 
             //SelectList slSeatsAvailable = new SelectList(seatsAvailable, nameof(Showing.ShowingID), nameof(Showing.StartTime));
 
@@ -170,7 +176,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 //populate the ViewBag with a list of existing courses
                 ViewBag.AllShowings = GetAllShowingsWithID((int)showingID);
-                ViewBag.AllSeatsAvailable = GetSeatsAvailable((int)showingID);
+                ViewBag.AllSeatsAvailable = GetSeatsAvailableAsync((int)showingID);
             }
 
             //pass the newly created registration detail to the view
@@ -412,7 +418,7 @@ namespace FinalProjectWorkspace.Controllers
 
             }
 
-            List<string> seatsAvailable = GetSeatsAvailable(selectedShowing.ShowingID);
+            List<string> seatsAvailable = await GetSeatsAvailableAsync(selectedShowing.ShowingID);
             if (!seatsAvailable.Contains(ticket.SeatNumber))
             {
                 return View("Error", new String[] { "This seat is taken." });
@@ -512,7 +518,7 @@ namespace FinalProjectWorkspace.Controllers
 
                 //dbT.Quantity = orderDetail.Quantity;
 
-                List<string> seatsAvailable = GetSeatsAvailable(dbT.Showing.ShowingID);
+                List<string> seatsAvailable = await GetSeatsAvailableAsync(dbT.Showing.ShowingID);
                 if (!seatsAvailable.Contains(ticket.SeatNumber))
                 {
                     return View("Error", new String[] { "This seat is taken." });

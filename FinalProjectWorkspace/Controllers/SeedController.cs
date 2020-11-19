@@ -106,7 +106,8 @@ namespace FinalProjectWorkspace.Controllers
                 //call the SeedCategories method from your Seeding folder
                 //you will need to pass in the instance of AppDbContext
                 //that you set in the constructor
-                Seeding.SeedMovieSchedule.SeedShowings(_context);
+                //TODO: Uncomment this line below
+                //Seeding.SeedMovieSchedule.SeedShowings(_context);
             }
             catch (Exception ex)
             {

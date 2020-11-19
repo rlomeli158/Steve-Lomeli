@@ -29,7 +29,7 @@
             <label for="Both">Both</label><br>
         </div>
         <button type="submit" class="btn btn-success">Search</button>
-        <a asp-action="Index" class="btn btn-danger">Show All</a>
+        <a class="btn btn-danger" href=@Url.Action("Index", "Showing", new { status = "All" })>Show All</a>
         <a class="btn btn-secondary" href=@Url.Action("Index", "Showing", new { status = "Unpublished" })>Show Unpublished</a>
     </p>
 </form>
@@ -65,44 +65,52 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Status)
                     </th>
-                    }
                 }
-                    <th></th>
-                </tr>
+            }
+            <th></th>
+        </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr class="table-secondary text-center text-dark">
-            <td>
-                @Html.DisplayFor(modelItem => item.Movie.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShowingDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Theatre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SeatsAvailable)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SpecialEvent)
-            </td>
-            @if (User.Identity.IsAuthenticated)
+    @if (Model == null)
+    {
+
+    }
+    else
+    {
+        <tbody>
+            @foreach (var item in Model)
             {
-                @if (User.IsInRole("Manager"))
-                {
+                <tr class="table-secondary text-center text-dark">
                     <td>
-                        @Html.DisplayFor(modelItem => item.Status)
+                        @Html.DisplayFor(modelItem => item.Movie.Title)
                     </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShowingDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Theatre)
+                    </td>
+                    @{Int32 seats = item.SeatsAvailable.Count(); }
+                    <td>
+                        @seats
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecialEvent)
+                    </td>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Manager"))
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                        }
                     }
-                }
                     <td>
                         <span>
                             @if (User.Identity.IsAuthenticated)
@@ -119,6 +127,8 @@
                         </span>
                     </td>
                 </tr>
-}
-    </tbody>
+            }
+        </tbody>
+    }
+
 </table>

@@ -24,14 +24,26 @@ namespace FinalProjectWorkspace.Controllers
         // GET: Showing
         public IActionResult Index(DateTime StartingShowingDate, String theatre, DateTime ShowingDate, String status)
         {
+            if (StartingShowingDate == new DateTime(01, 01, 0001) && theatre == null && ShowingDate == new DateTime(01, 01, 0001) && status == null)
+            {
+                return View();
+            }
+
             //LINQ to query job postings
             var query = from jp in _context.Showings select jp;
             query = query.Include(s => s.Movie);
 
-            if(status == "Unpublished")
+            if (status == "Unpublished")
             {
                 query = query.Where(s => s.Status == status);
                 List<Showing> SelectedUnpublishedShowings = query.ToList();
+
+                foreach (Showing s in SelectedUnpublishedShowings)
+                {
+                    var seatsAvailable = GetSeatsAvailable(s.ShowingID);
+                    s.SeatsAvailable = seatsAvailable;
+                }
+
                 return View(SelectedUnpublishedShowings.OrderBy(s => s.StartTime));
             }
 
@@ -47,7 +59,7 @@ namespace FinalProjectWorkspace.Controllers
 
             }
 
-            if(ShowingDate != new DateTime(01, 01, 0001))
+            if (ShowingDate != new DateTime(01, 01, 0001))
             {
                 query = query.Where(s => s.ShowingDate == ShowingDate);
             }
@@ -65,6 +77,12 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             List<Showing> SelectedShowings = query.ToList();
+            foreach (Showing s in SelectedShowings)
+            {
+                var seatsAvailable = GetSeatsAvailable(s.ShowingID);
+                s.SeatsAvailable = seatsAvailable;
+            }
+
             return View(SelectedShowings.OrderBy(s => s.StartTime));
 
             //return View(await _context.Showings.Include(s => s.Movie).ToListAsync());
@@ -81,6 +99,9 @@ namespace FinalProjectWorkspace.Controllers
             Showing showing = await _context.Showings
                 .Include(p => p.Movie)
                 .FirstOrDefaultAsync(m => m.ShowingID == id);
+
+            var seatsAvailable = GetSeatsAvailable(showing.ShowingID);
+            showing.SeatsAvailable = seatsAvailable;
 
             if (showing == null)
             {
@@ -106,6 +127,46 @@ namespace FinalProjectWorkspace.Controllers
 
             //return the MultiSelectList
             return movieSelectList;
+        }
+
+        public List<string> GetSeatsAvailable(int showingID)
+        {
+            List<string> allSeats = new List<string>()
+             {
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5"
+             };
+
+            List<string> seatsTaken = _context.Ticket
+                .Include(t => t.Order)
+                .Include(t => t.Showing)
+                .Where(t => t.Showing.ShowingID == showingID)
+                .Where(t => t.Order.OrderStatus != "Cancelled")
+                .Select(t => t.SeatNumber).ToList();
+
+            List<string> seatsAvailable = allSeats.Except(seatsTaken).ToList();
+
+            //SelectList slSeatsAvailable = new SelectList(seatsAvailable, nameof(Showing.ShowingID), nameof(Showing.StartTime));
+
+            return seatsAvailable;
         }
 
         // GET: Showing/Create
@@ -452,6 +513,7 @@ namespace FinalProjectWorkspace.Controllers
         public IActionResult Edit(int id, [Bind("ShowingID,ShowingDate,StartTime,EndTime,Theatre,SeatsAvailable,SpecialEvent,Status")] Showing showing, int SelectedMovie, int SelectedTheatre)
 
         {
+            Showing dbShowing = _context.Showings.FirstOrDefault();
             //this is a security check to see if the user is trying to modify
             //a different record.  Show an error message
             if (id != showing.ShowingID)
@@ -470,7 +532,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 //Find the course to edit in the database and include relevant 
                 //navigational properties
-                Showing dbShowing = _context.Showings
+                dbShowing = _context.Showings
                     .Include(cd => cd.Movie)
                     .FirstOrDefault(c => c.ShowingID == showing.ShowingID);
 
@@ -495,6 +557,7 @@ namespace FinalProjectWorkspace.Controllers
                 dbShowing.EndTime = dbShowing.StartTime.AddMinutes(dbShowing.Movie.RunTime);
                 //TODO: When we find out seats, change this
                 dbShowing.SeatsAvailable = showing.SeatsAvailable;
+
                 dbShowing.SpecialEvent = showing.SpecialEvent;
                 //TODO: If the showing was published before, should it still be published, or should it go to unpublished?
                 dbShowing.Status = showing.Status;
@@ -582,9 +645,20 @@ namespace FinalProjectWorkspace.Controllers
                 return View("Error", new string[] { "There was an error editing this product.", ex.Message });
             }
 
+            String theatre = "";
+            if (dbShowing.Theatre == Theatre.Theatre1)
+            {
+                theatre = "0";
+            }
+            else
+            {
+                theatre = "1";
+            }
+
             //if code gets this far, everything is okay
             //send the user back to the page with all the courses
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { theatre = theatre, showingDate = dbShowing.ShowingDate });
+            //return RedirectToAction(nameof(Index));
         }
 
         // GET: Showing/Delete/5
@@ -615,7 +689,16 @@ namespace FinalProjectWorkspace.Controllers
             var showing = await _context.Showings.FindAsync(id);
             _context.Showings.Remove(showing);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            String theatre = "";
+            if (showing.Theatre == Theatre.Theatre1)
+            {
+                theatre = "0";
+            } else
+            {
+                theatre = "1";
+            }
+            return RedirectToAction(nameof(Index), new { theatre = theatre, showingDate = showing.ShowingDate });
         }
 
         private bool ShowingExists(int id)
