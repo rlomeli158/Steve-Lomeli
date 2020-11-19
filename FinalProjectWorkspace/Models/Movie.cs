@@ -50,6 +50,21 @@ namespace FinalProjectWorkspace.Models
         [Required(ErrorMessage = "MPAA Rating is required!")]
         public MPAARatings MPAARating { get; set; } //As enum above
 
+        [NotMapped]
+        public DateTime ShowingSortOrder
+        {
+            get
+            {
+                if (Showings.Count() == 0)
+                {
+                    return new DateTime(2100, 1, 1);
+                } else
+                {
+                    return Showings.Min(s => s.StartTime).Date;
+                }
+            }
+        }
+
         //TODO: Uncomment this when you work on ratings/reviews
         //[Display(Name = "Average Review Rating")]
         //[DisplayFormat(DataFormatString = "{0:C",NullDisplayText = "No Ratings Yet")]
