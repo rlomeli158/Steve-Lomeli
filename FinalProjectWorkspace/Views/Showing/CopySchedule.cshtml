@@ -1,0 +1,54 @@
+@model FinalProjectWorkspace.Models.CopyViewModel
+
+@{
+    ViewData["Title"] = "Copy Schedule";
+}
+
+<h1>Copy Schedule</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CopySchedule">
+            <div style="display:inline-flex; grid-column-gap:30px">
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedCopyDate" class="control-label"></label>
+                    <input asp-for="SelectedCopyDate" class="form-control" />
+                    <span asp-validation-for="SelectedCopyDate" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedCopyTheatre" class="control-label"></label><br />&nbsp;
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.SelectedCopyTheatre, Theatre.Theatre1) Theater 1 &nbsp; &nbsp;
+                    </label>
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.SelectedCopyTheatre, Theatre.Theatre2) Theater 2
+                    </label>
+                    <span asp-validation-for="SelectedCopyTheatre" class="text-danger"></span>
+                </div>
+            </div>
+            <div style="display:inline-flex; grid-column-gap:30px">
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedToDate" class="control-label"></label>
+                    <input asp-for="SelectedToDate" class="form-control" />
+                    <span asp-validation-for="SelectedToDate" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedToTheatre" class="control-label"></label><br />&nbsp;
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.SelectedToTheatre, Theatre.Theatre1) Theater 1 &nbsp; &nbsp;
+                    </label>
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.SelectedToTheatre, Theatre.Theatre2) Theater 2
+                    </label>
+                    <span asp-validation-for="SelectedToTheatre" class="text-danger"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+</div>
+

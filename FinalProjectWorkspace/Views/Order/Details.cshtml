@@ -1,11 +1,31 @@
 @model FinalProjectWorkspace.Models.Order
 
-@{
-    ViewData["Title"] = "Shopping Cart";
+@if (Model.OrderStatus == "Active")
+{
+    {
+        ViewData["Title"] = "Shopping Cart";
+    }
 }
-<div class="text-center">
-    <h1>Shopping Cart</h1>
-</div>
+else
+{
+    {
+        ViewData["Title"] = "Order History";
+    }
+}
+
+@if (Model.OrderStatus == "Active")
+{
+    <div class="text-center">
+        <h1>Shopping Cart</h1>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h1>Order @Model.TransactionNumber</h1>
+    </div>
+}
+
 <div class="list-group">
     <a class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
@@ -43,7 +63,8 @@
 
 <h5>Tickets on this Order</h5>
 <table class="table table-hover text-center">
-    <tr class="text-light text-center">
+    <tr class="table-primary text-center">
+        <!--class="text-light text-center"-->
         <th>Movie Title</th>
         <th>Date</th>
         <th>Seat</th>
@@ -51,7 +72,14 @@
         <th>Discount</th>
         <th>Discount Name</th>
         <th>Total</th>
-        @if (Model.OrderStatus == "Paid")
+        <!--
+        if (Model.OrderStatus == "Active")
+        {
+            <th>Add Tickets</th>
+            <th>Remove Ticket</th>
+        }
+        -->
+        @if (Model.OrderStatus == "Paid" && Model.Tickets.Any(t => t.Showing.EndTime < DateTime.Now))
         {
             <th>Write a Review!</th>
         }
@@ -89,10 +117,22 @@
         <td>None</td>
     }
     <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
-    @if (Model.OrderStatus == "Paid")
+    @if (Model.OrderStatus == "Paid" && DateTime.Now > t.Showing.EndTime)
     {
         <td><a asp-action="Create" asp-controller="MovieReview" asp-route-movieid="@t.Showing.Movie.MovieID" class="btn btn-outline-info">Add Review</a></td>
     }
+    <!--
+    if (Model.OrderStatus == "Active")
+    {
+        <td>
+            <a asp-action="Create" asp-controller="Ticket" asp-route-orderid="t.Order.OrderID" asp-route-showingid="t.Showing.ShowingID"
+               class="btn btn-outline-info">Add</a>
+        </td>
+        <td>
+            <a asp-action="Delete" asp-controller="Ticket" asp-route-id="t.TicketID" class="btn btn-outline-info">Delete</a>
+        </td>
+    }
+    -->
 </tr>
     }
 </table>
@@ -164,7 +204,7 @@
     <!--<a asp-action="Index" class="btn btn-warning">Back to Order History</a>-->
     @if (Model.OrderStatus == "Active")
     {
-        <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Add or Remove Tickets</a>
+        <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit or Delete Tickets</a>
     }
     else
     {
@@ -179,7 +219,8 @@
         if (checkBox.checked == true) {
             text.style.display = "block";
         } else {
-            text.style.display = "none";
+            text.style.display = "none"
+            document.getElementById("textInput").value = null;
 
         }
     }

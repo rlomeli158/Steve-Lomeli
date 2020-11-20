@@ -25,7 +25,7 @@ namespace FinalProjectWorkspace.Models
         Thriller,
         War,
         Western
-        
+
     }
 
     public enum AllMPAARatings
@@ -37,7 +37,9 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "PG-13")]
         PG13,
         R,
-        Unrated
+        Unrated,
+        [Display(Name = "NC-17")]
+        NC17
     }
 
     public enum AllSearchTypes
@@ -45,7 +47,11 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Greater Than")]
         GreaterThan,
         [Display(Name = "Less Than")]
-        LessThan
+        LessThan,
+        [Display(Name = "Before")]
+        Before,
+        [Display(Name = "After")]
+        After
     }
 
     public class SearchViewModel
@@ -54,7 +60,10 @@ namespace FinalProjectWorkspace.Models
         public String SelectedTitle { get; set; } //Textbox
 
         [Display(Name = "Search by Overview:")]
-        public String SelectedOverview { get; set; } //Textbox
+        public String SelectedTagline { get; set; } //Textbox
+
+        [Display(Name = "Search by Actor:")]
+        public String SelectedActor { get; set; }
 
         [Display(Name = "Search by Genre:")]
         public Int32 SelectedGenreID { get; set; } //Dropdown

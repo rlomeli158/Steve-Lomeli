@@ -1,0 +1,53 @@
+﻿@model FinalProjectWorkspace.Models.RevenueSearchViewModel
+
+@{ ViewData["Title"] = "Revenue Report Search"; }
+
+<h1>Revenue Report Search</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DisplayRevenueReportResults">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SelectedStartingDate" class="control-label"></label>
+                <input asp-for="SelectedStartingDate" class="form-control" />
+                <span asp-validation-for="SelectedStartingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedEndingDate" class="control-label"></label>
+                <input asp-for="SelectedEndingDate" class="form-control" />
+                <span asp-validation-for="SelectedEndingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMovie" class="control-label"></label>
+                @Html.DropDownList("SelectedMovie", (SelectList)ViewBag.AllMovies, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMPAARating" class="control-label"></label>
+                @Html.DropDownListFor(model => model.SelectedMPAARating, (SelectList)ViewBag.AllMPAARatings, new { @class = "form-control" })
+                <span asp-validation-for="SelectedMPAARating" class="text-danger"></span>
+            <div class="form-group">
+                <label asp-for="SelectedTime" class="control-label"></label>
+                <input asp-for="SelectedTime" class="form-control" />
+                <span asp-validation-for="SelectedTime" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedSearchType" class="control-label"></label>&nbsp;
+                <label class="radio">
+                    @Html.RadioButtonFor(model => model.SelectedSearchType, AllSearchTypes.Before) Before &nbsp; &nbsp;
+                </label>
+                <label class="radio">
+                    @Html.RadioButtonFor(model => model.SelectedSearchType, AllSearchTypes.After) After
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-outline-success" />
+                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Return to Home Page</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

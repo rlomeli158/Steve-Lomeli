@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using System.Globalization;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -26,10 +28,64 @@ namespace FinalProjectWorkspace.Controllers
             //limit the list to only the registration details that belong to this registration
             List<Ticket> t = _context.Ticket
                                        .Include(rd => rd.Showing)
+                                       .ThenInclude(rd => rd.Movie)
+                                       .Include(rd => rd.Order)
                                        .Where(rd => rd.Order.OrderID == orderID)
                                        .ToList();
 
             return View(t);
+        }
+
+        public IActionResult ReportIndex()
+        {
+            
+            return View();
+        }
+
+        public async Task<List<string>> GetSeatsAvailableAsync(int showingID)
+        {
+            List<string> allSeats = new List<string>()
+             {
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5"
+             };
+
+            List<string> seatsTaken = _context.Ticket
+                .Include(t => t.Order)
+                .Include(t => t.Showing)
+                .Where(t => t.Showing.ShowingID == showingID)
+                .Where(t => t.Order.OrderStatus != "Cancelled")
+                .Select(t => t.SeatNumber).ToList();
+
+            List<string> seatsAvailable = allSeats.Except(seatsTaken).ToList();
+
+            //Update the showing in the database
+            Showing showing = _context.Showings.Where(s => s.ShowingID == showingID).First();
+            showing.SeatsAvailable = seatsAvailable;
+            _context.Update(showing);
+            await _context.SaveChangesAsync();
+
+            //SelectList slSeatsAvailable = new SelectList(seatsAvailable, nameof(Showing.ShowingID), nameof(Showing.StartTime));
+
+            return seatsAvailable;
         }
 
         private SelectList GetAllShowings()
@@ -67,8 +123,38 @@ namespace FinalProjectWorkspace.Controllers
             return slAllShowings;
         }
 
+        public SelectList GetAllRatings()
+        {
+
+            var MPAASelectList = new SelectList(Enum.GetValues(typeof(AllMPAARatings)).Cast<AllMPAARatings>().Select(v => new SelectListItem
+            {
+                Text = v.ToString(),
+                Value = ((int)v).ToString()
+            }).ToList(), "Value", "Text");
+
+            return MPAASelectList;
+        }
+
+        public SelectList GetAllMovies()
+        {
+            //Get the list of suppliers from the database
+            List<Movie> movieList = _context.Movies.ToList();
+
+            //add a dummy entry so the user can select all suppliers
+            Movie SelectNone = new Movie() { MovieID = 0, Title = "Select A Movie" };
+            movieList.Add(SelectNone);
+
+            //convert the list to a SelectList by calling SelectList constructor
+            //SupplierID and SupplierName are the names of the properties on the Supplier class
+            //SupplierID is the primary key
+            SelectList movieSelectList = new SelectList(movieList.OrderBy(s => s.MovieID), "MovieID", "Title");
+
+            //return the MultiSelectList
+            return movieSelectList;
+        }
+
         // GET: Ticket/Create
-        public IActionResult Create(int orderID, int? showingID)
+        public async Task<IActionResult> CreateAsync(int orderID, int? showingID)
         {
             //create a new instance of the RegistrationDetail class
             Ticket t = new Ticket();
@@ -79,15 +165,18 @@ namespace FinalProjectWorkspace.Controllers
             //set the new registration detail's registration equal to the registration you just found
             t.Order = dbOrder;
 
+            //it should always go to the else because they need to buy a ticket from a showing
             if (showingID == null)
             {
                 //populate the ViewBag with a list of existing courses
                 ViewBag.AllShowings = GetAllShowings();
+                //ViewBag.AllSeatsAvailable = GetSeatsAvailable();
             }
             else
             {
                 //populate the ViewBag with a list of existing courses
                 ViewBag.AllShowings = GetAllShowingsWithID((int)showingID);
+                ViewBag.AllSeatsAvailable = await GetSeatsAvailableAsync((int)showingID);
             }
 
             //pass the newly created registration detail to the view
@@ -103,7 +192,16 @@ namespace FinalProjectWorkspace.Controllers
                                     .FirstOrDefault(rd => rd.TicketID == ticketIn.TicketID);
             String showingDay;
             DateTime showingTime;
-            Order order = _context.Order.Where(o => o.OrderID != ticketIn.Order.OrderID).FirstOrDefault();
+
+            Order order = _context.Order.FirstOrDefault();
+            if (ticket != null)
+            {
+                order = _context.Order.Where(o => o.OrderID != ticket.Order.OrderID).FirstOrDefault();
+            } else
+            {
+                order = _context.Order.Where(o => o.OrderID != ticketIn.Order.OrderID).FirstOrDefault();
+
+            }
             Order badOrder = order;
             TimeSpan age;
             Decimal showingPrice = 0.00m;
@@ -285,6 +383,7 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Order, Users, User, Purchaser, TicketID, SeatNumber")] Ticket ticket, int SelectedShowing)
         {
+
             //if user has not entered all fields, send them back to try again
             if (ModelState.IsValid == false)
             {
@@ -298,13 +397,15 @@ namespace FinalProjectWorkspace.Controllers
             //Order dbOrder = _context.Order.Find(ticket.Order.OrderID);
 
             //Get tickets, showings, movies
-            Order dbOrder = _context.Order.Include(o => o.Tickets)
+            Order dbOrder = _context.Order.Include(o => o.Purchaser)
+                                          .Include(o => o.Tickets)
                                           .ThenInclude(o => o.Showing)
                                           .ThenInclude(o => o.Movie)
                                           .FirstOrDefault(o => o.OrderID == ticket.Order.OrderID);
 
             Showing selectedShowing = _context.Showings.Include(s => s.Movie)
                                                 .FirstOrDefault(s => s.ShowingID == SelectedShowing);
+
 
             //The selected showing is already on the order
             if (dbOrder.Tickets.Any(t => t.Showing.Movie == selectedShowing.Movie))
@@ -320,11 +421,26 @@ namespace FinalProjectWorkspace.Controllers
 
             }
 
+            List<string> seatsAvailable = await GetSeatsAvailableAsync(selectedShowing.ShowingID);
+            if (!seatsAvailable.Contains(ticket.SeatNumber))
+            {
+                return View("Error", new String[] { "This seat is taken." });
+            }
+
             //Showings are good, add tickets
             ticket.Showing = selectedShowing;
 
             //set the registration on the registration detail equal to the registration that we just found
             ticket.Order = dbOrder;
+
+            if (ticket.Showing.Movie.MPAARating == MPAARatings.R || ticket.Showing.Movie.MPAARating == MPAARatings.NC17)
+            {
+                if (ticket.Order.Purchaser.Birthday.AddYears(18) >= DateTime.Now)
+                {
+                    return View("Error", new String[]
+                    { "You are too young to see this movie. Please find another one!" });
+                }
+            }
 
             //find the course to be associated with this order
             //Showing dbShowing = _context.Showings.Find(SelectedShowing);
@@ -413,6 +529,12 @@ namespace FinalProjectWorkspace.Controllers
                 dbT.TicketPrice = dbT.TotalCost + ticket.DiscountAmount;
 
                 //dbT.Quantity = orderDetail.Quantity;
+
+                List<string> seatsAvailable = await GetSeatsAvailableAsync(dbT.Showing.ShowingID);
+                if (!seatsAvailable.Contains(ticket.SeatNumber))
+                {
+                    return View("Error", new String[] { "This seat is taken." });
+                } 
                 dbT.SeatNumber = ticket.SeatNumber;
                 //dbT.ExtendedPrice = dbT.Quantity * dbT.ProductPrice;
 
@@ -470,6 +592,106 @@ namespace FinalProjectWorkspace.Controllers
         private bool TicketExists(int id)
         {
             return _context.Ticket.Any(e => e.TicketID == id);
+        }
+
+        [Authorize(Roles="Manager")]
+        public IActionResult RevenueReportSearch()
+        {
+
+            //Populate view bag with list of categories
+            ViewBag.AllMPAARatings = GetAllRatings();
+            ViewBag.AllMovies = GetAllMovies();
+
+
+            //Set default properties
+            RevenueSearchViewModel rsvm = new RevenueSearchViewModel();
+            //Are these here necessary?
+            //svm.SelectedGenreID = (int)AllGenres.Action;
+            //svm.SelectedSearchType = AllSearchTypes.GreaterThan;
+            //svm.SelectedMPAARating = 2; //although it may not work
+
+            return View(rsvm);
+        }
+
+        [Authorize(Roles = "Manager")]
+        public IActionResult DisplayRevenueReportResults(RevenueSearchViewModel rsvm)
+        {
+            //Initial query LINQ
+            var query = from m in _context.Ticket select m;
+            query = query.Include(m => m.Showing).ThenInclude(m => m.Movie);
+
+            //If statements corresponding to each input form control
+
+            if (rsvm.SelectedStartingDate != null) //For date
+            {
+                DateTime datSelectedStartingDate = rsvm.SelectedStartingDate ?? new DateTime(1900, 1, 1);
+                query = query.Where(m => m.Showing.ShowingDate >= datSelectedStartingDate);
+            }
+
+            if (rsvm.SelectedEndingDate != null) //For date
+            {
+                DateTime datSelectedEndingDate = rsvm.SelectedEndingDate ?? new DateTime(1900, 1, 1);
+                query = query.Where(m => m.Showing.ShowingDate <= datSelectedEndingDate);
+            }
+
+            if (rsvm.SelectedMovie != 0) //For movie name
+            {
+                Movie movie = _context.Movies.Find(rsvm.SelectedMovie);
+                query = query.Where(m => m.Showing.Movie == movie);
+            }
+
+            if (rsvm.SelectedMPAARating != 0) //For MPAARating
+            {
+                string MPAAStringToDisplay = Enum.GetName(typeof(AllMPAARatings), rsvm.SelectedMPAARating);
+                MPAARatings MPAARatingsToDisplay = (MPAARatings)Enum.Parse(typeof(MPAARatings), MPAAStringToDisplay);
+                //query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay.ToString());
+                query = query.Where(m => m.Showing.Movie.MPAARating == MPAARatingsToDisplay);
+            }
+
+            if (rsvm.SelectedTime != null) //For showing time ********
+            {
+                DateTime timSelectedTime = rsvm.SelectedTime ?? new DateTime(1900, 1, 1);
+                switch (rsvm.SelectedSearchType)
+                {
+                    case AllSearchTypes.Before:
+                        query = query.Where(m => m.Showing.ShowingDate <= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
+                        break;
+                    case AllSearchTypes.After:
+                        query = query.Where(m => m.Showing.ShowingDate >= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (query != null) //they searched for something
+            {
+                TryValidateModel(rsvm);
+                if (ModelState.IsValid == false)
+                {
+                    //re-populate ViewBag to have list of all categories & MPAA Ratings
+                    ViewBag.AllMPAARatings = GetAllRatings();
+                    ViewBag.AllMovies = GetAllMovies();
+
+
+                    //View is returned with error messages
+                    return View("Browse", rsvm);
+                }
+
+                //Execute query, include category with it
+
+                List<Ticket> SelectedTickets = query.ToList();
+
+
+                return View("SearchResults", SelectedTickets); //Put year in here right now, but it should be showtime, right? **********
+
+
+            }
+
+            return View("RevenueReportBrowse");
+
+
+
         }
     }
 }

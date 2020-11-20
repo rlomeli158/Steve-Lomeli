@@ -13,7 +13,8 @@ namespace FinalProjectWorkspace.Models
         PG,
         PG13,
         R,
-        Unrated
+        Unrated,
+        NC17
     }
 
     public class Movie
@@ -48,6 +49,21 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "MPAA Rating")]
         [Required(ErrorMessage = "MPAA Rating is required!")]
         public MPAARatings MPAARating { get; set; } //As enum above
+
+        [NotMapped]
+        public DateTime ShowingSortOrder
+        {
+            get
+            {
+                if (Showings.Count() == 0)
+                {
+                    return new DateTime(2100, 1, 1);
+                } else
+                {
+                    return Showings.Min(s => s.StartTime).Date;
+                }
+            }
+        }
 
         //TODO: Uncomment this when you work on ratings/reviews
         //[Display(Name = "Average Review Rating")]

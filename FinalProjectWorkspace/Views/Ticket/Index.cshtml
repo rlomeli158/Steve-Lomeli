@@ -4,42 +4,65 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Edit or Remove Tickets</h1>
 
-<p>
-    <a class="btn btn-outline-primary" asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<table class="table table-hover text-center">
     <thead>
-        <tr>
+        <tr class="table-primary text-center">
             <th>
-                @Html.DisplayNameFor(model => model.TicketPrice)
+                @Html.DisplayNameFor(model => model.Showing.Movie.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TotalCost)
+                @Html.DisplayNameFor(model => model.Showing.ShowingDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SeatNumber)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>Edit</th>
+            <th>Remove</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="table-secondary text-center text-dark">
             <td>
-                @Html.DisplayFor(modelItem => item.TicketPrice)
+                @Html.DisplayFor(modelItem => item.Showing.Movie.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalCost)
+                @Html.DisplayFor(modelItem => item.Showing.ShowingDate) @Html.DisplayFor(modelItem => item.Showing.StartTime)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SeatNumber)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.TicketPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+            <td>
                 <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.TicketID">Edit</a>
-                <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.TicketID">Details</a>
-                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.TicketID">Delete</a>
+            </td>
+            <td>
+                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.TicketID">Remove</a>
             </td>
         </tr>
 }

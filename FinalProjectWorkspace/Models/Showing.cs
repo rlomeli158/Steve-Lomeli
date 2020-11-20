@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -36,9 +37,15 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Theatre")]
         public Theatre Theatre { get; set; }
 
-        [Display(Name = "Seats Available")]
-        public Int32 SeatsAvailable { get; set; } // You take the difference of all seats and seats purchased
+        [NotMapped]
+        public List<string> SeatsAvailable { get; set; }
+
+        //[Display(Name = "Seats Available")]
+        //public Int32 SeatsAvailable { get; set; } // You take the difference of all seats and seats purchased
+
         public Boolean SpecialEvent { get; set; }
+
+        public String Status { get; set; }
 
         public Movie Movie { get; set; }
         public List<Ticket> Tickets { get; set; }

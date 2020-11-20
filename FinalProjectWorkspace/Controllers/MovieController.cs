@@ -87,9 +87,14 @@ namespace FinalProjectWorkspace.Controllers
                 query = query.Where(m => m.Title.Contains(svm.SelectedTitle));
             }
 
-            if (svm.SelectedOverview != null && svm.SelectedOverview != "") //For overview/description
+            if (svm.SelectedTagline != null && svm.SelectedTagline != "") //For tagline
             {
-                query = query.Where(m => m.Overview.Contains(svm.SelectedOverview));
+                query = query.Where(m => m.Tagline.Contains(svm.SelectedTagline));
+            }
+
+            if (svm.SelectedActor != null && svm.SelectedActor != "") //For actors
+            {
+                query = query.Where(m => m.Actors.Contains(svm.SelectedActor));
             }
 
             if (svm.SelectedGenreID != 0) //For genre
@@ -149,17 +154,16 @@ namespace FinalProjectWorkspace.Controllers
 
                 //Execute query, include category with it
 
-                List<Movie> SelectedMovies = query.Include(m => m.Genre).ToList();
+                List<Movie> SelectedMovies = query.Include(m => m.Genre).Include(m => m.Showings).ToList();
 
                 //Populate the view bag with a count of all job postings
                 ViewBag.AllMovies = _context.Movies.Count();
                 //Populate the view bag with a count of selected job postings
                 ViewBag.SelectedMovies = SelectedMovies.Count();
 
-
-                return View("SearchResults", SelectedMovies.OrderByDescending(m => m.Year)); //Put year in here right now, but it should be showtime, right? **********
-
-
+                //return View("SearchResults", SelectedMovies.OrderBy(m => m.Showings.Min(s => s.StartTime))); //Put year in here right now, but it should be showtime, right? **********
+                //return View("SearchResults", SelectedMovies.OrderBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
+                return View("SearchResults", SelectedMovies.OrderBy(m => m.ShowingSortOrder).ThenBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
             }
 
             return View("Browse");
