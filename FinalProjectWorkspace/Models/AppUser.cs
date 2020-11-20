@@ -42,6 +42,7 @@ namespace FinalProjectWorkspace.Models
 
         [Display(Name = "Enter user birthday")]
         [Required(ErrorMessage = "Please enter your birthday!")]
+        [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
 
 
@@ -64,6 +65,10 @@ namespace FinalProjectWorkspace.Models
         //Will show all of the orders someone has received
         [InverseProperty("Recipient")]
         public List<Order> OrdersReceived { get; set; }
+
+        //Will show all of the orders someone has sold
+        [InverseProperty("Seller")]
+        public List<Order> OrdersSold { get; set; }
 
 
     }

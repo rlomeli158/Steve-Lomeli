@@ -32,36 +32,26 @@
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            <!--
-                <th>
-            Html.DisplayNameFor(model => model.Overview)
-                </th>
-                -->
             <th>
-                @Html.DisplayNameFor(model => model.Tagline)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RunTime)
+                @Html.DisplayNameFor(model => model.Genre.GenreName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Year)
             </th>
-            <!--
-            <th>
-                Html.DisplayNameFor(model => model.Actors)
-            </th>
-            -->
             <th>
                 @Html.DisplayNameFor(model => model.MPAARating)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Genre.GenreName)
+                @Html.DisplayNameFor(model => model.RunTime)
             </th>
             <th>
                 Review Rating
             </th>
             <th>
                 See Reviews
+            </th>
+            <th>
+                Upcoming Showtimes
             </th>
             <th>
                 Movie Details
@@ -71,54 +61,53 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr class="table-secondary text-center text-dark">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <!--
-                <td>
-                    Html.DisplayFor(modelItem => item.Overview)
-                </td>
-                -->
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tagline)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RunTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <!--
-                <td>
-                    Html.DisplayFor(modelItem => item.Actors)
-                </td>
-                --->
-                <td>
-                    @Html.DisplayFor(modelItem => item.MPAARating)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre.GenreName)
-                </td>
-                <td>
-                    @{Double? avgReview = item.MovieReviews.Where(r => r.ApprovalStatus == true).Average(m => m.Rating);}
-                    @if (avgReview != null)
-                    {
-                        @avgReview
-                    }
-                    else
-                    {
-                        @:No Rating yet
-                    }
+        <tr class="table-secondary text-center text-dark">
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.GenreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MPAARating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunTime)
+            </td>
+            <td>
+                @{Double? avgReview = item.MovieReviews.Where(r => r.ApprovalStatus == true).Average(m => m.Rating);}
+                @if (avgReview != null)
+                {
+                    @avgReview
+                }
+                else
+                {
+                    @:No Rating yet
+                }
 
-                </td>
-                <td>
-                    <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">Reviews</a>
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
-                </td>
-            </tr>
+            </td>
+            <td>
+                <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">Reviews</a>
+            </td>
+            <td>
+                @if(!item.Showings.Any())
+                {
+                    @:None Upcoming
+                }else
+                {
+                    @foreach (var showing in item.Showings)
+                    {
+                    @Html.DisplayFor(modelShowing => showing.ShowingDate)@: at @Html.DisplayFor(modelShowing => showing.StartTime) <br />
+                    }
+                }
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

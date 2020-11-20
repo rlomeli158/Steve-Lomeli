@@ -50,6 +50,8 @@ namespace FinalProjectWorkspace.Models
 
         public AppUser Recipient { get; set; } //Recipient of gift, if there is one
 
+        public AppUser Seller { get; set; } //Employee/Manager that sold order
+
         public Order()
         {
             if (Tickets == null)

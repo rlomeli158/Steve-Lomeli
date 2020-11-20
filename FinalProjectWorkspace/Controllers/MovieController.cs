@@ -9,6 +9,7 @@ using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using System.Collections;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -87,9 +88,9 @@ namespace FinalProjectWorkspace.Controllers
                 query = query.Where(m => m.Title.Contains(svm.SelectedTitle));
             }
 
-            if (svm.SelectedOverview != null && svm.SelectedOverview != "") //For overview/description
+            if (svm.SelectedTagline != null && svm.SelectedTagline != "") //For tagline
             {
-                query = query.Where(m => m.Overview.Contains(svm.SelectedOverview));
+                query = query.Where(m => m.Tagline.Contains(svm.SelectedTagline));
             }
 
             if (svm.SelectedActor != null && svm.SelectedActor != "") //For actors
@@ -154,17 +155,16 @@ namespace FinalProjectWorkspace.Controllers
 
                 //Execute query, include category with it
 
-                List<Movie> SelectedMovies = query.Include(m => m.Genre).ToList();
+                List<Movie> SelectedMovies = query.Include(m => m.Genre).Include(m => m.Showings).ToList();
 
                 //Populate the view bag with a count of all job postings
                 ViewBag.AllMovies = _context.Movies.Count();
                 //Populate the view bag with a count of selected job postings
                 ViewBag.SelectedMovies = SelectedMovies.Count();
 
-
-                return View("SearchResults", SelectedMovies.OrderBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
-
-
+                //return View("SearchResults", SelectedMovies.OrderBy(m => m.Showings.Min(s => s.StartTime))); //Put year in here right now, but it should be showtime, right? **********
+                //return View("SearchResults", SelectedMovies.OrderBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
+                return View("SearchResults", SelectedMovies.OrderBy(m => m.ShowingSortOrder).ThenBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
             }
 
             return View("Browse");
@@ -218,15 +218,23 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Genre,Revenue,Actors,MPAARating")] Movie movie, int SelectedGenre, int SelectedMPAARating)
         {
-            //Find the next Movie Number from the utilities class
-            //movie.MovieNumber = Utilities.GenerateNextMovieNumber.GetNextMovieNumber(_context);
 
-            
+            if (SelectedGenre == 0 && SelectedMPAARating == 0 )
+            {
 
-         
+                ModelState.AddModelError("Please verify that you have specified one Genre and one MPAA Rating.","");
+
+
+            }
+
+           
 
             if (ModelState.IsValid && SelectedGenre > 0 && SelectedMPAARating > 0 )
             {
+
+                //Find the next Movie Number from the utilities class
+                movie.MovieNumber = Utilities.GenerateNextMovieNumber.GetNextMovieNumber(_context);
+
 
                 Genre dbGenre = _context.Genres.Find(SelectedGenre);
 
@@ -245,7 +253,12 @@ namespace FinalProjectWorkspace.Controllers
 
             ViewBag.AllGenres = GetAllGenres();
             ViewBag.AllMPAARatings = GetAllRatings();
+
+            
             return View(movie);
+
+           
+
         }
 
         // GET: Movie/Edit/5

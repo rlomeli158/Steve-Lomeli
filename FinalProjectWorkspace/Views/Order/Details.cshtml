@@ -57,6 +57,42 @@ else
             @Html.DisplayFor(model => model.OrderStatus)
         </p>
     </a>
+    @if (Model.Seller != null)
+    {
+        <a class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">
+                    Sold By Employee
+                </h5>
+            </div>
+            <p class="mb-1">
+                @Html.DisplayFor(model => model.Seller.FirstName) @Html.DisplayFor(model => model.Seller.LastName)
+            </p>
+        </a>
+        <a class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">
+                    Customer
+                </h5>
+            </div>
+            <p class="mb-1">
+                @Html.DisplayFor(model => model.Purchaser.FirstName) @Html.DisplayFor(model => model.Purchaser.LastName)
+            </p>
+        </a>
+    }
+    @if (Model.Recipient != null && Model.OrderStatus != "Active")
+    {
+        <a class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">
+                    Gift @Html.DisplayNameFor(model => model.Recipient)
+                </h5>
+            </div>
+            <p class="mb-1">
+                @Html.DisplayFor(model => model.Recipient.UserName)
+            </p>
+        </a>
+    }
 </div>
 
 <hr style="border:1px solid white" />
@@ -187,10 +223,10 @@ else
                 </div>
                 <div>
                     <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
-                    <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false checked="checked" /> Cash<br />
+                    <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value="false" checked="checked" /> Cash<br />
                     @if (Model.Purchaser.PCPBalance >= (Model.Tickets.Count() * 100) && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
                     {
-                        <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true /> @:Popcorn Points<br />
+                        <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value="true"> @:Popcorn Points<br />
                     }
                     <input style="margin-top:10px" type="submit" value="Check Out" class="btn btn-success" onclick="viewText()" />
                 </div>

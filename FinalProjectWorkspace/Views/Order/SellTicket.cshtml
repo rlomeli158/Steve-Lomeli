@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "Sell Ticket";
+}
+
+<h1>Sell Ticket to Customer</h1>
+
+<form asp-action="SellTicket">
+    <p class="form-group">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        Enter the customer's email address: <input name="customer" class="form-control" type="email" /><br />
+        <button type="submit" class="btn btn-success">Submit</button>
+    </p>
+</form>
