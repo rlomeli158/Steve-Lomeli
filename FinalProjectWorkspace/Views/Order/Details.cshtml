@@ -210,10 +210,10 @@ else
                 </div>
                 <div>
                     <label asp-for="PaidWithPopcornPoints" class="control-label">What would you like to pay with?</label><br />
-                    <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=false checked="checked" /> Cash<br />
+                    <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value="false" checked="checked" /> Cash<br />
                     @if (Model.Purchaser.PCPBalance >= (Model.Tickets.Count() * 100) && Model.Tickets.Any(t => t.Showing.SpecialEvent) != true)
                     {
-                        <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value=true /> @:Popcorn Points<br />
+                        <input type="radio" class="radio" asp-for="PaidWithPopcornPoints" value="true"> @:Popcorn Points<br />
                     }
                     <input style="margin-top:10px" type="submit" value="Check Out" class="btn btn-success" onclick="viewText()" />
                 </div>

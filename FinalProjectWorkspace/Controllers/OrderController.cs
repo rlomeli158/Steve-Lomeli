@@ -121,8 +121,16 @@ namespace FinalProjectWorkspace.Controllers
                 return View("Error", new String[] { "There is no active order!" });
             }
 
-            //make sure a customer isn't trying to look at someone else's order
-            if (User.IsInRole("Manager") == false && order.Seller.UserName != User.Identity.Name && order.Purchaser.UserName != User.Identity.Name && order.Recipient.UserName != User.Identity.Name)
+            if (order.Seller == null)
+            {
+                //make sure a customer isn't trying to look at someone else's order
+                if (!User.IsInRole("Manager") && order.Purchaser.UserName != User.Identity.Name && order.Recipient.UserName != User.Identity.Name)
+                {
+                    return View("Error", new string[] { "You are not authorized to edit this order!" });
+                }
+            }
+            //make sure a customer isn't trying to look at someone else's order. (They aren't the seller, purchaser, or recipient)
+            else if (!User.IsInRole("Manager") && order.Seller.UserName != User.Identity.Name && order.Purchaser.UserName != User.Identity.Name && order.Recipient.UserName != User.Identity.Name)
             {
                 return View("Error", new string[] { "You are not authorized to edit this order!" });
             }
@@ -383,7 +391,7 @@ namespace FinalProjectWorkspace.Controllers
 
         // GET: Order/Edit/5
         [HttpGet, ActionName("CompleteOrder")]
-        public async Task<IActionResult> CompleteOrderAsync(Order orderIn)
+        public IActionResult CompleteOrder(Order orderIn)
         {
             if (orderIn.OrderID == 0)
             {
@@ -399,7 +407,7 @@ namespace FinalProjectWorkspace.Controllers
                 .FirstOrDefault(o => o.OrderID == orderIn.OrderID);
 
             order.PaidWithPopcornPoints = orderIn.PaidWithPopcornPoints;
-
+            ViewBag.PaidWithPopcornPoints = order.PaidWithPopcornPoints;
             if (order.PaidWithPopcornPoints == true)
             {
                 foreach (Ticket t in order.Tickets)
@@ -409,11 +417,15 @@ namespace FinalProjectWorkspace.Controllers
                 }
                 order.PopcornPoints = order.Tickets.Count() * -100;
                 order.Purchaser.PCPBalance -= Math.Abs(order.PopcornPoints);
+                ViewBag.PopcornPoints = order.PopcornPoints;
+                ViewBag.PCPBalance = order.Purchaser.PCPBalance;
             }
             else
             {
                 order.PopcornPoints = (int)order.Tickets.Sum(t => t.TransactionPopcornPoints);
                 order.Purchaser.PCPBalance = order.Purchaser.PCPBalance + order.PopcornPoints;
+                ViewBag.PopcornPoints = order.PopcornPoints;
+                ViewBag.PCPBalance = order.Purchaser.PCPBalance;
             }
 
             if (orderIn.Recipient.UserName != null)
@@ -423,11 +435,11 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     List<Movie> movies = order.Tickets.Select(t => t.Showing.Movie).ToList();
 
-                    foreach(Movie m in movies)
+                    foreach (Movie m in movies)
                     {
-                        if(user.Birthday.AddYears(18) >= DateTime.Now)
+                        if (user.Birthday.AddYears(18) >= DateTime.Now)
                         {
-                            if(m.MPAARating == MPAARatings.R || m.MPAARating == MPAARatings.NC17)
+                            if (m.MPAARating == MPAARatings.R || m.MPAARating == MPAARatings.NC17)
                             {
                                 return View("Error", new String[]
                                 { "The recipient is under 18 and they cannot be gifted a showing to " + m.Title + "."});
@@ -435,15 +447,17 @@ namespace FinalProjectWorkspace.Controllers
                         }
                     }
                     order.Recipient = user;
-                } else
+                    ViewBag.Recipient = user;
+                }
+                else
                 {
-                    return View("Error", new String[] { "This user doesn't have a Main Street Movies account! Please have them create one before gifting them tickets."});
+                    return View("Error", new String[] { "This user doesn't have a Main Street Movies account! Please have them create one before gifting them tickets." });
                 }
             }
 
             //TODO: If we uncomment this, then popcorn points get deducted successfully. We would have to remove "Return To Index" on the confirmation page.s
-            _context.Update(order);
-            await _context.SaveChangesAsync();
+            //_context.Update(order);
+            //await _context.SaveChangesAsync();
 
             if (order == null)
             {
@@ -455,7 +469,7 @@ namespace FinalProjectWorkspace.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CompleteOrder(Order orderIn)
+        public async Task<IActionResult> CompleteOrder(Order orderIn, int pcpBalance, int popcornPoints, String recipient)
         {
             //Find order in database that corresponds to user
             Order order = _context.Order
@@ -464,7 +478,16 @@ namespace FinalProjectWorkspace.Controllers
                 .Include(ord => ord.Purchaser)
                 .FirstOrDefault(o => o.OrderID == orderIn.OrderID);
 
+            if(recipient != null)
+            {
+                AppUser recipientUser = _context.Users.Where(u => u.UserName == recipient).First();
+                order.Recipient = recipientUser;
+            }
+
             order.OrderStatus = "Paid";
+            order.PaidWithPopcornPoints = orderIn.PaidWithPopcornPoints;
+            order.PopcornPoints = popcornPoints;
+            order.Purchaser.PCPBalance = pcpBalance;
 
             _context.Update(order);
             await _context.SaveChangesAsync();

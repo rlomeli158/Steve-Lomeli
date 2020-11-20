@@ -165,6 +165,9 @@
     </form>
     <form asp-action="CompleteOrder" method="post">
         <input type="hidden" asp-for="OrderID" />
+        <input type="hidden" name="pcpBalance" value=@ViewBag.PCPBalance>
+        <input type="hidden" name="popcornPoints" value=@ViewBag.PopcornPoints>
+        <input type="hidden" name="recipient" value=@ViewBag.Recipient>
         <input type="submit" value="Submit Order" class="btn btn-success" />
     </form>
 </div>
