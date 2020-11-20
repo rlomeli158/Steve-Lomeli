@@ -42,6 +42,7 @@ namespace FinalProjectWorkspace.Models
 
         [Display(Name = "Enter user birthday")]
         [Required(ErrorMessage = "Please enter your birthday!")]
+        [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
 
 

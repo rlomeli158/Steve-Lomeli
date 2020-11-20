@@ -40,6 +40,7 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Release Date")]
         [Required(ErrorMessage = "Movie Release Date is required!")]
         [DisplayFormat(DataFormatString = "{0:MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime Year { get; set; } //reflect this change on Balsamiq model
         public Decimal Revenue { get; set; } //Add this to model
 
