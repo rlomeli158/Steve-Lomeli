@@ -218,7 +218,7 @@ namespace FinalProjectWorkspace.Controllers
         public async Task<IActionResult> Create([Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Genre,Revenue,Actors,MPAARating")] Movie movie, int SelectedGenre, int SelectedMPAARating)
         {
             //Find the next Movie Number from the utilities class
-            //movie.MovieNumber = Utilities.GenerateNextMovieNumber.GetNextMovieNumber(_context);
+            movie.MovieNumber = Utilities.GenerateNextMovieNumber.GetNextMovieNumber(_context);
 
             
 
