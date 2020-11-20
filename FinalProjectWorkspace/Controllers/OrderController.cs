@@ -337,10 +337,21 @@ namespace FinalProjectWorkspace.Controllers
             return RedirectToAction(nameof(Confirmed),order);
         }
 
+
+
+        public IActionResult ConfirmedEmail(Order order)
+        {
+            return View("Confirmed", order);
+
+            //return View(order);
+        }
+
         // GET: Order/Edit/5
         public IActionResult Confirmed(Order order)
-        { 
-            return View(order);
+        {
+            return RedirectToAction("OrderConfirmed", "Email", new { order.OrderID });
+
+            //return View(order);
         }
 
         public async Task<IActionResult> Cancelled(int id)
@@ -375,8 +386,22 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             //send the user to the Orders Index page.
-            return View(order);
+            //return View(order);
+            
+            return RedirectToAction("OrderCancelled", "Email", new { order.OrderID });
+
         }
+
+
+        public IActionResult CancelledEmail(Order order)
+        {
+            return View("Cancelled", order);
+
+            //return View(order);
+        }
+
+
+
 
         private bool OrderExists(int id)
         {

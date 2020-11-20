@@ -657,6 +657,7 @@ namespace FinalProjectWorkspace.Controllers
 
             //if code gets this far, everything is okay
             //send the user back to the page with all the courses
+            //return RedirectToAction("OrderCancelled", "Email", new { showing. });
             return RedirectToAction(nameof(Index), new { theatre = theatre, showingDate = dbShowing.ShowingDate });
             //return RedirectToAction(nameof(Index));
         }

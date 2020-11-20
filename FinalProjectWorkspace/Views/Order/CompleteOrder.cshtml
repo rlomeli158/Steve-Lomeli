@@ -142,6 +142,7 @@
     </form>
     <form asp-action="CompleteOrder" method="post">
         <input type="hidden" asp-for="OrderID" />
-        <input type="submit" value="Submit Order" class="btn btn-success" />
+
+        <input type="submit" value="Submit Order" asp-route-id="@Model.OrderID" class="btn btn-success" />
     </form>
 </div>

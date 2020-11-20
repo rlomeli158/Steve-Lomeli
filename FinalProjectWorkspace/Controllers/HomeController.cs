@@ -39,8 +39,9 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             List<Showing> TodayShowing = query.Include(m => m.Movie).ToList();
+            List<Showing> ActiveShowing = query.Include(m => m.Movie).Where(m => m.ShowingDate >= CurrentDate).ToList();
 
-            ViewBag.AllShowings = _context.Showings.Count();
+            ViewBag.AllShowings = ActiveShowing.Count();
             ViewBag.SelectedShowings = TodayShowing.Count();
 
             return View(TodayShowing.OrderBy(m => m.StartTime));
