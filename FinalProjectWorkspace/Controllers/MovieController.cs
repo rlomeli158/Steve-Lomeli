@@ -9,6 +9,7 @@ using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using System.Collections;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -217,15 +218,23 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Genre,Revenue,Actors,MPAARating")] Movie movie, int SelectedGenre, int SelectedMPAARating)
         {
-            //Find the next Movie Number from the utilities class
-            movie.MovieNumber = Utilities.GenerateNextMovieNumber.GetNextMovieNumber(_context);
 
-            
+            if (SelectedGenre == 0 && SelectedMPAARating == 0 )
+            {
 
-         
+                ModelState.AddModelError("Please verify that you have specified one Genre and one MPAA Rating.","");
+
+
+            }
+
+           
 
             if (ModelState.IsValid && SelectedGenre > 0 && SelectedMPAARating > 0 )
             {
+
+                //Find the next Movie Number from the utilities class
+                movie.MovieNumber = Utilities.GenerateNextMovieNumber.GetNextMovieNumber(_context);
+
 
                 Genre dbGenre = _context.Genres.Find(SelectedGenre);
 
@@ -244,7 +253,12 @@ namespace FinalProjectWorkspace.Controllers
 
             ViewBag.AllGenres = GetAllGenres();
             ViewBag.AllMPAARatings = GetAllRatings();
+
+            
             return View(movie);
+
+           
+
         }
 
         // GET: Movie/Edit/5

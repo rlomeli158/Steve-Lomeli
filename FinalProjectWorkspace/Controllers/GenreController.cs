@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
+using System.Text;
 
 namespace FinalProjectWorkspace.Controllers
 {
@@ -140,8 +141,16 @@ namespace FinalProjectWorkspace.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var genre = await _context.Genres.FindAsync(id);
-            _context.Genres.Remove(genre);
-            await _context.SaveChangesAsync();
+            try {
+                _context.Genres.Remove(genre);
+                await _context.SaveChangesAsync();
+            }
+            catch
+            {
+                return View("Error", new string[] { "This genre cannot be deleted as a Movie is currently associated with it. " +
+                    "Please delete the movie first." });
+                
+            }
             return RedirectToAction(nameof(Index));
         }
 
