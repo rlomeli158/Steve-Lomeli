@@ -246,6 +246,9 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<string>("RecipientId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("SellerId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("TransactionNumber")
                         .HasColumnType("int");
 
@@ -256,6 +259,8 @@ namespace FinalProjectWorkspace.Migrations
                     b.HasIndex("PurchaserId");
 
                     b.HasIndex("RecipientId");
+
+                    b.HasIndex("SellerId");
 
                     b.ToTable("Order");
                 });
@@ -528,9 +533,15 @@ namespace FinalProjectWorkspace.Migrations
                         .WithMany("OrdersReceived")
                         .HasForeignKey("RecipientId");
 
+                    b.HasOne("FinalProjectWorkspace.Models.AppUser", "Seller")
+                        .WithMany("OrdersSold")
+                        .HasForeignKey("SellerId");
+
                     b.Navigation("Purchaser");
 
                     b.Navigation("Recipient");
+
+                    b.Navigation("Seller");
                 });
 
             modelBuilder.Entity("FinalProjectWorkspace.Models.Showing", b =>
@@ -621,6 +632,8 @@ namespace FinalProjectWorkspace.Migrations
                     b.Navigation("OrdersPurchased");
 
                     b.Navigation("OrdersReceived");
+
+                    b.Navigation("OrdersSold");
 
                     b.Navigation("Tickets");
                 });

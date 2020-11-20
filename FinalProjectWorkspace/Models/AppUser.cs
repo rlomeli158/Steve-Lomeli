@@ -65,6 +65,10 @@ namespace FinalProjectWorkspace.Models
         [InverseProperty("Recipient")]
         public List<Order> OrdersReceived { get; set; }
 
+        //Will show all of the orders someone has sold
+        [InverseProperty("Seller")]
+        public List<Order> OrdersSold { get; set; }
+
 
     }
     
