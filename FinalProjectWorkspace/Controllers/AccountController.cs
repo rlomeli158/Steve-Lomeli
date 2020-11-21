@@ -64,12 +64,12 @@ namespace FinalProjectWorkspace.Controllers
                     MiddleInitial = rvm.MiddleInitial,
                     LastName = rvm.LastName,
                     Address = rvm.FirstName,
-                    City = rvm.FirstName,
-                    State = rvm.FirstName,
-                    Zip = rvm.FirstName,
+                    City = rvm.City,
+                    State = rvm.State,
+                    Zip = rvm.Zip,
                     Birthday = rvm.Birthday,
                     PCPBalance = rvm.PCPBalance,
-                    AccountStatus = rvm.AccountStatus,
+                    AccountStatus = true,
                 };
 
                 //This code uses the UserManager object to create a new user with the specified password
@@ -78,8 +78,16 @@ namespace FinalProjectWorkspace.Controllers
                 //If the add user operation was successful, we need to do a few more things
                 if (result.Succeeded && User.IsInRole("Manager"))
                 {
-                    //TODO: Add user to desired role. This example adds the user to the customer role
-                    await _userManager.AddToRoleAsync(newUser, "Employee");
+                    if (rvm.CustomerAccountType == false && rvm.EmployeeAccountType == true)
+                    {
+                        //adds to employee role
+                        await _userManager.AddToRoleAsync(newUser, "Employee");
+                    } else
+                    {
+                        //adds to customer role
+                        await _userManager.AddToRoleAsync(newUser, "Customer");
+                    }
+                    
 
                     //NOTE: This code logs the user into the account that they just created
                     //You may or may not want to log a user in directly after they register - check
@@ -87,7 +95,7 @@ namespace FinalProjectWorkspace.Controllers
                     //Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
 
                     //Send the user to the home page
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("AccountCreation", "Email", new { newUser.Id });
                 }
 
                 if (result.Succeeded != User.IsInRole("Manager"))
@@ -98,10 +106,10 @@ namespace FinalProjectWorkspace.Controllers
                     //NOTE: This code logs the user into the account that they just created
                     //You may or may not want to log a user in directly after they register - check
                     //the business rules!
-                    Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
+                    //Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
 
                     //Send the user to the home page
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("AccountCreation", "Email", new { newUser.Id });
                 }
 
                 else  //the add user operation didn't work, and we need to show an error message
@@ -222,14 +230,7 @@ namespace FinalProjectWorkspace.Controllers
                 user = _context.Users.FirstOrDefault(u => u.UserName == id);
                 //user = _context.Users.FirstOrDefault(u => u.Id == id);
             }
-            /*
-             *
-             *User.IsInRole("Manager") && 
-            else
-            {
-                user = _context.Users.FirstOrDefault(u => u.Id == id);
-            }
-            */
+          
 
 
             //populate the view model
@@ -326,28 +327,11 @@ namespace FinalProjectWorkspace.Controllers
 
                 await _userManager.UpdateAsync(user);
                 await _context.SaveChangesAsync();
-                /*
-                try
-                {
-                    AppUser user = _context.Users.FirstOrDefault(u => u.Id == evm.UserID);
 
-                    await _userManager.UpdateAsync(user);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserExists(user.Id))
-                    {
-                        return View("Error");
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                */
-                //return RedirectToAction(Index, new { id = evm.UserID });
-                return RedirectToAction("Index", "Account", new { id = evm.UserID });
+
+                return RedirectToAction("AccountUpdate", "Email", new { user.Id });
+
+                //return RedirectToAction("Index", "Account", new { id = evm.UserID });
             }
 
             return View(evm);

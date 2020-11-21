@@ -39,8 +39,9 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             List<Showing> TodayShowing = query.Include(m => m.Movie).ToList();
+            List<Showing> ActiveShowing = query.Include(m => m.Movie).Where(m => m.ShowingDate >= CurrentDate).ToList();
 
-            ViewBag.AllShowings = _context.Showings.Count();
+            ViewBag.AllShowings = ActiveShowing.Count();
             ViewBag.SelectedShowings = TodayShowing.Count();
 
             return View(TodayShowing.OrderBy(m => m.StartTime));
@@ -142,95 +143,6 @@ namespace FinalProjectWorkspace.Controllers
             }).ToList(), "Value", "Text");
 
             return MPAASelectList;
-        }
-
-        public IActionResult DisplaySearchResults(SearchViewModel svm)
-        {
-            //Initial query LINQ
-            var query = from m in _context.Movies select m;
-
-            //If statements corresponding to each input form control
-
-            if (svm.SelectedTitle != null && svm.SelectedTitle != "") //For title
-            {
-                query = query.Where(m => m.Title.Contains(svm.SelectedTitle));
-            }
-
-            if (svm.SelectedOverview != null && svm.SelectedOverview != "") //For overview/description
-            {
-                query = query.Where(m => m.Overview.Contains(svm.SelectedOverview));
-            }
-
-            if (svm.SelectedGenreID != 0) //For genre
-            {
-                Genre GenreToDisplay = _context.Genres.Find(svm.SelectedGenreID);
-                query = query.Where(m => m.Genre == GenreToDisplay);
-            }
-
-            if (svm.SelectedMPAARating != 0) //For MPAARating
-            {
-                string MPAARatingToDisplay = Enum.GetName(typeof(AllMPAARatings), svm.SelectedMPAARating);
-                query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay);
-            }
-         
-            if (svm.SelectedCustomerRating != null) //For rating 
-            {
-                switch (svm.SelectedSearchType)
-                {
-                    case AllSearchTypes.GreaterThan:
-                        query = query.Where(m => m.MovieReviews.Average(r => r.Rating) >= Convert.ToDouble(svm.SelectedCustomerRating));
-                        break;
-                    case AllSearchTypes.LessThan:
-                        query = query.Where(m => m.MovieReviews.Average(r => r.Rating) <= Convert.ToDouble(svm.SelectedCustomerRating)); 
-                        break;
-                    default:
-                        break;
-                }
-            }
-            
-
-            if (svm.SelectedYear != null) //For release year
-            {
-                DateTime datSelectedDate = svm.SelectedYear ?? new DateTime(1900, 1, 1); 
-                query = query.Where(m => m.Year >= datSelectedDate);
-            }
-
-            if (svm.SelectedShowingDate != null) //For showing date ********
-            {
-                DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Showings.Min(r => r.ShowingDate) >= datSelectedDate); //Same issue as above, get showing date from showings or rating from movie review.
-                                                                                                 //Should it even be min?
-            }
-
-            if (query != null) //they searched for something
-            {
-                TryValidateModel(svm);
-                if (ModelState.IsValid == false)
-                {
-                    //re-populate ViewBag to have list of all categories & MPAA Ratings
-                    ViewBag.AllCategories = GetAllGenres();
-                    ViewBag.AllMPAARatings = GetAllRatings();
-
-                    //View is returned with error messages
-                    return View("DetailedSearch", svm);
-                }
-
-                //Execute query, include category with it
-
-                List<Movie> SelectedMovies = query.Include(m => m.Genre).ToList();
-
-                //Populate the view bag with a count of all job postings
-                ViewBag.AllMovies = _context.Movies.Count();
-                //Populate the view bag with a count of selected job postings
-                ViewBag.SelectedMovies = SelectedMovies.Count();
-
-
-                return View("SearchResults", SelectedMovies.OrderByDescending(m => m.Year)); //Put year in here right now, but it should be showtime, right? **********
-
-
-            }
-
-            return View("DetailedSearch");
         }
 
         public async Task<IActionResult> MovieDetails(int? id)

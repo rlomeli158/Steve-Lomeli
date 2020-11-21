@@ -84,9 +84,23 @@
                             <label asp-validation-for="AccountStatus" class="custom-control-label" for="customSwitch1">Active Status</label>
                         </div>
                     </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="custom-control custom-switch">
+                            <input asp-for="CustomerAccountType" type="checkbox" class="custom-control-input" id="customer" onclick="myFunction()">
+                            <label asp-validation-for="CustomerAccountType" class="custom-control-label" for="customer">Customer</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-switch">
+                            <input asp-for="EmployeeAccountType" type="checkbox" class="custom-control-input" id="employee" onclick="myFunctionE()">
+                            <label asp-validation-for="EmployeeAccountType" class="custom-control-label" for="employee">Employee</label>
+                        </div>
+                    </div>
                 }
+
             }
-            
+
             <div class="form-group">
                 <input type="submit" value="Register" class="btn btn-outline-primary" />
             </div>
@@ -98,4 +112,24 @@
     <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Home</a>
 </div>
 
+<script>
+    function myFunction() {
+        var checkBox = document.getElementById("customer");
+        var checkbox2 = document.getElementById("employee");
 
+        if (checkBox.checked == true) {
+            checkbox2.checked = false
+        }
+
+    }
+
+    function myFunctionE() {
+        var checkBox = document.getElementById("customer");
+        var checkbox2 = document.getElementById("employee");
+
+        if (checkbox2.checked == true) {
+            checkBox.checked = false
+
+        }
+    }
+</script>

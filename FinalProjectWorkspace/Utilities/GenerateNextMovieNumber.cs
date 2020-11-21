@@ -5,24 +5,24 @@ using System.Linq;
 
 namespace FinalProjectWorkspace.Utilities
 {
-    public static class GenerateNextMovieID
+    public static class GenerateNextMovieNumber
     {
-        public static Int32 GetNextMovieID(AppDbContext _context)
+        public static Int32 GetNextMovieNumber(AppDbContext _context)
         {
             //set a constant to designate where the order numbers 
             //should start
-            const Int32 START_NUMBER = 3001;
+            const Int32 START_NUMBER = 3000;
 
             Int32 intMaxMovieNumber; //the current maximum order number
             Int32 intNextMovieNumber; //the order number for the next class
 
-            if (_context.Users.Count() == 0) //there are no orders in the database yet
+            if (_context.Movies.Count() == 0) //there are no movies in the database yet
             {
                 intMaxMovieNumber = START_NUMBER; //order numbers start at 3001
             }
             else
             {
-                intMaxMovieNumber = Int32.Parse(_context.Users.Max(c => c.Id)); //this is the highest number in the database right now
+                intMaxMovieNumber = _context.Movies.Max(c => c.MovieNumber); //this is the highest number in the database right now
             }
 
             //You added records to the datbase before you realized 
