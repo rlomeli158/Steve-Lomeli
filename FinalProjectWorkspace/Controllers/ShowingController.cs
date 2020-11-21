@@ -228,8 +228,27 @@ namespace FinalProjectWorkspace.Controllers
                 showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
             showing.EndTime = showing.StartTime.AddMinutes(showing.Movie.RunTime);
 
+            DateTime compareOpeningTime = new DateTime(showing.StartTime.Year, showing.StartTime.Month, showing.StartTime.Day, 09, 00, 00);
+
+            DateTime compareClosingTime = new DateTime(showing.StartTime.Year, showing.StartTime.Month, showing.StartTime.Day, 23, 59, 59);
+
+            if (showing.StartTime < compareOpeningTime)
+            {
+                return View("Error", new string[]
+                { "The showing you're wanting to create is too early. Please schedule it for after 9 AM." });
+            }
+
+            /* TODO: do we have to check for after 12 AM?
+            if (showing.EndTime > compareOpeningTime)
+            {
+                return View("Error", new string[]
+                { "The showing you're wanting to create is too late. Please schedule it for before 12 AM." });
+            }
+            */
+
             //Compare showing you want to add to the other showings on the same date for business rules
             List<Showing> showingsToCompare = _context.Showings
+                                            .Include(s => s.Movie)
                                             .Where(s => s.ShowingDate == showing.ShowingDate)
                                             .Where(s => s.Theatre == showing.Theatre).ToList();
 
@@ -241,7 +260,7 @@ namespace FinalProjectWorkspace.Controllers
                 if(showing.StartTime > s.StartTime)
                 {
                     //if the other showing starts at least 25 minutes after the showing you're creating, then it's good
-                    if (showing.StartTime > s.EndTime.AddMinutes(25))
+                    if (showing.StartTime > s.EndTime.AddMinutes(25) || s.Status == "Cancelled")
                     {
                         //good
                     }
@@ -249,7 +268,7 @@ namespace FinalProjectWorkspace.Controllers
                     else
                     {
                         return View("Error", new string[]
-                        { "The showing you're wanting to create is too close to the start of another showing." });
+                        { "The showing you're wanting to create has a start time less than 25 minutes after " + s.Movie.Title + " which ends at " + s.EndTime + ". To fix this, make the start time of " + showing.Movie.Title + " later. "});
                     }
                 }
                 //if the showing you want to add starts after another showing on the same day
@@ -257,7 +276,7 @@ namespace FinalProjectWorkspace.Controllers
                 else
                 {
                     //if the showing you're creating's start time is 25 minutes after the end of another movie, it's good
-                    if(s.StartTime > showing.EndTime.AddMinutes(25))
+                    if(s.StartTime > showing.EndTime.AddMinutes(25) || s.Status == "Cancelled")
                     {
                         //good
                     }
@@ -265,7 +284,7 @@ namespace FinalProjectWorkspace.Controllers
                     else
                     {
                         return View("Error", new string[]
-                        { "The showing you're wanting to create is too close to the end of another showing." });
+                        { "The start time you input would make the end time of your showing be within 25 minutes of the start of " + s.Movie.Title + " at " + s.StartTime + ". To fix this, make the start time of " + showing.Movie.Title + " earlier or push back " + s.Movie.Title + "."});
                     }
                 }
             }
@@ -296,7 +315,7 @@ namespace FinalProjectWorkspace.Controllers
             await _context.SaveChangesAsync();
 
             //Send the user to the page with all the showings
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Showing", new { theatre = showing.Theatre, ShowingDate = showing.ShowingDate});
         }
 
 
@@ -403,11 +422,16 @@ namespace FinalProjectWorkspace.Controllers
                 { "There are no movies on this date or in this theater! Please verify both and try again." });
             }
 
-            //Use this to check if movie runs past 9:30 PM
+            //Use this to check if movie runs past 9:30 PM or 9:45 AM
             DateTime compareTime;
+            DateTime compareTimeMorning;
+
 
             //Use this as a counter to ensure at least one movie ends past 9:30 PM
             Int32 movieEndPastNine = 0;
+
+            //Use this as a counter to ensure at least one movie starts by 9:45 AM
+            Int32 movieStartByNine = 0;
 
             //Sort the orders and put them in order of start time for that day
             showings = showings.OrderBy(s => s.StartTime).ToList();
@@ -428,14 +452,21 @@ namespace FinalProjectWorkspace.Controllers
                     movieEndPastNine += 1;
                 }
 
+                compareTimeMorning = new DateTime(s.EndTime.Year, s.EndTime.Month, s.EndTime.Day, 09, 45, 00);
+
+                //TODO: If we have to add validation for a movie starting as close to 9 AM as possible, I think we would add another if statement here along
+                //with a counter, similar to how we have a movie that ends past 9
+                if (s.StartTime <= compareTimeMorning)
+                {
+                    movieStartByNine += 1;
+                }
+
                 //Checks if start time is no more than 45 minutes after previous movie's end time, enters the if statement if movies are too spaced out
-                if(s.StartTime > goodEndTime.AddMinutes(45))
+                if (s.StartTime > goodEndTime.AddMinutes(45))
                 {
                     return View("Error", new string[]
                     {  s.Movie.Title + " (ID: "+ s.ShowingID + ") " + "showing at " + s.StartTime + " is more than 45 minutes after the previous showing." });
                 }
-                //TODO: If we have to add validation for a movie starting as close to 9 AM as possible, I think we would add another if statement here along
-                //with a counter, similar to how we have a movie that ends past 9
 
                 //set the good end time to the end time of the current showing for the next loop
                 goodEndTime = s.EndTime;
@@ -445,6 +476,10 @@ namespace FinalProjectWorkspace.Controllers
             if (movieEndPastNine < 1)
             {
                 return View("Error", new string[] { "There is no movie that runs past 9:30 PM. Please add one." });
+            }
+            else if (movieStartByNine < 1)
+            {
+                return View("Error", new string[] { "There is no movie that starts by 9:45 AM. Please add one." });
             }
             //otherwise, you are set to go, and you can set each showing to publish and update the DB
             else
@@ -534,7 +569,7 @@ namespace FinalProjectWorkspace.Controllers
                 //navigational properties
                 dbShowing = _context.Showings
                     .Include(cd => cd.Movie)
-                    .Include(cd => cd.Tickets).ThenInclude(cd => cd.Order)
+                    .Include(cd => cd.Tickets).ThenInclude(cd => cd.Order).ThenInclude(cd => cd.Purchaser)
                     .FirstOrDefault(c => c.ShowingID == showing.ShowingID);
 
                 //Find the movie the person wants to watch in the database
@@ -576,6 +611,7 @@ namespace FinalProjectWorkspace.Controllers
 
                 //Compare showing you want to add to the other showings on the same date for business rules
                 List<Showing> showingsToCompare = _context.Showings
+                                                .Include(s => s.Movie)
                                                 .Where(s => s.ShowingDate == dbShowing.ShowingDate)
                                                 .Where(s => s.Theatre == dbShowing.Theatre).ToList();
 
@@ -587,7 +623,7 @@ namespace FinalProjectWorkspace.Controllers
                     if (dbShowing.StartTime > s.StartTime)
                     {
                         //if the other showing starts at least 25 minutes after the showing you're creating, then it's good
-                        if (dbShowing.StartTime > s.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID)
+                        if (dbShowing.StartTime > s.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID || s.Status == "Cancelled")
                         {
                             //good
                         }
@@ -595,7 +631,8 @@ namespace FinalProjectWorkspace.Controllers
                         else
                         {
                             return View("Error", new string[]
-                            { "The showing you're wanting to create is too close to the start of another showing." });
+                            { "The start time you input less than 25 minutes after " + s.Movie.Title + " which ends at " + s.EndTime + ". To fix this, make the start time of " + dbShowing.Movie.Title + " later. "});
+
                         }
                     }
                     //if the showing you want to add starts after another showing on the same day
@@ -603,7 +640,7 @@ namespace FinalProjectWorkspace.Controllers
                     else
                     {
                         //if the showing you're creating's start time is 25 minutes after the end of another movie, it's good
-                        if (s.StartTime > dbShowing.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID)
+                        if (s.StartTime > dbShowing.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID || s.Status == "Cancelled")
                         {
                             //good
                         }
@@ -611,7 +648,7 @@ namespace FinalProjectWorkspace.Controllers
                         else
                         {
                             return View("Error", new string[]
-                            { "The showing you're wanting to create is too close to the end of another showing." });
+                            { "The start time you input would make the end time of your showing be within 25 minutes of the start of " + s.Movie.Title + " at " + s.StartTime + ". To fix this, make the start time of " + dbShowing.Movie.Title + " earlier or push back " + s.Movie.Title + "."});
                         }
                     }
                 }
@@ -641,10 +678,9 @@ namespace FinalProjectWorkspace.Controllers
                 _context.Showings.Update(dbShowing);
                 _context.SaveChanges();
 
-                /*TODO: Fix this, giving me null reference error if I cancel a showing
                 if (dbShowing.Status == "Cancelled")
                 {
-                    foreach (Order o in dbShowing.Tickets.Where(t => t.Order.PaidWithPopcornPoints == true).Select(t => t.Order))
+                    foreach (Order o in dbShowing.Tickets.Where(t => t.Order.PaidWithPopcornPoints == true).Select(t => t.Order).ToArray())
                     {
                         o.PopcornPoints *= -1;
                         o.Purchaser.PCPBalance += o.PopcornPoints;
@@ -652,12 +688,14 @@ namespace FinalProjectWorkspace.Controllers
 
                         _context.Order.Update(o);
                         _context.SaveChanges();
+
+                        //TODO: Add code here for emailing customers and letting them know that their showing has been cancelled, so has their entire order
+                        //and their popcorn points have been refunded
                     }
+                } else
+                {
+                    //TODO: add code here for emailing customers and letting them know their showing has been modified, no action is needed
                 }
-                */
-
-
-                //TODO: Add code here for emailing customers and letting them know that their movie has been rescheduled
 
             }
             catch (Exception ex)
@@ -679,7 +717,7 @@ namespace FinalProjectWorkspace.Controllers
             //send the user back to the page with all the courses
             //return RedirectToAction("OrderCancelled", "Email", new { showing. });
             return RedirectToAction(nameof(Index), new { theatre = theatre, showingDate = dbShowing.ShowingDate });
-            //return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Showing/Delete/5

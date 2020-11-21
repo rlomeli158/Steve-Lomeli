@@ -206,7 +206,7 @@ else
             }
         </table>
     </div>
-    @if (Model.OrderTotal > 0 && Model.OrderStatus != "Paid")
+    @if (Model.OrderTotal > 0 && Model.OrderStatus == "Active")
     {
         <div style="margin-top:25px ;margin-left:450px;width:100%">
             <form asp-action="CompleteOrder" asp-route-id="@Model.OrderID" method="get">
@@ -242,7 +242,7 @@ else
     {
         <a asp-action="Edit" asp-route-id="@Model.OrderID" class="btn btn-info">Edit or Delete Tickets</a>
     }
-    else
+    else if (Model.OrderStatus == "Paid")
     {
         <a asp-action="Cancelled" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a>
     }

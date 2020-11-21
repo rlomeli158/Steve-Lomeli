@@ -414,7 +414,6 @@ namespace FinalProjectWorkspace.Controllers
                 return View("Error", new String[] { "This showing has been cancelled!" });
             }
 
-
             //The selected showing is already on the order
             if (dbOrder.Tickets.Any(t => t.Showing.Movie == selectedShowing.Movie))
             {
@@ -433,6 +432,27 @@ namespace FinalProjectWorkspace.Controllers
             if (!seatsAvailable.Contains(ticket.SeatNumber))
             {
                 return View("Error", new String[] { "This seat is taken." });
+            }
+
+            foreach(Ticket t in dbOrder.Tickets)
+            {
+                //If the showing time of the showing we're trying to add starts after the end time of the showing already on the order, it's good
+                //it's also okay if they add more of the same showing
+                if (selectedShowing.StartTime > t.Showing.EndTime || selectedShowing.ShowingID == t.Showing.ShowingID)
+                {
+                    //it's good
+                }
+                //if it gets here, then the showing we're trying to add is before the showing already on the order.
+                //We have to make sure that if it's before, the selected showing we want to add ends before the start time of the showing already on there
+                //it's also okay if they add more of the same showing
+                else if (selectedShowing.EndTime < t.Showing.StartTime || selectedShowing.ShowingID == t.Showing.ShowingID)
+                {
+                    //it's good
+                } else
+                {
+                    return View("Error", new String[]
+                    { "This showing overlaps with a showing already on your order. Please delete " + t.Showing.Movie.Title + " to add this showing." });
+                }
             }
 
             //Showings are good, add tickets

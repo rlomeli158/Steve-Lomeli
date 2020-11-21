@@ -556,6 +556,12 @@ namespace FinalProjectWorkspace.Controllers
                 //update the order status to cancelled
                 order.OrderStatus = "Cancelled";
 
+                if (order.PaidWithPopcornPoints == true)
+                {
+                    order.PopcornPoints *= -1;
+                    order.Purchaser.PCPBalance += order.PopcornPoints;
+                }
+
                 _context.Update(order);
                 await _context.SaveChangesAsync();
             }
