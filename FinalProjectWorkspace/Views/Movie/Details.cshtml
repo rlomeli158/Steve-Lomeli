@@ -52,18 +52,25 @@
             @Html.DisplayFor(model => model.Genre.GenreName)
         </p>
     </a>
-    <!--
     <a class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">
-                Html.DisplayNameFor(model => model.AverageReviewRating)
+                Average Review Rating
             </h5>
         </div>
         <p class="mb-1">
-            Html.DisplayFor(model => model.AverageReviewRating)
+            @{Double? avgReview = Model.MovieReviews.Where(r => r.ApprovalStatus == true).Average(m => m.Rating);}
+            @if (avgReview != null)
+            {
+                @avgReview
+            }
+            else
+            {
+                @:No Rating yet
+            }
         </p>
     </a>
-        -->
+
 </div>
 
 <table class="table table-hover text-center">

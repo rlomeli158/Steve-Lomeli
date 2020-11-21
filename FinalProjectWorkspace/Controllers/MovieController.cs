@@ -189,6 +189,7 @@ namespace FinalProjectWorkspace.Controllers
             var movie = await _context.Movies
                 .Include(p => p.Showings)
                 .Include(p => p.Genre)
+                .Include(p => p.MovieReviews)
                 .FirstOrDefaultAsync(m => m.MovieID == id);
 
             if (movie == null)

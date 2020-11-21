@@ -10,16 +10,19 @@ using FinalProjectWorkspace.Models;
 using System.Globalization;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace FinalProjectWorkspace.Controllers
 {
     public class TicketController : Controller
     {
         private readonly AppDbContext _context;
+        private UserManager<AppUser> _userManager;
 
-        public TicketController(AppDbContext context)
+        public TicketController(AppDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Ticket
@@ -595,43 +598,38 @@ namespace FinalProjectWorkspace.Controllers
         }
 
         [Authorize(Roles="Manager")]
-        public IActionResult RevenueReportSearch()
+        public IActionResult ReportSearch()
         {
 
             //Populate view bag with list of categories
             ViewBag.AllMPAARatings = GetAllRatings();
             ViewBag.AllMovies = GetAllMovies();
 
-
             //Set default properties
-            RevenueSearchViewModel rsvm = new RevenueSearchViewModel();
-            //Are these here necessary?
-            //svm.SelectedGenreID = (int)AllGenres.Action;
-            //svm.SelectedSearchType = AllSearchTypes.GreaterThan;
-            //svm.SelectedMPAARating = 2; //although it may not work
+            ReportSearchViewModel rsvm = new ReportSearchViewModel();
 
             return View(rsvm);
         }
 
         [Authorize(Roles = "Manager")]
-        public IActionResult DisplayRevenueReportResults(RevenueSearchViewModel rsvm)
+        public async Task<IActionResult> DisplayReportResultsAsync(ReportSearchViewModel rsvm)
         {
             //Initial query LINQ
             var query = from m in _context.Ticket select m;
-            query = query.Include(m => m.Showing).ThenInclude(m => m.Movie);
+            query = query.Include(m => m.Showing).ThenInclude(m => m.Movie).Include(m => m.Order).ThenInclude(m => m.Purchaser);
 
             //If statements corresponding to each input form control
 
             if (rsvm.SelectedStartingDate != null) //For date
             {
                 DateTime datSelectedStartingDate = rsvm.SelectedStartingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Showing.ShowingDate >= datSelectedStartingDate);
+                query = query.Where(m => m.Order.OrderDate >= datSelectedStartingDate);
             }
 
             if (rsvm.SelectedEndingDate != null) //For date
             {
                 DateTime datSelectedEndingDate = rsvm.SelectedEndingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Showing.ShowingDate <= datSelectedEndingDate);
+                query = query.Where(m => m.Order.OrderDate <= datSelectedEndingDate);
             }
 
             if (rsvm.SelectedMovie != 0) //For movie name
@@ -654,44 +652,68 @@ namespace FinalProjectWorkspace.Controllers
                 switch (rsvm.SelectedSearchType)
                 {
                     case AllSearchTypes.Before:
-                        query = query.Where(m => m.Showing.ShowingDate <= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
+                        query = query.Where(m => m.Order.OrderDate.Hour <= timSelectedTime.Hour); //TODO: Verify if Max is correct here or if something else should be used
                         break;
                     case AllSearchTypes.After:
-                        query = query.Where(m => m.Showing.ShowingDate >= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
+                        query = query.Where(m => m.Order.OrderDate.Hour >= timSelectedTime.Hour); //TODO: Verify if Max is correct here or if something else should be used
                         break;
                     default:
                         break;
                 }
             }
 
-            if (query != null) //they searched for something
+            
+
+            TryValidateModel(rsvm);
+            if (ModelState.IsValid == false)
             {
-                TryValidateModel(rsvm);
-                if (ModelState.IsValid == false)
-                {
-                    //re-populate ViewBag to have list of all categories & MPAA Ratings
-                    ViewBag.AllMPAARatings = GetAllRatings();
-                    ViewBag.AllMovies = GetAllMovies();
+                //re-populate ViewBag to have list of all categories & MPAA Ratings
+                ViewBag.AllMPAARatings = GetAllRatings();
+                ViewBag.AllMovies = GetAllMovies();
 
 
-                    //View is returned with error messages
-                    return View("Browse", rsvm);
-                }
-
-                //Execute query, include category with it
-
-                List<Ticket> SelectedTickets = query.ToList();
-
-
-                return View("SearchResults", SelectedTickets); //Put year in here right now, but it should be showtime, right? **********
-
-
+                //View is returned with error messages
+                return View("ReportSearch", rsvm);
             }
 
-            return View("RevenueReportBrowse");
+            //Execute query, include category with it
+            
+            List<Ticket> SelectedTickets = query.Include(m => m.Showing).ThenInclude(m => m.Movie).Include(m => m.Order).ThenInclude(m => m.Purchaser).Where(r => r.Order.OrderStatus == "Paid").ToList();
+            ReportViewModel rvm = new ReportViewModel();
 
+            if (rsvm.TotalRevenue != false) 
+            {
+                rvm.TotalRevenue = SelectedTickets.Sum(r => r.TotalCost);
+            }
+            if (rsvm.TotalSeatsSold != false) 
+            {
+                rvm.TotalSeatsSold = SelectedTickets.Count();
+            }
+            if (rsvm.ByCustomers != false)
+            {
+                IList<AppUser> users = await _userManager.GetUsersInRoleAsync("Customer");
 
+                users = users.Where(u => u.OrdersPurchased != null).ToList();
+                rvm.AppUsers = (List<AppUser>)users;
+            }
+            if (rsvm.PPTickets != false)
+            {
+                rvm.PopcornPointTickets = SelectedTickets.Where(r => r.Order.PaidWithPopcornPoints == true).ToList();
+            }
 
+            return View("ReportSearchResults", rvm); //Put year in here right now, but it should be showtime, right? **********
+
+        }
+
+        [Authorize(Roles = "Manager")]
+        public IActionResult Transactions(string id)
+        {
+            List<Order> orders = _context.Order
+                                       .Include(rd => rd.Purchaser)
+                                       .Include(rd => rd.Tickets)
+                                       .Where(rd => rd.Purchaser.Id == id)
+                                       .ToList();
+            return View(orders);
         }
     }
 }

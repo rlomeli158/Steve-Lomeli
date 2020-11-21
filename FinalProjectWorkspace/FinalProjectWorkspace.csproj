@@ -305,5 +305,8 @@
     <Content Remove="wwwroot\lib\font-awesome\sprites\brands.svg" />
     <Content Remove="wwwroot\lib\font-awesome\sprites\regular.svg" />
     <Content Remove="wwwroot\lib\font-awesome\sprites\solid.svg" />
+    <Content Remove="Views\Showing\Browse.cshtml" />
+    <Content Remove="Views\Showing\CopySchedule.cshtml" />
+    <Content Remove="Views\Home\TestSeats.cshtml" />
   </ItemGroup>
 </Project>

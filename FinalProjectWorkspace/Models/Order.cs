@@ -42,6 +42,7 @@ namespace FinalProjectWorkspace.Models
 
         public Int32 PopcornPoints { get; set; }
 
+        [Display(Name ="Paid with Popcorn Points?")]
         public Boolean PaidWithPopcornPoints { get; set; }
 
         public List<Ticket> Tickets { get; set; }

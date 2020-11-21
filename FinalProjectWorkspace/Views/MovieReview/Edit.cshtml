@@ -16,11 +16,25 @@
                 <label asp-for="Movie.Title" class="control-label"></label>
                 @Html.DisplayFor(Model => Model.Movie.Title, new { @class = "form-control" })
             </div>
-            <div class="form-group">
-                <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
-                <span asp-validation-for="Rating" class="text-danger"></span>
-            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                    @if (User.IsInRole("Employee"))
+                    {
+                        <div class="form-group">
+                            <label asp-for="Rating" class="control-label"></label>
+                            @Html.DisplayFor(Model => Model.Rating, new { @class = "form-control" })
+                        </div>
+                    }
+                    @if (User.IsInRole("Customer"))
+                    {
+                        <div class="form-group">
+                            <label asp-for="Rating" class="control-label"></label>
+                            <input asp-for="Rating" class="form-control" />
+                            <span asp-validation-for="Rating" class="text-danger"></span>
+                        </div>
+                    }
+            }
+
             <div class="form-group">
                 <label asp-for="ReviewDescription" class="control-label"></label>
                 <input asp-for="ReviewDescription" class="form-control" />
