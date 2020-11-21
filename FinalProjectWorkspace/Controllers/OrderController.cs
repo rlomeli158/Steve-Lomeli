@@ -27,12 +27,12 @@ namespace FinalProjectWorkspace.Controllers
             List<Order> Orders = new List<Order>();
             if (User.IsInRole("Manager"))
             {
-                Orders = _context.Order.Include(o => o.Tickets).ToList();
+                Orders = _context.Order.Include(o => o.Tickets).ThenInclude(o => o.Showing).ToList();
             }
             else //user is a customer
             {
                 Orders = _context.Order.Where(o => o.Recipient.UserName == User.Identity.Name
-                                                || o.Purchaser.UserName == User.Identity.Name).Include(ord => ord.Tickets).ToList();
+                                                || o.Purchaser.UserName == User.Identity.Name).Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ToList();
             }
 
             return View(Orders);
@@ -93,7 +93,7 @@ namespace FinalProjectWorkspace.Controllers
                 .Where(ord => ord.OrderStatus == "Active")
                 .FirstOrDefault(o => o.Purchaser.UserName == customer);
             }
-            else if (User.IsInRole("Employee"))
+            else if (User.IsInRole("Employee") || User.IsInRole("Manager"))
             {
                 //Find order in database that corresponds to user
                 order = _context.Order
@@ -118,7 +118,7 @@ namespace FinalProjectWorkspace.Controllers
             //if registration wasn't found
             if (order == null)
             {
-                return View("Error", new String[] { "There is no active order!" });
+                return View("Error", new String[] { "There is no active order! Please buy a ticket for an order to be created." });
             }
 
             if (order.Seller == null)
@@ -207,7 +207,7 @@ namespace FinalProjectWorkspace.Controllers
             //Find order in database that corresponds to user
             //Create dummy order that will be changed later
             Order orderInDB = _context.Order.FirstOrDefault();
-            if (User.IsInRole("Employee") && customer == null)
+            if ((User.IsInRole("Employee") || User.IsInRole("Manager")) && customer == null)
             {
                 //Find order in database that corresponds to user
                 order = _context.Order
@@ -218,8 +218,16 @@ namespace FinalProjectWorkspace.Controllers
                     .Where(ord => ord.OrderStatus == "Active")
                     .FirstOrDefault(o => o.Seller.UserName == User.Identity.Name);
 
+                if ((User.IsInRole("Employee") || User.IsInRole("Manager")) & order == null)
+                {
+                    return View("Error", new String[] { "You cannot place an order on this account. Please sign into a customer account." });
+
+                }
+
                 customer = order.Purchaser.UserName;
             }
+
+          
 
             if (customer != null)
             {
@@ -407,7 +415,13 @@ namespace FinalProjectWorkspace.Controllers
                 .FirstOrDefault(o => o.OrderID == orderIn.OrderID);
 
             order.PaidWithPopcornPoints = orderIn.PaidWithPopcornPoints;
-            ViewBag.PaidWithPopcornPoints = order.PaidWithPopcornPoints;
+            if (order.PaidWithPopcornPoints == true)
+            {
+                ViewBag.PaidWithPopcornPoints = 1;
+            } else
+            {
+                ViewBag.PaidWithPopcornPoints = 0;
+            }
             if (order.PaidWithPopcornPoints == true)
             {
                 foreach (Ticket t in order.Tickets)
@@ -469,7 +483,7 @@ namespace FinalProjectWorkspace.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CompleteOrder(Order orderIn, int pcpBalance, int popcornPoints, String recipient)
+        public async Task<IActionResult> CompleteOrder(Order orderIn, int pcpBalance, int popcornPoints, String recipient, int paidPP)
         {
             //Find order in database that corresponds to user
             Order order = _context.Order
@@ -485,7 +499,13 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             order.OrderStatus = "Paid";
-            order.PaidWithPopcornPoints = orderIn.PaidWithPopcornPoints;
+            if (paidPP == 0)
+            {
+                order.PaidWithPopcornPoints = false;
+            } else if (paidPP == 1)
+            {
+                order.PaidWithPopcornPoints = true;
+            }
             order.PopcornPoints = popcornPoints;
             order.Purchaser.PCPBalance = pcpBalance;
 

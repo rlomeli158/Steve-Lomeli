@@ -103,6 +103,7 @@ namespace FinalProjectWorkspace.Models
         [Required(ErrorMessage = "Please enter your birthday!")]
         [MinAge(13)] // 13 is the parameter of constructor. 
         [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
 
         [Display(Name = "Popcorn Point Balance")]
@@ -122,6 +123,12 @@ namespace FinalProjectWorkspace.Models
 
         [Display(Name = "Account State")]
         public bool AccountStatus { get; set; }
+
+        [Display(Name = "Account Type")]
+        public bool EmployeeAccountType { get; set; }
+
+        [Display(Name = "Account Type")]
+        public bool CustomerAccountType { get; set; }
     }
 
     //NOTE: This is the view model used to allow the user to 

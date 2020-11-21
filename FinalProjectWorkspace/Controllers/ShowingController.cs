@@ -534,6 +534,7 @@ namespace FinalProjectWorkspace.Controllers
                 //navigational properties
                 dbShowing = _context.Showings
                     .Include(cd => cd.Movie)
+                    .Include(cd => cd.Tickets).ThenInclude(cd => cd.Order)
                     .FirstOrDefault(c => c.ShowingID == showing.ShowingID);
 
                 //Find the movie the person wants to watch in the database
@@ -554,6 +555,11 @@ namespace FinalProjectWorkspace.Controllers
                 dbShowing.ShowingDate = showing.ShowingDate;
                 dbShowing.StartTime = new DateTime(showing.ShowingDate.Year, showing.ShowingDate.Month, showing.ShowingDate.Day,
                 showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
+
+                if (dbShowing.StartTime < DateTime.Now)
+                {
+                    return View("Error", new string[] { "You cannot reschedule this movie for the past!" });
+                }
                 dbShowing.EndTime = dbShowing.StartTime.AddMinutes(dbShowing.Movie.RunTime);
                 //TODO: When we find out seats, change this
                 dbShowing.SeatsAvailable = showing.SeatsAvailable;
@@ -568,8 +574,6 @@ namespace FinalProjectWorkspace.Controllers
                 //because its not in the requirements.
                 //TODO: if a ticket that was cancelled was paid for with popcorn points, then completely refund them the popcorn points
 
-
-
                 //Compare showing you want to add to the other showings on the same date for business rules
                 List<Showing> showingsToCompare = _context.Showings
                                                 .Where(s => s.ShowingDate == dbShowing.ShowingDate)
@@ -583,7 +587,7 @@ namespace FinalProjectWorkspace.Controllers
                     if (dbShowing.StartTime > s.StartTime)
                     {
                         //if the other showing starts at least 25 minutes after the showing you're creating, then it's good
-                        if (dbShowing.StartTime > s.EndTime.AddMinutes(25))
+                        if (dbShowing.StartTime > s.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID)
                         {
                             //good
                         }
@@ -599,7 +603,7 @@ namespace FinalProjectWorkspace.Controllers
                     else
                     {
                         //if the showing you're creating's start time is 25 minutes after the end of another movie, it's good
-                        if (s.StartTime > dbShowing.EndTime.AddMinutes(25))
+                        if (s.StartTime > dbShowing.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID)
                         {
                             //good
                         }
@@ -636,6 +640,22 @@ namespace FinalProjectWorkspace.Controllers
                 //save the changes
                 _context.Showings.Update(dbShowing);
                 _context.SaveChanges();
+
+                /*TODO: Fix this, giving me null reference error if I cancel a showing
+                if (dbShowing.Status == "Cancelled")
+                {
+                    foreach (Order o in dbShowing.Tickets.Where(t => t.Order.PaidWithPopcornPoints == true).Select(t => t.Order))
+                    {
+                        o.PopcornPoints *= -1;
+                        o.Purchaser.PCPBalance += o.PopcornPoints;
+                        o.OrderStatus = "Cancelled";
+
+                        _context.Order.Update(o);
+                        _context.SaveChanges();
+                    }
+                }
+                */
+
 
                 //TODO: Add code here for emailing customers and letting them know that their movie has been rescheduled
 

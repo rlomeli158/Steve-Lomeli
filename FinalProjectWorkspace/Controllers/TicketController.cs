@@ -406,6 +406,11 @@ namespace FinalProjectWorkspace.Controllers
             Showing selectedShowing = _context.Showings.Include(s => s.Movie)
                                                 .FirstOrDefault(s => s.ShowingID == SelectedShowing);
 
+            if (selectedShowing.Status == "Cancelled")
+            {
+                return View("Error", new String[] { "This showing has been cancelled!" });
+            }
+
 
             //The selected showing is already on the order
             if (dbOrder.Tickets.Any(t => t.Showing.Movie == selectedShowing.Movie))

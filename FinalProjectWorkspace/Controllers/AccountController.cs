@@ -78,8 +78,16 @@ namespace FinalProjectWorkspace.Controllers
                 //If the add user operation was successful, we need to do a few more things
                 if (result.Succeeded && User.IsInRole("Manager"))
                 {
-                    //TODO: Add user to desired role. This example adds the user to the customer role
-                    await _userManager.AddToRoleAsync(newUser, "Employee");
+                    if (rvm.CustomerAccountType == false && rvm.EmployeeAccountType == true)
+                    {
+                        //adds to employee role
+                        await _userManager.AddToRoleAsync(newUser, "Employee");
+                    } else
+                    {
+                        //adds to customer role
+                        await _userManager.AddToRoleAsync(newUser, "Customer");
+                    }
+                    
 
                     //NOTE: This code logs the user into the account that they just created
                     //You may or may not want to log a user in directly after they register - check
@@ -98,7 +106,7 @@ namespace FinalProjectWorkspace.Controllers
                     //NOTE: This code logs the user into the account that they just created
                     //You may or may not want to log a user in directly after they register - check
                     //the business rules!
-                    Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
+                    //Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
 
                     //Send the user to the home page
                     return RedirectToAction("AccountCreation", "Email", new { newUser.Id });
