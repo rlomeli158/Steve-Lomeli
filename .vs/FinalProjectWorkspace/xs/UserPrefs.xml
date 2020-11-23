@@ -1,13 +1,34 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Order/Details.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/ShowingController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Order/Index.cshtml" Line="53" Column="125" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="413" Column="1" />
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="671" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Order/CompleteOrder.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Details.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" Line="12" Column="37" IsPinned="True" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="60" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Order.cs" Line="45" Column="53" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="7" Column="18" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/ReportViewModel.cs" Line="21" Column="62" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/SearchViewModel.cs" Line="81" Column="78" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="28" Column="9" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="327" Column="48" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="683" Column="103" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/RevenueReportSearchResults.cshtml" Line="14" Column="11" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="63" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/Index.cshtml" Line="71" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="44" Column="2" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/ReportSearch.cshtml" Line="56" Column="54" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/Transactions.cshtml" Line="38" Column="18" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Edit.cshtml" Line="26" Column="31" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="29" Column="26" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieReviewController.cs" Line="84" Column="61" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="147" Column="65" />
+      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="16" Column="34" />
+      <File FileName="FinalProjectWorkspace/Views/Home/EmployeeHomeView.cshtml" Line="47" Column="116" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Index.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Genre.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovies.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/EmailController.cs" Line="291" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="119" Column="10" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,19 +36,21 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ShowingController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
-              <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
-                <Node name="Order" expanded="True">
-                  <Node name="Details.cshtml" selected="True" />
-                </Node>
-                <Node name="Showing" expanded="True" />
+                <Node name="Movie" expanded="True" />
+                <Node name="MovieReview" expanded="True" />
+                <Node name="Order" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="Ticket" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -39,12 +62,7 @@
   <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="661" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="663" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="664" column="1" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="665" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

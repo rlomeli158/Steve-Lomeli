@@ -691,12 +691,12 @@ namespace FinalProjectWorkspace.Controllers
 
                         //TODO: Add code here for emailing customers and letting them know that their showing has been cancelled, so has their entire order
                         //and their popcorn points have been refunded
-                        return RedirectToAction("OrderCancelled", "Email", new { ticketPurchaserID = dbShowing.Tickets.Select(t => t.Order.Purchaser.Id) });
+                        return RedirectToAction("OrderCancelled", "Email", new { ticketPurchaserID = dbShowing.Tickets.Select(t => t.Order.OrderID) });
                     }
                 } else
                 {
                     //TODO: add code here for emailing customers and letting them know their showing has been modified, no action is needed
-                    return RedirectToAction("MovieReschedule", "Email", new { ticketPurchaserID = dbShowing.Tickets.Select(t => t.Order.Purchaser.Id) });
+                    return RedirectToAction("MovieReschedule", "Email", new { ticketPurchaserID = dbShowing.Tickets.Select(t => t.Order.OrderID) });
                 }
 
             }
