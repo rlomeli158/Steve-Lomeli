@@ -130,7 +130,7 @@ namespace FinalProjectWorkspace.Controllers
                     var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Your order was cancelled by a manager. Here are the details of the cancelled order: </p></br>" +
                     "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Order Subtotal: {3}</p><p>Taxes: {4}</p><p>Order Total: {5}</p> " +
                     "<p>Popcorn Points: {6}</p><p>Paid With PopcornPoints: {7}</p><p>Purchaser: {8}</p>" +
-                    "<p>You will be refunded to the original payment method. Please contatc us so we can reschedule you for another showing. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><h2>~ Dak from Main St.</h2>";
+                    "<p>You will be refunded to the original payment method. Please contatc us so we can reschedule you for another showing. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                     var message = new MailMessage();
                     message.To.Add(new MailAddress(msEmail)); //replace with valid value
                     message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
@@ -158,7 +158,7 @@ namespace FinalProjectWorkspace.Controllers
                     var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Your order was canceled. Here are the details of the cancelled order: </p></br>" +
                     "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Order Subtotal: {3}</p><p>Taxes: {4}</p><p>Order Total: {5}</p> " +
                     "<p>Popcorn Points: {6}</p><p>Paid With PopcornPoints: {7}</p><p>Purchaser: {8}</p>" +
-                    "<p>You will be refunded to the original payment method. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><h2>~ Dak from Main St.</h2>";
+                    "<p>You will be refunded to the original payment method. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                     var message = new MailMessage();
                     message.To.Add(new MailAddress(msEmail)); //replace with valid value
                     message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
@@ -216,7 +216,7 @@ namespace FinalProjectWorkspace.Controllers
                 var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Rock on!! Your order was confirmed! Here are the deets: </p></br>" +
                     "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Order Subtotal: {3}</p><p>Taxes: {4}</p><p>Order Total: {5}</p> " +
                     "<p>Popcorn Points: {6}</p><p>Paid With PopcornPoints: {7}</p><p>Purchaser: {8}</p>" +
-                    "<p>If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><h2>~ Dak from Main St.</h2>";
+                    "<p>If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
                 message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
@@ -256,7 +256,7 @@ namespace FinalProjectWorkspace.Controllers
             if (ModelState.IsValid)
             {
                 var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St!</p><p>Your account {1} was recently updated. If you did not initiate this change, please contact us to reset your password." +
-                    "</p><p>Have a great rest of your day!</p></br><h2>~ Dak from Main St.</h2>";
+                    "</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
                 message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
@@ -283,7 +283,7 @@ namespace FinalProjectWorkspace.Controllers
 
 
 
-        public async Task<ActionResult> AccountCreation(string id)
+        public async Task<ActionResult> AccountCreation(string id, string emailPassword)
         {
             AppUser user;
 
@@ -294,14 +294,14 @@ namespace FinalProjectWorkspace.Controllers
             if (ModelState.IsValid)
             {
                 var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St!</p><p>Your account was successfully created! " +
-                    "Your Account information is below:</p></br><p>Email: {1}</p></br><p>To sign in, please use this email address and the password you set. " +
+                    "Your Account information is below:</p></br><p>Email: {1}</p><p>Password: {2}</p></br><p>To sign in, please use this email address and the password you set. " +
                     "If you did not create this account or forgot your password, please contact us." +
-                    "</p><p>Have a great rest of your day!</p></br><h2>~ Dak from Main St.</h2>";
+                    "</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
                 message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
                 message.Subject = "Account Creation - Main St.";
-                message.Body = string.Format(body, user.FirstName, user.Email);
+                message.Body = string.Format(body, user.FirstName, user.Email, emailPassword);
                 message.IsBodyHtml = true;
 
 
@@ -325,7 +325,7 @@ namespace FinalProjectWorkspace.Controllers
 
 
 
-        //NEED TO CONNECT
+        
 
         public async Task<ActionResult> MovieReschedule(int orderID)
         {
@@ -345,7 +345,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Your tickets were rescheduled. Here are the details of the rescheduled order: </p></br>" +
                     "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Purchaser: {3}</p>" +
-                    "<p>You will be refunded to the original payment method. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><h2>~ Dak from Main St.</h2>";
+                    "<p>You will be refunded to the original payment method. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
                 message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");

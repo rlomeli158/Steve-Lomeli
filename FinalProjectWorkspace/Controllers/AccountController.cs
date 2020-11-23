@@ -43,10 +43,16 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel rvm)
         {
-            if(rvm.Birthday.AddYears(13) >= DateTime.Now)
+            if(rvm.Birthday.AddYears(13) >= DateTime.Now && rvm.EmployeeAccountType != true)
             {
                 ModelState.AddModelError("You are too young to have an account.","You must be at least 13 to register for this site.");
             }
+            else if (rvm.Birthday.AddYears(18) >= DateTime.Now && rvm.EmployeeAccountType == true)
+            {
+                ModelState.AddModelError("The user is too young to be an employee.", "They must be at least 18 or older.");
+            }
+
+            var emailPassword = rvm.Password;
 
             //if registration data is valid, create a new user on the database
             if (ModelState.IsValid)
@@ -95,7 +101,7 @@ namespace FinalProjectWorkspace.Controllers
                     //Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
 
                     //Send the user to the home page
-                    return RedirectToAction("AccountCreation", "Email", new { newUser.Id });
+                    return RedirectToAction("AccountCreation", "Email", new { newUser.Id, emailPassword });
                 }
 
                 if (result.Succeeded != User.IsInRole("Manager"))
@@ -106,10 +112,10 @@ namespace FinalProjectWorkspace.Controllers
                     //NOTE: This code logs the user into the account that they just created
                     //You may or may not want to log a user in directly after they register - check
                     //the business rules!
-                    //Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
+                    Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
 
                     //Send the user to the home page
-                    return RedirectToAction("AccountCreation", "Email", new { newUser.Id });
+                    return RedirectToAction("AccountCreation", "Email", new { newUser.Id, emailPassword } );
                 }
 
                 else  //the add user operation didn't work, and we need to show an error message
@@ -323,7 +329,16 @@ namespace FinalProjectWorkspace.Controllers
                 user.Birthday = evm.Birthday;
                 user.PhoneNumber = evm.PhoneNumber;
                 user.PCPBalance = evm.PCPBalance;
-                user.AccountStatus = evm.AccountStatus;
+
+                if (User.IsInRole("Employee") || User.IsInRole("Customer"))
+                {
+                    _ = user.AccountStatus == user.AccountStatus;
+                }
+                else
+                {
+                    user.AccountStatus = evm.AccountStatus;
+                }
+                
 
                 await _userManager.UpdateAsync(user);
                 await _context.SaveChangesAsync();
@@ -445,7 +460,8 @@ namespace FinalProjectWorkspace.Controllers
                 await _signInManager.SignInAsync(userLoggedIn, isPersistent: false);
 
                 //send the user back to the home page
-                return RedirectToAction("Index", "Account");
+                return RedirectToAction("AccountUpdate", "Email", new { userLoggedIn.Id });
+                //return RedirectToAction("Index", "Account");
             }
             else //attempt to change the password didn't work
             {

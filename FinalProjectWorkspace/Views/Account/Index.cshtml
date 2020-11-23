@@ -51,6 +51,18 @@
 
         <a asp-action="EditAccount" asp-route-id="@Model.UserID" class="btn btn-outline-primary text-center">Edit Account</a>
         <a asp-action="ChangePassword" asp-route-id="@Model.UserID" class="btn btn-outline-danger text-center">Change password</a>
-       
+        @if (User.Identity.IsAuthenticated)
+        {
+            @if (User.IsInRole("Manager"))
+            {
+                <a asp-action="ManagerHomeView" asp-controller="Home" class="btn btn-outline-danger text-center">Manager Home</a>
+            }
+            else if (User.IsInRole("Employee"))
+            {
+                <a asp-action="EmployeeHomeView" asp-controller="Home" class="btn btn-outline-danger text-center">Employee Home</a>
+            }
+        }
+
+
     </dl>
 </div>
