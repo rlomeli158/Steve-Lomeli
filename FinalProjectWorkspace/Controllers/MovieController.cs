@@ -220,11 +220,14 @@ namespace FinalProjectWorkspace.Controllers
         public async Task<IActionResult> Create([Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Genre,Revenue,Actors,MPAARating")] Movie movie, int SelectedGenre, int SelectedMPAARating)
         {
 
-            if (SelectedGenre == 0 && SelectedMPAARating == 0 )
+            if (SelectedGenre == 0 || SelectedMPAARating == 0 )
             {
 
-                ModelState.AddModelError("Please verify that you have specified one Genre and one MPAA Rating.","");
+                ModelState.AddModelError("DropdownError","Please verify that you have specified one Genre and one MPAA Rating.");
 
+                ViewBag.AllGenres = GetAllGenres();
+                ViewBag.AllMPAARatings = GetAllRatings();
+                return View(movie);
 
             }
 
