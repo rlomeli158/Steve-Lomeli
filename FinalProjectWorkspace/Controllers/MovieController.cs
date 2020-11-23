@@ -155,7 +155,10 @@ namespace FinalProjectWorkspace.Controllers
 
                 //Execute query, include category with it
 
-                List<Movie> SelectedMovies = query.Include(m => m.Genre).Include(m => m.Showings).ToList();
+                List<Movie> SelectedMovies = query
+                    .Include(m => m.Genre)
+                    .Include(m => m.Showings)
+                    .ToList();
 
                 //Populate the view bag with a count of all job postings
                 ViewBag.AllMovies = _context.Movies.Count();
