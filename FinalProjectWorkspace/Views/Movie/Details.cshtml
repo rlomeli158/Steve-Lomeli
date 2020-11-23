@@ -83,15 +83,18 @@
     @foreach (Showing p in Model.Showings)
     {
 <tr class="table-secondary text-center text-dark">
-    <td>@Html.DisplayFor(modelItem => p.ShowingDate)</td>
-    <td>@Html.DisplayFor(modelItem => p.StartTime)</td>
-    <td>@Html.DisplayFor(modelItem => p.EndTime)</td>
-    <td>@Html.DisplayFor(modelItem => p.Theatre)</td>
-    <td>
-        <form asp-controller="Order" asp-action="Create" asp-route-showingid="@p.ShowingID" method="post">
-            <input type="submit" value="Buy a ticket!" class="btn btn-outline-info" />
-        </form>
-    </td>
+    @if (DateTime.Now < p.StartTime)
+    {
+        <td>@Html.DisplayFor(modelItem => p.ShowingDate)</td>
+        <td>@Html.DisplayFor(modelItem => p.StartTime)</td>
+        <td>@Html.DisplayFor(modelItem => p.EndTime)</td>
+        <td>@Html.DisplayFor(modelItem => p.Theatre)</td>
+        <td>
+            <form asp-controller="Order" asp-action="Create" asp-route-showingid="@p.ShowingID" method="post">
+                <input type="submit" value="Buy a ticket!" class="btn btn-outline-info" />
+            </form>
+        </td>
+    }
 </tr>}
 </table>
 <div class="text-center">

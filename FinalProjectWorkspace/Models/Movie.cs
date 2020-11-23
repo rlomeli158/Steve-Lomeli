@@ -61,6 +61,10 @@ namespace FinalProjectWorkspace.Models
                     return new DateTime(2100, 1, 1);
                 } else
                 {
+                    if (Showings.Max(s => s.StartTime).Date < DateTime.Now)
+                    {
+                        return new DateTime(2100, 1, 1);
+                    } 
                     return Showings.Min(s => s.StartTime).Date;
                 }
             }

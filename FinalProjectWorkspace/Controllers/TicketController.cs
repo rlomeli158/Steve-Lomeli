@@ -159,6 +159,17 @@ namespace FinalProjectWorkspace.Controllers
         // GET: Ticket/Create
         public async Task<IActionResult> CreateAsync(int orderID, int? showingID)
         {
+            Showing showing = _context.Showings.Find(showingID);
+
+            if (DateTime.Now > showing.StartTime)
+            {
+                return View("Error", new String[] { "This showing is in the past, you can't watch this anymore!" });
+            }
+
+            if(showing.Status == "Unpublished" || showing.Status == "Cancelled")
+            {
+                return View("Error", new String[] { "This showing is unpublished or cancelled!" });
+            }
             //create a new instance of the RegistrationDetail class
             Ticket t = new Ticket();
 
