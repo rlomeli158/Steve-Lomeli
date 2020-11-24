@@ -70,7 +70,14 @@ namespace FinalProjectWorkspace.Models
         [InverseProperty("Seller")]
         public List<Order> OrdersSold { get; set; }
 
+        public AppUser()
+        {
+            if (Tickets == null)
+            {
+                Tickets = new List<Ticket>();
+            }
 
+        }
     }
     
 }

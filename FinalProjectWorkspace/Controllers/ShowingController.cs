@@ -706,7 +706,7 @@ namespace FinalProjectWorkspace.Controllers
                 } else
                 {
                     //TODO: add code here for emailing customers and letting them know their showing has been modified, no action is needed
-                    return RedirectToAction("MovieReschedule", "Email", new { ticketPurchaserID = dbShowing.Tickets.Select(t => t.Order.OrderID) });
+                    RedirectToAction("MovieReschedule", "Email", new { ticketPurchaserID = dbShowing.Tickets.Select(t => t.Order.OrderID) });
                 }
 
             }
