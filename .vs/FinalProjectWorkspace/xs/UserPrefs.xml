@@ -1,15 +1,9 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/ShowingController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="175" Column="25" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="236" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Create.cshtml" />
-      <File FileName="FinalProjectWorkspace/Seeding/SeedEmployees.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieReviewController.cs" Line="14" Column="16" />
-      <File FileName="FinalProjectWorkspace/Views/Home/EmployeeHomeView.cshtml" Line="16" Column="17" />
-      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" Line="13" Column="23" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="90" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="681" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,14 +11,13 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="DAL" expanded="True" />
-              <Node name="Seeding" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ShowingController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="ManagerHomeView.cshtml" selected="True" />
-                </Node>
-                <Node name="Movie" expanded="True" />
+                <Node name="Order" expanded="True" />
                 <Node name="Showing" expanded="True" />
               </Node>
             </Node>
@@ -37,7 +30,10 @@
   <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="687" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="681" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

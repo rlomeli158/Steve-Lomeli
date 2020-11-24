@@ -1103,7 +1103,6 @@
 /Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Genre/Index.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Genre/Create.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Genre/Delete.cshtml.g.cs
-/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Genre/Details.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Genre/Edit.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Genre/Index.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Order/SellTicket.cshtml.g.cs
@@ -1139,3 +1138,9 @@
 /Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Details.cshtml.g.cs
 /Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Edit.cshtml.g.cs
 /Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Index.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Create.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Delete.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Details.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Edit.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Index.cshtml.g.cs
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Showing/CopySchedule.cshtml.g.cs

@@ -86,7 +86,7 @@
                         @totalRevenue
                     </td>
                     <td>
-                        @{Int32 totalSeats = item.OrdersPurchased.DefaultIfEmpty().Count();}
+                        @{Int32 totalSeats = item.OrdersPurchased.DefaultIfEmpty().Sum(item => item.Tickets.Count());}
                         @totalSeats
                     </td>
                     <td>

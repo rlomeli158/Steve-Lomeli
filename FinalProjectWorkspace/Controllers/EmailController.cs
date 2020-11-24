@@ -345,7 +345,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Your tickets were rescheduled. Here are the details of the rescheduled order: </p></br>" +
                     "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Purchaser: {3}</p>" +
-                    "<p>You will be refunded to the original payment method. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
+                    "<p>If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
                 message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
@@ -363,7 +363,7 @@ namespace FinalProjectWorkspace.Controllers
                     smtp.Port = 587;
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(message);
-                    return RedirectToAction("CancelledEmail", "Order", order);
+                    return RedirectToAction("Index", "Showing");
                 }
             }
             return View("Error", new String[] { "Unable to send the email!" });
