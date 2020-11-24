@@ -666,7 +666,7 @@ namespace FinalProjectWorkspace.Controllers
                     if (s.Movie == dbShowing.Movie)
                     {
                         //And if their start times are the same
-                        if (s.StartTime == dbShowing.StartTime)
+                        if (s.ShowingDate == dbShowing.ShowingDate && s.StartTime == dbShowing.StartTime && s.ShowingID != dbShowing.ShowingID)
                         {
                             //This is not allowed, send this error
                             return View("Error", new string[] { dbShowing.Movie.Title + " is being shown at the same time at the other theatre." });
@@ -694,6 +694,8 @@ namespace FinalProjectWorkspace.Controllers
                                 t.TotalCost = 0;
                                 t.TransactionPopcornPoints = 0;
                             }
+                            _context.Order.Update(o);
+                            _context.SaveChanges();
                         }
 
                         _context.Order.Update(o);
