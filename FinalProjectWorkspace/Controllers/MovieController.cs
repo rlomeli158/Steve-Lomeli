@@ -155,7 +155,10 @@ namespace FinalProjectWorkspace.Controllers
 
                 //Execute query, include category with it
 
-                List<Movie> SelectedMovies = query.Include(m => m.Genre).Include(m => m.Showings).ToList();
+                List<Movie> SelectedMovies = query
+                    .Include(m => m.Genre)
+                    .Include(m => m.Showings)
+                    .ToList();
 
                 //Populate the view bag with a count of all job postings
                 ViewBag.AllMovies = _context.Movies.Count();
@@ -220,11 +223,14 @@ namespace FinalProjectWorkspace.Controllers
         public async Task<IActionResult> Create([Bind("MovieID,MovieNumber,Title,Overview,Tagline,RunTime,Year,Genre,Revenue,Actors,MPAARating")] Movie movie, int SelectedGenre, int SelectedMPAARating)
         {
 
-            if (SelectedGenre == 0 && SelectedMPAARating == 0 )
+            if (SelectedGenre == 0 || SelectedMPAARating == 0 )
             {
 
-                ModelState.AddModelError("Please verify that you have specified one Genre and one MPAA Rating.","");
+                ModelState.AddModelError("DropdownError","Please verify that you have specified one Genre and one MPAA Rating.");
 
+                ViewBag.AllGenres = GetAllGenres();
+                ViewBag.AllMPAARatings = GetAllRatings();
+                return View(movie);
 
             }
 

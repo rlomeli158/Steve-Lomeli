@@ -169,8 +169,11 @@ namespace FinalProjectWorkspace.Controllers
         [Authorize(Roles = "Manager,Employee")]
         public IActionResult EmployeeHomeView()
         {
+            
             return View();
         }
+
+        
 
         // Views Manager Home After Login
         [Authorize(Roles = "Manager")]

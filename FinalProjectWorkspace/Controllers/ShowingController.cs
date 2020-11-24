@@ -684,7 +684,17 @@ namespace FinalProjectWorkspace.Controllers
                     {
                         o.PopcornPoints *= -1;
                         o.Purchaser.PCPBalance += o.PopcornPoints;
-                        o.OrderStatus = "Cancelled";
+                        o.OrderStatus = "Partially Cancelled";
+
+                        foreach (Ticket t in o.Tickets)
+                        {
+                            if(t.Showing.ShowingID == dbShowing.ShowingID)
+                            {
+                                t.TicketPrice = 0;
+                                t.TotalCost = 0;
+                                t.TransactionPopcornPoints = 0;
+                            }
+                        }
 
                         _context.Order.Update(o);
                         _context.SaveChanges();

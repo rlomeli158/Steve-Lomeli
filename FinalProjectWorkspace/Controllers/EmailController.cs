@@ -327,7 +327,7 @@ namespace FinalProjectWorkspace.Controllers
 
         
 
-        public async Task<ActionResult> MovieReschedule(int orderID)
+        public async Task<ActionResult> MovieReschedule(int ticketPurchaserID)
         {
             AppUser user;
 
@@ -335,7 +335,7 @@ namespace FinalProjectWorkspace.Controllers
                 .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
                 .Include(ord => ord.Recipient)
                 .Include(ord => ord.Purchaser)
-                .FirstOrDefault(o => o.OrderID == orderID);
+                .FirstOrDefault(o => o.OrderID == ticketPurchaserID);
 
             user = _context.Users.FirstOrDefault(u => u.Id == order.Purchaser.Id);
 
