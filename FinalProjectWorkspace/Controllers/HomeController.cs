@@ -169,7 +169,9 @@ namespace FinalProjectWorkspace.Controllers
         [Authorize(Roles = "Manager,Employee")]
         public IActionResult EmployeeHomeView()
         {
-            
+            AppUser user = _context.Users.First(u => u.UserName == User.Identity.Name);
+            ViewBag.PersonName = user.FirstName;
+
             return View();
         }
 
