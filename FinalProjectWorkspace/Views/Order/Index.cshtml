@@ -50,7 +50,7 @@
                         <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.OrderID">Edit Tickets</a>
                     }
                     <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.OrderID">View</a>
-                    @if (item.OrderStatus == "Paid" && !item.Tickets.Any(t => t.Showing.StartTime < DateTime.Now.AddHours(1)))
+                    @if ((item.OrderStatus == "Paid" || item.OrderStatus == "Partially Cancelled") && !item.Tickets.Any(t => t.Showing.StartTime < DateTime.Now.AddHours(1)))
                     {
                         <a class="btn btn-outline-danger" asp-action="Cancelled" asp-route-id="@item.OrderID">Cancel</a>
                     }

@@ -497,6 +497,8 @@ namespace FinalProjectWorkspace.Controllers
 
             ticket.TransactionPopcornPoints = Math.Truncate(ticket.TotalCost);
 
+            ticket.TicketStatus = "Active";
+
             //add the registration detail to the database
             _context.Add(ticket);
             await _context.SaveChangesAsync();

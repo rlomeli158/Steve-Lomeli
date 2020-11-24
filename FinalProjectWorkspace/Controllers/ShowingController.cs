@@ -680,57 +680,154 @@ namespace FinalProjectWorkspace.Controllers
 
                 if (dbShowing.Status == "Cancelled")
                 {
-                    foreach (Order o in dbShowing.Tickets.Where(t => t.Order.PaidWithPopcornPoints == true).Select(t => t.Order).ToArray())
-                    {
-                        o.PopcornPoints *= -1;
-                        o.Purchaser.PCPBalance += o.PopcornPoints;
-                        o.OrderStatus = "Partially Cancelled";
+                    List<int> orderIDsModified = new List<int>();
 
-                        foreach (Ticket t in o.Tickets)
+                    foreach (Order o in dbShowing.Tickets.Where(t => t.Order.OrderStatus == "Paid" || t.Order.OrderStatus == "Partially Cancelled").Select(t => t.Order))
+                    {
+                        if (o.PaidWithPopcornPoints == true)
                         {
-                            if(t.Showing.ShowingID == dbShowing.ShowingID)
+                            //get entire order
+                            Order fullOrder = _context.Order.Include(p => p.Tickets).First(p => p.OrderID == o.OrderID);
+
+                            //Loop through each ticket, make status cancelled
+                            foreach (Ticket t in o.Tickets)
                             {
-                                t.TicketPrice = 0;
-                                t.TotalCost = 0;
-                                t.TransactionPopcornPoints = 0;
+                                //if the ticket in the order matches the showing we changed to cancelled, cancel the ticket and remove discount/popcorn points
+                                if(t.Showing.ShowingID == dbShowing.ShowingID)
+                                {
+                                    t.TicketStatus = "Cancelled";
+                                    t.DiscountAmount = 0;
+                                    t.TransactionPopcornPoints = 0;
+                                    t.DiscountName = DiscountNames.None;
+                                }
+
+                                //update ticket
+                                _context.Ticket.Update(t);
+                                _context.SaveChanges();
                             }
-                            _context.Order.Update(o);
-                            _context.SaveChanges();
+
+                            //If ALL of the tickets on the order are cancelled
+                            if (o.Tickets.Where(t => t.TicketStatus == "Cancelled").Count() == fullOrder.Tickets.Count())
+                            {
+                                //Set whole status to cancelled
+                                o.OrderStatus = "Cancelled";
+
+                                //Refund PCP
+                                o.Purchaser.PCPBalance += Math.Abs(o.PopcornPoints);
+
+                                //Earned no PCP for order
+                                o.PopcornPoints = 0;
+
+                                //Update in database
+                                _context.Order.Update(o);
+                                _context.SaveChanges();
+
+                                //send email
+                                orderIDsModified.Add(o.OrderID);
+                                //return RedirectToAction("OrderCancelled", "Email", new { ticketPurchaserID = o.OrderID });
+
+                            }
+                            //if not ALL of the tickets on the order are cancelled
+                            else
+                            {
+                                //set to partially cancelled and refund popcorn points accordingly
+                                o.OrderStatus = "Partially Cancelled";
+                                Int32 oldPCP = o.PopcornPoints;
+                                o.PopcornPoints = fullOrder.Tickets.Where(t => t.TicketStatus == "Active").Count() * -100;
+                                o.Purchaser.PCPBalance = o.Purchaser.PCPBalance + (Math.Abs(oldPCP) - Math.Abs(o.PopcornPoints));
+
+                                //update in database
+                                _context.Order.Update(o);
+                                _context.SaveChanges();
+
+                                //Send email
+                                orderIDsModified.Add(o.OrderID);
+                                //return RedirectToAction("MovieModification", "Email", new { ticketPurchaserID = o.OrderID });
+                            }
+                        }
+                        //they didn't pay with popcorn points
+                        else
+                        {
+                            Order fullOrder = _context.Order.Include(p => p.Tickets).First(p => p.OrderID == o.OrderID);
+
+                            foreach (Ticket t in o.Tickets)
+                            {
+                                //if ticket matches showing that was cancelled, remove price and cost to remove revenue
+                                if(t.Showing.ShowingID == dbShowing.ShowingID)
+                                {
+                                    t.TicketPrice = 0;
+                                    t.TotalCost = 0;
+                                    t.DiscountAmount = 0;
+                                    t.DiscountName = DiscountNames.None;
+                                    t.TransactionPopcornPoints = 0;
+                                    t.TicketStatus = "Cancelled";
+                                }
+
+                                //update ticket
+                                _context.Ticket.Update(t);
+                                _context.SaveChanges();
+                            }
+
+                            //if all tickets are cancelled
+                            if (o.Tickets.Where(t => t.TicketStatus == "Cancelled").Count() == fullOrder.Tickets.Count())
+                            {
+                                //set order to cancelled
+                                o.OrderStatus = "Cancelled";
+
+                                //subtract popcorn points, which should be positive 
+                                o.Purchaser.PCPBalance -= o.PopcornPoints;
+                                o.PopcornPoints = 0;
+
+                                //update
+                                _context.Order.Update(o);
+                                _context.SaveChanges();
+
+                                //send email
+                                orderIDsModified.Add(o.OrderID);
+                                //return RedirectToAction("OrderCancelled", "Email", new { ticketPurchaserID = o.OrderID });
+                            }
+                            //all tickets aren't cancelled
+                            else
+                            {
+                                //set order to partially cancelled, refund according popcorn points
+                                o.OrderStatus = "Partially Cancelled";
+                                Int32 oldPCP = o.PopcornPoints;
+                                o.PopcornPoints = (int)fullOrder.Tickets.Sum(t => t.TransactionPopcornPoints);
+                                o.Purchaser.PCPBalance = o.Purchaser.PCPBalance - (oldPCP - o.PopcornPoints);
+
+                                //update in database
+                                _context.Order.Update(o);
+                                _context.SaveChanges();
+
+                                orderIDsModified.Add(o.OrderID);
+                                //return RedirectToAction("MovieModification", "Email", new { ticketPurchaserID = o.OrderID });
+                            }
                         }
 
-                        _context.Order.Update(o);
-                        _context.SaveChanges();
-
-                        //TODO: Add code here for emailing customers and letting them know that their showing has been cancelled, so has their entire order
-                        //and their popcorn points have been refunded
-                        RedirectToAction("OrderCancelled", "Email", new { ticketPurchaserID = dbShowing.Tickets.Select(t => t.Order.Purchaser.Id) });
                     }
-                } else
-                {
-                    //TODO: add code here for emailing customers and letting them know their showing has been modified, no action is needed
-                    RedirectToAction("MovieReschedule", "Email", new { ticketPurchaserID = dbShowing.Tickets.Select(t => t.Order.OrderID) });
+                    return RedirectToAction("MovieModificationList", "Email", new { ticketPurchaserIDs = orderIDsModified });
                 }
+                //If order was just changed, not cancelled
+                else
+                {
+                    List<int> orderIDs = new List<int>();
 
+                    foreach(Order o in dbShowing.Tickets.Where(t => t.Order.OrderStatus == "Paid" || t.Order.OrderStatus == "Partially Cancelled").Select(t => t.Order))
+                    {
+                        orderIDs.Add(o.OrderID);
+                    }
+                    return RedirectToAction("MovieModificationList", "Email", new { ticketPurchaserIDs = orderIDs });
+                }
             }
             catch (Exception ex)
             {
                 return View("Error", new string[] { "There was an error editing this product.", ex.Message });
             }
 
-            String theatre = "";
-            if (dbShowing.Theatre == Theatre.Theatre1)
-            {
-                theatre = "0";
-            }
-            else
-            {
-                theatre = "1";
-            }
-
             //if code gets this far, everything is okay
             //send the user back to the page with all the courses
             //return RedirectToAction("OrderCancelled", "Email", new { showing. });
-            return RedirectToAction(nameof(Index), new { theatre = theatre, showingDate = dbShowing.ShowingDate });
+            //return RedirectToAction(nameof(Index), new { theatre = theatre, showingDate = dbShowing.ShowingDate });
 
         }
 

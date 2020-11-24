@@ -39,6 +39,9 @@ namespace FinalProjectWorkspace.Models
 
         public Decimal TransactionPopcornPoints { get; set; }
 
+        //to see if ticket is cancelled or not
+        public String TicketStatus{ get; set; }
+
         public Order Order { get; set; }
         public Showing Showing { get; set; }
 
