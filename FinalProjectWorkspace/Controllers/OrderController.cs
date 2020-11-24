@@ -505,6 +505,15 @@ namespace FinalProjectWorkspace.Controllers
             } else if (paidPP == 1)
             {
                 order.PaidWithPopcornPoints = true;
+                foreach (Ticket t in order.Tickets)
+                {
+                    t.TotalCost = 0;
+                    t.TicketPrice = 0;
+                    t.TransactionPopcornPoints = 0;
+
+                    _context.Update(t);
+                    await _context.SaveChangesAsync();
+                }
             }
             order.PopcornPoints = popcornPoints;
             order.Purchaser.PCPBalance = pcpBalance;
@@ -560,6 +569,12 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     order.PopcornPoints *= -1;
                     order.Purchaser.PCPBalance += order.PopcornPoints;
+                }
+                foreach(Ticket t in order.Tickets)
+                {
+                    t.TotalCost = 0;
+                    t.TicketPrice = 0;
+                    t.TransactionPopcornPoints = 0;
                 }
 
                 _context.Update(order);

@@ -26,6 +26,13 @@ else
     </div>
 }
 
+@if (Model.OrderStatus == "Cancelled")
+{
+    <div class="text-center text-info">
+        <h3>This order is cancelled.</h3>
+    </div>
+}
+
 <div class="list-group">
     <a class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
@@ -122,54 +129,54 @@ else
     </tr>
     @foreach (Ticket t in Model.Tickets)
     {
-<tr class="table-secondary text-center text-dark">
-    <td>@Html.DisplayFor(ModelItem => t.Showing.Movie.Title)</td>
-    <td>@Html.DisplayFor(ModelItem => t.Showing.ShowingDate) @Html.DisplayFor(ModelItem => t.Showing.StartTime)</td>
-    <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
-    <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
-    <td>@Html.DisplayFor(ModelItem => t.DiscountAmount)</td>
-    @if (t.DiscountName == DiscountNames.Manitee)
-    {
-        <td>Manitee</td>
-    }
-    else if (t.DiscountName == DiscountNames.Tuesday_Discount)
-    {
-        <td>Discount Tuesday</td>
-    }
-    else if (t.DiscountName == DiscountNames.Senior_Discounts)
-    {
-        <td>Senior</td>
-    }
-    else if (t.DiscountName == DiscountNames.Manitee_and_Senior)
-    {
-        <td>Manitee &amp; Senior</td>
-    }
-    else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
-    {
-        <td>Discount Tuesday &amp; Senior</td>
-    }
-    else
-    {
-        <td>None</td>
-    }
-    <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
-    @if (Model.OrderStatus == "Paid" && DateTime.Now > t.Showing.EndTime)
-    {
-        <td><a asp-action="Create" asp-controller="MovieReview" asp-route-movieid="@t.Showing.Movie.MovieID" class="btn btn-outline-info">Add Review</a></td>
-    }
-    <!--
-    if (Model.OrderStatus == "Active")
-    {
-        <td>
-            <a asp-action="Create" asp-controller="Ticket" asp-route-orderid="t.Order.OrderID" asp-route-showingid="t.Showing.ShowingID"
-               class="btn btn-outline-info">Add</a>
-        </td>
-        <td>
-            <a asp-action="Delete" asp-controller="Ticket" asp-route-id="t.TicketID" class="btn btn-outline-info">Delete</a>
-        </td>
-    }
-    -->
-</tr>
+        <tr class="table-secondary text-center text-dark">
+            <td>@Html.DisplayFor(ModelItem => t.Showing.Movie.Title)</td>
+            <td>@Html.DisplayFor(ModelItem => t.Showing.ShowingDate) @Html.DisplayFor(ModelItem => t.Showing.StartTime)</td>
+            <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
+            <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
+            <td>@Html.DisplayFor(ModelItem => t.DiscountAmount)</td>
+            @if (t.DiscountName == DiscountNames.Manitee)
+            {
+                <td>Manitee</td>
+            }
+            else if (t.DiscountName == DiscountNames.Tuesday_Discount)
+            {
+                <td>Discount Tuesday</td>
+            }
+            else if (t.DiscountName == DiscountNames.Senior_Discounts)
+            {
+                <td>Senior</td>
+            }
+            else if (t.DiscountName == DiscountNames.Manitee_and_Senior)
+            {
+                <td>Manitee &amp; Senior</td>
+            }
+            else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
+            {
+                <td>Discount Tuesday &amp; Senior</td>
+            }
+            else
+            {
+                <td>None</td>
+            }
+            <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
+            @if (Model.OrderStatus == "Paid" && DateTime.Now > t.Showing.EndTime)
+            {
+                <td><a asp-action="Create" asp-controller="MovieReview" asp-route-movieid="@t.Showing.Movie.MovieID" class="btn btn-outline-info">Add Review</a></td>
+            }
+            <!--
+            if (Model.OrderStatus == "Active")
+            {
+                <td>
+                    <a asp-action="Create" asp-controller="Ticket" asp-route-orderid="t.Order.OrderID" asp-route-showingid="t.Showing.ShowingID"
+                       class="btn btn-outline-info">Add</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-controller="Ticket" asp-route-id="t.TicketID" class="btn btn-outline-info">Delete</a>
+                </td>
+            }
+            -->
+        </tr>
     }
 </table>
 
@@ -202,6 +209,18 @@ else
                     <td>Amount Saved With Discounts:</td>
                     @{ Decimal discountSaved = Model.Tickets.Sum(t => t.DiscountAmount);}
                     <td>$@discountSaved</td>
+                </tr>
+            }
+            @if (Model.PaidWithPopcornPoints == true && Model.OrderStatus != "Active")
+            {
+                <tr>
+                    <td>Popcorn Points Used:</td>
+                    <td>@Html.DisplayFor(model => model.PopcornPoints)</td>
+                </tr>
+                <tr>
+                    <td>Amount Saved With Popcorn Points:</td>
+                    @{ Decimal popcornSaved = Model.Tickets.Sum(t => t.TicketPrice) - Model.Tickets.Sum(t => t.DiscountAmount);}
+                    <td>$@popcornSaved</td>
                 </tr>
             }
         </table>
