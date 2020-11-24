@@ -43,11 +43,11 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel rvm)
         {
-            if(rvm.Birthday.AddYears(13) >= DateTime.Now && rvm.EmployeeAccountType != true)
+            if(rvm.Birthday.AddYears(13) <= DateTime.Now && rvm.EmployeeAccountType != true)
             {
                 ModelState.AddModelError("You are too young to have an account.","You must be at least 13 to register for this site.");
             }
-            else if (rvm.Birthday.AddYears(18) >= DateTime.Now && rvm.EmployeeAccountType == true)
+            else if (rvm.Birthday.AddYears(18) <= DateTime.Now && rvm.EmployeeAccountType == true)
             {
                 ModelState.AddModelError("The user is too young to be an employee.", "They must be at least 18 or older.");
             }
