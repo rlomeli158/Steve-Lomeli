@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Showing/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/MovieController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="100" Column="49" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="99" Column="21" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="142" Column="18" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="184" Column="45" />
       <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="171" Column="100" />
       <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="104" Column="21" />
       <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="1" Column="1" />
@@ -13,14 +13,14 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="MovieController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Movie" expanded="True" />
-                <Node name="Showing" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Showing" expanded="True" />
                 <Node name="Ticket" expanded="True" />
               </Node>
             </Node>
