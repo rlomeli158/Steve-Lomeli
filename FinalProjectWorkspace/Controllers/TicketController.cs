@@ -376,7 +376,7 @@ namespace FinalProjectWorkspace.Controllers
 
                 //Remove the senior discount price
                 showingPrice -= seniorDiscount;
-                ticketIn.DiscountAmount += showingPrice;
+                ticketIn.DiscountAmount += seniorDiscount;
 
                 if (ticketIn.DiscountName == DiscountNames.Matinee)
                 {
@@ -752,7 +752,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             List<Order> orders = _context.Order
                                        .Include(rd => rd.Purchaser)
-                                       .Include(rd => rd.Tickets)
+                                       .Include(rd => rd.Tickets).ThenInclude(rd => rd.Showing).ThenInclude(rd => rd.Movie)
                                        .Where(rd => rd.Purchaser.Id == id)
                                        .ToList();
             return View(orders);

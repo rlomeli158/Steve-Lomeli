@@ -59,7 +59,51 @@ namespace FinalProjectWorkspace.Controllers
             return genreSelectList;
         }
 
-       
+        public List<string> GetSeatsAvailable(int showingID)
+        {
+            List<string> allSeats = new List<string>()
+             {
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5"
+             };
+
+            List<string> seatsTaken = _context.Ticket
+                .Include(t => t.Order)
+                .Include(t => t.Showing)
+                .Where(t => t.Showing.ShowingID == showingID)
+                .Where(t => t.Order.OrderStatus != "Cancelled")
+                .Select(t => t.SeatNumber).ToList();
+
+            List<string> seatsAvailable = allSeats.Except(seatsTaken).ToList();
+
+            //Update the showing in the database
+            Showing showing = _context.Showings.Where(s => s.ShowingID == showingID).First();
+            showing.SeatsAvailable = seatsAvailable;
+            _context.Update(showing);
+            _context.SaveChanges();
+
+            //SelectList slSeatsAvailable = new SelectList(seatsAvailable, nameof(Showing.ShowingID), nameof(Showing.StartTime));
+
+            return seatsAvailable;
+        }
 
         public SelectList GetAllRatings()
         {
@@ -137,7 +181,7 @@ namespace FinalProjectWorkspace.Controllers
             if (svm.SelectedShowingDate != null) //For showing date ********
             {
                 DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Showings.Max(r => r.ShowingDate) >= datSelectedDate); //TODO: Verify if Max is correct here or if something else should be used
+                query = query.Where(m => m.Showings.Any(r => r.ShowingDate == datSelectedDate)); //TODO: Verify if Max is correct here or if something else should be used
             }
 
             if (query != null) //they searched for something
@@ -159,6 +203,39 @@ namespace FinalProjectWorkspace.Controllers
                     .Include(m => m.Genre)
                     .Include(m => m.Showings)
                     .ToList();
+
+
+                if (svm.SelectedShowingDate != null) //For showing date ********
+                {
+                    DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
+                    ViewBag.showingDate = datSelectedDate;
+                    List<Movie> moviesToRemove = new List<Movie>();
+                    foreach (Movie m in SelectedMovies)
+                    {
+                        foreach(Showing s in m.Showings)
+                        {
+                            if(s.ShowingDate != datSelectedDate)
+                            {
+                                moviesToRemove.Add(m);
+                            }else
+                            {
+                                var seatsAvailable = GetSeatsAvailable(s.ShowingID);
+                                s.SeatsAvailable = seatsAvailable;
+                            }
+                        }
+                    }
+
+                    /*
+                    if(moviesToRemove != null)
+                    {
+                        foreach(Movie m in moviesToRemove)
+                        {
+                            SelectedMovies.Remove(m);
+                        }
+                    }
+                    */
+
+                }
 
                 //Populate the view bag with a count of all job postings
                 ViewBag.AllMovies = _context.Movies.Count();

@@ -108,10 +108,10 @@ namespace FinalProjectWorkspace.Seeding
                     strGenreName = seedGenre.GenreName;
 
                     //try to find the Genre in the database
-                    Genre dbCategory = db.Genres.FirstOrDefault(c => c.GenreName == seedGenre.GenreName);
+                    Genre dbGenre = db.Genres.FirstOrDefault(c => c.GenreName == seedGenre.GenreName);
 
                     //if the Genre isn't in the database, dbCategory will be null
-                    if (dbCategory == null)
+                    if (dbGenre == null)
                     {
                         //add the Genre to the database
                         db.Genres.Add(seedGenre);
@@ -122,7 +122,7 @@ namespace FinalProjectWorkspace.Seeding
                         //update all the fields
                         //this isn't really needed for Genre because it only has one field
                         //but you will need it to re-set seeded data with more fields
-                        dbCategory.GenreName = seedGenre.GenreName;
+                        dbGenre.GenreName = seedGenre.GenreName;
                         //you would add other fields here
                         db.SaveChanges();
                     }
