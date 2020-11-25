@@ -48,9 +48,9 @@
             <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
             <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
             <td>@Html.DisplayFor(ModelItem => t.DiscountAmount)</td>
-            @if (t.DiscountName == DiscountNames.Manitee)
+            @if (t.DiscountName == DiscountNames.Matinee)
             {
-                <td>Manitee</td>
+                <td>Matinee</td>
             }
             else if (t.DiscountName == DiscountNames.Tuesday_Discount)
             {
@@ -60,9 +60,9 @@
             {
                 <td>Senior</td>
             }
-            else if (t.DiscountName == DiscountNames.Manitee_and_Senior)
+            else if (t.DiscountName == DiscountNames.Matinee_and_Senior)
             {
-                <td>Manitee &amp; Senior</td>
+                <td>Matinee &amp; Senior</td>
             }
             else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
             {

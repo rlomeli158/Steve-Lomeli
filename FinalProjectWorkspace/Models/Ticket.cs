@@ -9,11 +9,11 @@ namespace FinalProjectWorkspace.Models
     public enum DiscountNames
     {
         None,
-        Manitee,
+        Matinee,
         Tuesday_Discount,
         Senior_Discounts,
         Tuesday_and_Senior,
-        Manitee_and_Senior
+        Matinee_and_Senior
     }
 
     //Should be individual tickets
@@ -27,15 +27,14 @@ namespace FinalProjectWorkspace.Models
         public DiscountNames DiscountName { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public Decimal DiscountAmount { get; set; } //This is how you set a field as nullable, right? Because
-                                                    //some people won't have discounts?
+        public Decimal DiscountAmount { get; set; } 
 
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal TotalCost { get; set; }
 
         //Seats purchased
         [Required(ErrorMessage = "Please select a seat.")]
-        public String SeatNumber { get; set; } //The strings (seat row & numbers)
+        public String SeatNumber { get; set; }
 
         public Decimal TransactionPopcornPoints { get; set; }
 

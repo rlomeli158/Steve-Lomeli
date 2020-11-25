@@ -190,6 +190,17 @@ namespace FinalProjectWorkspace.Controllers
             return TheatreSelectList;
         }
 
+        public SelectList GetAllTheatres(int selectedTheater)
+        {
+
+            var TheatreSelectList = new SelectList(Enum.GetValues(typeof(Theatre)).Cast<Theatre>().Select(v => new SelectListItem
+            {
+                Text = v.ToString(),
+                Value = ((int)v).ToString()
+            }).ToList(), "Value", "Text",selectedTheater);
+
+            return TheatreSelectList;
+        }
 
         // POST: Showing/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -372,7 +383,7 @@ namespace FinalProjectWorkspace.Controllers
                     if (theaterShowing.Movie == showing.Movie)
                     {
                         //and it also starts at the same time
-                        if (theaterShowing.StartTime == showing.StartTime)
+                        if (theaterShowing.ShowingDate == showing.ShowingDate && theaterShowing.StartTime == showing.StartTime)
                         {
                             //this is not allowed, throw an error for the whole thing
                             return View("Error", new string[]
@@ -517,7 +528,12 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             ViewBag.AllMovies = GetAllMovies(showing.ShowingID);
-            ViewBag.AllTheatres = GetAllTheatres();
+            Int32 theater = 0;
+            if(showing.Theatre == Theatre.Theatre2)
+            {
+                theater = 1;
+            }
+            ViewBag.AllTheatres = GetAllTheatres(theater);
             return View(showing);
         }
 
@@ -558,7 +574,13 @@ namespace FinalProjectWorkspace.Controllers
 
             if (ModelState.IsValid == false) //there is something wrong
             {
-                ViewBag.AllMovies = GetAllMovies(); //TODO: Add int to bring back dropdown with movie already selected
+                ViewBag.AllMovies = GetAllMovies(showing.ShowingID); //TODO: Add int to bring back dropdown with movie already selected
+                Int32 theaterNumber = 0;
+                if (showing.Theatre == Theatre.Theatre2)
+                {
+                    theaterNumber = 1;
+                }
+                ViewBag.AllTheatres = GetAllTheatres(theaterNumber);
                 return View(showing);
             }
 
@@ -666,7 +688,7 @@ namespace FinalProjectWorkspace.Controllers
                     if (s.Movie == dbShowing.Movie)
                     {
                         //And if their start times are the same
-                        if (s.ShowingDate == dbShowing.ShowingDate && s.StartTime == dbShowing.StartTime && s.ShowingID != dbShowing.ShowingID)
+                        if (s.ShowingDate == dbShowing.ShowingDate && s.StartTime == dbShowing.StartTime) //&& s.ShowingID != dbShowing.ShowingID)
                         {
                             //This is not allowed, send this error
                             return View("Error", new string[] { dbShowing.Movie.Title + " is being shown at the same time at the other theatre." });
@@ -805,7 +827,22 @@ namespace FinalProjectWorkspace.Controllers
                         }
 
                     }
-                    return RedirectToAction("MovieModificationList", "Email", new { ticketPurchaserIDs = orderIDsModified });
+                    if (!orderIDsModified.Any())
+                    {
+                        String theatreToReturn;
+                        if (dbShowing.Theatre == Theatre.Theatre1)
+                        {
+                            theatreToReturn = "0";
+                        }
+                        else
+                        {
+                            theatreToReturn = "1";
+                        }
+                        return RedirectToAction(nameof(Index), new { theatre = theatreToReturn, showingDate = dbShowing.ShowingDate });
+                    }else
+                    {
+                        return RedirectToAction("MovieModificationList", "Email", new { ticketPurchaserIDs = orderIDsModified });
+                    }
                 }
                 //If order was just changed, not cancelled
                 else
@@ -816,7 +853,23 @@ namespace FinalProjectWorkspace.Controllers
                     {
                         orderIDs.Add(o.OrderID);
                     }
-                    return RedirectToAction("MovieModificationList", "Email", new { ticketPurchaserIDs = orderIDs });
+                    if (!orderIDs.Any())
+                    {
+                        String theatreToReturn;
+                        if (dbShowing.Theatre == Theatre.Theatre1)
+                        {
+                            theatreToReturn = "0";
+                        }
+                        else
+                        {
+                            theatreToReturn = "1";
+                        }
+                        return RedirectToAction(nameof(Index), new { theatre = theatreToReturn, showingDate = dbShowing.ShowingDate });
+                    }
+                    else
+                    {
+                        return RedirectToAction("MovieModificationList", "Email", new { ticketPurchaserIDs = orderIDs });
+                    }
                 }
             }
             catch (Exception ex)
@@ -845,6 +898,12 @@ namespace FinalProjectWorkspace.Controllers
             if (showing == null)
             {
                 return NotFound();
+            }
+
+            if(showing.Status == "Published")
+            {
+                return View("Error", new string[]
+                { "You cannot delete this showing because it has already been published. Please cancel it by clicking edit."});
             }
 
             return View(showing);

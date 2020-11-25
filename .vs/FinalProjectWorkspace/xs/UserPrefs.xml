@@ -1,5 +1,10 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/MovieController.cs">
+    <Files>
+      <File FileName="FinalProjectWorkspace/Seeding/SeedGenres.cs" Line="107" Column="47" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="377" Column="46" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="78" Column="9" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -7,13 +12,14 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="ShowingController.cs" selected="True" />
+                <Node name="MovieController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
-              <Node name="Utilities" expanded="True" />
+              <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
                 <Node name="Order" expanded="True" />
-                <Node name="Showing" expanded="True" />
+                <Node name="Ticket" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -25,7 +31,9 @@
   <MonoDevelop.Ide.ItemProperties.FinalProjectWorkspace PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/EmailController.cs" relfile="FinalProjectWorkspace/Controllers/EmailController.cs" line="434" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

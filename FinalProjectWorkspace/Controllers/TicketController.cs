@@ -291,7 +291,6 @@ namespace FinalProjectWorkspace.Controllers
 
                     showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
-                    //For the discount amount, TODO: Add discount name
                     String normal = _context.Prices
                                             .Where(p => p.PriceName == "WEEKDAY_REGULAR_PRICE")
                                             .Select(p => p.PriceAmount).First().ToString();
@@ -299,7 +298,7 @@ namespace FinalProjectWorkspace.Controllers
                     Decimal normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
                     ticketIn.DiscountAmount = normalPrice - showingPrice;
-                    ticketIn.DiscountName = DiscountNames.Manitee;
+                    ticketIn.DiscountName = DiscountNames.Matinee;
                 }
                 else if (showingDay == "Tuesday" && showingTime < compareTimeFive) //WORKS
                 {
@@ -309,7 +308,6 @@ namespace FinalProjectWorkspace.Controllers
 
                     showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
-                    //For the discount amount, TODO: Add discount name
                     String normal = _context.Prices
                                             .Where(p => p.PriceName == "WEEKDAY_REGULAR_PRICE")
                                             .Select(p => p.PriceAmount).First().ToString();
@@ -354,7 +352,7 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     if (order.Tickets
                             .Where(t => t.DiscountName == DiscountNames.Senior_Discounts
-                                       || t.DiscountName == DiscountNames.Manitee_and_Senior
+                                       || t.DiscountName == DiscountNames.Matinee_and_Senior
                                        || t.DiscountName == DiscountNames.Tuesday_and_Senior).Count() >= 2 && ticket == null)
                     {
                         return showingPrice;
@@ -364,19 +362,25 @@ namespace FinalProjectWorkspace.Controllers
                 if (ticket != null)
                 {
                     if (ticket.Order.Tickets.Where(t => t.DiscountName == DiscountNames.Senior_Discounts
-                            || t.DiscountName == DiscountNames.Manitee_and_Senior
+                            || t.DiscountName == DiscountNames.Matinee_and_Senior
                             || t.DiscountName == DiscountNames.Tuesday_and_Senior).Count() >= 2)
                     {
                         return showingPrice;
                     }
                 }
-                
-                showingPrice -= 2;
-                ticketIn.DiscountAmount += 2;
+                String price = _context.Prices
+                                    .Where(p => p.PriceName == "SENIOR_DISCOUNT")
+                                    .Select(p => p.PriceAmount).First().ToString();
+                Decimal seniorDiscount;
+                seniorDiscount = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
-                if (ticketIn.DiscountName == DiscountNames.Manitee)
+                //Remove the senior discount price
+                showingPrice -= seniorDiscount;
+                ticketIn.DiscountAmount += showingPrice;
+
+                if (ticketIn.DiscountName == DiscountNames.Matinee)
                 {
-                    ticketIn.DiscountName = DiscountNames.Manitee_and_Senior;
+                    ticketIn.DiscountName = DiscountNames.Matinee_and_Senior;
                 }
                 else if (ticketIn.DiscountName == DiscountNames.Tuesday_Discount)
                 {

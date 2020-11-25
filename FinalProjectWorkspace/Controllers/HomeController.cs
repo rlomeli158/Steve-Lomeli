@@ -38,8 +38,16 @@ namespace FinalProjectWorkspace.Controllers
                 query = query.Where(m => m.ShowingDate >= CurrentDate);
             }
 
-            List<Showing> TodayShowing = query.Include(m => m.Movie).ToList();
-            List<Showing> ActiveShowing = query.Include(m => m.Movie).Where(m => m.ShowingDate >= CurrentDate).ToList();
+            List<Showing> TodayShowing = query
+                .Include(m => m.Movie)
+                .Where(m => m.Status == "Published")
+                .ToList();
+
+            List<Showing> ActiveShowing = query
+                .Include(m => m.Movie)
+                .Where(m => m.ShowingDate >= CurrentDate)
+                .Where(m => m.Status == "Published")
+                .ToList();
 
             ViewBag.AllShowings = ActiveShowing.Count();
             ViewBag.SelectedShowings = TodayShowing.Count();
