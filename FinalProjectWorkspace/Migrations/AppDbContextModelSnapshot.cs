@@ -347,6 +347,9 @@ namespace FinalProjectWorkspace.Migrations
                     b.Property<decimal>("TicketPrice")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("TicketStatus")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("TotalCost")
                         .HasColumnType("decimal(18,2)");
 

@@ -133,7 +133,7 @@ namespace FinalProjectWorkspace.Controllers
                     "<p>You will be refunded to the original payment method. Please contatc us so we can reschedule you for another showing. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                     var message = new MailMessage();
                     message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                    message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                    message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                     message.Subject = "Sorry! Your Order was Canceled";
                     message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
                         order.Purchaser);
@@ -161,7 +161,7 @@ namespace FinalProjectWorkspace.Controllers
                     "<p>You will be refunded to the original payment method. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                     var message = new MailMessage();
                     message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                    message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                    message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                     message.Subject = "Order Cancellation";
                     message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
                         order.Purchaser);
@@ -219,7 +219,7 @@ namespace FinalProjectWorkspace.Controllers
                     "<p>If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                 message.Subject = "Order Confirmation";
                 message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
                     order.Purchaser);
@@ -259,7 +259,7 @@ namespace FinalProjectWorkspace.Controllers
                     "</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                 message.Subject = "Account Update - Main St.";
                 message.Body = string.Format(body, user.FirstName, user.Email);
                 message.IsBodyHtml = true;
@@ -299,7 +299,7 @@ namespace FinalProjectWorkspace.Controllers
                     "</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                 message.Subject = "Account Creation - Main St.";
                 message.Body = string.Format(body, user.FirstName, user.Email, emailPassword);
                 message.IsBodyHtml = true;
@@ -327,7 +327,7 @@ namespace FinalProjectWorkspace.Controllers
 
         
 
-        public async Task<ActionResult> MovieReschedule(int ticketPurchaserID)
+        public async Task<ActionResult> MovieModification(int ticketPurchaserID)
         {
             AppUser user;
 
@@ -343,13 +343,13 @@ namespace FinalProjectWorkspace.Controllers
 
             if (ModelState.IsValid)
             {
-                var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Your tickets were rescheduled. Here are the details of the rescheduled order: </p></br>" +
+                var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Some tickets on your order were modified. Here are the details of the rescheduled order: </p></br>" +
                     "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Purchaser: {3}</p>" +
-                    "<p>If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
+                    "<p>Please log in to your account to view these changes. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
-                message.Subject = "Order Cancellation";
+                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
+                message.Subject = "Order Modification";
                 message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.Purchaser);
                 message.IsBodyHtml = true;
 
@@ -368,6 +368,70 @@ namespace FinalProjectWorkspace.Controllers
             }
             return View("Error", new String[] { "Unable to send the email!" });
 
+
+        }
+
+        public async Task<ActionResult> MovieModificationList(int[] ticketPurchaserIDs)
+        {
+            AppUser user;
+            String theatre = "0";
+            DateTime showingDate = new DateTime(1900,1,1);
+
+            foreach(int orderID in ticketPurchaserIDs)
+            {
+                try
+                {
+                    
+                    Order order = _context.Order
+                    .Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ThenInclude(ord => ord.Movie)
+                    .Include(ord => ord.Recipient)
+                    .Include(ord => ord.Purchaser)
+                    .FirstOrDefault(o => o.OrderID == orderID);
+
+                    user = _context.Users.FirstOrDefault(u => u.Id == order.Purchaser.Id);
+                    string msEmail = Convert.ToString(user.Email);
+
+                    if (ModelState.IsValid)
+                    {
+                        var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Your order was modified by Main St. Staff. Here are the details of the rescheduled order: </p></br>" +
+                            "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Purchaser: {3}</p>" +
+                            "<p>Please log in to your account to view these changes. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
+                        var message = new MailMessage();
+                        message.To.Add(new MailAddress(msEmail)); //replace with valid value
+                        message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
+                        message.Subject = "Order Modification";
+                        message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.Purchaser);
+                        message.IsBodyHtml = true;
+
+
+
+                        using (var smtp = new SmtpClient("smtp.gmail.com", 587))
+                        {
+
+                            smtp.Credentials = new NetworkCredential("dak.mainst@gmail.com", "basic123!");
+                            smtp.Host = "smtp.gmail.com";
+                            smtp.Port = 587;
+                            smtp.EnableSsl = true;
+                            await smtp.SendMailAsync(message);
+                        }
+                    }
+
+                    if (order.Tickets.Select(s => s.Showing.Theatre).First() == Theatre.Theatre1)
+                    {
+                        theatre = "0";
+                    }
+                    else
+                    {
+                        theatre = "1";
+                    }
+                    showingDate = order.Tickets.Select(t => t.Showing.ShowingDate).First();
+                }
+                catch
+                {
+                    return View("Error", new String[] { "Unable to send the email!" });
+                }
+            }
+            return RedirectToAction("Index", "Showing", new { theatre, showingDate});
 
         }
 

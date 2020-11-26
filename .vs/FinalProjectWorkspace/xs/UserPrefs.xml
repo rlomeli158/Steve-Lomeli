@@ -1,17 +1,11 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/MovieController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="90" Column="1" />
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" />
-      <File FileName="FinalProjectWorkspace/Models/Genre.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/Movie.cs" />
-      <File FileName="FinalProjectWorkspace/wwwroot/css/bootstrap.css" />
-      <File FileName="FinalProjectWorkspace/Views/Order/CompleteOrder.cshtml" />
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieReviewController.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="142" Column="18" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="184" Column="45" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="171" Column="100" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="104" Column="21" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,13 +17,11 @@
                 <Node name="MovieController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
-              <Node name="Utilities" expanded="True" />
+              <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Order" expanded="True" />
+                <Node name="Movie" expanded="True" />
                 <Node name="Showing" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
+                <Node name="Ticket" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -42,8 +34,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="687" column="1" />
-      <Breakpoint file="/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="681" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/EmailController.cs" relfile="FinalProjectWorkspace/Controllers/EmailController.cs" line="434" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

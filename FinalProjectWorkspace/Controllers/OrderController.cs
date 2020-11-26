@@ -27,11 +27,19 @@ namespace FinalProjectWorkspace.Controllers
             List<Order> Orders = new List<Order>();
             if (User.IsInRole("Manager"))
             {
-                Orders = _context.Order.Include(o => o.Tickets).ThenInclude(o => o.Showing).ToList();
+                Orders = _context.Order
+                    .Include(o => o.Seller)
+                    .Include(o => o.Purchaser)
+                    .Include(o => o.Recipient)
+                    .Include(o => o.Tickets).ThenInclude(o => o.Showing).ToList();
             }
             else //user is a customer
             {
-                Orders = _context.Order.Where(o => o.Recipient.UserName == User.Identity.Name
+                Orders = _context.Order
+                    .Include(o => o.Seller)
+                    .Include(o => o.Purchaser)
+                    .Include(o => o.Recipient)
+                    .Where(o => o.Recipient.UserName == User.Identity.Name
                                                 || o.Purchaser.UserName == User.Identity.Name).Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ToList();
             }
 
@@ -567,14 +575,23 @@ namespace FinalProjectWorkspace.Controllers
 
                 if (order.PaidWithPopcornPoints == true)
                 {
-                    order.PopcornPoints *= -1;
-                    order.Purchaser.PCPBalance += order.PopcornPoints;
+                    order.Purchaser.PCPBalance += Math.Abs(order.PopcornPoints);
+                    order.PopcornPoints = 0;
+                   
+                } else
+                {
+                    order.Purchaser.PCPBalance -= order.PopcornPoints;
+                    order.PopcornPoints = 0;
                 }
+
                 foreach(Ticket t in order.Tickets)
                 {
                     t.TotalCost = 0;
                     t.TicketPrice = 0;
                     t.TransactionPopcornPoints = 0;
+                    t.DiscountName = DiscountNames.None;
+                    t.TicketStatus = "Cancelled";
+                    t.DiscountAmount = 0;
                 }
 
                 _context.Update(order);

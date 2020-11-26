@@ -59,7 +59,7 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Search by Title:")]
         public String SelectedTitle { get; set; } //Textbox
 
-        [Display(Name = "Search by Overview:")]
+        [Display(Name = "Search by Tagline:")]
         public String SelectedTagline { get; set; } //Textbox
 
         [Display(Name = "Search by Actor:")]
