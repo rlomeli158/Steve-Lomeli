@@ -1,11 +1,24 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/MovieController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml">
     <Files>
       <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="142" Column="18" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="184" Column="45" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="171" Column="100" />
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="104" Column="21" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="447" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="39" Column="26" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="376" Column="59" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="83" Column="8" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/Create.cshtml" Line="8" Column="3" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="122" Column="37" />
+      <File FileName="FinalProjectWorkspace/Controllers/RoleAdminController.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="41" Column="43" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Delete.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Details.cshtml" Line="68" Column="39" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="113" Column="59" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Edit.cshtml" Line="60" Column="19" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/Index.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Index.cshtml" Line="77" Column="111" />
+      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" Line="67" Column="73" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,15 +26,12 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="MovieController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Movie" expanded="True" />
-                <Node name="Showing" expanded="True" />
-                <Node name="Ticket" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="ManagerHomeView.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -34,7 +44,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/EmailController.cs" relfile="FinalProjectWorkspace/Controllers/EmailController.cs" line="434" column="1" />
+      <Breakpoint file="/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/Controllers/EmailController.cs" relfile="FinalProjectWorkspace/Controllers/EmailController.cs" line="434" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

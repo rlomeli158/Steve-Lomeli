@@ -412,6 +412,7 @@ namespace FinalProjectWorkspace.Controllers
             return View(movie);
         }
 
+        /*
         // GET: Movie/Delete/5
         [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Delete(int? id)
@@ -442,10 +443,12 @@ namespace FinalProjectWorkspace.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        */
 
         private bool MovieExists(int id)
         {
             return _context.Movies.Any(e => e.MovieID == id);
         }
+        
     }
 }

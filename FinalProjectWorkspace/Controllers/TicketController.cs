@@ -438,6 +438,8 @@ namespace FinalProjectWorkspace.Controllers
                 //The order already contains tickets to this showing
                 if(ticketList.Any(t => t.Showing.ShowingID != selectedShowing.ShowingID))
                 {
+                    //ModelState.AddModelError("TicketError", "There's already a ticket for a different showing on your order!");
+                    //return View(ticket);
                     return View("Error", new String[] { "There's already a ticket for a different showing on your order!" });
                 }
 
@@ -446,10 +448,14 @@ namespace FinalProjectWorkspace.Controllers
             List<string> seatsAvailable = await GetSeatsAvailableAsync(selectedShowing.ShowingID);
             if (!seatsAvailable.Contains(ticket.SeatNumber))
             {
+                //ModelState.AddModelError("TakenError", "This seat is taken.");
+
+                //ViewBag.AllShowings = GetAllShowings();
+                //return View(ticket);
                 return View("Error", new String[] { "This seat is taken." });
             }
 
-            foreach(Ticket t in dbOrder.Tickets)
+            foreach (Ticket t in dbOrder.Tickets)
             {
                 //If the showing time of the showing we're trying to add starts after the end time of the showing already on the order, it's good
                 //it's also okay if they add more of the same showing
