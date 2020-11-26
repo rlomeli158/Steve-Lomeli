@@ -16,15 +16,13 @@
             <form asp-action="EditAccount" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="UserID" />
-                <!---->
                 @if (User.Identity.IsAuthenticated)
                 {
                     @if (User.IsInRole("Manager"))
                     {
                         <div class="form-group">
-                            <label asp-for="Email" class="control-label"></label>
-                            <input readonly asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
+                            <label class="control-label">Email: </label>
+                            @Html.DisplayTextFor(Model => Model.Email)
                         </div>
                         <div class="form-group">
                             <label asp-for="FirstName" class="control-label"></label>
@@ -46,24 +44,20 @@
                     else
                     {
                         <div class="form-group">
-                            <label asp-for="Email" class="control-label"></label>
-                            <input readonly asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
+                            <label class="control-label">Email: </label>
+                            @Html.DisplayTextFor(Model => Model.Email)
                         </div>
                         <div class="form-group">
-                            <label asp-for="FirstName" class="control-label"></label>
-                            <input readonly asp-for="FirstName" class="form-control" />
-                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                            <label class="control-label">First Name:</label>
+                            @Html.DisplayFor(Model => Model.FirstName, new { @class = "form-control" })
                         </div>
                         <div class="form-group">
-                            <label asp-for="MiddleInitial" class="control-label"></label>
-                            <input readonly asp-for="MiddleInitial" class="form-control" />
-                            <span asp-validation-for="MiddleInitial" class="text-danger"></span>
+                            <label class="control-label">Middle Initial: </label>
+                            @Html.DisplayFor(Model => Model.MiddleInitial, new { @class = "form-control" })
                         </div>
                         <div class="form-group">
-                            <label asp-for="LastName" class="control-label"></label>
-                            <input readonly asp-for="LastName" class="form-control" />
-                            <span asp-validation-for="LastName" class="text-danger"></span>
+                            <label class="control-label">Last Name: </label>
+                            @Html.DisplayFor(Model => Model.LastName, new { @class = "form-control" })
                         </div>
                     }
 
@@ -108,12 +102,12 @@
                     {
                         <div class="form-group">
                             <div class="custom-control custom-switch">
-                                <input asp-for="AccountStatus" type="checkbox" class="custom-control-input" id="customSwitch1" checked ="checked">
+                                <input asp-for="AccountStatus" type="checkbox" class="custom-control-input" id="customSwitch1" checked="checked">
                                 <label asp-validation-for="AccountStatus" class="custom-control-label" for="customSwitch1">Active Status</label>
                             </div>
                         </div>
                     }
-                   
+
                 }
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-outline-danger" />

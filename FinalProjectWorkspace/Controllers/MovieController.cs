@@ -202,6 +202,7 @@ namespace FinalProjectWorkspace.Controllers
                 List<Movie> SelectedMovies = query
                     .Include(m => m.Genre)
                     .Include(m => m.Showings)
+                    .ThenInclude(m => m.Tickets)
                     .ToList();
 
 

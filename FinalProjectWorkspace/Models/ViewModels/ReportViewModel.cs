@@ -11,7 +11,8 @@ namespace FinalProjectWorkspace.Models
         public Int32 TotalSeatsSold { get; set; }
 
         [Display(Name = "Total Revenue")]
-        [DisplayFormat(DataFormatString = "{0:C}")]
+        //[DisplayFormat(DataFormatString = "{0:C}")]
+        [DataType(DataType.Currency)]
         public Decimal TotalRevenue { get; set; }
 
         [Display(Name = "Customer")]

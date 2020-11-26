@@ -24,10 +24,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.ReviewDescription)
             </th>
+            @if(User.IsInRole("Employee") || User.IsInRole("Manager"))
+            {
             <th>
                 @Html.DisplayNameFor(model => model.ApprovalStatus)
             </th>
-            <th></th>
+            }
+            <th>
+                Edit
+            </th>
+            <th>
+                Details
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -45,13 +53,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ReviewDescription)
             </td>
+            @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
+            {
             <td>
                 @Html.DisplayFor(modelItem => item.ApprovalStatus)
             </td>
+            }
             <td>
-                <a asp-action="Edit" asp-route-id="@item.MovieReviewID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MovieReviewID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MovieReviewID">Delete</a>
+                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.MovieReviewID">Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-outline-danger" asp-action="Details" asp-route-id="@item.MovieReviewID">Details</a>
             </td>
         </tr>
 }

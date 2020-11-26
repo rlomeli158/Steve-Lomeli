@@ -671,13 +671,13 @@ namespace FinalProjectWorkspace.Controllers
             if (rsvm.SelectedStartingDate != null) //For date
             {
                 DateTime datSelectedStartingDate = rsvm.SelectedStartingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Order.OrderDate >= datSelectedStartingDate);
+                query = query.Where(m => m.Showing.ShowingDate >= datSelectedStartingDate);
             }
 
             if (rsvm.SelectedEndingDate != null) //For date
             {
                 DateTime datSelectedEndingDate = rsvm.SelectedEndingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Order.OrderDate <= datSelectedEndingDate);
+                query = query.Where(m => m.Showing.ShowingDate <= datSelectedEndingDate);
             }
 
             if (rsvm.SelectedMovie != 0) //For movie name
@@ -700,10 +700,10 @@ namespace FinalProjectWorkspace.Controllers
                 switch (rsvm.SelectedSearchType)
                 {
                     case AllSearchTypes.Before:
-                        query = query.Where(m => m.Order.OrderDate.Hour <= timSelectedTime.Hour); //TODO: Verify if Max is correct here or if something else should be used
+                        query = query.Where(m => m.Showing.StartTime <= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
                         break;
                     case AllSearchTypes.After:
-                        query = query.Where(m => m.Order.OrderDate.Hour >= timSelectedTime.Hour); //TODO: Verify if Max is correct here or if something else should be used
+                        query = query.Where(m => m.Showing.StartTime >= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
                         break;
                     default:
                         break;

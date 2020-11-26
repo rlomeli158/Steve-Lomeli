@@ -13,15 +13,15 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MovieReviewID" />
             <div class="form-group">
-                <label asp-for="Movie.Title" class="control-label"></label>
+                <label class="control-label">Title: </label>
                 @Html.DisplayFor(Model => Model.Movie.Title, new { @class = "form-control" })
             </div>
             @if (User.Identity.IsAuthenticated)
             {
-                    @if (User.IsInRole("Employee"))
+                    @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
                     {
                         <div class="form-group">
-                            <label asp-for="Rating" class="control-label"></label>
+                            <label class="control-label">Rating: </label>
                             @Html.DisplayFor(Model => Model.Rating, new { @class = "form-control" })
                         </div>
                     }
@@ -40,7 +40,7 @@
                 <input asp-for="ReviewDescription" class="form-control" />
                 <span asp-validation-for="ReviewDescription" class="text-danger"></span>
             </div>
-            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager") || User.IsInRole("Employee"))
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager") || User.IsInRole("Employee") && Model.ApprovalStatus == false)
             {
                 <div class="form-group form-check">
                     <label class="form-check-label">

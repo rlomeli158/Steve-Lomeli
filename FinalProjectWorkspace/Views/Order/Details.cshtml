@@ -124,7 +124,7 @@ else
         {
             <th>Ticket Status</th>
         }
-        @if (Model.OrderStatus == "Paid" && Model.Tickets.Any(t => t.Showing.EndTime < DateTime.Now))
+        @if (Model.OrderStatus == "Paid" && Model.Tickets.Any(t => t.Showing.EndTime < DateTime.Now) && Model.Tickets.Any(t => t.TicketStatus != "Cancelled"))
         {
             <th>Write a Review!</th>
         }
@@ -166,7 +166,7 @@ else
     {
         <td>@Html.DisplayFor(ModelItem => t.TicketStatus)</td>
     }
-    @if (Model.OrderStatus == "Paid" && DateTime.Now > t.Showing.EndTime)
+    @if (Model.OrderStatus == "Paid" && DateTime.Now > t.Showing.EndTime && t.TicketStatus != "Cancelled")
     {
         <td><a asp-action="Create" asp-controller="MovieReview" asp-route-movieid="@t.Showing.Movie.MovieID" class="btn btn-outline-info">Add Review</a></td>
     }

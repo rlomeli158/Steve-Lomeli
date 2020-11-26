@@ -1,24 +1,23 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Account/Index.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="142" Column="18" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="447" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="39" Column="26" />
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="376" Column="59" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="83" Column="8" />
-      <File FileName="FinalProjectWorkspace/Views/Ticket/Create.cshtml" Line="8" Column="3" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Index.cshtml" Line="122" Column="37" />
-      <File FileName="FinalProjectWorkspace/Controllers/RoleAdminController.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/Showing.cs" Line="41" Column="43" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Delete.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Create.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Details.cshtml" Line="68" Column="39" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="113" Column="59" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Edit.cshtml" Line="60" Column="19" />
-      <File FileName="FinalProjectWorkspace/Views/Ticket/Index.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Index.cshtml" Line="77" Column="111" />
-      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" Line="67" Column="73" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieReviewController.cs" Line="153" Column="102" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Index.cshtml" Line="25" Column="71" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Create.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Index.cshtml" Line="67" Column="117" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="238" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="79" Column="24" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="127" Column="159" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Account/EditAccount.cshtml" Line="25" Column="66" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Edit.cshtml" Line="43" Column="138" />
+      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="282" Column="38" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/ReportSearchResults.cshtml" Line="9" Column="7" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/Transactions.cshtml" Line="86" Column="84" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/ReportViewModel.cs" Line="15" Column="38" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="706" Column="88" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,11 +26,21 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
+              </Node>
+              <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="ManagerHomeView.cshtml" selected="True" />
+                <Node name="Account" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
                 </Node>
+                <Node name="Home" expanded="True" />
+                <Node name="Movie" expanded="True" />
+                <Node name="MovieReview" expanded="True" />
+                <Node name="Order" expanded="True" />
+                <Node name="RoleAdmin" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="Ticket" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -44,7 +53,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/Controllers/EmailController.cs" relfile="FinalProjectWorkspace/Controllers/EmailController.cs" line="434" column="1" />
+      <Catchpoint exceptionName="System.NullReferenceException" includeSubclasses="True" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

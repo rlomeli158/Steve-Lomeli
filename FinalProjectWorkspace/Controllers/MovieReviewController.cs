@@ -138,6 +138,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 return NotFound();
             }
+            
 
             MovieReview movieReview = _context.MovieReview
                                        .Include(mr => mr.Movie)
@@ -147,6 +148,11 @@ namespace FinalProjectWorkspace.Controllers
             {
                 return NotFound();
             }
+            if (User.IsInRole("Manager") == false || User.IsInRole("Employee") == false && movieReview.User != User.Identity)
+            {
+                return View("Error", new string[] { "You are not authorized to edit this movie review!" });
+            }
+
             ViewBag.AllMovies = GetTicketMovies();
             return View(movieReview);
         }
@@ -174,12 +180,22 @@ namespace FinalProjectWorkspace.Controllers
                       .FirstOrDefault(mr => mr.MovieReviewID == movieReview.MovieReviewID);
 
                     //update the scalar properties
-                    dbMR.ApprovalStatus = movieReview.ApprovalStatus;
+                    if (User.IsInRole("Customer"))
+                    {
+                        dbMR.ApprovalStatus = false;
+                    }
+                    else
+                    {
+                        dbMR.ApprovalStatus = movieReview.ApprovalStatus;
+                    }
+                                   
                     dbMR.Rating = movieReview.Rating;
                     dbMR.ReviewDescription = movieReview.ReviewDescription;
 
                     _context.Update(dbMR);
                     await _context.SaveChangesAsync();
+
+                    
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -198,34 +214,7 @@ namespace FinalProjectWorkspace.Controllers
             return View(movieReview);
         }
 
-        // GET: MovieReview/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var movieReview = await _context.MovieReview
-                .FirstOrDefaultAsync(m => m.MovieReviewID == id);
-            if (movieReview == null)
-            {
-                return NotFound();
-            }
-
-            return View(movieReview);
-        }
-
-        // POST: MovieReview/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var movieReview = await _context.MovieReview.FindAsync(id);
-            _context.MovieReview.Remove(movieReview);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+        
 
         private bool MovieReviewExists(int id)
         {
