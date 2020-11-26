@@ -133,7 +133,7 @@ namespace FinalProjectWorkspace.Controllers
                     "<p>You will be refunded to the original payment method. Please contatc us so we can reschedule you for another showing. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                     var message = new MailMessage();
                     message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                    message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                    message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                     message.Subject = "Sorry! Your Order was Canceled";
                     message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
                         order.Purchaser);
@@ -161,7 +161,7 @@ namespace FinalProjectWorkspace.Controllers
                     "<p>You will be refunded to the original payment method. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                     var message = new MailMessage();
                     message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                    message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                    message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                     message.Subject = "Order Cancellation";
                     message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
                         order.Purchaser);
@@ -219,7 +219,7 @@ namespace FinalProjectWorkspace.Controllers
                     "<p>If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                 message.Subject = "Order Confirmation";
                 message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
                     order.Purchaser);
@@ -259,7 +259,7 @@ namespace FinalProjectWorkspace.Controllers
                     "</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                 message.Subject = "Account Update - Main St.";
                 message.Body = string.Format(body, user.FirstName, user.Email);
                 message.IsBodyHtml = true;
@@ -299,7 +299,7 @@ namespace FinalProjectWorkspace.Controllers
                     "</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                 message.Subject = "Account Creation - Main St.";
                 message.Body = string.Format(body, user.FirstName, user.Email, emailPassword);
                 message.IsBodyHtml = true;
@@ -348,7 +348,7 @@ namespace FinalProjectWorkspace.Controllers
                     "<p>Please log in to your account to view these changes. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                 message.Subject = "Order Modification";
                 message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.Purchaser);
                 message.IsBodyHtml = true;
@@ -398,7 +398,7 @@ namespace FinalProjectWorkspace.Controllers
                             "<p>Please log in to your account to view these changes. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                         var message = new MailMessage();
                         message.To.Add(new MailAddress(msEmail)); //replace with valid value
-                        message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
+                        message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St. - Team 17");
                         message.Subject = "Order Modification";
                         message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.Purchaser);
                         message.IsBodyHtml = true;
