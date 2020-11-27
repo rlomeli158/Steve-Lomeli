@@ -1,7 +1,13 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Order/Details.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="180" Column="49" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="162" Column="19" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="64" Column="18" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/Create.cshtml" Line="17" Column="45" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="476" Column="91" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="36" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,16 +15,19 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="TicketController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Movie" expanded="True" />
                 <Node name="MovieReview" expanded="True" />
-                <Node name="Order" expanded="True">
-                  <Node name="Details.cshtml" selected="True" />
-                </Node>
+                <Node name="Order" expanded="True" />
                 <Node name="RoleAdmin" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="Ticket" expanded="True" />
