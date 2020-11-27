@@ -69,7 +69,8 @@ namespace FinalProjectWorkspace.Models
         public Int32 SelectedGenreID { get; set; } //Dropdown
 
         [Display(Name = "Search by Year:")]
-        public DateTime? SelectedYear { get; set; } //Textbox, verify it's a year (similar to salary) Should we use Int32 or String?
+        [RegularExpression("([0-9]+)", ErrorMessage = "Please enter a valid year.")]
+        public String SelectedYear { get; set; } //Textbox, verify it's a year (similar to salary) Should we use Int32 or String?
 
         [Display(Name = "Search by MPAA Rating:")]
         public Int32 SelectedMPAARating { get; set; } //Dropdown
