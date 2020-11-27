@@ -171,17 +171,16 @@ namespace FinalProjectWorkspace.Controllers
                 }
             }
 
-
             if (svm.SelectedYear != null) //For release year
             {
-                DateTime datSelectedDate = svm.SelectedYear ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Year >= datSelectedDate);
+                //DateTime datSelectedDate = svm.SelectedYear ?? new DateTime(1900, 1, 1);
+                query = query.Where(m => m.Year.Year == Convert.ToInt32(svm.SelectedYear));
             }
 
-            if (svm.SelectedShowingDate != null) //For showing date ********
+            if (svm.SelectedShowingDate != null)
             {
                 DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Showings.Any(r => r.ShowingDate == datSelectedDate)); //TODO: Verify if Max is correct here or if something else should be used
+                query = query.Where(m => m.Showings.Any(r => r.ShowingDate == datSelectedDate));
             }
 
             if (query != null) //they searched for something

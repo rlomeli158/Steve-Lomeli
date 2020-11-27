@@ -1,23 +1,7 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Account/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Order/Details.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/MovieReviewController.cs" Line="153" Column="102" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Index.cshtml" Line="25" Column="71" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Create.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Index.cshtml" Line="67" Column="117" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="238" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="79" Column="24" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="127" Column="159" />
-      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Account/EditAccount.cshtml" Line="25" Column="66" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Edit.cshtml" Line="43" Column="138" />
-      <File FileName="FinalProjectWorkspace/Models/MovieReview.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="282" Column="38" />
-      <File FileName="FinalProjectWorkspace/Views/Ticket/ReportSearchResults.cshtml" Line="9" Column="7" />
-      <File FileName="FinalProjectWorkspace/Views/Ticket/Transactions.cshtml" Line="86" Column="84" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/ReportViewModel.cs" Line="15" Column="38" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="706" Column="88" />
-      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,13 +15,10 @@
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
-                <Node name="Home" expanded="True" />
-                <Node name="Movie" expanded="True" />
                 <Node name="MovieReview" expanded="True" />
-                <Node name="Order" expanded="True" />
+                <Node name="Order" expanded="True">
+                  <Node name="Details.cshtml" selected="True" />
+                </Node>
                 <Node name="RoleAdmin" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="Ticket" expanded="True" />

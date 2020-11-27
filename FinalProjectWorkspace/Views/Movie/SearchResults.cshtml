@@ -41,9 +41,13 @@
             <th>
                 Upcoming Showtimes
             </th>
-            <th>
-                Seats Available
-            </th>
+            @{ Int32 showingCount = 0;}
+            @if (showingCount == 1)
+            {
+                <th>
+                    Seats Available
+                </th>
+            }
             <th>
                 Movie Details
             </th>
@@ -76,7 +80,7 @@
                 }
                 else
                 {
-                    @:0
+                    @:No Reviews Yet!
                 }
 
             </td>
@@ -84,10 +88,9 @@
                 <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">Reviews</a>
             </td>
             <td>
-                @{ Int32 showingCount = 0;}
                 @if (!item.Showings.Any())
                 {
-                    @:0
+                    @:None Upcoming!
                 }
                 else
                 {
@@ -101,68 +104,68 @@
                                 @Html.DisplayFor(modelShowing => showing.ShowingDate) @:at @Html.DisplayFor(modelShowing => showing.StartTime) <br />
                             }
                         }
-                    }else
+                    }
+                    else
                     {
-                    Int32 blankCount = 0;
-                    Int32 totalCount = 0;
-                    Int32 unpublishedCount = 0;
-                    @foreach (var showing in item.Showings)
-                    {
-                        totalCount += 1;
-                        DateTime showingTime = new DateTime(showing.StartTime.Year, showing.StartTime.Month, showing.StartTime.Day,
-                            showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
-                        if (DateTime.Now < showingTime && showing.Status == "Published")
+                        Int32 blankCount = 0;
+                        Int32 totalCount = 0;
+                        Int32 unpublishedCount = 0;
+                        @foreach (var showing in item.Showings)
                         {
-                            @Html.DisplayFor(modelShowing => showing.ShowingDate) @:at @Html.DisplayFor(modelShowing => showing.StartTime) <br />
-                            <br />
-
-                        }
-                        else
-                        {
-                            blankCount += 1;
-                            if (showing.Status == "Unpublished")
+                            totalCount += 1;
+                            DateTime showingTime = new DateTime(showing.StartTime.Year, showing.StartTime.Month, showing.StartTime.Day,
+                                showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
+                            if (DateTime.Now < showingTime && showing.Status == "Published")
                             {
-                                unpublishedCount += 1;
+                                @Html.DisplayFor(modelShowing => showing.ShowingDate) @:at @Html.DisplayFor(modelShowing => showing.StartTime) <br />
+                                <br />
+
+                            }
+                            else
+                            {
+                                blankCount += 1;
+                                if (showing.Status == "Unpublished")
+                                {
+                                    unpublishedCount += 1;
+                                }
                             }
                         }
-                    }
-                    if (blankCount == totalCount)
-                    {
-                        if (unpublishedCount >= 1)
+                        if (blankCount == totalCount)
                         {
-                            @:Coming soon!
-                        }
-                        else
-                        {
-                            @:None Upcoming
+                            if (unpublishedCount >= 1)
+                            {
+                                @:Coming soon!
+                            }
+                            else
+                            {
+                                @:None Upcoming
 
                             }
                         }
                     }
                 }
             </td>
-            <td>
-                @if (showingCount == 1)
-                {
-                    Int32 seatCount = 0;
-                    foreach (var showing in item.Showings)
+            @if (showingCount == 1)
+            {
+             <td>
+                 @{Int32 seatCount = 0;}
+                 @foreach (var showing in item.Showings)
+                 {
+                    if(showing.SeatsAvailable != null)
                     {
-                        if(showing.SeatsAvailable != null)
-                        {
-                            seatCount = showing.SeatsAvailable.Count();
-                        }
+                       seatCount = showing.SeatsAvailable.Count();
                     }
-                    if (seatCount != 0)
-                    {
-                        @seatCount
-                    }
-                }
-
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
-            </td>
-        </tr>
+                  }
+                 @if (seatCount != 0)
+                 {
+                    @seatCount
+                 }
+             </td>
+             }
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

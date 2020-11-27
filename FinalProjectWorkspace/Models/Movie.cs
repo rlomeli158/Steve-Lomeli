@@ -59,13 +59,18 @@ namespace FinalProjectWorkspace.Models
                 if (Showings.Count() == 0)
                 {
                     return new DateTime(2100, 1, 1);
-                } else
+                }
+                else
                 {
-                    if (Showings.Max(s => s.StartTime).Date < DateTime.Now)
+                    if (Showings.Where(s => s.Status != "Unpublished" || s.Status != "Cancelled").Min(s => s.ShowingDate).Date < DateTime.Now)
                     {
+                        if(Showings.Where(s => s.Status == "Published").Any(s => s.StartTime >= DateTime.Now))
+                        {
+                            return Showings.Where(s => s.StartTime >= DateTime.Now && s.Status == "Published").Min(s => s.ShowingDate).Date;
+                        }
                         return new DateTime(2100, 1, 1);
                     } 
-                    return Showings.Min(s => s.StartTime).Date;
+                    return Showings.Min(s => s.ShowingDate).Date;
                 }
             }
         }
