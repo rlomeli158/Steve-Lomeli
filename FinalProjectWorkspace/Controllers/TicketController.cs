@@ -291,12 +291,25 @@ namespace FinalProjectWorkspace.Controllers
 
                     showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
-                    String normal = _context.Prices
+                    Decimal normalPrice;
+
+                    if (showingDay != "Friday")
+                    {
+                        String normal = _context.Prices
                                             .Where(p => p.PriceName == "WEEKDAY_REGULAR_PRICE")
                                             .Select(p => p.PriceAmount).First().ToString();
 
-                    Decimal normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                        normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                    }
+                    else
+                    {
+                        String normal = _context.Prices
+                                            .Where(p => p.PriceName == "WEEKEND_REGULAR_PRICE")
+                                            .Select(p => p.PriceAmount).First().ToString();
 
+                        normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                    }
+                   
                     ticketIn.DiscountAmount = normalPrice - showingPrice;
                     ticketIn.DiscountName = DiscountNames.Matinee;
                 }
