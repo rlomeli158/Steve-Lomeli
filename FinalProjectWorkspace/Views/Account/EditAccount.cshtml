@@ -22,7 +22,7 @@
                     {
                         <div class="form-group">
                             <label class="control-label">Email: </label>
-                            @Html.DisplayTextFor(Model => Model.Email)
+                            <input readonly asp-for="Email" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label asp-for="FirstName" class="control-label"></label>
@@ -45,19 +45,19 @@
                     {
                         <div class="form-group">
                             <label class="control-label">Email: </label>
-                            @Html.DisplayTextFor(Model => Model.Email)
+                            <input readonly asp-for="Email" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">First Name:</label>
-                            @Html.DisplayFor(Model => Model.FirstName, new { @class = "form-control" })
+                            <input readonly asp-for="FirstName" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Middle Initial: </label>
-                            @Html.DisplayFor(Model => Model.MiddleInitial, new { @class = "form-control" })
+                            <input readonly asp-for="MiddleInitial" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Last Name: </label>
-                            @Html.DisplayFor(Model => Model.LastName, new { @class = "form-control" })
+                            <input readonly asp-for="LastName" class="form-control"/>
                         </div>
                     }
 
