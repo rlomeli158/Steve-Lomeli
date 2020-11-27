@@ -120,11 +120,11 @@ else
             <th>Add Tickets</th>
             <th>Remove Ticket</th>
         }
-        @if (Model.OrderStatus != "Active" && Model.Tickets.Any(t => t.Showing.EndTime > DateTime.Now))
+        @if (Model.OrderStatus != "Active")
         {
             <th>Ticket Status</th>
         }
-        @if (Model.OrderStatus == "Paid" && Model.Tickets.Any(t => t.Showing.EndTime < DateTime.Now) && Model.Tickets.Any(t => t.TicketStatus != "Cancelled"))
+        @if (Model.OrderStatus == "Paid" && Model.Tickets.Any(t => t.TicketStatus != "Cancelled"))
         {
             <th>Write a Review!</th>
         }
@@ -162,13 +162,25 @@ else
         <td>None</td>
     }
     <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
-    @if (Model.OrderStatus != "Active" && t.Showing.EndTime > DateTime.Now)
+    @if (Model.OrderStatus != "Active")
     {
-        <td>@Html.DisplayFor(ModelItem => t.TicketStatus)</td>
+        @if (DateTime.Now > t.Showing.EndTime)
+        {
+            <td>Completed</td>
+        }
+        else
+        {
+            <td>@Html.DisplayFor(ModelItem => t.TicketStatus)</td>
+
+        }
     }
     @if (Model.OrderStatus == "Paid" && DateTime.Now > t.Showing.EndTime && t.TicketStatus != "Cancelled")
     {
         <td><a asp-action="Create" asp-controller="MovieReview" asp-route-movieid="@t.Showing.Movie.MovieID" class="btn btn-outline-info">Add Review</a></td>
+    }
+    else if (Model.OrderStatus == "Paid" && t.TicketStatus != "Cancelled")
+    {
+        <td>Come back after your movie to leave a review!</td>
     }
     @if (Model.OrderStatus == "Active")
     {
@@ -274,7 +286,7 @@ else
         <a asp-action="Edit" asp-route-id="Model.OrderID" class="btn btn-info">Edit or Delete Tickets</a>
     }
         -->
-    @if (Model.OrderStatus == "Paid" || Model.OrderStatus == "Partially Cancelled")
+    @if ((Model.OrderStatus == "Paid" || Model.OrderStatus == "Partially Cancelled") && !Model.Tickets.Any(t => DateTime.Now > t.Showing.StartTime))
     {
     <br />
     <a asp-action="Cancelled" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a>
