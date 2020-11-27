@@ -148,9 +148,9 @@ namespace FinalProjectWorkspace.Controllers
             {
                 return NotFound();
             }
-            if (User.IsInRole("Manager") == false || User.IsInRole("Employee") == false && movieReview.User != User.Identity)
+            if (User.IsInRole("Manager") == false && User.IsInRole("Employee") == false && movieReview.User != User.Identity)
             {
-                return View("Error", new string[] { "You are not authorized to edit this movie review!" });
+                return View("Error", new string[] { "You are not authorized to edit this order!" });
             }
 
             ViewBag.AllMovies = GetTicketMovies();
@@ -171,7 +171,7 @@ namespace FinalProjectWorkspace.Controllers
 
             if (ModelState.IsValid)
             {
-                MovieReview dbMR;
+                MovieReview dbMR = _context.MovieReview.Find(movieReview.MovieReviewID);
                 try
                 {
                     dbMR = _context.MovieReview
@@ -188,8 +188,12 @@ namespace FinalProjectWorkspace.Controllers
                     {
                         dbMR.ApprovalStatus = movieReview.ApprovalStatus;
                     }
-                                   
-                    dbMR.Rating = movieReview.Rating;
+
+                    if (User.IsInRole("Customer"))
+                    {
+                        dbMR.Rating = movieReview.Rating;
+                    }
+                    
                     dbMR.ReviewDescription = movieReview.ReviewDescription;
 
                     _context.Update(dbMR);
