@@ -3,7 +3,10 @@
     ViewBag.Title = "Edit Role";
 }
 
-<h2>Edit Role: @Model.Role.Name</h2>
+    <br />
+<h1 class="text-center text-danger">Edit Role: @Model.Role.Name</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
 
 @Html.ValidationSummary()
 
@@ -39,7 +42,7 @@
                         <td>@user.MiddleInitial</td>
                         <td>@user.LastName</td>
                         <td>@user.Email</td>
-                        <td >
+                        <td>
                             <input type="checkbox" name="IdsToAdd" value="@user.Id" />
 
                             @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })
@@ -79,7 +82,7 @@
                         <td>@user.MiddleInitial</td>
                         <td>@user.LastName</td>
                         <td>@user.Email</td>
-                        <td >
+                        <td>
                             <input type="checkbox" name="IdsToRemove" value="@user.Id" />
 
                             @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })

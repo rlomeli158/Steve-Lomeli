@@ -4,12 +4,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Movie Reviews</h1>
+    <br />
+<h1 class="text-center text-danger">Movie Reviews</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
 
 <!--<p>
     <a asp-action="Create">Create New</a>
 </p>-->
-<table class="table table-hover text-center" >
+<table class="table table-hover text-center">
     <thead>
         <tr class="text-light text-center">
             <th>
@@ -24,11 +27,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.ReviewDescription)
             </th>
-            @if(User.IsInRole("Employee") || User.IsInRole("Manager"))
+            @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
             {
-            <th>
-                @Html.DisplayNameFor(model => model.ApprovalStatus)
-            </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApprovalStatus)
+                </th>
             }
             <th>
                 Edit
@@ -39,33 +42,34 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr class="table-secondary text-center text-dark">
-            <td>
-                @Html.DisplayFor(modelItem => item.ReviewDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Movie.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReviewDescription)
-            </td>
-            @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
-            {
-            <td>
-                @Html.DisplayFor(modelItem => item.ApprovalStatus)
-            </td>
-            }
-            <td>
-                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.MovieReviewID">Edit</a>
-            </td>
-            <td>
-                <a class="btn btn-outline-danger" asp-action="Details" asp-route-id="@item.MovieReviewID">Details</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr class="table-secondary text-center text-dark">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReviewDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReviewDescription)
+                </td>
+                @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApprovalStatus)
+                    </td>
+                }
+                <td>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.MovieReviewID">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-action="Details" asp-route-id="@item.MovieReviewID">Details</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

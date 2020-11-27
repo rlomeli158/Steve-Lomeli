@@ -421,18 +421,26 @@ namespace FinalProjectWorkspace.Controllers
             //AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
             AppUser userLoggedIn = await _userManager.FindByIdAsync(id);
 
-            if (User.IsInRole("Manager"))
+            if (User.IsInRole("Manager") || User.IsInRole("Employee"))
             {
                 var resetpswd = await _userManager.GeneratePasswordResetTokenAsync(userLoggedIn);
                 var outcome = await _userManager.ResetPasswordAsync(userLoggedIn, resetpswd, cpvm.NewPassword);
 
-                if (outcome.Succeeded)
+                if (outcome.Succeeded && User.IsInRole("Manager"))
                 {
                     //sign in the user with the new password
                     //await _signInManager.SignInAsync(userLoggedIn, isPersistent: false);
 
                     //send the user back to the home page
                     return RedirectToAction("ManagerHomeView", "Home");
+                }
+                else if (outcome.Succeeded && User.IsInRole("Employee"))
+                {
+                    //sign in the user with the new password
+                    //await _signInManager.SignInAsync(userLoggedIn, isPersistent: false);
+
+                    //send the user back to the home page
+                    return RedirectToAction("EmployeeHomeView", "Home");
                 }
                 else //attempt to change the password didn't work
                 {

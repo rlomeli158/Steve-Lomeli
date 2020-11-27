@@ -4,7 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<br />
+<h1 class="text-center text-danger">Movie Home</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
 
 <p>
     <a class="btn btn-outline-primary" asp-action="Create">Create New</a>
@@ -43,40 +46,41 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Overview)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tagline)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RunTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Revenue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Actors)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MPAARating)
-            </td>
-            <td>
-                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.MovieID">Edit</a> |
-                <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.MovieID">Details</a> 
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Overview)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tagline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RunTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Revenue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actors)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MPAARating)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.MovieID">Edit</a> |
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.MovieID">Details</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

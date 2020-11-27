@@ -4,9 +4,12 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit Movie Review</h1>
 
-<hr />
+    <br />
+<h1 class="text-center text-danger">Edit Movie Review</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -18,21 +21,21 @@
             </div>
             @if (User.Identity.IsAuthenticated)
             {
-                    @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
-                    {
-                        <div class="form-group">
-                            <label class="control-label">Rating: </label>
-                            @Html.DisplayFor(Model => Model.Rating, new { @class = "form-control" })
-                        </div>
-                    }
-                    @if (User.IsInRole("Customer"))
-                    {
-                        <div class="form-group">
-                            <label asp-for="Rating" class="control-label"></label>
-                            <input asp-for="Rating" class="form-control" />
-                            <span asp-validation-for="Rating" class="text-danger"></span>
-                        </div>
-                    }
+                @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
+                {
+                    <div class="form-group">
+                        <label class="control-label">Rating: </label>
+                        @Html.DisplayFor(Model => Model.Rating, new { @class = "form-control" })
+                    </div>
+                }
+                @if (User.IsInRole("Customer"))
+                {
+                    <div class="form-group">
+                        <label asp-for="Rating" class="control-label"></label>
+                        <input asp-for="Rating" class="form-control" />
+                        <span asp-validation-for="Rating" class="text-danger"></span>
+                    </div>
+                }
             }
 
             <div class="form-group">
