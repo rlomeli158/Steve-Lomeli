@@ -7,10 +7,11 @@
 
 @{List<string> seatsAvailable = ViewBag.AllSeatsAvailable;}
 
-<h1>Create</h1>
+<br />
+<h1 class="text-center text-danger">Create Ticket</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
 
-<h4>Ticket</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create" name="keyboard">
@@ -96,8 +97,7 @@
 
 
 
-<script>
-    $('#A1').click(function () {
+<script>$('#A1').click(function () {
         $('#output').val($(this).val());
         console.log($(this).val());
 
@@ -187,8 +187,6 @@
             $('').addClass('btn btn-info');
 
         })
-        */
-
-    </script>
+        */</script>
 
 

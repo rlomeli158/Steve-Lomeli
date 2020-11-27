@@ -33,7 +33,7 @@ namespace FinalProjectWorkspace.Models
         public Decimal TotalCost { get; set; }
 
         //Seats purchased
-        [Required(ErrorMessage = "Please select a seat.")]
+        //[Required(ErrorMessage = "Please select a seat.")]
         public String SeatNumber { get; set; }
 
         public Decimal TransactionPopcornPoints { get; set; }

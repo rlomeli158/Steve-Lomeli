@@ -4,9 +4,12 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit Movie Review</h1>
 
-<hr />
+    <br />
+<h1 class="text-center text-danger">Edit Movie Review</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -14,7 +17,7 @@
             <input type="hidden" asp-for="MovieReviewID" />
             <div class="form-group">
                 <label class="control-label">Title: </label>
-                @Html.DisplayFor(Model => Model.Movie.Title)
+                @Html.DisplayFor(Model => Model.Movie.Title, new { @class = "form-control" })
             </div>
             @if (User.Identity.IsAuthenticated)
             {
@@ -22,7 +25,7 @@
                 {
                     <div class="form-group">
                         <label class="control-label">Rating: </label>
-                        @Html.DisplayFor(Model => Model.Rating)
+                        @Html.DisplayFor(Model => Model.Rating, new { @class = "form-control" })
                     </div>
                 }
                 @if (User.IsInRole("Customer"))
@@ -40,7 +43,7 @@
                 <input asp-for="ReviewDescription" class="form-control" />
                 <span asp-validation-for="ReviewDescription" class="text-danger"></span>
             </div>
-            @if (User.Identity.IsAuthenticated && (User.IsInRole("Manager") || User.IsInRole("Employee") == true) && Model.ApprovalStatus == false)
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager") || User.IsInRole("Employee") && Model.ApprovalStatus == false)
             {
                 <div class="form-group form-check">
                     <label class="form-check-label">
@@ -56,6 +59,6 @@
 </div>
 
 <div>
-    <a class="btn btn-outline-warning" asp-action="Index">Back to Reviews</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 

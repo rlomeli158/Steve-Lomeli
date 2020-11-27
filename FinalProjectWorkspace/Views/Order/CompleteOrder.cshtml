@@ -5,7 +5,12 @@
 }
 
 <div class="text-center">
-<h1>Confirm Your Order</h1>
+    <br />
+
+    <h1 class="text-center text-danger">Confirm Your Order</h1>
+    <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+    <br />
+
 </div>
 <div class="list-group">
     <a class="list-group-item list-group-item-action flex-column align-items-start">
@@ -76,7 +81,8 @@
     }
 </div>
 
-<hr style="border:1px solid white" />
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
 
 <h5>Tickets on this Order</h5>
 <table class="table table-hover text-center">
@@ -100,19 +106,24 @@
             @if (t.DiscountName == DiscountNames.Matinee)
             {
                 <td>Matinee</td>
-            } else if (t.DiscountName == DiscountNames.Tuesday_Discount)
+            }
+            else if (t.DiscountName == DiscountNames.Tuesday_Discount)
             {
                 <td>Discount Tuesday</td>
-            } else if (t.DiscountName == DiscountNames.Senior_Discounts)
+            }
+            else if (t.DiscountName == DiscountNames.Senior_Discounts)
             {
                 <td>Senior</td>
-            } else if (t.DiscountName == DiscountNames.Matinee_and_Senior)
+            }
+            else if (t.DiscountName == DiscountNames.Matinee_and_Senior)
             {
                 <td>Matinee &amp; Senior</td>
-            } else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
+            }
+            else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
             {
                 <td>Discount Tuesday &amp; Senior</td>
-            } else
+            }
+            else
             {
                 <td>None</td>
             }

@@ -4,8 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>List of Genres</h1>
-
+    <br />
+<h1 class="text-center text-danger">All Genres</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
 <p>
     <a class="btn btn-outline-primary" asp-action="Create">Create New</a>
 </p>
@@ -19,17 +21,18 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.GenreName)
-            </td>
-            <td>
-                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.GenreID">Edit</a> |
-                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.GenreID">Delete</a>
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GenreName)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.GenreID">Edit</a> |
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.GenreID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 

@@ -4,9 +4,10 @@
     ViewData["Title"] = "Register";
 }
 
-<h1>Register a New User</h1>
-
-<hr />
+    <br />
+<h1 class="text-center text-danger">Register a New User</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Register" method="post">
@@ -112,8 +113,7 @@
     <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Home</a>
 </div>
 
-<script>
-    function myFunction() {
+<script>function myFunction() {
         var checkBox = document.getElementById("customer");
         var checkbox2 = document.getElementById("employee");
 
@@ -131,5 +131,4 @@
             checkBox.checked = false
 
         }
-    }
-</script>
+    }</script>

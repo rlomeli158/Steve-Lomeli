@@ -4,7 +4,10 @@
     ViewData["Title"] = "Transactions";
 }
 
-<h1>Transactions</h1>
+    <br />
+<h1 class="text-center text-danger">Transactions</h1>
+<hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
+<br />
 
 <table class="table table-hover text-center">
     <thead>
@@ -35,49 +38,49 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr class="table-secondary text-center text-dark">
-            <td>
-                @Html.DisplayFor(modelItem => item.TransactionNumber)
-            </td>
-            <td>
-                @{List<string> moviesWatched = new List<string>(); }
-                @foreach (var showing in item.Tickets)
-                {
-                    if (!moviesWatched.Contains(showing.Showing.Movie.Title))
+            <tr class="table-secondary text-center text-dark">
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransactionNumber)
+                </td>
+                <td>
+                    @{List<string> moviesWatched = new List<string>(); }
+                    @foreach (var showing in item.Tickets)
                     {
-                        moviesWatched.Add(showing.Showing.Movie.Title);
+                        if (!moviesWatched.Contains(showing.Showing.Movie.Title))
+                        {
+                            moviesWatched.Add(showing.Showing.Movie.Title);
+                        }
                     }
-                }
-                @foreach (string movie in moviesWatched)
-                {
-                    @movie
-                    <br />
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderTotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderStatus)
-            </td>
-            <td>
-                @{Int32 seatsSold = item.Tickets.Count(); }
-                @seatsSold
-            </td>
-            <td>
-                @if (item.PaidWithPopcornPoints == true)
-                {
-                    @:Yes
-                }
-                else
-                {
-                    @:No
-                }
-            </td>
-        </tr>
+                    @foreach (string movie in moviesWatched)
+                    {
+                        @movie
+                        <br />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </td>
+                <td>
+                    @{Int32 seatsSold = item.Tickets.Count(); }
+                    @seatsSold
+                </td>
+                <td>
+                    @if (item.PaidWithPopcornPoints == true)
+                    {
+                        @:Yes
+                    }
+                    else
+                    {
+                        @:No
+                    }
+                </td>
+            </tr>
         }
     </tbody>
 </table>
