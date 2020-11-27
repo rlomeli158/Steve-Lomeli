@@ -1,10 +1,13 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Movie.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
     <Files>
       <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="180" Column="49" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" Line="29" Column="68" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Browse.cshtml" />
       <File FileName="FinalProjectWorkspace/Views/Movie/SearchResults.cshtml" Line="162" Column="19" />
-      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="64" Column="47" />
+      <File FileName="FinalProjectWorkspace/Models/Movie.cs" Line="64" Column="18" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/Create.cshtml" Line="17" Column="45" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="476" Column="91" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="36" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,10 +15,11 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="TicketController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
-                <Node name="Movie.cs" selected="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">

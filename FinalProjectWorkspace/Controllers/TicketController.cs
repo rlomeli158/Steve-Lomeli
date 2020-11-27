@@ -414,6 +414,15 @@ namespace FinalProjectWorkspace.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Order, Users, User, Purchaser, TicketID, SeatNumber")] Ticket ticket, int SelectedShowing)
         {
+            if (ticket.SeatNumber == null)
+            {
+                ModelState.AddModelError("EmptyError", "Please select a seat.");
+
+                ViewBag.AllShowings = GetAllShowings();
+                ViewBag.AllSeatsAvailable = await GetSeatsAvailableAsync(SelectedShowing);
+                return View(ticket);
+                //return View("Error", new String[] { "This seat is taken." });
+            }
 
             //if user has not entered all fields, send them back to try again
             if (ModelState.IsValid == false)
@@ -461,11 +470,12 @@ namespace FinalProjectWorkspace.Controllers
             List<string> seatsAvailable = await GetSeatsAvailableAsync(selectedShowing.ShowingID);
             if (!seatsAvailable.Contains(ticket.SeatNumber))
             {
-                //ModelState.AddModelError("TakenError", "This seat is taken.");
+                ModelState.AddModelError("TakenError", "This seat is taken.");
 
-                //ViewBag.AllShowings = GetAllShowings();
-                //return View(ticket);
-                return View("Error", new String[] { "This seat is taken." });
+                ViewBag.AllShowings = GetAllShowings();
+                ViewBag.AllSeatsAvailable = await GetSeatsAvailableAsync(SelectedShowing);
+                return View(ticket);
+                //return View("Error", new String[] { "This seat is taken." });
             }
 
             foreach (Ticket t in dbOrder.Tickets)
