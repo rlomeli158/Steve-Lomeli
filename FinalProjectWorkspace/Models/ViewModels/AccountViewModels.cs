@@ -101,7 +101,7 @@ namespace FinalProjectWorkspace.Models
 
         [Display(Name = "Enter user birthday")]
         [Required(ErrorMessage = "Please enter your birthday!")]
-        [MinAge(13)] // 13 is the parameter of constructor. 
+        //[MinAge(13)] // 13 is the parameter of constructor. 
         [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
         [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
