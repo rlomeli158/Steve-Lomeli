@@ -19,9 +19,11 @@
                     <!--The link to products is provided as an example.  You can add more links for additional pages-->
                     <li class="nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
                     <li class="nav-item"><a asp-controller="Movie" asp-action="Browse" class="nav-link">Browse</a></li>
-
-                    <li class="nav-item"><a asp-controller="Order" asp-action="Index" class="nav-link">Orders</a></li>
-                    <li class="nav-item"><a asp-controller="MovieReview" asp-action="Index" class="nav-link">Movie Reviews</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item"><a asp-controller="Order" asp-action="Index" class="nav-link">Orders</a></li>
+                        <li class="nav-item"><a asp-controller="MovieReview" asp-action="Index" class="nav-link">Movie Reviews</a></li>
+                    }
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (User.IsInRole("Manager"))

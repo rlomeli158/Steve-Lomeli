@@ -75,7 +75,6 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "First Name")]
         public String FirstName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your middle initial!")]
         [Display(Name = "Middle Initial")]
         public String MiddleInitial { get; set; }
 
@@ -83,23 +82,23 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Last Name")]
         public String LastName { get; set; }
 
-        [Display(Name = "Enter user address")]
+        [Display(Name = "Enter address")]
         [Required(ErrorMessage = "Please enter your address!")]
         public String Address { get; set; }
 
-        [Display(Name = "Enter user city")]
+        [Display(Name = "Enter city")]
         [Required(ErrorMessage = "Please enter your city!")]
         public String City { get; set; }
 
-        [Display(Name = "Enter user state")]
+        [Display(Name = "Enter state")]
         [Required(ErrorMessage = "Please enter your state!")]
         public String State { get; set; }
 
-        [Display(Name = "Enter user Zip")]
+        [Display(Name = "Enter Zip")]
         [Required(ErrorMessage = "Please enter your Zip!")]
         public String Zip { get; set; }
 
-        [Display(Name = "Enter user birthday")]
+        [Display(Name = "Enter birthday")]
         [Required(ErrorMessage = "Please enter your birthday!")]
         //[MinAge(13)] // 13 is the parameter of constructor. 
         [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
