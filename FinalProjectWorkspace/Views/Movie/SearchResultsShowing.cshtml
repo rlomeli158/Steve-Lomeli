@@ -25,12 +25,6 @@
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Genre.GenreName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.MPAARating)
             </th>
             <th>
@@ -43,7 +37,10 @@
                 See Reviews
             </th>
             <th>
-                Upcoming Showtimes
+                Selected Show Date
+            </th>
+            <th>
+                Seats Available
             </th>
             <th>
                 Movie Details
@@ -56,12 +53,6 @@
             <tr class="table-secondary text-center text-dark">
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre.GenreName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MPAARating)
@@ -85,6 +76,7 @@
                     <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">Reviews</a>
                 </td>
                 <td>
+                    @{ Int32 showingCount = 0;}
                     @if (!item.Showings.Any())
                     {
                         @:None Upcoming!
@@ -97,6 +89,7 @@
                             {
                                 if (showing.ShowingDate == ViewBag.showingDate)
                                 {
+                                    showingCount = 1;
                                     @Html.DisplayFor(modelShowing => showing.ShowingDate) @:at @Html.DisplayFor(modelShowing => showing.StartTime) <br />
                                 }
                             }
@@ -141,6 +134,27 @@
                         }
                     }
                 </td>
+                @if (showingCount == 1)
+                {
+                    <td>
+                        @{Int32 seatCount = 0;}
+                        @foreach (var showing in item.Showings)
+                        {
+                            if (showing.SeatsAvailable != null)
+                            {
+                                seatCount = showing.SeatsAvailable.Count();
+                            }
+                        }
+                        @if (seatCount != 0)
+                        {
+                            @seatCount
+                        }
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
                 <td>
                     <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
                 </td>

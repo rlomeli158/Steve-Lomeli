@@ -9106,19 +9106,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/audreyhsien/.nuget/packages/": {}
+    "/Users/slomeli/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+      "projectUniqueName": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
       "projectName": "FinalProjectWorkspace",
-      "projectPath": "/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
-      "packagesPath": "/Users/audreyhsien/.nuget/packages/",
-      "outputPath": "/Users/audreyhsien/Desktop/Fall2020/MIS333K/KILLER K Final Project/GitHub/FinalProject/FinalProjectWorkspace/obj/",
+      "projectPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+      "packagesPath": "/Users/slomeli/.nuget/packages/",
+      "outputPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/audreyhsien/.config/NuGet/NuGet.Config"
+        "/Users/slomeli/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

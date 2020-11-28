@@ -1144,3 +1144,4 @@
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Price/Index.cshtml.g.cs
 /Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Showing/CopySchedule.cshtml.g.cs
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/FinalProjectWorkspace.csprojAssemblyReference.cache
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Debug/netcoreapp3.1/Razor/Views/Movie/SearchResultsShowing.cshtml.g.cs

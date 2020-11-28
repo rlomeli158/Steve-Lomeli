@@ -119,9 +119,9 @@ else
         <th>Movie Title</th>
         <th>Date</th>
         <th>Seat</th>
-        <th>Price</th>
-        <th>Discount</th>
-        <th>Discount Name</th>
+        <!--<th>Price</th>
+    <th>Discount</th>-->
+        <th>Ticket Type</th>
         <th>Total</th>
         @if (Model.OrderStatus == "Active")
         {
@@ -143,11 +143,11 @@ else
     <td>@Html.DisplayFor(ModelItem => t.Showing.Movie.Title)</td>
     <td>@Html.DisplayFor(ModelItem => t.Showing.ShowingDate) @Html.DisplayFor(ModelItem => t.Showing.StartTime)</td>
     <td>@Html.DisplayFor(ModelItem => t.SeatNumber)</td>
-    <td>@Html.DisplayFor(ModelItem => t.TicketPrice)</td>
-    <td>@Html.DisplayFor(ModelItem => t.DiscountAmount)</td>
+    <!--<td>Html.DisplayFor(ModelItem => t.TicketPrice)</td>
+    <td>Html.DisplayFor(ModelItem => t.DiscountAmount)</td>-->
     @if (t.DiscountName == DiscountNames.Matinee)
     {
-        <td>Matinee</td>
+        <td>Matinee Discount</td>
     }
     else if (t.DiscountName == DiscountNames.Tuesday_Discount)
     {
@@ -155,19 +155,27 @@ else
     }
     else if (t.DiscountName == DiscountNames.Senior_Discounts)
     {
-        <td>Senior</td>
+        <td>Senior Discount</td>
     }
     else if (t.DiscountName == DiscountNames.Matinee_and_Senior)
     {
-        <td>Matinee &amp; Senior</td>
+        <td>Matinee &amp; Senior Discounts</td>
     }
     else if (t.DiscountName == DiscountNames.Tuesday_and_Senior)
     {
-        <td>Discount Tuesday &amp; Senior</td>
+        <td>Discount Tuesday &amp; Senior Discounts</td>
     }
-    else
+    else if (t.TicketType == TicketTypes.Special_Event)
     {
-        <td>None</td>
+        <td>Special Event</td>
+    }
+    else if (t.TicketType == TicketTypes.Weekday_Regular)
+    {
+        <td>Weekday Discount</td>
+    }
+    else if (t.TicketType == TicketTypes.Weekend_Regular)
+    {
+        <td>Regular Weekend</td>
     }
     <td>@Html.DisplayFor(ModelItem => t.TotalCost)</td>
     @if (Model.OrderStatus != "Active")
@@ -227,14 +235,6 @@ else
                 <td>Order Total:</td>
                 <td>@Html.DisplayFor(model => model.OrderTotal)</td>
             </tr>
-            @if (Model.Tickets.Sum(t => t.DiscountAmount) > 0)
-            {
-                <tr>
-                    <td>Amount Saved With Discounts:</td>
-                    @{ Decimal discountSaved = Model.Tickets.Sum(t => t.DiscountAmount);}
-                    <td>$@discountSaved</td>
-                </tr>
-            }
             @if (Model.PaidWithPopcornPoints == true && Model.OrderStatus != "Active")
             {
                 <tr>

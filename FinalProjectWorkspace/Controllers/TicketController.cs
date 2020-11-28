@@ -175,10 +175,71 @@ namespace FinalProjectWorkspace.Controllers
             Ticket t = new Ticket();
 
             //find the order that should be associated with this ticket
-            Order dbOrder = _context.Order.Find(orderID);
+            //Order dbOrder = _context.Order.Find(orderID);
+
+            //Get tickets, showings, movies
+            Order dbOrder = _context.Order.Include(o => o.Purchaser)
+                                          .Include(o => o.Tickets)
+                                          .ThenInclude(o => o.Showing)
+                                          .ThenInclude(o => o.Movie)
+                                          .FirstOrDefault(o => o.OrderID == orderID);
 
             //set the new registration detail's registration equal to the registration you just found
             t.Order = dbOrder;
+
+
+            Showing selectedShowing = _context.Showings.Include(s => s.Movie)
+                                                .FirstOrDefault(s => s.ShowingID == showingID);
+            if (dbOrder.Tickets.Any())
+            {
+                foreach (Ticket ticket in dbOrder.Tickets)
+                {
+                    //If the showing time of the showing we're trying to add starts after the end time of the showing already on the order, it's good
+                    //it's also okay if they add more of the same showing
+                    if (selectedShowing.StartTime > ticket.Showing.EndTime || selectedShowing.ShowingID == ticket.Showing.ShowingID)
+                    {
+                        //it's good
+                    }
+                    //if it gets here, then the showing we're trying to add is before the showing already on the order.
+                    //We have to make sure that if it's before, the selected showing we want to add ends before the start time of the showing already on there
+                    //it's also okay if they add more of the same showing
+                    else if (selectedShowing.EndTime < ticket.Showing.StartTime || selectedShowing.ShowingID == ticket.Showing.ShowingID)
+                    {
+                        //it's good
+                    }
+                    else
+                    {
+                        return View("Error", new String[]
+                        { "This showing overlaps with a showing already on your order. Please delete " + ticket.Showing.Movie.Title + " to add this showing." });
+                    }
+                }
+            }
+
+            //The selected showing is already on the order
+            if (dbOrder.Tickets.Any(t => t.Showing.Movie == selectedShowing.Movie))
+            {
+                //Finding all the tickets that have the same movie
+                List<Ticket> ticketList = dbOrder.Tickets.Where(t => t.Showing.Movie == selectedShowing.Movie).ToList();
+
+                //The order already contains tickets to this showing
+                if (ticketList.Any(t => t.Showing.ShowingID != selectedShowing.ShowingID))
+                {
+                    //ModelState.AddModelError("TicketError", "There's already a ticket for a different showing on your order!");
+                    //return View(ticket);
+                    return View("Error", new String[] { "There's already a ticket for a different showing on your order!" });
+                }
+
+            }
+
+            AppUser user = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+            if (selectedShowing.Movie.MPAARating == MPAARatings.R || selectedShowing.Movie.MPAARating == MPAARatings.NC17)
+            {
+                if (user.Birthday.AddYears(18) >= DateTime.Now)
+                {
+                    return View("Error", new String[]
+                    { "You are too young to see this movie. Please find another one!" });
+                }
+            }
 
             //it should always go to the else because they need to buy a ticket from a showing
             if (showingID == null)
@@ -231,6 +292,7 @@ namespace FinalProjectWorkspace.Controllers
                     .Select(p => p.PriceAmount).First().ToString();
 
                     ticketIn.DiscountAmount = 0;
+                    ticketIn.TicketType = TicketTypes.Special_Event;
                     return showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
                 }
 
@@ -256,6 +318,7 @@ namespace FinalProjectWorkspace.Controllers
                                         .Where(p => p.PriceName == "SPECIAL_EVENT_PRICE")
                                         .Select(p => p.PriceAmount).First().ToString();
                     ticketIn.DiscountAmount = 0;
+                    ticketIn.TicketType = TicketTypes.Special_Event;
                     return showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
                 }
                 showingDay = ticket.Showing.ShowingDate.ToString("dddd");
@@ -301,6 +364,8 @@ namespace FinalProjectWorkspace.Controllers
                                             .Select(p => p.PriceAmount).First().ToString();
 
                         normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                        ticketIn.TicketType = TicketTypes.Weekend_Regular;
+
                     }
                     else
                     {
@@ -309,6 +374,8 @@ namespace FinalProjectWorkspace.Controllers
                                             .Select(p => p.PriceAmount).First().ToString();
 
                         normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+
+                        ticketIn.TicketType = TicketTypes.Weekday_Regular;
                     }
                    
                     ticketIn.DiscountAmount = normalPrice - showingPrice;
@@ -328,6 +395,7 @@ namespace FinalProjectWorkspace.Controllers
 
                     Decimal normalPrice = Decimal.Parse(normal, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
 
+                    ticketIn.TicketType = TicketTypes.Weekday_Regular;
                     ticketIn.DiscountAmount = normalPrice - showingPrice;
                     ticketIn.DiscountName = DiscountNames.Tuesday_Discount;
 
@@ -339,6 +407,9 @@ namespace FinalProjectWorkspace.Controllers
                                     .Select(p => p.PriceAmount).First().ToString();
 
                     showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                    ticketIn.TicketType = TicketTypes.Weekday_Regular;
+                    ticketIn.DiscountName = DiscountNames.Weekday_Discount;
+
                 }
                 else if (showingTime > compareTimeNoon) //WORKS FOR FRIDAY
                 {
@@ -347,6 +418,8 @@ namespace FinalProjectWorkspace.Controllers
                                     .Select(p => p.PriceAmount).First().ToString();
 
                     showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                    ticketIn.TicketType = TicketTypes.Weekend_Regular;
+
                 }
             }
             else
@@ -356,6 +429,8 @@ namespace FinalProjectWorkspace.Controllers
                                                     .Select(p => p.PriceAmount).First().ToString();
 
                 showingPrice = Decimal.Parse(price, NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
+                ticketIn.TicketType = TicketTypes.Weekend_Regular;
+
             }
 
             //Age Discount

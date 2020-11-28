@@ -225,15 +225,15 @@ namespace FinalProjectWorkspace.Controllers
                         }
                     }
 
-                    /*
-                    if(moviesToRemove != null)
-                    {
-                        foreach(Movie m in moviesToRemove)
-                        {
-                            SelectedMovies.Remove(m);
-                        }
-                    }
-                    */
+                    //Populate the view bag with a count of all job postings
+                    ViewBag.AllMovies = _context.Movies.Count();
+                    //Populate the view bag with a count of selected job postings
+                    ViewBag.SelectedMovies = SelectedMovies.Count();
+
+                    //return View("SearchResults", SelectedMovies.OrderBy(m => m.Showings.Min(s => s.StartTime))); //Put year in here right now, but it should be showtime, right? **********
+                    //return View("SearchResults", SelectedMovies.OrderBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
+                    return View("SearchResultsShowing", SelectedMovies.OrderBy(m => m.ShowingSortOrder).ThenBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
+
 
                 }
 
