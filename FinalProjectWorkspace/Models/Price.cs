@@ -24,11 +24,15 @@ namespace FinalProjectWorkspace.Models
 		//Constants for Weekend - all shows on weekends (Friday after 12:00 noon and all day Saturday and Sunday)
 		const Decimal WEEKENDREGULAR_PRICE = 12.00m;
 		*/
-		
+
+
 		public Int32 PriceID { get; set; }
 
+		[Display(Name = "Price Name")]
 		public String PriceName { get; set; }
 
+		[Display(Name = "Price Amount")]
+		[DisplayFormat(DataFormatString = "{0:C}")]
 		public Decimal PriceAmount { get; set; }
 		
 

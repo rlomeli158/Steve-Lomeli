@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProjectWorkspace.Controllers
 {
+    [Authorize(Roles = "Manager")]
 
     public class ShowingController : Controller
     {

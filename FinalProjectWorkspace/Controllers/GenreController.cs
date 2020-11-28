@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using FinalProjectWorkspace.DAL;
 using FinalProjectWorkspace.Models;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProjectWorkspace.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class GenreController : Controller
     {
         private readonly AppDbContext _context;

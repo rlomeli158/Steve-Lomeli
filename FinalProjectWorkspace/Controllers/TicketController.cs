@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace FinalProjectWorkspace.Controllers
 {
+    [Authorize]
     public class TicketController : Controller
     {
         private readonly AppDbContext _context;
