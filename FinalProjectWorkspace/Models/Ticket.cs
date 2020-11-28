@@ -13,7 +13,15 @@ namespace FinalProjectWorkspace.Models
         Tuesday_Discount,
         Senior_Discounts,
         Tuesday_and_Senior,
-        Matinee_and_Senior
+        Matinee_and_Senior,
+        Weekday_Discount
+    }
+
+    public enum TicketTypes
+    {
+        Weekday_Regular,
+        Weekend_Regular,
+        Special_Event
     }
 
     //Should be individual tickets
@@ -25,6 +33,8 @@ namespace FinalProjectWorkspace.Models
         public Decimal TicketPrice { get; set; }
 
         public DiscountNames DiscountName { get; set; }
+
+        public TicketTypes TicketType { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal DiscountAmount { get; set; } 

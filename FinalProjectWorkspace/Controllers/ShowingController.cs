@@ -505,7 +505,8 @@ namespace FinalProjectWorkspace.Controllers
                 }
             }
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { theatre = pvm.SelectedTheatre, showingDate = pvm.SelectedShowingDate });
+            //return RedirectToAction(nameof(Index));
         }
         // GET: Showing/Edit/5
         [Authorize(Roles = "Manager")]
