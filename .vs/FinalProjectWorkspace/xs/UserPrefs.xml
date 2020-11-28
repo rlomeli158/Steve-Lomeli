@@ -1,13 +1,7 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Movie/Details.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/AppUser.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" Line="20" Column="11" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/AccountViewModels.cs" Line="101" Column="31" />
-      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="25" Column="25" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Confirmed.cshtml" Line="39" Column="64" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="74" Column="7" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Edit.cshtml" Line="28" Column="96" />
-      <File FileName="FinalProjectWorkspace/Views/MovieReview/Details.cshtml" Line="41" Column="13" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,20 +11,11 @@
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
+                <Node name="AppUser.cs" selected="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="Movie" expanded="True">
-                  <Node name="Details.cshtml" selected="True" />
-                </Node>
-                <Node name="MovieReview" expanded="True" />
-                <Node name="Order" expanded="True" />
-                <Node name="RoleAdmin" expanded="True" />
-                <Node name="Shared" expanded="True" />
-                <Node name="Ticket" expanded="True" />
+                <Node name="Seed" expanded="True" />
               </Node>
             </Node>
           </Node>

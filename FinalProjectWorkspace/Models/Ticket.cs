@@ -44,6 +44,7 @@ namespace FinalProjectWorkspace.Models
 
         //Seats purchased
         //[Required(ErrorMessage = "Please select a seat.")]
+        [Display(Name = "Select Your Seat:")]
         public String SeatNumber { get; set; }
 
         public Decimal TransactionPopcornPoints { get; set; }

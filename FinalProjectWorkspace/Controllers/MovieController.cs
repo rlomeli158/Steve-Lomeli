@@ -180,7 +180,8 @@ namespace FinalProjectWorkspace.Controllers
             if (svm.SelectedShowingDate != null)
             {
                 DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
-                query = query.Where(m => m.Showings.Any(r => r.ShowingDate == datSelectedDate));
+                var CurrentTime = DateTime.Now;
+                query = query.Where(m => m.Showings.Where(m => m.StartTime > CurrentTime).Any(r => r.ShowingDate == datSelectedDate));
             }
 
             if (query != null) //they searched for something
@@ -209,14 +210,12 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
                     ViewBag.showingDate = datSelectedDate;
-                    List<Movie> moviesToRemove = new List<Movie>();
                     foreach (Movie m in SelectedMovies)
                     {
                         foreach(Showing s in m.Showings)
                         {
                             if(s.ShowingDate != datSelectedDate)
                             {
-                                moviesToRemove.Add(m);
                             }else
                             {
                                 var seatsAvailable = GetSeatsAvailable(s.ShowingID);

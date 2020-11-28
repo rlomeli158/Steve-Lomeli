@@ -26,7 +26,9 @@ namespace FinalProjectWorkspace.Controllers
         {
             //Initial query LINQ
             var query = from m in _context.Showings select m;
+            query = _context.Showings.Include(m => m.Movie);
             var CurrentDate = System.DateTime.Today;
+            var CurrentTime = System.DateTime.Now;
 
             if (SearchString != null && SearchString != "")
             {
@@ -41,13 +43,16 @@ namespace FinalProjectWorkspace.Controllers
 
             List<Showing> TodayShowing = query
                 .Include(m => m.Movie)
+                .Where(m => m.ShowingDate == CurrentDate)
                 .Where(m => m.Status == "Published")
+                .Where(m => m.StartTime > CurrentTime)
                 .ToList();
 
             List<Showing> ActiveShowing = query
                 .Include(m => m.Movie)
                 .Where(m => m.ShowingDate == CurrentDate)
                 .Where(m => m.Status == "Published")
+                .Where(m => m.StartTime > CurrentTime)
                 .ToList();
 
             ViewBag.AllShowings = ActiveShowing.Count();
