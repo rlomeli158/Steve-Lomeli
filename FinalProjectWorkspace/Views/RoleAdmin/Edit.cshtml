@@ -3,7 +3,7 @@
     ViewBag.Title = "Edit Role";
 }
 
-    <br />
+<br />
 <h1 class="text-center text-danger">Edit Role: @Model.Role.Name</h1>
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
@@ -14,85 +14,105 @@
 {
     <input type="hidden" name="roleName" value="@Model.Role.Name" />
     <div class="panel panel-primary">
-        <div class="panel-heading">Add To @Model.Role.Name</div>
-        <table class="table table-striped">
-            @if (Model.NonMembers.Count() == 0)
-            {
-                <tr>
-                    <td colspan="3">All Users Are Members</td>
-                </tr>
-            }
-            else
-            {
-                <tr>
-                    <!--TODO: Add additional user fields here-->
-                    <!--First name is included as an example-->
-                    <th>First Name</th>
-                    <th>Middle Initial</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Add to Role</th>
-                </tr>
-                foreach (AppUser user in Model.NonMembers)
+
+        @if (User.IsInRole("Manager"))
+        {
+
+            <div class="panel-heading">Add To @Model.Role.Name</div>
+            <table class="table table-striped">
+                @if (Model.NonMembers.Count() == 0)
                 {
                     <tr>
-                        <!--TODO: Add additional fields here-->
-                        <!--FirstName is included as an example-->
-                        <td>@user.FirstName</td>
-                        <td>@user.MiddleInitial</td>
-                        <td>@user.LastName</td>
-                        <td>@user.Email</td>
-                        <td>
-                            <input type="checkbox" name="IdsToAdd" value="@user.Id" />
-
-                            @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })
-                        </td>
+                        <td colspan="3">All Users Are Members</td>
                     </tr>
                 }
-            }
-        </table>
+                else
+                {
+                    <tr>
+                        <!--TODO: Add additional user fields here-->
+                        <!--First name is included as an example-->
+                        <th>First Name</th>
+                        <th>Middle Initial</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Add to Role</th>
+                    </tr>
+                    foreach (AppUser user in Model.NonMembers)
+                    {
+                        <tr>
+                            <!--TODO: Add additional fields here-->
+                            <!--FirstName is included as an example-->
+                            <td>@user.FirstName</td>
+                            <td>@user.MiddleInitial</td>
+                            <td>@user.LastName</td>
+                            <td>@user.Email</td>
+                            <td>
+                                <input type="checkbox" name="IdsToAdd" value="@user.Id" />
+
+                                @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        }
     </div>
+
 
     <div class="panel panel-primary">
         <div class="panel-heading">Remove from @Model.Role.Name</div>
         <table class="table table-striped">
-            @if (Model.Members.Count() == 0)
+
+            @if (User.IsInRole("Employee") || (User.IsInRole("Manager")))
             {
-                <tr>
-                    <td colspan="3">No Users Are Members</td>
-                </tr>
-            }
-            else
-            {
-                <tr>
-                    <!--TODO: Add additional user fields here-->
-                    <!--First name is included as an example-->
-                    <th>First Name</th>
-                    <th>Middle Initial</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Remove From Role</th>
-                </tr>
-                foreach (AppUser user in Model.Members)
+                @if (Model.Members.Count() == 0)
                 {
                     <tr>
-                        <!--TODO: Add additional fields here-->
-                        <!--FirstName is included as an example-->
-                        <td>@user.FirstName</td>
-                        <td>@user.MiddleInitial</td>
-                        <td>@user.LastName</td>
-                        <td>@user.Email</td>
-                        <td>
-                            <input type="checkbox" name="IdsToRemove" value="@user.Id" />
-
-                            @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })
-                        </td>
+                        <td colspan="3">No Users Are Members</td>
                     </tr>
                 }
-            }
-        </table>
-    </div>
+                else
+                {
+                    <tr>
+                        <!--TODO: Add additional user fields here-->
+                        <!--First name is included as an example-->
+                        <th>First Name</th>
+                        <th>Middle Initial</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Remove from Role</th>
+                    </tr>
+                    foreach (AppUser user in Model.Members)
+                    {
+                        <tr>
+                            <!--TODO: Add additional fields here-->
+                            <!--FirstName is included as an example-->
+                            <td>@user.FirstName</td>
+                            <td>@user.MiddleInitial</td>
+                            <td>@user.LastName</td>
+                            <td>@user.Email</td>
+                            <td>
 
-    <button type="submit" class="btn btn-outline-danger">Save</button>
-    <a asp-action="Index" class="btn btn-outline-success">Cancel</a>
-}
+                                @if (User.IsInRole("Manager"))
+                                {
+                                <input type="checkbox" name="IdsToRemove" value="@user.Id" />
+                                }
+                                
+                                @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+            </table>
+        </div>
+
+
+
+        @if (User.IsInRole("Manager"))
+            {
+                 <button type="submit" class="btn btn-outline-danger">Save</button>
+            }
+
+        <a asp-action="Index" class="btn btn-outline-success">Cancel</a>
+    }

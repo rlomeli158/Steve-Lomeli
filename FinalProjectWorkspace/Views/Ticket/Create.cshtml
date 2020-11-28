@@ -12,8 +12,8 @@
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
 
-<div class="row">
-    <div class="col-md-4">
+<div class="text-center">
+    <div class="text-center">
         <form asp-action="Create" name="keyboard">
             <div asp-validation-summary="All" class="text-danger"></div>
             @Html.HiddenFor(model => model.Order.OrderID)
@@ -22,7 +22,11 @@
                 <label class="control-label">Showing:</label>
                 @Html.DropDownList("SelectedShowing", (SelectList)ViewBag.AllShowings, new { @class = "form-control" })
             </div>
+            <div class="text-center">
+                <h3 class="text-danger text-center">S C R E E N</h3>
+            </div>
             <div>
+                
                 <div style="display:inline-flex;grid-column-gap:15px">
                     <input type="button" id="A1" value="A1"
                            class="btn btn-@(seatsAvailable.Contains("A1") ? "success" : "danger")">
@@ -87,6 +91,7 @@
         <span asp-validation-for="SeatNumber" class="text-danger"></span>
     </div>
         -->
+            <br/>
             <div class="form-group">
                 <input type="submit" value="Add to Order" class="btn btn-outline-primary" />
                 <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index" >Back to Home</a>

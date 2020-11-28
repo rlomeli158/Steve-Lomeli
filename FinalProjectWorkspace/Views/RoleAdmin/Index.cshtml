@@ -11,9 +11,9 @@
 <br />
 
 <div class="panel panel-primary">
-    <div class="panel-heading">Roles</div>
-    <table class="table table-striped">
-        <tr>
+
+    <table class="table table-hover text-center">
+        <tr class="text-light text-center">
             <th>ID</th>
             <th>Name</th>
             <th>Users</th>
@@ -23,7 +23,7 @@
         {
             @if (Model.Count() == 0)
             {
-                <tr>
+                <tr class="table-secondary text-center text-dark">
                     <td colspan="4" class="text-center">No roles</td>
                 </tr>
             }
@@ -31,7 +31,7 @@
             {
                 foreach (RoleEditModel role in Model)
                 {
-                    <tr>
+                    <tr class="table-secondary text-center text-dark">
                         <td>@role.Role.Id</td>
                         <td>@role.Role.Name</td>
                         <td>
@@ -46,7 +46,7 @@
                             }
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = role.Role.Id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Edit", "Edit", new { id = role.Role.Id }, new { @class = "btn btn-info" })
                         </td>
                     </tr>
                 }
@@ -57,7 +57,7 @@
         {
             @if (Model.Count() == 0)
             {
-                <tr>
+                <tr class="table-secondary text-center text-dark">
                     <td colspan="4" class="text-center">No roles</td>
                 </tr>
             }
@@ -65,7 +65,7 @@
             {
                 foreach (RoleEditModel role in Model)
                 {
-                    <tr>
+                    <tr class="table-secondary text-center text-dark">
                         <td>@role.Role.Id</td>
                         <td>@role.Role.Name</td>
                         <td>
@@ -79,7 +79,7 @@
                             }
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = role.Role.Id }, new { @class = "btn btn-outline-primary" })
+                            @Html.ActionLink("Edit", "Edit", new { id = role.Role.Id }, new { @class = "btn btn-outline-info" })
                         </td>
                     </tr>
                 }

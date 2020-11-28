@@ -313,6 +313,9 @@ namespace FinalProjectWorkspace.Controllers
                 return View("Error");
             }
 
+            //if (User.IsInRole("Manager") )
+
+
             if (ModelState.IsValid)
             {
                 AppUser user = _context.Users.FirstOrDefault(u => u.Id == evm.UserID);

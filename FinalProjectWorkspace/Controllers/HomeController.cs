@@ -26,7 +26,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             //Initial query LINQ
             var query = from m in _context.Showings select m;
-            var CurrentDate = System.DateTime.Now;
+            var CurrentDate = System.DateTime.Today;
 
             if (SearchString != null && SearchString != "")
             {
@@ -35,7 +35,8 @@ namespace FinalProjectWorkspace.Controllers
 
             else
             {
-                query = query.Where(m => m.ShowingDate >= CurrentDate);
+                query = query.Where(m => m.ShowingDate == CurrentDate).Where(m => m.Status == "Published");
+                
             }
 
             List<Showing> TodayShowing = query
@@ -45,7 +46,7 @@ namespace FinalProjectWorkspace.Controllers
 
             List<Showing> ActiveShowing = query
                 .Include(m => m.Movie)
-                .Where(m => m.ShowingDate >= CurrentDate)
+                .Where(m => m.ShowingDate == CurrentDate)
                 .Where(m => m.Status == "Published")
                 .ToList();
 
@@ -189,6 +190,9 @@ namespace FinalProjectWorkspace.Controllers
         [Authorize(Roles = "Manager")]
         public IActionResult ManagerHomeView()
         {
+            AppUser user = _context.Users.First(u => u.UserName == User.Identity.Name);
+            ViewBag.PersonName = user.FirstName;
+
             return View();
         }
 
