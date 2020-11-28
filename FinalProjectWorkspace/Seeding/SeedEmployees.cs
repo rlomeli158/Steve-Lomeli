@@ -36,6 +36,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp2.City = "Georgetown";
 				newUserEmp2.State = "TX";
 				newUserEmp2.Zip = "78628";
+				newUserEmp2.PhoneNumber = "9074653365";
 				newUserEmp2.Birthday = new DateTime(1958, 4, 25);
 
 
@@ -67,6 +68,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp3.City = "Austin";
 				newUserEmp3.State = "TX";
 				newUserEmp3.Zip = "78746";
+				newUserEmp3.PhoneNumber = "9073876657";
 				newUserEmp3.Birthday = new DateTime(1959, 7, 2);
 
 
@@ -98,6 +100,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp4.City = "Austin";
 				newUserEmp4.State = "TX";
 				newUserEmp4.Zip = "78727";
+				newUserEmp4.PhoneNumber = "9074748452";
 				newUserEmp4.Birthday = new DateTime(1964, 9, 2);
 
 
@@ -129,6 +132,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp5.City = "Austin";
 				newUserEmp5.State = "TX";
 				newUserEmp5.Zip = "78712";
+				newUserEmp5.PhoneNumber = "9078746718";
 				newUserEmp5.Birthday = new DateTime(1992, 3, 30);
 
 
@@ -160,6 +164,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp6.City = "San Marcos";
 				newUserEmp6.State = "TX";
 				newUserEmp6.Zip = "78666";
+				newUserEmp6.PhoneNumber = "9075479167";
 				newUserEmp6.Birthday = new DateTime(1996, 12, 29);
 
 
@@ -191,6 +196,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp7.City = "Austin";
 				newUserEmp7.State = "TX";
 				newUserEmp7.Zip = "78712";
+				newUserEmp7.PhoneNumber = "9074590929";
 				newUserEmp7.Birthday = new DateTime(1970, 8, 12);
 
 
@@ -222,6 +228,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp8.City = "Austin";
 				newUserEmp8.State = "TX";
 				newUserEmp8.Zip = "78729";
+				newUserEmp8.PhoneNumber = "9073744746";
 				newUserEmp8.Birthday = new DateTime(1970, 12, 18);
 
 
@@ -253,6 +260,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp9.City = "San Antonio";
 				newUserEmp9.State = "TX";
 				newUserEmp9.Zip = "78758";
+				newUserEmp9.PhoneNumber = "9078178335";
 				newUserEmp9.Birthday = new DateTime(1971, 3, 11);
 
 
@@ -284,6 +292,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp10.City = "Austin";
 				newUserEmp10.State = "TX";
 				newUserEmp10.Zip = "78746";
+				newUserEmp10.PhoneNumber = "9074512631";
 				newUserEmp10.Birthday = new DateTime(1972, 12, 20);
 
 
@@ -315,6 +324,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp11.City = "Austin";
 				newUserEmp11.State = "TX";
 				newUserEmp11.Zip = "78712";
+				newUserEmp11.PhoneNumber = "9079457399";
 				newUserEmp11.Birthday = new DateTime(1973, 4, 28);
 
 
@@ -346,6 +356,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp12.City = "Austin";
 				newUserEmp12.State = "TX";
 				newUserEmp12.Zip = "78705";
+				newUserEmp12.PhoneNumber = "9078752943";
 				newUserEmp12.Birthday = new DateTime(1978, 6, 21);
 
 
@@ -377,6 +388,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp13.City = "Cedar Park";
 				newUserEmp13.State = "TX";
 				newUserEmp13.Zip = "78613";
+				newUserEmp13.PhoneNumber = "9075571146";
 				newUserEmp13.Birthday = new DateTime(1993, 3, 16);
 
 
@@ -408,6 +420,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp14.City = "Austin";
 				newUserEmp14.State = "TX";
 				newUserEmp14.Zip = "78755";
+				newUserEmp14.PhoneNumber = "9074510084";
 				newUserEmp14.Birthday = new DateTime(1986, 5, 25);
 
 
@@ -439,6 +452,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp15.City = "Austin";
 				newUserEmp15.State = "TX";
 				newUserEmp15.Zip = "78701";
+				newUserEmp15.PhoneNumber = "9018833432";
 				newUserEmp15.Birthday = new DateTime(1986, 6, 6);
 
 
@@ -470,6 +484,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp16.City = "Austin";
 				newUserEmp16.State = "TX";
 				newUserEmp16.Zip = "78760";
+				newUserEmp16.PhoneNumber = "9075554545";
 				newUserEmp16.Birthday = new DateTime(1989, 10, 16);
 
 
@@ -501,6 +516,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp17.City = "Austin";
 				newUserEmp17.State = "TX";
 				newUserEmp17.Zip = "78734";
+				newUserEmp17.PhoneNumber = "9075524141";
 				newUserEmp17.Birthday = new DateTime(1988, 4, 5);
 
 
@@ -532,6 +548,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp18.City = "Kyle";
 				newUserEmp18.State = "TX";
 				newUserEmp18.Zip = "78640";
+				newUserEmp18.PhoneNumber = "9556662323";
 				newUserEmp18.Birthday = new DateTime(1993, 2, 22);
 
 
@@ -563,6 +580,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp19.City = "Austin";
 				newUserEmp19.State = "TX";
 				newUserEmp19.Zip = "78747";
+				newUserEmp19.PhoneNumber = "9886662222";
 				newUserEmp19.Birthday = new DateTime(1996, 6, 29);
 
 
@@ -594,6 +612,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp20.City = "Austin";
 				newUserEmp20.State = "TX";
 				newUserEmp20.Zip = "78758";
+				newUserEmp20.PhoneNumber = "9221113333";
 				newUserEmp20.Birthday = new DateTime(1997, 12, 29);
 
 
@@ -625,6 +644,7 @@ namespace FinalProjectWorkspace.Seeding
 				newUserEmp21.City = "Buda";
 				newUserEmp21.State = "TX";
 				newUserEmp21.Zip = "78712";
+				newUserEmp21.PhoneNumber = "9893336666";
 				newUserEmp21.Birthday = new DateTime(1999, 12, 17);
 
 
