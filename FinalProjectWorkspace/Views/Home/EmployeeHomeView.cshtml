@@ -1,4 +1,4 @@
-﻿
+﻿@model AppUser
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col mb-4">
                     <p class="sansserif" style="color:darksalmon;">Movie Search</p>
-                    <a class="btn btn-primary" asp-action="MovieSearch">Movie Search</a>
+                    <a class="btn btn-primary" asp-controller="Movie" asp-action="Browse">Movie Search</a>
                 </div>
             </div>
         </center>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col mb-4">
                         <p class="sansserif" style="color:darksalmon;">Edit Profile</p>
-                        <a class="btn btn-primary" asp-action="EditProfile">Edit Profile</a>
+                        <a class="btn btn-primary" asp-controller="Account" asp-action="EditAccount" asp-route-id="@Model.Id">Edit Profile</a>
                     </div>
                 </div>
             </center>

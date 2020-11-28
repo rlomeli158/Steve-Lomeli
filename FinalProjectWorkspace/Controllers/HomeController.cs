@@ -186,7 +186,7 @@ namespace FinalProjectWorkspace.Controllers
             AppUser user = _context.Users.First(u => u.UserName == User.Identity.Name);
             ViewBag.PersonName = user.FirstName;
 
-            return View();
+            return View(user);
         }
 
         
@@ -198,7 +198,7 @@ namespace FinalProjectWorkspace.Controllers
             AppUser user = _context.Users.First(u => u.UserName == User.Identity.Name);
             ViewBag.PersonName = user.FirstName;
 
-            return View();
+            return View(user);
         }
 
         // this action displays the OrderCheckout view

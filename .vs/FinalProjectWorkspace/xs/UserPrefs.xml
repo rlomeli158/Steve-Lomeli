@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/AccountController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Program.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="68" Column="1" />
-      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="404" Column="54" />
-      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Account/ChangePasswordEmpMan.cshtml" Line="17" Column="76" />
+      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" Line="2" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Index.cshtml" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" />
+      <File FileName="FinalProjectWorkspace/Program.cs" Line="18" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,13 +12,15 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="AccountController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Movie" expanded="True" />
               </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -31,7 +33,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Catchpoint exceptionName="System.NullReferenceException" includeSubclasses="True" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="427" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
