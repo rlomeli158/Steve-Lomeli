@@ -44,32 +44,39 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr class="table-secondary text-center text-dark">
+        <tr class="table-secondary text-center text-dark">
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewDescription)
+            </td>
+            @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
+            {
                 <td>
-                    @Html.DisplayFor(modelItem => item.ReviewDate)
+                    @Html.DisplayFor(modelItem => item.ApprovalStatus)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Movie.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReviewDescription)
-                </td>
-                @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
-                {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ApprovalStatus)
-                    </td>
-                }
-                <td>
+            }
+            <td>
+            @if (User.IsInRole("Manager") || User.IsInRole("Employee") || item.User.UserName == User.Identity.Name)
+            {
                     <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.MovieReviewID">Edit</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-danger" asp-action="Details" asp-route-id="@item.MovieReviewID">Details</a>
-                </td>
-            </tr>
+            }
+            else
+            {
+                @:Unable to Edit
+            }
+            </td>
+            <td>
+                <a class="btn btn-outline-danger" asp-action="Details" asp-route-id="@item.MovieReviewID">Details</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

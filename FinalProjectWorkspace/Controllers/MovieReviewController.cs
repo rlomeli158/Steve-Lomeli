@@ -30,12 +30,14 @@ namespace FinalProjectWorkspace.Controllers
                 if (User.IsInRole("Manager") || User.IsInRole("Employee"))
                 {
                     MovieReviews = _context.MovieReview
+                                    .Include(mr => mr.User)
                                     .Include(mr => mr.Movie)
                                     .ToList();
                 }
                 else //user is a customer
                 {
                     MovieReviews = _context.MovieReview
+                                    .Include(mr => mr.User)
                                     .Include(mr => mr.Movie)
                                     .Where(mr => mr.User.UserName == User.Identity.Name)
                                     .ToList();
@@ -47,6 +49,7 @@ namespace FinalProjectWorkspace.Controllers
             else
             {
                 List<MovieReview> mrs = _context.MovieReview
+                                          .Include(mr => mr.User)
                                           .Include(mr => mr.Movie)
                                           .Where(mr => mr.Movie.MovieID == movieID)
                                           .Where(mr => mr.ApprovalStatus == true)
@@ -148,7 +151,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 return NotFound();
             }
-            if (User.IsInRole("Manager") == false && User.IsInRole("Employee") == false && movieReview.User != User.Identity)
+            if (User.IsInRole("Manager") == false && User.IsInRole("Employee") == false && movieReview.User.UserName != User.Identity.Name)
             {
                 return View("Error", new string[] { "You are not authorized to edit this order!" });
             }
