@@ -16,16 +16,18 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MovieReviewID" />
             <div class="form-group">
-                <label class="control-label">Title: </label>
-                @Html.DisplayFor(Model => Model.Movie.Title, new { @class = "form-control" })
+                <label asp-for="Movie.Title" class="control-label"></label>
+                <input readonly asp-for="Movie.Title" class="form-control" />
+                <span asp-validation-for="Movie.Title" class="text-danger"></span>
             </div>
             @if (User.Identity.IsAuthenticated)
             {
                 @if (User.IsInRole("Employee") || User.IsInRole("Manager"))
                 {
                     <div class="form-group">
-                        <label class="control-label">Rating: </label>
-                        @Html.DisplayFor(Model => Model.Rating, new { @class = "form-control" })
+                        <label asp-for="Rating" class="control-label"></label>
+                        <input readonly asp-for="Rating" class="form-control" />
+                        <span asp-validation-for="Rating" class="text-danger"></span>
                     </div>
                 }
                 @if (User.IsInRole("Customer"))
@@ -43,13 +45,17 @@
                 <input asp-for="ReviewDescription" class="form-control" />
                 <span asp-validation-for="ReviewDescription" class="text-danger"></span>
             </div>
-            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager") || User.IsInRole("Employee") && Model.ApprovalStatus == false)
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Manager") || User.IsInRole("Employee"))
             {
-                <div class="form-group form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" asp-for="ApprovalStatus" /> @Html.DisplayNameFor(model => model.ApprovalStatus)
-                    </label>
-                </div>
+                @if (Model.ApprovalStatus == false)
+                {
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="ApprovalStatus" /> @Html.DisplayNameFor(model => model.ApprovalStatus)
+                        </label>
+                    </div>
+                }
+                
             }
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -59,6 +65,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-warning text-center">Back to Reviews</a>
 </div>
 

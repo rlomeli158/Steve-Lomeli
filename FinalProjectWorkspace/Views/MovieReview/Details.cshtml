@@ -4,47 +4,73 @@
     ViewData["Title"] = "Details";
 }
 
-    <br />
+<br />
 <h1 class="text-center text-danger">Movie Review Details</h1>
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
 
-<div>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReviewDate)
-        </dt>
-        <dd class="col-sm-10">
+<div class="list-group">
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.ReviewDate)
+            </h5>
+        </div>
+        <p class="mb-1">
             @Html.DisplayFor(model => model.ReviewDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie.Title)
-        </dt>
-        <dd class="col-sm-10">
+        </p>
+    </a>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.Movie.Title)
+            </h5>
+        </div>
+        <p class="mb-1">
             @Html.DisplayFor(model => model.Movie.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-        <dd class="col-sm-10">
+        </p>
+    </a>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.Rating)
+            </h5>
+        </div>
+        <p class="mb-1">
             @Html.DisplayFor(model => model.Rating)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReviewDescription)
-        </dt>
-        <dd class="col-sm-10">
+        </p>
+    </a>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.ReviewDescription)
+            </h5>
+        </div>
+        <p class="mb-1">
             @Html.DisplayFor(model => model.ReviewDescription)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ApprovalStatus)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ApprovalStatus)
-        </dd>
-    </dl>
+        </p>
+    </a>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+                @Html.DisplayNameFor(model => model.ApprovalStatus)
+            </h5>
+        </div>
+        <p class="mb-1">
+            @if (Model.ApprovalStatus == true)
+            {
+                @:Approved
+            }
+            else
+            {
+                @:Not Approved Yet
+            }
+        </p>
+    </a>
+
 </div>
+<br/>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.MovieReviewID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.MovieReviewID" class="btn btn-outline-primary text-center">Edit</a>
+    <a asp-action="Index" class="btn btn-outline-warning text-center">Back to Reviews</a>
 </div>
