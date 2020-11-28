@@ -401,12 +401,24 @@ namespace FinalProjectWorkspace.Controllers
 
         //Logic for change password
         // GET: /Account/ChangePassword
-        public ActionResult ChangePassword()
+        public async Task<ActionResult> ChangePasswordAsync(String id)
+        {
+            AppUser userLoggedIn = await _userManager.FindByIdAsync(id);
+
+            if (User.IsInRole("Manager") || User.IsInRole("Employee") && userLoggedIn.UserName != User.Identity.Name)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("ChangePasswordEmpMan","Account", new { id });
+            }
+        }
+
+        public IActionResult ChangePasswordEmpMan(String id)
         {
             return View();
         }
-
-        
 
         // POST: /Account/ChangePassword
         [HttpPost]
@@ -424,7 +436,7 @@ namespace FinalProjectWorkspace.Controllers
             //AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
             AppUser userLoggedIn = await _userManager.FindByIdAsync(id);
 
-            if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+            if (User.IsInRole("Manager") || User.IsInRole("Employee") && userLoggedIn.UserName != User.Identity.Name)
             {
                 var resetpswd = await _userManager.GeneratePasswordResetTokenAsync(userLoggedIn);
                 var outcome = await _userManager.ResetPasswordAsync(userLoggedIn, resetpswd, cpvm.NewPassword);
