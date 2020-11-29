@@ -773,10 +773,13 @@ namespace FinalProjectWorkspace.Controllers
                 if(showing.Status == "Cancelled")
                 {
                     dbShowing.Status = "Cancelled";
+                }else if(dbShowing.Status == "Published")
+                {
+                    dbShowing.Status = "Published";
+
                 }else
                 {
                     dbShowing.Status = "Unpublished";
-
                 }
 
                 //Compare showing you want to add to the other showings on the same date for business rules

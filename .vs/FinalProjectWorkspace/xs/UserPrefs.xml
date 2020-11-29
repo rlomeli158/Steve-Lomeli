@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Showing/Edit.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="779" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="782" Column="54" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="56" Column="35" />
+      <File FileName="FinalProjectWorkspace/Seeding/SeedMovieSchedule.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,13 +15,13 @@
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
               </Node>
-              <Node name="Seeding" expanded="True" />
+              <Node name="Seeding" expanded="True">
+                <Node name="SeedMovieSchedule.cs" selected="True" />
+              </Node>
               <Node name="Views" expanded="True">
                 <Node name="Movie" expanded="True" />
                 <Node name="Order" expanded="True" />
-                <Node name="Showing" expanded="True">
-                  <Node name="Edit.cshtml" selected="True" />
-                </Node>
+                <Node name="Showing" expanded="True" />
               </Node>
             </Node>
           </Node>
