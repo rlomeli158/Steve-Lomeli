@@ -348,6 +348,12 @@ namespace FinalProjectWorkspace.Controllers
                 return View(cvm);
             }
 
+            if (DateTime.Now > cvm.SelectedToDate)
+            {
+                return View("Error", new string[]
+                { "You cannot copy schedules to the past." });
+            }
+
             //Get the showings you're copying from
             List<Showing> originalShowings = _context.Showings
                                             .Include(s => s.Movie)
@@ -358,6 +364,17 @@ namespace FinalProjectWorkspace.Controllers
             List<Showing> showingsToCompareForOtherTheatre = _context.Showings
                                 .Where(s => s.ShowingDate == cvm.SelectedToDate)
                                 .Where(s => s.Theatre != cvm.SelectedToTheatre).ToList();
+
+            //Get the showings from the other theater on the day you're trying to copy to
+            List<Showing> showingsToCompareForCurrentTheatre = _context.Showings
+                                .Where(s => s.ShowingDate == cvm.SelectedToDate)
+                                .Where(s => s.Theatre == cvm.SelectedToTheatre).ToList();
+
+            if (showingsToCompareForCurrentTheatre.Count() >= 1)
+            {
+                return View("Error", new string[]
+                { "To ensure no errors, please delete all showings at " + cvm.SelectedToTheatre +" on " + cvm.SelectedToDate.Value.ToShortDateString() + " before copying to ensure we can fully copy schedules." });
+            }
 
             //For each showing you're copying from
             foreach (Showing s in originalShowings)
