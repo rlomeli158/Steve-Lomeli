@@ -761,19 +761,23 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     return View("Error", new string[] { "You cannot reschedule this movie for the past!" });
                 }
+                if (dbShowing.Status == "Published" && DateTime.Now.AddHours(1) > dbShowing.StartTime)
+                {
+                    return View("Error", new string[] { "You cannot reschedule this movie with less than 1 hour's notice!" });
+                }
                 dbShowing.EndTime = dbShowing.StartTime.AddMinutes(dbShowing.Movie.RunTime);
-                //TODO: When we find out seats, change this
                 dbShowing.SeatsAvailable = showing.SeatsAvailable;
 
                 dbShowing.SpecialEvent = showing.SpecialEvent;
                 //TODO: If the showing was published before, should it still be published, or should it go to unpublished?
-                dbShowing.Status = showing.Status;
+                if(showing.Status == "Cancelled")
+                {
+                    dbShowing.Status = "Cancelled";
+                }else
+                {
+                    dbShowing.Status = "Unpublished";
 
-
-                //TODO: If we don't delete showings when they're cancelled, then add code here to check if status = inactive/cancelled
-                //If so, then send customers emails, see if we have to set tickets to inactive anywhere *i don't think so*
-                //because its not in the requirements.
-                //TODO: if a ticket that was cancelled was paid for with popcorn points, then completely refund them the popcorn points
+                }
 
                 //Compare showing you want to add to the other showings on the same date for business rules
                 List<Showing> showingsToCompare = _context.Showings
@@ -784,7 +788,7 @@ namespace FinalProjectWorkspace.Controllers
                 //for each showing on the same day
                 foreach (Showing s in showingsToCompare)
                 {
-                    if (dbShowing.StartTime == s.StartTime)
+                    if (dbShowing.StartTime == s.StartTime && dbShowing.ShowingID != s.ShowingID)
                     {
                         return View("Error", new string[]
                         { "The showing you're wanting to add starts at the same time as " + s.Movie.Title});
