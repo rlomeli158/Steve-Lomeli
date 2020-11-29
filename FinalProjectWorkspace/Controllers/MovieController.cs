@@ -215,7 +215,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
                 var CurrentTime = DateTime.Now;
-                query = query.Where(m => m.Showings.Where(m => m.StartTime > CurrentTime).Any(r => r.ShowingDate == datSelectedDate));
+                query = query.Where(m => m.Showings.Where(m => m.StartTime > CurrentTime).Where(m => m.Status == "Published").Any(r => r.ShowingDate == datSelectedDate));
             }
 
             if (query != null) //they searched for something

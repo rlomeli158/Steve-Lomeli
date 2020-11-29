@@ -87,10 +87,14 @@
                         {
                             foreach (var showing in item.Showings)
                             {
-                                if (showing.ShowingDate == ViewBag.showingDate)
+                                if (showing.ShowingDate == ViewBag.showingDate && showing.Status == "Published" && DateTime.Now < showing.StartTime)
                                 {
                                     showingCount = 1;
                                     @Html.DisplayFor(modelShowing => showing.ShowingDate) @:at @Html.DisplayFor(modelShowing => showing.StartTime) <br />
+                                }
+                                else if (showing.ShowingDate == ViewBag.showingDate && showing.Status == "Cancelled")
+                                {
+                                    @:We're sorry, this showing was cancelled. Come back soon!
                                 }
                             }
                         }
@@ -112,9 +116,11 @@
                                 }
                                 else
                                 {
+                                    @:You just missed it!
                                     blankCount += 1;
                                     if (showing.Status == "Unpublished")
                                     {
+                                        @:Coming Soon!
                                         unpublishedCount += 1;
                                     }
                                 }

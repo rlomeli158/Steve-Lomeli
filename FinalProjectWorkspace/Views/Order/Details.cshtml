@@ -241,11 +241,6 @@ else
                     <td>Popcorn Points Used:</td>
                     <td>@Html.DisplayFor(model => model.PopcornPoints)</td>
                 </tr>
-                <tr>
-                    <td>Amount Saved With Popcorn Points:</td>
-                    @{ Decimal popcornSaved = Model.Tickets.Sum(t => t.TicketPrice) - Model.Tickets.Sum(t => t.DiscountAmount);}
-                    <td>$@popcornSaved</td>
-                </tr>
             }
             @if (Model.PaidWithPopcornPoints == false && (Model.OrderStatus == "Partially Cancelled" || Model.OrderStatus == "Paid"))
             {

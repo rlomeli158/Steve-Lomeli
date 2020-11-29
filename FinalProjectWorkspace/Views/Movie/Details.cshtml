@@ -98,7 +98,7 @@
     @foreach (Showing p in Model.Showings)
     {
 <tr class="table-secondary text-center text-dark">
-    @if (DateTime.Now < p.StartTime)
+    @if (DateTime.Now < p.StartTime && p.Status == "Published")
     {
         <td>@Html.DisplayFor(modelItem => p.ShowingDate)</td>
         <td>@Html.DisplayFor(modelItem => p.StartTime)</td>
