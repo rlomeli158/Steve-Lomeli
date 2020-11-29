@@ -13,11 +13,13 @@
     <div class="col-md-4">
         <form asp-action="Publish">
             <div style="display:inline-flex; grid-column-gap:30px">
+                <!--
                 <div class="form-group" style="width:300px">
                     <label asp-for="SelectedShowingDate" class="control-label"></label>
                     <input asp-for="SelectedShowingDate" class="form-control" />
                     <span asp-validation-for="SelectedShowingDate" class="text-danger"></span>
                 </div>
+                    -->
                 <div class="form-group" style="width:300px">
                     <label asp-for="SelectedTheatre" class="control-label"></label><br />&nbsp;
                     <label class="radio">
@@ -27,6 +29,16 @@
                         @Html.RadioButtonFor(model => model.SelectedTheatre, Theatre.Theatre2) Theater 2
                     </label>
                     <span asp-validation-for="SelectedTheatre" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedStartingDate" class="control-label"></label>
+                    <input asp-for="SelectedStartingDate" class="form-control" />
+                    <span asp-validation-for="SelectedStartingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:300px">
+                    <label asp-for="SelectedEndingDate" class="control-label"></label>
+                    <input asp-for="SelectedEndingDate" class="form-control" />
+                    <span asp-validation-for="SelectedEndingDate" class="text-danger"></span>
                 </div>
             </div>
             <button type="submit" class="btn btn-outline-primary">Submit</button>

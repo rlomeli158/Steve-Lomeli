@@ -19,7 +19,7 @@
         {
 
             <div class="panel-heading">Add To @Model.Role.Name</div>
-            <table class="table table-striped">
+            <table class="table table-hover text-center">
                 @if (Model.NonMembers.Count() == 0)
                 {
                     <tr>
@@ -28,18 +28,19 @@
                 }
                 else
                 {
-                    <tr>
+                    <tr class="text-light text-center">
                         <!--TODO: Add additional user fields here-->
                         <!--First name is included as an example-->
                         <th>First Name</th>
                         <th>Middle Initial</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Add to Role</th>
+                        <th>Remove from Role</th>
+                        <th>Edit Profile</th>
                     </tr>
                     foreach (AppUser user in Model.NonMembers)
                     {
-                        <tr>
+                        <tr class="table-secondary text-center text-dark">
                             <!--TODO: Add additional fields here-->
                             <!--FirstName is included as an example-->
                             <td>@user.FirstName</td>
@@ -47,8 +48,9 @@
                             <td>@user.LastName</td>
                             <td>@user.Email</td>
                             <td>
-                                <input type="checkbox" name="IdsToAdd" value="@user.Id" />
-
+                                <input type="checkbox" name="IdsToRemove" value="@user.Id" />
+                            </td>
+                            <td>
                                 @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })
                             </td>
                         </tr>
@@ -61,7 +63,7 @@
 
     <div class="panel panel-primary">
         <div class="panel-heading">Remove from @Model.Role.Name</div>
-        <table class="table table-striped">
+        <table class="table table-hover text-center">
 
             @if (User.IsInRole("Employee") || (User.IsInRole("Manager")))
             {
@@ -73,31 +75,35 @@
                 }
                 else
                 {
-                    <tr>
+                    <tr class="text-light text-center">
                         <!--TODO: Add additional user fields here-->
                         <!--First name is included as an example-->
                         <th>First Name</th>
                         <th>Middle Initial</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        @if (User.IsInRole("Manager"))
+                        {
                         <th>Remove from Role</th>
+                        }
+                        <th>Edit Profile</th>
                     </tr>
                     foreach (AppUser user in Model.Members)
                     {
-                        <tr>
+                        <tr class="table-secondary text-center text-dark">
                             <!--TODO: Add additional fields here-->
                             <!--FirstName is included as an example-->
                             <td>@user.FirstName</td>
                             <td>@user.MiddleInitial</td>
                             <td>@user.LastName</td>
                             <td>@user.Email</td>
+                            @if (User.IsInRole("Manager"))
+                            {
                             <td>
-
-                                @if (User.IsInRole("Manager"))
-                                {
                                 <input type="checkbox" name="IdsToRemove" value="@user.Id" />
-                                }
-                                
+                            </td>
+                            }
+                            <td>
                                 @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })
                             </td>
                         </tr>

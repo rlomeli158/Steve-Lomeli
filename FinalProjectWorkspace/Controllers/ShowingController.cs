@@ -419,31 +419,151 @@ namespace FinalProjectWorkspace.Controllers
                 return View(pvm);
             }
 
-            //Get all showings that are currently unpublished for the selected date and selected theater
-            List<Showing> showings = _context.Showings
-                .Include(s => s.Movie)
-                .Where(s => s.Status == "Unpublished")
-                .Where(s => s.ShowingDate == pvm.SelectedShowingDate)
-                .Where(s => s.Theatre == pvm.SelectedTheatre)
-                .ToList();
-
-            //If there are no showings on this day, throw an error
-            if (!showings.Any())
-            {
-                return View("Error", new string[]
-                { "There are no movies on this date or in this theater! Please verify both and try again." });
-            }
-
             //Use this to check if movie runs past 9:30 PM or 9:45 AM
             DateTime compareTime;
             DateTime compareTimeMorning;
-
 
             //Use this as a counter to ensure at least one movie ends past 9:30 PM
             Int32 movieEndPastNine = 0;
 
             //Use this as a counter to ensure at least one movie starts by 9:45 AM
             Int32 movieStartByNine = 0;
+
+            List<Showing> showings = _context.Showings.ToList();
+
+            if (pvm.SelectedStartingDate != new DateTime(01, 01, 0001) && pvm.SelectedEndingDate != new DateTime(01, 01, 0001))
+            {
+                if (pvm.SelectedEndingDate != pvm.SelectedStartingDate.Value.AddDays(6) || pvm.SelectedStartingDate.Value.DayOfWeek != DayOfWeek.Friday)
+                {
+                    return View("Error", new string[]
+                    { "You must select a time period from Friday to the following Thursday. Please verify your dates and try again." });
+                }
+
+                if (DateTime.Now > pvm.SelectedStartingDate)
+                {
+                    return View("Error", new string[]
+                    { "You cannot publish schedules for the past." });
+                }
+
+                List<Showing> showingsToPublishWeek = _context.Showings
+                .Include(s => s.Movie)
+                .Where(s => s.Status == "Unpublished")
+                .Where(s => s.ShowingDate >= pvm.SelectedShowingDate || s.ShowingDate <= pvm.SelectedEndingDate)
+                .Where(s => s.Theatre == pvm.SelectedTheatre)
+                .ToList();
+
+                if (showingsToPublishWeek.Count() == 0)
+                {
+                    return View("Error", new string[]
+                    { "This date range contains no showings!" });
+                }
+
+                var weekDays = new List<string>()
+            {
+                "Friday",
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+            };
+
+                foreach (string day in weekDays)
+                {
+                    if (!showingsToPublishWeek.Where(s => s.ShowingDate.DayOfWeek.ToString() == day).Any())
+                    {
+                        return View("Error", new string[]
+                        { "There are no movies on " + day + " of this week! Please verify and try again." });
+                    }
+                }
+
+                showingsToPublishWeek = showingsToPublishWeek.OrderBy(s => s.StartTime).ToList();
+
+                DateTime goodEndTimeShowingsWeek = new DateTime(2100, 1, 1, 23, 59, 59);
+                foreach (DayOfWeek day in showingsToPublishWeek.Select(s => s.ShowingDate.DayOfWeek))
+                {
+                foreach (Showing s in showingsToPublishWeek.Where(s => s.ShowingDate.DayOfWeek == day).OrderBy(s => s.StartTime))
+                {
+                    //Checks if a movie runs past 9:30 PM
+                    compareTime = new DateTime(s.EndTime.Year, s.EndTime.Month, s.EndTime.Day, 21, 30, 00);
+
+                    //If it does, then add one to the counter. 
+                    if (s.EndTime > compareTime)
+                    {
+                        movieEndPastNine += 1;
+                    }
+
+                    compareTimeMorning = new DateTime(s.EndTime.Year, s.EndTime.Month, s.EndTime.Day, 09, 45, 00);
+
+                    //TODO: If we have to add validation for a movie starting as close to 9 AM as possible, I think we would add another if statement here along
+                    //with a counter, similar to how we have a movie that ends past 9
+                    if (s.StartTime <= compareTimeMorning)
+                    {
+                        movieStartByNine += 1;
+                    }
+
+                    //Checks if start time is no more than 45 minutes after previous movie's end time, enters the if statement if movies are too spaced out
+                    if (s.StartTime > goodEndTimeShowingsWeek.AddMinutes(45))
+                    {
+                        return View("Error", new string[]
+                        {  s.Movie.Title + " (ID: "+ s.ShowingID + ") " + "showing at " + s.StartTime + " is more than 45 minutes after the previous showing." });
+                    }
+
+                    //set the good end time to the end time of the current showing for the next loop
+                    goodEndTimeShowingsWeek = s.EndTime;
+                }
+                    goodEndTimeShowingsWeek = new DateTime(2100, 1, 1, 23, 59, 59);
+                }
+
+                //if there wasn't a movie that ended past nine, you have to add one
+                if (movieEndPastNine < 7)
+                {
+                    return View("Error", new string[] { "There is no movie that runs past 9:30 PM. Please add one." });
+                }
+                else if (movieStartByNine < 7)
+                {
+                    return View("Error", new string[] { "There is no movie that starts by 9:45 AM. Please add one." });
+                }
+                //otherwise, you are set to go, and you can set each showing to publish and update the DB
+                else
+                {
+                    foreach (Showing s in showingsToPublishWeek)
+                    {
+                        s.Status = "Published";
+
+                        //save the changes
+                        _context.Showings.Update(s);
+                        _context.SaveChanges();
+                    }
+                }
+
+                return RedirectToAction(nameof(Index), new { theatre = pvm.SelectedTheatre, StartingShowingDate = pvm.SelectedStartingDate });
+
+            }
+            else
+            {
+                if (DateTime.Now > pvm.SelectedShowingDate)
+                {
+                    return View("Error", new string[]
+                    { "You cannot publish schedules for the past." });
+                }
+
+                //Get all showings that are currently unpublished for the selected date and selected theater
+                showings = _context.Showings
+                    .Include(s => s.Movie)
+                    .Where(s => s.Status == "Unpublished")
+                    .Where(s => s.ShowingDate == pvm.SelectedShowingDate)
+                    .Where(s => s.Theatre == pvm.SelectedTheatre)
+                    .ToList();
+
+                //If there are no showings on this day, throw an error
+                if (!showings.Any())
+                {
+                    return View("Error", new string[]
+                    { "There are no movies on this date or in this theater! Please verify both and try again." });
+                }
+            }
 
             //Sort the orders and put them in order of start time for that day
             showings = showings.OrderBy(s => s.StartTime).ToList();
@@ -456,7 +576,7 @@ namespace FinalProjectWorkspace.Controllers
             foreach (Showing s in showings)
             {
                 //Checks if a movie runs past 9:30 PM
-                compareTime = new DateTime(s.EndTime.Year, s.EndTime.Month, s.EndTime.Day, 21, 30,00);
+                compareTime = new DateTime(s.EndTime.Year, s.EndTime.Month, s.EndTime.Day, 21, 30, 00);
 
                 //If it does, then add one to the counter. 
                 if (s.EndTime > compareTime)

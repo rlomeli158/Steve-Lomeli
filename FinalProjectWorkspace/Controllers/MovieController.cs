@@ -59,6 +59,28 @@ namespace FinalProjectWorkspace.Controllers
             return genreSelectList;
         }
 
+        private SelectList GetAllGenresWithID(int id)
+        {
+
+            //Get the list of categories from the database
+            List<Genre> genreList = _context.Genres.ToList();
+
+            Genre selectedGenre = _context.Genres.Find(id);
+
+            //add a dummy entry so the user can select all categories
+            Genre SelectNone = new Genre() { GenreID = 0, GenreName = "All" };
+            genreList.Add(SelectNone);
+
+            //convert the list to a SelectList by calling SelectList constructor
+            //CategoryID and CategoryName are the names of the properties on the Category class
+            //CategoryID is the primary key
+            SelectList genreSelectList = new SelectList(genreList.OrderBy(m => m.GenreID),
+           "GenreID", "GenreName", selectedGenre.GenreID);
+
+            //return the SelectList
+            return genreSelectList;
+        }
+
         public List<string> GetSeatsAvailable(int showingID)
         {
             List<string> allSeats = new List<string>()
@@ -107,7 +129,6 @@ namespace FinalProjectWorkspace.Controllers
 
         public SelectList GetAllRatings()
         {
-
             var MPAASelectList = new SelectList(Enum.GetValues(typeof(AllMPAARatings)).Cast<AllMPAARatings>().Select(v => new SelectListItem
             {
                 Text = v.ToString(),
@@ -117,7 +138,20 @@ namespace FinalProjectWorkspace.Controllers
             return MPAASelectList;
         }
 
-        
+        public SelectList GetAllRatingsWithID(int id)
+        {
+            string MPAAStringToDisplay = Enum.GetName(typeof(AllMPAARatings), id);
+            MPAARatings MPAARatingsToDisplay = (MPAARatings)Enum.Parse(typeof(MPAARatings), MPAAStringToDisplay);
+            var MPAASelectList = new SelectList(Enum.GetValues(typeof(AllMPAARatings)).Cast<AllMPAARatings>().Select(v => new SelectListItem
+            {
+                Text = v.ToString(),
+                Value = ((int)v).ToString()
+            }).ToList(), "Value", "Text", ((int)MPAARatingsToDisplay+1));
+
+            return MPAASelectList;
+        }
+
+
 
         public IActionResult DisplaySearchResults(SearchViewModel svm)
         {
@@ -346,21 +380,22 @@ namespace FinalProjectWorkspace.Controllers
 
         // GET: Movie/Edit/5
         [Authorize(Roles = "Manager")]
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var movie = await _context.Movies.FindAsync(id);
+            Movie movie = _context.Movies.Include(m => m.Genre).First(m => m.MovieID == id);
             if (movie == null)
             {
                 return NotFound();
             }
 
-            ViewBag.AllGenres = GetAllGenres();
-            ViewBag.AllMPAARatings = GetAllRatings();
+            ViewBag.AllGenres = GetAllGenresWithID(movie.Genre.GenreID);
+            Int32 movieRatingID =(int)movie.MPAARating + 1;
+            ViewBag.AllMPAARatings = GetAllRatingsWithID(movieRatingID);
             return View(movie);
         }
 
@@ -375,6 +410,18 @@ namespace FinalProjectWorkspace.Controllers
             if (id != movie.MovieID)
             {
                 return NotFound();
+            }
+
+
+            if (SelectedGenre == 0 || SelectedMPAARating == 0)
+            {
+
+                ModelState.AddModelError("DropdownError", "Please verify that you have specified one Genre and one MPAA Rating.");
+
+                ViewBag.AllGenres = GetAllGenres();
+                ViewBag.AllMPAARatings = GetAllRatings();
+                return View(movie);
+
             }
 
             if (ModelState.IsValid && SelectedGenre > 0 && SelectedMPAARating > 0)

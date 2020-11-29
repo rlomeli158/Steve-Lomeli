@@ -13,13 +13,10 @@
             <center>
                 <br />
                 <br />
-                <br />
-
                 <h1 class="text-center text-danger">Welcome, @ViewBag.PersonName!</h1>
             </center>
         </div>
         <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
-        <br />
         <br />
         <br />
         <center>
@@ -40,6 +37,7 @@
             </div>
         </center>
         <br />
+        <br />
         <div>
             <center>
                 <div class="row row-cols-1 row-cols-md-3">
@@ -49,13 +47,21 @@
                         <a class="btn btn-primary" asp-controller="MovieReview" asp-action="Index">Edit Reviews</a>
                     </div>
                     <div class="col mb-4">
-                        <p class="sansserif" style="color:darksalmon;">Edit Profile</p>
-                        <a class="btn btn-primary" asp-controller="Account" asp-action="Index">Edit Accounts</a>
+                        <p class="sansserif" style="color:darksalmon;">Create an Employee or Customer</p>
+                        <a class="btn btn-primary" asp-action="Register" asp-controller="Account">Create a Profile</a>
                     </div>
                     <div class="col mb-4">
                         <p class="sansserif" style="color:darksalmon;">Movie Schedule</p>
                         <a class="btn btn-primary" asp-controller="Showing" asp-action="Index">Movie Schedule</a>
                     </div>
+                </div>
+            </center>
+        </div>
+        <br />
+        <br />
+        <div>
+            <center>
+                <div class="row row-cols-1 row-cols-md-3">
                     <div class="col mb-4">
                         <p class="sansserif" style="color:darksalmon;">Reports</p>
                         <a class="btn btn-primary" asp-controller="Ticket" asp-action="ReportIndex">Reports</a>
@@ -71,7 +77,6 @@
                 </div>
             </center>
         </div>
-
     </div>
 </body>
 </html>

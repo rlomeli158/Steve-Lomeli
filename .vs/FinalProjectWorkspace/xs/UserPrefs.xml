@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" Line="2" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Index.cshtml" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" />
-      <File FileName="FinalProjectWorkspace/Program.cs" Line="18" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="463" Column="22" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/PublishViewModel.cs" Line="13" Column="11" />
+      <File FileName="FinalProjectWorkspace/Views/Showing/Publish.cshtml" Line="22" Column="24" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="330" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,15 +12,16 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="TicketController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
+              </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="Movie" expanded="True" />
+                <Node name="Showing" expanded="True" />
               </Node>
-              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -33,6 +34,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Catchpoint exceptionName="System.NullReferenceException" includeSubclasses="True" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/ShowingController.cs" relfile="FinalProjectWorkspace/Controllers/ShowingController.cs" line="468" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

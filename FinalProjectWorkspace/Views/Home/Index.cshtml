@@ -75,7 +75,7 @@
                         @Html.DisplayNameFor(model => model.Theatre)
                     </th>
                     <th>
-                        Details
+                        Buy Ticket
                     </th>
                 </tr>
             </thead>
@@ -99,7 +99,9 @@
                             @Html.DisplayFor(modelItem => item.Theatre)
                         </td>
                         <td>
-                            <a class="btn btn-outline-info" asp-controller="Movie" asp-action="Details" asp-route-id="@item.Movie.MovieID">Details</a>
+                            <form asp-controller="Order" asp-action="Create" asp-route-showingid="@item.ShowingID" method="post">
+                                <input type="submit" value="Buy a ticket!" class="btn btn-outline-info" />
+                            </form>
                         </td>
 
                     </tr>
