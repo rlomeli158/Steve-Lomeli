@@ -1,14 +1,7 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/MovieController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/ShowingController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="314" Column="35" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/PublishViewModel.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Publish.cshtml" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" />
-      <File FileName="FinalProjectWorkspace/Views/Order/Details.cshtml" Line="243" Column="22" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResultsShowing.cshtml" Line="115" Column="57" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="101" Column="63" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="156" Column="9" />
+      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="232" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +10,7 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="MovieController.cs" selected="True" />
+                <Node name="ShowingController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />

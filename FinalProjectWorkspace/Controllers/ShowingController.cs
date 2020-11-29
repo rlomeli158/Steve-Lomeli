@@ -267,12 +267,17 @@ namespace FinalProjectWorkspace.Controllers
             //for each showing on the same day
             foreach(Showing s in showingsToCompare)
             {
+                if (showing.StartTime == s.StartTime)
+                {
+                    return View("Error", new string[]
+                    { "The showing you're wanting to add starts at the same time as " + s.Movie.Title});
+                }
                 //if the showing you want to create starts before a showing on the same day,
                 //you must check that its end time is at least 25 minutes before the other show starts
                 if(showing.StartTime > s.StartTime)
                 {
                     //if the other showing starts at least 25 minutes after the showing you're creating, then it's good
-                    if (showing.StartTime > s.EndTime.AddMinutes(25) || s.Status == "Cancelled")
+                    if (showing.StartTime >= s.EndTime.AddMinutes(25) || s.Status == "Cancelled")
                     {
                         //good
                     }
@@ -288,7 +293,7 @@ namespace FinalProjectWorkspace.Controllers
                 else
                 {
                     //if the showing you're creating's start time is 25 minutes after the end of another movie, it's good
-                    if(s.StartTime > showing.EndTime.AddMinutes(25) || s.Status == "Cancelled")
+                    if(s.StartTime >= showing.EndTime.AddMinutes(25) || s.Status == "Cancelled")
                     {
                         //good
                     }
@@ -464,8 +469,8 @@ namespace FinalProjectWorkspace.Controllers
 
                 List<Showing> showingsToPublishWeek = _context.Showings
                 .Include(s => s.Movie)
-                .Where(s => s.Status == "Unpublished")
-                .Where(s => s.ShowingDate >= pvm.SelectedShowingDate || s.ShowingDate <= pvm.SelectedEndingDate)
+                //.Where(s => s.Status == "Unpublished")
+                .Where(s => pvm.SelectedStartingDate <= s.ShowingDate && pvm.SelectedEndingDate >= s.ShowingDate)
                 .Where(s => s.Theatre == pvm.SelectedTheatre)
                 .ToList();
 
@@ -779,12 +784,17 @@ namespace FinalProjectWorkspace.Controllers
                 //for each showing on the same day
                 foreach (Showing s in showingsToCompare)
                 {
+                    if (dbShowing.StartTime == s.StartTime)
+                    {
+                        return View("Error", new string[]
+                        { "The showing you're wanting to add starts at the same time as " + s.Movie.Title});
+                    }
                     //if the showing you want to create starts before a showing on the same day,
                     //you must check that its end time is at least 25 minutes before the other show starts
                     if (dbShowing.StartTime > s.StartTime)
                     {
                         //if the other showing starts at least 25 minutes after the showing you're creating, then it's good
-                        if (dbShowing.StartTime > s.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID || s.Status == "Cancelled")
+                        if (dbShowing.StartTime >= s.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID || s.Status == "Cancelled")
                         {
                             //good
                         }
@@ -801,7 +811,7 @@ namespace FinalProjectWorkspace.Controllers
                     else
                     {
                         //if the showing you're creating's start time is 25 minutes after the end of another movie, it's good
-                        if (s.StartTime > dbShowing.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID || s.Status == "Cancelled")
+                        if (s.StartTime >= dbShowing.EndTime.AddMinutes(25) || dbShowing.ShowingID == s.ShowingID || s.Status == "Cancelled")
                         {
                             //good
                         }
