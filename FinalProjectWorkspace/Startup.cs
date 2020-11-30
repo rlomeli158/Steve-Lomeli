@@ -19,7 +19,7 @@ namespace FinalProjectWorkspace
 
 
             //add the connection string for jeremiah Azure account
-            var connectionString = "Server=tcp:t17333kr1.database.windows.net,1433;Initial Catalog=t17333kr1;Persist Security Info=False;User ID=test;Password=abc1234!;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            var connectionString = "Server=tcp:finalprojectteam17.database.windows.net,1433;Initial Catalog=finalprojectteam17;Persist Security Info=False;User ID=burtram;Password=basic123!;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             //TODO: Uncomment this line once you have your connection string
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
@@ -80,9 +80,9 @@ namespace FinalProjectWorkspace
             });
 
             //Only need to seed ONCE. Do this at the beginning of the project.
-            //Seeding.SeedIdentity.AddAdmin(service).Wait();
-            //Seeding.SeedEmployee.SeedEmployees(service).Wait();
-            //Seeding.SeedCustomer.SeedCustomers(service).Wait();
+            Seeding.SeedIdentity.AddAdmin(service).Wait();
+            Seeding.SeedEmployee.SeedEmployees(service).Wait();
+            Seeding.SeedCustomer.SeedCustomers(service).Wait();
             //Then seed, in order, genre, prices, movies, movie schedule
         }
     }

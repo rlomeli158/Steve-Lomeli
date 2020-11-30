@@ -855,12 +855,18 @@ namespace FinalProjectWorkspace.Controllers
         [Authorize(Roles = "Manager")]
         public IActionResult Transactions(string id)
         {
-            List<Order> orders = _context.Order
-                                       .Include(rd => rd.Purchaser)
-                                       .Include(rd => rd.Tickets).ThenInclude(rd => rd.Showing).ThenInclude(rd => rd.Movie)
-                                       .Where(rd => rd.Purchaser.Id == id)
+            //List<Order> orders = _context.Order
+                                       //.Include(rd => rd.Purchaser)
+                                       //.Include(rd => rd.Tickets).ThenInclude(rd => rd.Showing).ThenInclude(rd => rd.Movie)
+                                       //.Where(rd => rd.Purchaser.Id == id)
+                                       //.ToList();
+            List<Ticket> tickets = _context.Ticket
+                                       .Include(rd => rd.Order).ThenInclude(rd => rd.Purchaser)
+                                       .Include(rd => rd.Showing).ThenInclude(rd => rd.Movie)
+                                       .Where(rd => rd.Order.Purchaser.Id == id)
                                        .ToList();
-            return View(orders);
+
+            return View(tickets);
         }
     }
 }
