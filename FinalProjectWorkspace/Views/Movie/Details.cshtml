@@ -2,7 +2,7 @@
 
 @{ ViewData["Title"] = "Details"; }
 
-<p></p>
+<br/>
 <h3 class="text-danger">
     @Html.DisplayFor(model => model.Tagline)
 </h3>
@@ -94,6 +94,7 @@
         <th>End Time</th>
         <th>Theatre</th>
         <th>Special Event?</th>
+        <th>Purchase</th>
     </tr>
     @foreach (Showing p in Model.Showings)
     {

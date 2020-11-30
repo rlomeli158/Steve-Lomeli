@@ -9,8 +9,8 @@
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
 
-<div class="row">
-    <div class="col-md-4">
+<div class="text-center">
+    <div class="text-center">
         <form asp-action="CopySchedule">
             <div style="display:inline-flex; grid-column-gap:30px">
                 <div class="form-group" style="width:300px">
@@ -29,6 +29,8 @@
                     <span asp-validation-for="SelectedCopyTheatre" class="text-danger"></span>
                 </div>
             </div>
+            <br/>
+            <br/>
             <div style="display:inline-flex; grid-column-gap:30px">
                 <div class="form-group" style="width:300px">
                     <label asp-for="SelectedToDate" class="control-label"></label>
@@ -46,12 +48,9 @@
                     <span asp-validation-for="SelectedToTheatre" class="text-danger"></span>
                 </div>
             </div>
-            <button type="submit" class="btn btn-outline-primary">Submit</button>
+            <button type="submit" class="btn btn-outline-Danger">Submit</button>
+            <a class="btn btn-outline-primary" asp-action="Index">Back to Showings</a>
         </form>
     </div>
-</div>
-
-<div>
-    <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
 </div>
 

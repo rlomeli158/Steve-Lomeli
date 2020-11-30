@@ -202,10 +202,10 @@ else
     {
         <td>
             <a asp-action="Create" asp-controller="Ticket" asp-route-orderid="@t.Order.OrderID" asp-route-showingid="@t.Showing.ShowingID"
-               class="btn btn-outline-info">Add</a>
+               class="btn btn-outline-warning">Add</a>
         </td>
         <td>
-            <a asp-action="Delete" asp-controller="Ticket" asp-route-id="@t.TicketID" class="btn btn-outline-info">Delete</a>
+            <a asp-action="Delete" asp-controller="Ticket" asp-route-id="@t.TicketID" class="btn btn-outline-danger">Delete</a>
         </td>
     }
 </tr>
@@ -292,7 +292,7 @@ else
     @if ((Model.OrderStatus == "Paid" || Model.OrderStatus == "Partially Cancelled") && !Model.Tickets.Any(t => DateTime.Now > t.Showing.StartTime))
     {
         <br />
-        <a asp-action="Cancelled" asp-route-id="@Model.OrderID" class="btn btn-danger">Cancel Order</a>
+        <a asp-action="Cancelled" asp-route-id="@Model.OrderID" class="btn btn-outline-danger">Cancel Order</a>
     }
 </div>
 
