@@ -40,6 +40,7 @@ namespace FinalProjectWorkspace.Models
         public Decimal DiscountAmount { get; set; } 
 
         [DisplayFormat(DataFormatString = "{0:C}")]
+        [Display(Name = "Ticket Cost")]
         public Decimal TotalCost { get; set; }
 
         //Seats purchased
@@ -47,9 +48,11 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Select Your Seat:")]
         public String SeatNumber { get; set; }
 
+        [Display(Name = "Transaction Popcorn Points")]
         public Decimal TransactionPopcornPoints { get; set; }
 
         //to see if ticket is cancelled or not
+        [Display(Name = "Ticket Status")]
         public String TicketStatus{ get; set; }
 
         public Order Order { get; set; }

@@ -1,7 +1,7 @@
 @model IEnumerable<FinalProjectWorkspace.Models.Movie>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "All Movie";
 }
 
 <br />
@@ -9,10 +9,10 @@
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
 
-<p>
+<div class="text-center">
     <a class="btn btn-outline-primary" asp-action="Create">Create New Movie</a>
     <a class="btn btn-outline-primary" asp-controller="Genre" asp-action="Create">Create New Genre</a>
-</p>
+</div>
 <table class="table table-hover text-center">
     <thead>
         <tr class="text-light text-center">
@@ -66,7 +66,7 @@
                 @Html.DisplayFor(modelItem => item.MPAARating)
             </td>
             <td>
-                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.MovieID">Edit</a>
+                <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.MovieID">Edit</a>
             </td>
             <td>
                 <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.MovieID">Details</a>

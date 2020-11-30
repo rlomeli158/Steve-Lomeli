@@ -46,7 +46,7 @@
                             }
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = role.Role.Id }, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Edit", "Edit", new { id = role.Role.Id }, new { @class = "btn btn-outline-info" })
                         </td>
                     </tr>
                 }
@@ -89,12 +89,14 @@
 
     </table>
 </div>
+<div class="text-center">
 
 @if (User.Identity.IsAuthenticated)
 {
     @if (User.IsInRole("Manager"))
     {
         @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-outline-info" })
-        <a class="btn btn-success" asp-action="Register" asp-controller="Account">Create an Employee or Customer</a>
+        <a class="btn btn-outline-primary" asp-action="Register" asp-controller="Account">Create New Employee or Customer</a>
     }
 }
+</div>

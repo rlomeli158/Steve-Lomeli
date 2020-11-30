@@ -5,15 +5,15 @@
 }
 
     <br />
-<h1 class="text-center text-danger">OrderCheckout</h1>
+<h1 class="text-center text-danger">Order Checkout</h1>
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
 
 
 <h4>Order</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="text-center">
+    <div class="text-center">
         <form asp-action="OrderTotals" method="get">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -51,14 +51,10 @@
                     <input class="form-check-input" asp-for="OrderStatus" /> @Html.DisplayNameFor(model => model.OrderStatus)
                 </label>
             </div>
-            <div class="form-group">
+            <div class="text-center form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
