@@ -789,7 +789,6 @@ namespace FinalProjectWorkspace.Controllers
             {
                 string MPAAStringToDisplay = Enum.GetName(typeof(AllMPAARatings), rsvm.SelectedMPAARating);
                 MPAARatings MPAARatingsToDisplay = (MPAARatings)Enum.Parse(typeof(MPAARatings), MPAAStringToDisplay);
-                //query = query.Where(m => m.MPAARating.ToString() == MPAARatingToDisplay.ToString());
                 query = query.Where(m => m.Showing.Movie.MPAARating == MPAARatingsToDisplay);
             }
 
@@ -823,9 +822,9 @@ namespace FinalProjectWorkspace.Controllers
                 return View("ReportSearch", rsvm);
             }
 
-            //Execute query, include category with it
+            //Execute query
             
-            List<Ticket> SelectedTickets = query.Include(m => m.Showing).ThenInclude(m => m.Movie).Include(m => m.Order).ThenInclude(m => m.Purchaser).Where(r => r.Order.OrderStatus == "Paid").ToList();
+            List<Ticket> SelectedTickets = query.Include(m => m.Showing).ThenInclude(m => m.Movie).Include(m => m.Order).ThenInclude(m => m.Purchaser).Where(r => r.TicketStatus == "Active").ToList();
             ReportViewModel rvm = new ReportViewModel();
 
             if (rsvm.TotalRevenue != false) 
@@ -848,18 +847,13 @@ namespace FinalProjectWorkspace.Controllers
                 rvm.PopcornPointTickets = SelectedTickets.Where(r => r.Order.PaidWithPopcornPoints == true).ToList();
             }
 
-            return View("ReportSearchResults", rvm); //Put year in here right now, but it should be showtime, right? **********
+            return View("ReportSearchResults", rvm);
 
         }
 
         [Authorize(Roles = "Manager")]
         public IActionResult Transactions(string id)
         {
-            //List<Order> orders = _context.Order
-                                       //.Include(rd => rd.Purchaser)
-                                       //.Include(rd => rd.Tickets).ThenInclude(rd => rd.Showing).ThenInclude(rd => rd.Movie)
-                                       //.Where(rd => rd.Purchaser.Id == id)
-                                       //.ToList();
             List<Ticket> tickets = _context.Ticket
                                        .Include(rd => rd.Order).ThenInclude(rd => rd.Purchaser)
                                        .Include(rd => rd.Showing).ThenInclude(rd => rd.Movie)
