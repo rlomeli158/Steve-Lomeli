@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="DisplaySearchResults">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="SelectedTitle" class="control-label"></label>
                 <input asp-for="SelectedTitle" class="form-control" />
@@ -57,10 +57,22 @@
                     @Html.RadioButtonFor(model => model.SelectedSearchType, AllSearchTypes.LessThan) Less than
                 </label>
             </div>
+            <!--
             <div class="form-group">
                 <label asp-for="SelectedShowingDate" class="control-label"></label>
                 <input asp-for="SelectedShowingDate" class="form-control" />
                 <span asp-validation-for="SelectedShowingDate" class="text-danger"></span>
+            </div>
+                -->
+            <div class="form-group">
+                <label asp-for="StartingShowingDate" class="control-label"></label>
+                <input asp-for="StartingShowingDate" class="form-control" />
+                <span asp-validation-for="StartingShowingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndingShowingDate" class="control-label"></label>
+                <input asp-for="EndingShowingDate" class="form-control" />
+                <span asp-validation-for="EndingShowingDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Search" class="btn btn-outline-success" />

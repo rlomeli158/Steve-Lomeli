@@ -40,6 +40,9 @@
                 Selected Show Date
             </th>
             <th>
+                Theatre
+            </th>
+            <th>
                 Seats Available
             </th>
             <th>
@@ -50,124 +53,65 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr class="table-secondary text-center text-dark">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MPAARating)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RunTime)
-                </td>
-                <td>
-                    @{Double? avgReview = item.MovieReviews.Where(r => r.ApprovalStatus == true).Average(m => m.Rating);}
-                    @if (avgReview != null)
-                    {
-                        @avgReview
-                    }
-                    else
-                    {
-                        @:0
-                    }
-
-                </td>
-                <td>
-                    <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">Reviews</a>
-                </td>
-                <td>
-                    @{ Int32 showingCount = 0;}
-                    @if (!item.Showings.Any())
-                    {
-                        @:None Upcoming!
-                    }
-                    else
-                    {
-                        if (ViewBag.showingDate != null)
+            @foreach(var showing in item.Showings)
+            {
+                if(ViewBag.startDate <= showing.ShowingDate && ViewBag.endDate >= showing.ShowingDate && showing.Status == "Published" && DateTime.Now < showing.StartTime)
+                {                
+                <tr class="table-secondary text-center text-dark">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MPAARating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RunTime)
+                    </td>
+                    <td>
+                        @{Double? avgReviews = item.MovieReviews.Where(r => r.ApprovalStatus == true).Average(m => m.Rating);}
+                        @if (avgReviews != null)
                         {
-                            foreach (var showing in item.Showings)
-                            {
-                                if (showing.ShowingDate == ViewBag.showingDate && showing.Status == "Published" && DateTime.Now < showing.StartTime)
-                                {
-                                    showingCount = 1;
-                                    @Html.DisplayFor(modelShowing => showing.ShowingDate) @:at @Html.DisplayFor(modelShowing => showing.StartTime) <br />
-                                }
-                                else if (showing.ShowingDate == ViewBag.showingDate && showing.Status == "Cancelled")
-                                {
-                                    @:We're sorry, this showing was cancelled. Come back soon!
-                                }
-                            }
+                            @avgReviews
                         }
                         else
                         {
-                            Int32 blankCount = 0;
-                            Int32 totalCount = 0;
-                            Int32 unpublishedCount = 0;
-                            @foreach (var showing in item.Showings)
-                            {
-                                totalCount += 1;
-                                DateTime showingTime = new DateTime(showing.StartTime.Year, showing.StartTime.Month, showing.StartTime.Day,
-                                    showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
-                                if (DateTime.Now < showingTime && showing.Status == "Published")
-                                {
-                                    @Html.DisplayFor(modelShowing => showing.ShowingDate) @:at @Html.DisplayFor(modelShowing => showing.StartTime) <br />
-                                    <br />
-
-                                }
-                                else
-                                {
-                                    @:You just missed it!
-                                    blankCount += 1;
-                                    if (showing.Status == "Unpublished")
-                                    {
-                                        @:Coming Soon!
-                                        unpublishedCount += 1;
-                                    }
-                                }
-                            }
-                            if (blankCount == totalCount)
-                            {
-                                if (unpublishedCount >= 1)
-                                {
-                                    @:Coming soon!
-                                }
-                                else
-                                {
-                                    @:None Upcoming
-
-                                }
-                            }
+                            @:0
                         }
-                    }
-                </td>
-                @if (showingCount == 1)
-                {
+
+                    </td>
+                    <td>
+                        <a asp-action="Index" asp-controller="MovieReview" asp-route-movieid="@item.MovieID" class="btn btn-outline-info">Reviews</a>
+                    </td>
+                    <td>
+                        @if (ViewBag.startDate <= showing.ShowingDate && ViewBag.endDate >= showing.ShowingDate && showing.Status == "Published" && DateTime.Now < showing.StartTime)
+                        {
+                            @Html.DisplayFor(modelShowing => showing.ShowingDate) @:at @Html.DisplayFor(modelShowing => showing.StartTime)
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelShowing => showing.Theatre)
+                    </td>
                     <td>
                         @{Int32 seatCount = 0;}
-                        @foreach (var showing in item.Showings)
+                        @if (showing.SeatsAvailable != null)
                         {
-                            if (showing.SeatsAvailable != null)
-                            {
-                                seatCount = showing.SeatsAvailable.Count();
-                            }
+                            seatCount = showing.SeatsAvailable.Count();
                         }
                         @if (seatCount != 0)
                         {
                             @seatCount
                         }
                     </td>
-                }
-                else
-                {
-                    <td></td>
-                }
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
-                </td>
-            </tr>
-        }
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.MovieID" class="btn btn-outline-info">View</a>
+                    </td>
+                </tr>
+
+            } 
+               }
+            }
     </tbody>
-</table>
+    </table>
 
 <div class="text-center">
     <a class="btn btn-outline-primary" asp-action="Browse">Back to Search</a>

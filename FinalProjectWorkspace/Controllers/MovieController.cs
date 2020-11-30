@@ -218,6 +218,50 @@ namespace FinalProjectWorkspace.Controllers
                 query = query.Where(m => m.Showings.Where(m => m.StartTime > CurrentTime).Where(m => m.Status == "Published").Any(r => r.ShowingDate == datSelectedDate));
             }
 
+            if(svm.StartingShowingDate != null && svm.EndingShowingDate == null)
+            {
+                ModelState.AddModelError
+                    ("NotFilledOut", "Please fill out the corresponding ending date. If you want to only view one showing date, set that as your starting and ending date.");
+                //Populate view bag with list of categories
+                ViewBag.AllGenres = GetAllGenres();
+                ViewBag.AllMPAARatings = GetAllRatings();
+                return View("Browse", svm);
+            }
+            if (svm.StartingShowingDate == null && svm.EndingShowingDate != null)
+            {
+                ModelState.AddModelError
+                    ("NotFilledOut", "Please fill out the corresponding starting date. If you want to only view one showing date, set that as your starting and ending date.");
+                //Populate view bag with list of categories
+                ViewBag.AllGenres = GetAllGenres();
+                ViewBag.AllMPAARatings = GetAllRatings();
+                return View("Browse",svm);
+            }
+            if (svm.StartingShowingDate > svm.EndingShowingDate && (svm.StartingShowingDate != null && svm.EndingShowingDate != null))
+            {
+                ModelState.AddModelError("WronglyFilled", "The starting date is after the end date. Please verify your dates.");
+                //Populate view bag with list of categories
+                ViewBag.AllGenres = GetAllGenres();
+                ViewBag.AllMPAARatings = GetAllRatings();
+                return View("Browse", svm);
+            }
+
+            if (svm.StartingShowingDate < DateTime.Now && (svm.StartingShowingDate != null && svm.EndingShowingDate != null))
+            {
+                ModelState.AddModelError("WronglyFilled", "You cannot search for past showtimes. Please verify your dates.");
+                //Populate view bag with list of categories
+                ViewBag.AllGenres = GetAllGenres();
+                ViewBag.AllMPAARatings = GetAllRatings();
+                return View("Browse", svm);
+            }
+            if (svm.StartingShowingDate != null && svm.EndingShowingDate != null)
+            {
+                DateTime datStartDate = svm.StartingShowingDate ?? new DateTime(1900, 1, 1);
+                DateTime datEndDate = svm.EndingShowingDate ?? new DateTime(1900, 1, 1);
+                var CurrentTime = DateTime.Now;
+                query = query.Where(m => m.Showings.Where(m => m.StartTime > CurrentTime).Where(m => m.Status == "Published")
+                .Any(r => svm.StartingShowingDate <= r.ShowingDate && svm.EndingShowingDate >= r.ShowingDate));
+            }
+
             if (query != null) //they searched for something
             {
                 TryValidateModel(svm);
@@ -240,17 +284,18 @@ namespace FinalProjectWorkspace.Controllers
                     .ToList();
 
 
-                if (svm.SelectedShowingDate != null) //For showing date ********
+                if (svm.StartingShowingDate != null && svm.EndingShowingDate != null) //For showing date ********
                 {
-                    DateTime datSelectedDate = svm.SelectedShowingDate ?? new DateTime(1900, 1, 1);
-                    ViewBag.showingDate = datSelectedDate;
+                    DateTime startDate = svm.StartingShowingDate ?? new DateTime(1900, 1, 1);
+                    DateTime endDate = svm.EndingShowingDate ?? new DateTime(1900, 1, 1);
+
+                    ViewBag.startDate = startDate;
+                    ViewBag.endDate = endDate;
                     foreach (Movie m in SelectedMovies)
                     {
                         foreach(Showing s in m.Showings)
                         {
-                            if(s.ShowingDate != datSelectedDate)
-                            {
-                            }else
+                            if (svm.StartingShowingDate <= s.ShowingDate && svm.EndingShowingDate >= s.ShowingDate)
                             {
                                 var seatsAvailable = GetSeatsAvailable(s.ShowingID);
                                 s.SeatsAvailable = seatsAvailable;
@@ -263,8 +308,6 @@ namespace FinalProjectWorkspace.Controllers
                     //Populate the view bag with a count of selected job postings
                     ViewBag.SelectedMovies = SelectedMovies.Count();
 
-                    //return View("SearchResults", SelectedMovies.OrderBy(m => m.Showings.Min(s => s.StartTime))); //Put year in here right now, but it should be showtime, right? **********
-                    //return View("SearchResults", SelectedMovies.OrderBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
                     return View("SearchResultsShowing", SelectedMovies.OrderBy(m => m.ShowingSortOrder).ThenBy(m => m.Title)); //Put year in here right now, but it should be showtime, right? **********
 
 

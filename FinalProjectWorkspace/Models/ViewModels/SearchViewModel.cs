@@ -85,5 +85,13 @@ namespace FinalProjectWorkspace.Models
         [DataType(DataType.Date)]
         public DateTime? SelectedShowingDate { get; set; } //Date selector
 
+        [Display(Name = "Enter a Starting Showing Date:")]
+        [DataType(DataType.Date)]
+        public DateTime? StartingShowingDate { get; set; } //Date selector
+
+        [Display(Name = "Enter an Ending Showing Date:")]
+        [DataType(DataType.Date)]
+        public DateTime? EndingShowingDate { get; set; } //Date selector
+
     }
 }
