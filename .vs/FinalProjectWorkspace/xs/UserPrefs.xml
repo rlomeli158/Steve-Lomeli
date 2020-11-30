@@ -1,8 +1,19 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Showing/Edit.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/Ticket.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/ShowingController.cs" Line="779" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Showing/Edit.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" Line="57" Column="109" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/AccountViewModels.cs" Line="101" Column="31" />
+      <File FileName="FinalProjectWorkspace/Views/Shared/_Layout.cshtml" Line="25" Column="25" />
+      <File FileName="FinalProjectWorkspace/Views/Order/Confirmed.cshtml" Line="39" Column="64" />
+      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="137" Column="39" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Edit.cshtml" Line="68" Column="5" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Details.cshtml" Line="72" Column="6" />
+      <File FileName="FinalProjectWorkspace/Controllers/EmailController.cs" Line="130" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Create.cshtml" Line="46" Column="90" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/Transactions.cshtml" Line="25" Column="31" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="869" Column="31" />
+      <File FileName="FinalProjectWorkspace/Models/Ticket.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,14 +24,18 @@
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
+                <Node name="Ticket.cs" selected="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
                 <Node name="Movie" expanded="True" />
+                <Node name="MovieReview" expanded="True" />
                 <Node name="Order" expanded="True" />
-                <Node name="Showing" expanded="True">
-                  <Node name="Edit.cshtml" selected="True" />
-                </Node>
+                <Node name="RoleAdmin" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="Ticket" expanded="True" />
               </Node>
             </Node>
           </Node>
