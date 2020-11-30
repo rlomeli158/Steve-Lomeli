@@ -18,6 +18,7 @@
     <Folder Include="wwwroot\images\" />
     <Folder Include="Views\Seed\" />
     <Folder Include="Utilities\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="3.1.9" />
