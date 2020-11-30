@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj": {}
+    "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj": {}
   },
   "projects": {
-    "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj": {
+    "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+        "projectUniqueName": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
         "projectName": "FinalProjectWorkspace",
-        "projectPath": "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
-        "packagesPath": "/Users/jennifertruong/.nuget/packages/",
-        "outputPath": "/Users/jennifertruong/Documents/GitHub/FinalProject/FinalProjectWorkspace/obj/",
+        "projectPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/FinalProjectWorkspace.csproj",
+        "packagesPath": "/Users/slomeli/.nuget/packages/",
+        "outputPath": "/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jennifertruong/.config/NuGet/NuGet.Config"
+          "/Users/slomeli/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -24,6 +24,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -91,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

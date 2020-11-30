@@ -856,6 +856,8 @@ namespace FinalProjectWorkspace.Seeding
 					//if Movie Schedule is null, MovieSchedule is not in database
 					if (dbMovieSchedule == null)
 					{
+						seedShowing.Status = "Published";
+						seedShowing.SpecialEvent = false;
 						//Add the MovieSchedule to the database
 						db.Showings.Add(seedShowing);
 						db.SaveChanges();
@@ -867,6 +869,7 @@ namespace FinalProjectWorkspace.Seeding
 						dbMovieSchedule.Movie = seedShowing.Movie;
 						dbMovieSchedule.Theatre = seedShowing.Theatre;
 						dbMovieSchedule.ShowingDate = seedShowing.ShowingDate;
+						dbMovieSchedule.Status = "Published";
 					}
 				}
 			}

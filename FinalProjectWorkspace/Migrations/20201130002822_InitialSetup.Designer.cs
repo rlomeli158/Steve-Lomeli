@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProjectWorkspace.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201124145247_TicketStatus")]
-    partial class TicketStatus
+    [Migration("20201130002822_InitialSetup")]
+    partial class InitialSetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -340,7 +340,6 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("SeatNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ShowingID")
@@ -351,6 +350,9 @@ namespace FinalProjectWorkspace.Migrations
 
                     b.Property<string>("TicketStatus")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TicketType")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("TotalCost")
                         .HasColumnType("decimal(18,2)");
