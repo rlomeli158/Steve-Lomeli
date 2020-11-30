@@ -10,8 +10,8 @@
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
 
-<div class="row">
-    <div class="col-md-4">
+<div class="text-center">
+    <div class="text-center">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MovieReviewID" />
@@ -57,14 +57,11 @@
                 }
                 
             }
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group text-center">
+                <input type="submit" value="Save" class="btn btn-outline-danger" />
+                <a asp-action="Index" class="btn btn-outline-primary text-center">Back to Reviews</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index" class="btn btn-outline-warning text-center">Back to Reviews</a>
 </div>
 

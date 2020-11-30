@@ -8,8 +8,8 @@
 <h1 class="text-center text-danger">Register a New User</h1>
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
-<div class="row">
-    <div class="col-md-4">
+<div class="text-center">
+    <div class="text-center">
         <form asp-action="Register" method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <!--TODO: Add other required fields for registration here-->
@@ -102,16 +102,15 @@
 
             }
 
-            <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-outline-primary" />
+            <div class="form-group text-center">
+                <input type="submit" value="Register" class="btn btn-outline-danger" />
+                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Home</a>
             </div>
         </form>
     </div>
 </div>
 
-<div class="text-center">
-    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Home</a>
-</div>
+
 
 <script>function myFunction() {
         var checkBox = document.getElementById("customer");

@@ -3166,14 +3166,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-info {
-  color: #1f9bcf;
-  border-color: #1f9bcf;
+  color: #3c66af;
+  border-color: #3c66af;
 }
 
 .btn-outline-info:hover {
   color: #fff;
-  background-color: #1f9bcf;
-  border-color: #1f9bcf;
+  background-color: #3c66af;
+  border-color: #3c66af;
 }
 
 .btn-outline-info:focus, .btn-outline-info.focus {
@@ -3182,15 +3182,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-info.disabled, .btn-outline-info:disabled {
-  color: #1f9bcf;
+  color: #3c66af;
   background-color: transparent;
 }
 
 .btn-outline-info:not(:disabled):not(.disabled):active, .btn-outline-info:not(:disabled):not(.disabled).active,
 .show > .btn-outline-info.dropdown-toggle {
   color: #fff;
-  background-color: #1f9bcf;
-  border-color: #1f9bcf;
+  background-color: #3c66af;
+  border-color: #3c66af;
 }
 
 .btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus,
@@ -10393,7 +10393,7 @@ a.text-warning:hover, a.text-warning:focus {
 }
 
 .text-danger {
-  color: #d9534f !important;
+  color: #b43757 !important;
 }
 
 a.text-danger:hover, a.text-danger:focus {
@@ -10765,20 +10765,12 @@ div.video {
     width: 100% /* More than element */;
 }
 
-/* USE THESE 4 TO CHANGE LINK COLORS
-a {
-    color: green;
+.col-centered {
+    display:inline-block;
+    float:none;
+    margin-right:-4px;
 }
 
-a:link {
-    color: green;
+.row-centered {
+    text-align:center;
 }
-
-a:visited {
-    color: green;
-}
-
-a:hover {
-    color: green;
-}
-    */

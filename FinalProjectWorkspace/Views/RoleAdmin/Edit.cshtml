@@ -18,7 +18,7 @@
         @if (User.IsInRole("Manager"))
         {
 
-            <div class="panel-heading">Add To @Model.Role.Name</div>
+            <div class="panel-heading text-center">Add To @Model.Role.Name</div>
             <table class="table table-hover text-center">
                 @if (Model.NonMembers.Count() == 0)
                 {
@@ -62,7 +62,7 @@
 
 
     <div class="panel panel-primary">
-        <div class="panel-heading">Remove from @Model.Role.Name</div>
+        <div class="panel-heading text-center">Remove from @Model.Role.Name</div>
         <table class="table table-hover text-center">
 
             @if (User.IsInRole("Employee") || (User.IsInRole("Manager")))
@@ -104,7 +104,7 @@
                             </td>
                             }
                             <td>
-                                @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-primary" })
+                                @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-info" })
                             </td>
                         </tr>
                     }
@@ -114,11 +114,13 @@
         </div>
 
 
-
-        @if (User.IsInRole("Manager"))
+        <div class="text-center">
+            @if (User.IsInRole("Manager"))
             {
                  <button type="submit" class="btn btn-outline-danger">Save</button>
             }
 
         <a asp-action="Index" class="btn btn-outline-success">Cancel</a>
+        </div>
+        
     }

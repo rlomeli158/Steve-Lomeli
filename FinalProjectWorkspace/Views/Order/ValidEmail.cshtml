@@ -20,12 +20,12 @@
 <br />
 
 <div class="text-center">
-    <a class="btn btn-secondary" asp-action="SellTicket">Enter Another Email</a>
+    <a class="btn btn-outline-primary" asp-action="SellTicket">Enter Another Email</a>
     <form asp-action="Create">
         <p class="form-group">
             <div asp-validation-summary="All" class="text-danger"></div>
             <input name="customer" class="form-control" type="hidden" value=@ViewBag.Customer><br />
-            <button type="submit" class="btn btn-success">Create an Order</button>
+            <button type="submit" class="btn btn-ouline-warning">Create an Order</button>
         </p>
     </form>
 </div>
