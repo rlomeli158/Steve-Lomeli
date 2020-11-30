@@ -80,9 +80,9 @@ namespace FinalProjectWorkspace
             });
 
             //Only need to seed ONCE. Do this at the beginning of the project.
-            Seeding.SeedIdentity.AddAdmin(service).Wait();
-            Seeding.SeedEmployee.SeedEmployees(service).Wait();
-            Seeding.SeedCustomer.SeedCustomers(service).Wait();
+            //Seeding.SeedIdentity.AddAdmin(service).Wait();
+            //Seeding.SeedEmployee.SeedEmployees(service).Wait();
+            //Seeding.SeedCustomer.SeedCustomers(service).Wait();
             //Then seed, in order, genre, prices, movies, movie schedule
         }
     }

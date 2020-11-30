@@ -6,11 +6,7 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Movie" expanded="True" />
-                <Node name="Seed" expanded="True" />
-              </Node>
+              <Node name="Views" expanded="True" />
               <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
