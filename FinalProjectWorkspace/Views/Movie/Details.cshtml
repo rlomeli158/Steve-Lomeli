@@ -123,6 +123,27 @@
     }
 </tr>}
 </table>
+
+<h3 class="text-danger">Movie Reviews</h3>
+<table class="table table-hover text-center">
+    <tr class="text-light text-center">
+        <th>Review Date</th>
+        <th>Rating</th>
+        <th>Description</th>
+    </tr>
+    @foreach (MovieReview mr in Model.MovieReviews)
+    {
+        <tr class="table-secondary text-center text-dark">
+            @if (mr.ApprovalStatus == true)
+            {
+                <td>@Html.DisplayFor(modelItem => mr.ReviewDate)</td>
+                <td>@Html.DisplayFor(modelItem => mr.Rating)</td>
+                <td>@Html.DisplayFor(modelItem => mr.ReviewDescription)</td>
+            }
+        </tr>
+}
+</table>
+
 <div class="text-center">
 
     @if (User.Identity.IsAuthenticated)
