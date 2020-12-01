@@ -292,6 +292,7 @@ else
     @if ((Model.OrderStatus == "Paid" || Model.OrderStatus == "Partially Cancelled") && !Model.Tickets.Any(t => DateTime.Now > t.Showing.StartTime))
     {
         <br />
+        <br />
         <a asp-action="Cancelled" asp-route-id="@Model.OrderID" class="btn btn-outline-danger">Cancel Order</a>
     }
 </div>
