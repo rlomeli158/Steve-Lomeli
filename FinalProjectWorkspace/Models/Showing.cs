@@ -38,13 +38,16 @@ namespace FinalProjectWorkspace.Models
         public Theatre Theatre { get; set; }
 
         [NotMapped]
+        [Display(Name = "Seats Available")]
         public List<string> SeatsAvailable { get; set; }
 
         //[Display(Name = "Seats Available")]
         //public Int32 SeatsAvailable { get; set; } // You take the difference of all seats and seats purchased
 
+        [Display(Name = "Special Event?")]
         public Boolean SpecialEvent { get; set; }
 
+        [Display(Name = "Showing Status")]
         public String Status { get; set; }
 
         public Movie Movie { get; set; }

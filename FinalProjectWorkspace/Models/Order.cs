@@ -19,6 +19,7 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Order Date")]
         public DateTime OrderDate { get; set; }
 
+        [Display(Name = "Order Subtotal")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal OrderSubtotal
         {
@@ -32,6 +33,7 @@ namespace FinalProjectWorkspace.Models
         }
 
         [DisplayFormat(DataFormatString = "{0:C}")]
+        [Display(Name = "Order Total")]
         public Decimal OrderTotal
         {
             get { return OrderSubtotal + Taxes; }
@@ -40,6 +42,7 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Status")]
         public String OrderStatus { get; set; } //Active or inactive in case it was cancelled
 
+        [Display(Name = "Popcorn Points")]
         public Int32 PopcornPoints { get; set; }
 
         [Display(Name ="Paid with Popcorn Points?")]

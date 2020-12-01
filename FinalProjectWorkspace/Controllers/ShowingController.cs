@@ -753,6 +753,20 @@ namespace FinalProjectWorkspace.Controllers
 
                 //update the course's scalar properties
                 dbShowing.Movie = dbMovie;
+                //TODO: If the showing was published before, should it still be published, or should it go to unpublished?
+                if (showing.Status == "Cancelled")
+                {
+                    dbShowing.Status = "Cancelled";
+                }
+                else if (dbShowing.Status == "Published" && dbShowing.ShowingDate.Date == showing.ShowingDate.Date)
+                {
+                    dbShowing.Status = "Published";
+
+                }
+                else
+                {
+                    dbShowing.Status = "Unpublished";
+                }
                 dbShowing.ShowingDate = showing.ShowingDate;
                 dbShowing.StartTime = new DateTime(showing.ShowingDate.Year, showing.ShowingDate.Month, showing.ShowingDate.Day,
                 showing.StartTime.Hour, showing.StartTime.Minute, showing.StartTime.Millisecond);
@@ -769,6 +783,7 @@ namespace FinalProjectWorkspace.Controllers
                 dbShowing.SeatsAvailable = showing.SeatsAvailable;
 
                 dbShowing.SpecialEvent = showing.SpecialEvent;
+                /*
                 //TODO: If the showing was published before, should it still be published, or should it go to unpublished?
                 if(showing.Status == "Cancelled")
                 {
@@ -781,6 +796,7 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     dbShowing.Status = "Unpublished";
                 }
+                */
 
                 //Compare showing you want to add to the other showings on the same date for business rules
                 List<Showing> showingsToCompare = _context.Showings

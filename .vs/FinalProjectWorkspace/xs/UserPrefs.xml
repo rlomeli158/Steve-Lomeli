@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Startup.cs" Line="23" Column="37" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/Details.cshtml" Line="118" Column="10" />
-      <File FileName="FinalProjectWorkspace/Controllers/MovieController.cs" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Controllers/HomeController.cs" Line="44" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/MovieReview/Details.cshtml" Line="59" Column="36" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="22" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,21 +11,12 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
+                <Node name="TicketController.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
-              </Node>
-              <Node name="Seeding" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="Movie" expanded="True" />
+                <Node name="Genre" expanded="True" />
                 <Node name="MovieReview" expanded="True" />
-                <Node name="Order" expanded="True" />
-                <Node name="RoleAdmin" expanded="True" />
-                <Node name="Shared" expanded="True" />
-                <Node name="Ticket" expanded="True" />
+                <Node name="Showing" expanded="True" />
               </Node>
             </Node>
           </Node>

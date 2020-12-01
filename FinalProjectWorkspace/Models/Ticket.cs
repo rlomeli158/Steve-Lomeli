@@ -29,13 +29,17 @@ namespace FinalProjectWorkspace.Models
     {
         public Int32 TicketID { get; set; }
 
+        [Display(Name = "Ticket Price")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal TicketPrice { get; set; }
 
+        [Display(Name = "Discount Name")]
         public DiscountNames DiscountName { get; set; }
 
+        [Display(Name = "Ticket Type")]
         public TicketTypes TicketType { get; set; }
 
+        [Display(Name = "Discount Amount")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal DiscountAmount { get; set; } 
 

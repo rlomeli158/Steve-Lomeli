@@ -10,7 +10,7 @@ namespace FinalProjectWorkspace.Models
     {
         public Int32 GenreID { get; set; }
 
-        [Display(Name = "Genre")]
+        [Display(Name = "Genre Name:")]
         public String GenreName { get; set; }
 
         public List<Movie> Movies { get; set; }

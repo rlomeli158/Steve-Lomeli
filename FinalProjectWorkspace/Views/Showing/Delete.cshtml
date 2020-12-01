@@ -1,7 +1,7 @@
 @model FinalProjectWorkspace.Models.Showing
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete a Showing";
 }
 
     <div class="text-center">
@@ -76,6 +76,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="ShowingID" />
         <input type="submit" value="Delete" class="btn btn-outline-danger" />
-        <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+        <a class="btn btn-outline-primary" asp-action="Index">Back to Movies Schedules</a>
     </form>
 </div>

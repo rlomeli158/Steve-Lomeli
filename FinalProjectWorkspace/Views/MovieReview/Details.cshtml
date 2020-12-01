@@ -1,7 +1,7 @@
 @model FinalProjectWorkspace.Models.MovieReview
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Review Details";
 }
 
 <br />
@@ -36,8 +36,38 @@
                 @Html.DisplayNameFor(model => model.Rating)
             </h5>
         </div>
-        <p class="mb-1">
+        @if (Model.Rating == 5)
+        {
+            <img src="https://i.ibb.co/tsDybfF/Five-stars.png" width="15%" />
             @Html.DisplayFor(model => model.Rating)
+
+        }
+        else if (Model.Rating == 4)
+        {
+            <img src="https://i.ibb.co/CQBqNpC/four.png" width="15%" />
+            @Html.DisplayFor(model => model.Rating)
+
+        }
+        else if (Model.Rating == 3)
+        {
+            <img src="https://i.ibb.co/ynsPtYR/three-stars.png" width="15%" />
+            @Html.DisplayFor(model => model.Rating)
+
+        }
+        else if (Model.Rating == 2)
+        {
+            <img src="https://i.ibb.co/Q929rhy/Two-stars.png" width="15%" />
+            @Html.DisplayFor(model => model.Rating)
+
+        }
+        else if (Model.Rating == 1)
+        {
+            <img src="https://i.ibb.co/bscRn81/One-star.png" width="15%" />
+            @Html.DisplayFor(model => model.Rating)
+
+        }
+        <p class="mb-1">
+            <!--Html.DisplayFor(model => model.Rating)-->
         </p>
     </a>
     <a class="list-group-item list-group-item-action flex-column align-items-start">
