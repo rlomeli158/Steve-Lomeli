@@ -795,13 +795,24 @@ namespace FinalProjectWorkspace.Controllers
             if (rsvm.SelectedTime != null) //For showing time ********
             {
                 DateTime timSelectedTime = rsvm.SelectedTime ?? new DateTime(1900, 1, 1);
+
+                if(rsvm.SelectedSearchType == AllSearchTypes.GreaterThan)
+                {
+                    ModelState.AddModelError("NotSelected", "Please choose either before or after for your selected time.");
+                    //Populate view bag with list of categories
+                    ViewBag.AllMPAARatings = GetAllRatings();
+                    ViewBag.AllMovies = GetAllMovies();
+                    return View("ReportSearch",rsvm);
+                }
+
+
                 switch (rsvm.SelectedSearchType)
                 {
                     case AllSearchTypes.Before:
-                        query = query.Where(m => m.Showing.StartTime <= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
+                        query = query.Where(m => m.Showing.StartTime.TimeOfDay <= timSelectedTime.TimeOfDay);
                         break;
                     case AllSearchTypes.After:
-                        query = query.Where(m => m.Showing.StartTime >= timSelectedTime); //TODO: Verify if Max is correct here or if something else should be used
+                        query = query.Where(m => m.Showing.StartTime.TimeOfDay >= timSelectedTime.TimeOfDay);
                         break;
                     default:
                         break;
@@ -841,6 +852,11 @@ namespace FinalProjectWorkspace.Controllers
 
                 users = users.Where(u => u.OrdersPurchased != null).ToList();
                 rvm.AppUsers = (List<AppUser>)users;
+                foreach (AppUser user in rvm.AppUsers)
+                {
+                    user.Tickets = SelectedTickets.Where(t => t.Order.Purchaser.UserName == user.UserName).ToList();
+                }
+                //rvm.Tickets = SelectedTickets;
             }
             if (rsvm.PPTickets != false)
             {

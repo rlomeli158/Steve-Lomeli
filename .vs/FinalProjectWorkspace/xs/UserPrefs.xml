@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/ViewModels/ReportViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Views/Ticket/ReportSearch.cshtml">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="843" Column="53" />
-      <File FileName="FinalProjectWorkspace/Views/Ticket/ReportSearchResults.cshtml" Line="99" Column="1" />
-      <File FileName="FinalProjectWorkspace/Views/Movie/SearchResultsShowing.cshtml" Line="1" Column="1" />
-      <File FileName="FinalProjectWorkspace/Models/ViewModels/ReportViewModel.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="795" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Home/ManagerHomeView.cshtml" Line="71" Column="100" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/ReportSearchResults.cshtml" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Views/Ticket/ReportSearch.cshtml" Line="13" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,15 +13,10 @@
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True">
-                  <Node name="ReportViewModel.cs" selected="True" />
-                </Node>
-              </Node>
               <Node name="Views" expanded="True">
-                <Node name="Movie" expanded="True" />
-                <Node name="Showing" expanded="True" />
-                <Node name="Ticket" expanded="True" />
+                <Node name="Ticket" expanded="True">
+                  <Node name="ReportSearch.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -35,7 +30,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Catchpoint exceptionName="System.NullReferenceException" includeSubclasses="True" />
-      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Ticket/ReportSearchResults.cshtml" relfile="FinalProjectWorkspace/Views/Ticket/ReportSearchResults.cshtml" line="99" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

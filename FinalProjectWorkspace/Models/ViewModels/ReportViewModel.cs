@@ -18,6 +18,9 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Customer")]
         public List<AppUser> AppUsers { get; set; }
 
+        [Display(Name = "Tickets")]
+        public List<Ticket> Tickets { get; set; }
+
         [Display(Name = "Popcorn Point Tickets")]
         public List<Ticket> PopcornPointTickets { get; set; }
 

@@ -73,6 +73,9 @@
                     @Html.DisplayNameFor(model => model.TotalSeatsSold)
                 </th>
                 <th>
+                    Popcorn Points Earned
+                </th>
+                <th>
                     Transactions
                 </th>
             </tr>
@@ -86,30 +89,43 @@
                     </td>
                     <td>
                         @{Decimal totalRevenue = item.OrdersPurchased.DefaultIfEmpty().Sum(item => item.OrderSubtotal);}
-                        @totalRevenue
+                        $@totalRevenue
                     </td>
                     <td>
                         @{Int32 totalSeats = item.OrdersPurchased.DefaultIfEmpty().Sum(item => item.Tickets.Count());}
                         @totalSeats
                     </td>
                     <td>
+                        @{Int32 totalPCP = item.OrdersPurchased.DefaultIfEmpty().Sum(item => item.Tickets.Sum(item => (int)item.TransactionPopcornPoints));}
+                        @totalPCP
+                    </td>
+                    <td>
                         <a class="btn btn-outline-warning" asp-action="Transactions" asp-route-id="@item.Id">Transactions</a>
                     </td>
                 </tr>
-                <!--
-                foreach (var ticket in item.Tickets)
+                @foreach (var ticket in item.Tickets)
                 {
                     <tr class="table-secondary text-center text-dark">
-                        <td></td>
                         <td>
-                            Html.DisplayFor(modelTicket => ticket.TotalCost)
+                            
                         </td>
                         <td>
-                            Html.DisplayFor(modelTicket => ticket.SeatNumber)
+                            @Html.DisplayFor(modelTicket => ticket.TotalCost)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelTicket => ticket.SeatNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelTicket => ticket.TransactionPopcornPoints)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelTicket => ticket.Showing.Movie.Title) <br />
+                            Date: @Html.DisplayFor(modelTicket => ticket.Showing.ShowingDate)
+                            @Html.DisplayFor(modelTicket => ticket.Showing.StartTime)<br />
+                            Status: @Html.DisplayFor(modelTicket => ticket.TicketStatus)
                         </td>
                     </tr>
                 }
-                    -->
 
             }
         </tbody>

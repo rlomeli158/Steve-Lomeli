@@ -69,6 +69,7 @@ namespace FinalProjectWorkspace.Controllers
 
             MovieReview movieReview = await _context.MovieReview
                                               .Include(mr => mr.Movie)
+                                              .Include(mr => mr.User)
                                               .FirstOrDefaultAsync(m => m.MovieReviewID == id);
             if (movieReview == null)
             {

@@ -82,15 +82,15 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Last Name")]
         public String LastName { get; set; }
 
-        [Display(Name = "Enter address")]
+        [Display(Name = "Enter Address")]
         [Required(ErrorMessage = "Please enter your address!")]
         public String Address { get; set; }
 
-        [Display(Name = "Enter city")]
+        [Display(Name = "Enter City")]
         [Required(ErrorMessage = "Please enter your city!")]
         public String City { get; set; }
 
-        [Display(Name = "Enter state")]
+        [Display(Name = "Enter State")]
         [Required(ErrorMessage = "Please enter your state!")]
         public String State { get; set; }
 
@@ -98,7 +98,7 @@ namespace FinalProjectWorkspace.Models
         [Required(ErrorMessage = "Please enter your Zip!")]
         public String Zip { get; set; }
 
-        [Display(Name = "Enter birthday")]
+        [Display(Name = "Enter Birthday")]
         [Required(ErrorMessage = "Please enter your birthday!")]
         //[MinAge(13)] // 13 is the parameter of constructor. 
         [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
@@ -138,17 +138,17 @@ namespace FinalProjectWorkspace.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Current Password")]
         public string OldPassword { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "New Password")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
+        [Display(Name = "Confirm New Password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }   
@@ -173,10 +173,14 @@ namespace FinalProjectWorkspace.Models
         public String City { get; set; }
         public String State { get; set; }
         public String Zip { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
+
         [Display(Name = "Popcorn Points Balance")]
         public Int32 PCPBalance { get; set; }
+
         [Display(Name = "Account State")]
         public bool AccountStatus { get; set; }
     }
@@ -211,23 +215,23 @@ namespace FinalProjectWorkspace.Models
         [Display(Name = "Last Name")]
         public String LastName { get; set; }
 
-        [Display(Name = "Enter user address")]
+        [Display(Name = "Enter Address")]
         [Required(ErrorMessage = "Please enter your address!")]
         public String Address { get; set; }
 
-        [Display(Name = "Enter user city")]
+        [Display(Name = "Enter City")]
         [Required(ErrorMessage = "Please enter your city!")]
         public String City { get; set; }
 
-        [Display(Name = "Enter user state")]
+        [Display(Name = "Enter State")]
         [Required(ErrorMessage = "Please enter your state!")]
         public String State { get; set; }
 
-        [Display(Name = "Enter user Zip")]
+        [Display(Name = "Enter Zip")]
         [Required(ErrorMessage = "Please enter your Zip!")]
         public String Zip { get; set; }
 
-        [Display(Name = "Enter user birthday")]
+        [Display(Name = "Enter Birthday")]
         [Required(ErrorMessage = "Please enter your birthday!")]
         [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
         [DataType(DataType.Date)]

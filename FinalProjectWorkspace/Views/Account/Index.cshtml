@@ -47,8 +47,7 @@
         <dd>@Model.Zip</dd>
 
         <dt>Birthday:</dt>
-        <dd>@Model.Birthday</dd>
-
+        <dd>@Html.DisplayFor(model => model.Birthday)</dd>
 
         <dt>Account Status:</dt>
         <dd>@Model.AccountStatus</dd>
@@ -72,7 +71,7 @@
         {
             @if (User.IsInRole("Manager"))
             {
-                <a asp-action="ManagerHomeView" asp-controller="Home" class="btn btn-outline-danger text-center">Manager Home</a>
+                <a asp-action="ManagerHomeView" asp-controller="Home" class="btn btn-outline-warning text-center">Manager Home</a>
             }
             else if (User.IsInRole("Employee"))
             {
