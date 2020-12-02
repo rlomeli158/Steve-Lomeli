@@ -26,12 +26,13 @@ namespace FinalProjectWorkspace.Models
 
         [Display(Name = "Start Time")]
         [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
+        [DisplayFormat(DataFormatString = "{0:h:mm tt}")]
         public DateTime StartTime { get; set; }
 
         [Display(Name = "End Time")]
         [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
+        [DisplayFormat(DataFormatString = "{0:h:mm tt}")]
+        //[DisplayFormat(DataFormatString = "{0:hh:mm}")]
         public DateTime EndTime { get; set; }
 
         [Display(Name = "Theatre")]

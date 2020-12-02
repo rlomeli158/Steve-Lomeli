@@ -96,6 +96,21 @@
                         <a class="btn btn-outline-warning" asp-action="Transactions" asp-route-id="@item.Id">Transactions</a>
                     </td>
                 </tr>
+                <!--
+                foreach (var ticket in item.Tickets)
+                {
+                    <tr class="table-secondary text-center text-dark">
+                        <td></td>
+                        <td>
+                            Html.DisplayFor(modelTicket => ticket.TotalCost)
+                        </td>
+                        <td>
+                            Html.DisplayFor(modelTicket => ticket.SeatNumber)
+                        </td>
+                    </tr>
+                }
+                    -->
+
             }
         </tbody>
     </table>
