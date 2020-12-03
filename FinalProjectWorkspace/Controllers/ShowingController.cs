@@ -94,7 +94,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this showing. Please Try Again." });
             }
 
             Showing showing = await _context.Showings
@@ -106,7 +106,7 @@ namespace FinalProjectWorkspace.Controllers
 
             if (showing == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this showing. Please Try Again." });
             }
 
             return View(showing);
@@ -657,13 +657,13 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this showing. Please Try Again." });
             }
 
             var showing = await _context.Showings.FindAsync(id);
             if (showing == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this showing. Please Try Again." });
             }
 
             if(DateTime.Now >= showing.StartTime)
@@ -1062,14 +1062,14 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this showing. Please Try Again." });
             }
 
             var showing = await _context.Showings
                 .FirstOrDefaultAsync(m => m.ShowingID == id);
             if (showing == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this showing. Please Try Again." });
             }
 
             if(showing.Status == "Published")

@@ -295,7 +295,7 @@ namespace FinalProjectWorkspace.Controllers
 
             if (user == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "There was a problem editing this account. Please Try Again." });
             }
             return View(evm);
 

@@ -30,14 +30,14 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this price. Please Try Again." });
             }
 
             var price = await _context.Prices
                 .FirstOrDefaultAsync(m => m.PriceID == id);
             if (price == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this price. Please Try Again." });
             }
 
             return View(price);
@@ -70,13 +70,13 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this price. Please Try Again." });
             }
 
             var price = await _context.Prices.FindAsync(id);
             if (price == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this price. Please Try Again." });
             }
             return View(price);
         }
@@ -90,7 +90,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id != price.PriceID)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this price. Please Try Again." });
             }
 
             if (ModelState.IsValid)
@@ -104,7 +104,7 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     if (!PriceExists(price.PriceID))
                     {
-                        return NotFound();
+                        return View("Error2", new String[] { "Could not find this price. Please Try Again." });
                     }
                     else
                     {
@@ -121,14 +121,14 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this price. Please Try Again." });
             }
 
             var price = await _context.Prices
                 .FirstOrDefaultAsync(m => m.PriceID == id);
             if (price == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this price. Please Try Again." });
             }
 
             return View(price);

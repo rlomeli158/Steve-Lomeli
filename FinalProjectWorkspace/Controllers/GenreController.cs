@@ -33,14 +33,14 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this genre. Please Try Again." });
             }
 
             var genre = await _context.Genres
                 .FirstOrDefaultAsync(m => m.GenreID == id);
             if (genre == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this genre. Please Try Again." });
             }
 
             return View(genre);
@@ -73,13 +73,13 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not edit this genre. Please Try Again." });
             }
 
             var genre = await _context.Genres.FindAsync(id);
             if (genre == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this genre. Please Try Again." });
             }
             return View(genre);
         }
@@ -93,7 +93,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id != genre.GenreID)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this genre. Please Try Again." });
             }
 
             if (ModelState.IsValid)
@@ -107,7 +107,7 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     if (!GenreExists(genre.GenreID))
                     {
-                        return NotFound();
+                        return View("Error2", new String[] { "Could not find this genre. Please Try Again." });
                     }
                     else
                     {
@@ -124,14 +124,14 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this genre. Please Try Again." });
             }
 
             var genre = await _context.Genres
                 .FirstOrDefaultAsync(m => m.GenreID == id);
             if (genre == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this genre. Please Try Again." });
             }
 
             return View(genre);

@@ -64,7 +64,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this movie review. Please Try Again." });
             }
 
             MovieReview movieReview = await _context.MovieReview
@@ -73,7 +73,7 @@ namespace FinalProjectWorkspace.Controllers
                                               .FirstOrDefaultAsync(m => m.MovieReviewID == id);
             if (movieReview == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this movie review. Please Try Again." });
             }
 
             return View(movieReview);
@@ -140,7 +140,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this movie review. Please Try Again." });
             }
             
 
@@ -150,7 +150,7 @@ namespace FinalProjectWorkspace.Controllers
                                        .FirstOrDefault(o => o.MovieReviewID == id);
             if (movieReview == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this movie review. Please Try Again." });
             }
             if (User.IsInRole("Manager") == false && User.IsInRole("Employee") == false && movieReview.User.UserName != User.Identity.Name)
             {
@@ -170,7 +170,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id != movieReview.MovieReviewID)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this movie review. Please Try Again." });
             }
 
             if (ModelState.IsValid)
@@ -209,7 +209,7 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     if (!MovieReviewExists(movieReview.MovieReviewID))
                     {
-                        return NotFound();
+                        return View("Error2", new String[] { "Could not find this movie review. Please Try Again." });
                     }
                     else
                     {

@@ -163,7 +163,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this movie. Please Try Again." });
             }
 
             var movie = await _context.Movies
@@ -172,7 +172,7 @@ namespace FinalProjectWorkspace.Controllers
 
             if (movie == null)
             {
-                return NotFound();
+                return View("Error2", new String[] { "Could not find this movie. Please Try Again." });
             }
 
             return View(movie);
