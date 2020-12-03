@@ -546,6 +546,8 @@ namespace FinalProjectWorkspace.Controllers
                     {
                         return View("Error", new string[] { "There is no movie that starts by 9:45 AM on " + day + ". Please add one." });
                     }
+                    movieEndPastNine = 0;
+                    movieStartByNine = 0;
                 }
 
                 foreach (Showing s in showingsToPublishWeek)
