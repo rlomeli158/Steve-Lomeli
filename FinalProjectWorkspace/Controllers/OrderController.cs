@@ -453,6 +453,14 @@ namespace FinalProjectWorkspace.Controllers
 
             if (orderIn.Recipient.UserName != null)
             {
+                //Prevent someone from gifting an order to themselves
+                if (orderIn.Recipient.UserName == order.Purchaser.UserName)
+                {
+                    return View("Error", new String[]
+                    { "You can't gift an order to yourself!" });
+
+                }
+
                 AppUser user = _context.Users.Where(u => u.UserName == orderIn.Recipient.UserName).FirstOrDefault();
                 if (user != null)
                 {

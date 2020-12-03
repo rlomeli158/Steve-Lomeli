@@ -163,17 +163,17 @@ namespace FinalProjectWorkspace.Controllers
 
             if (svm.SelectedTitle != null && svm.SelectedTitle != "") //For title
             {
-                query = query.Where(m => m.Title.Contains(svm.SelectedTitle));
+                query = query.Where(m => m.Title.Contains(svm.SelectedTitle.Trim()));
             }
 
             if (svm.SelectedTagline != null && svm.SelectedTagline != "") //For tagline
             {
-                query = query.Where(m => m.Tagline.Contains(svm.SelectedTagline));
+                query = query.Where(m => m.Tagline.Contains(svm.SelectedTagline.Trim()));
             }
 
             if (svm.SelectedActor != null && svm.SelectedActor != "") //For actors
             {
-                query = query.Where(m => m.Actors.Contains(svm.SelectedActor));
+                query = query.Where(m => m.Actors.Contains(svm.SelectedActor.Trim()));
             }
 
             if (svm.SelectedGenreID != 0) //For genre
@@ -192,6 +192,16 @@ namespace FinalProjectWorkspace.Controllers
 
             if (svm.SelectedCustomerRating != null) //For rating 
             {
+                if (Convert.ToDouble(svm.SelectedCustomerRating) > 5 || Convert.ToDouble(svm.SelectedCustomerRating) < 1)
+                {
+                    ModelState.AddModelError
+                    ("IncorrectRating", "Rating must only be from 1 to 5. Please fix your rating");
+                    //Populate view bag with list of categories
+                    ViewBag.AllGenres = GetAllGenres();
+                    ViewBag.AllMPAARatings = GetAllRatings();
+                    return View("Browse", svm);
+                }
+              
                 switch (svm.SelectedSearchType)
                 {
                     case AllSearchTypes.GreaterThan:
