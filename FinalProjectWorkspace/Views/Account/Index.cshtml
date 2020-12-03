@@ -57,7 +57,7 @@
         <a asp-action="EditAccount" asp-route-id="@Model.UserID" class="btn btn-outline-primary text-center">Edit Account</a>
         @if (User.Identity.IsAuthenticated)
         {
-            @if (User.IsInRole("Manager") || User.IsInRole("Employee") && Model.UserName == User.Identity.Name)
+            @if ((User.IsInRole("Manager") || User.IsInRole("Employee")) && Model.UserName == User.Identity.Name)
             {
                 <a asp-action="ChangePasswordEmpMan" asp-route-id="@Model.UserID" class="btn btn-outline-danger text-center">Change password</a>
             }

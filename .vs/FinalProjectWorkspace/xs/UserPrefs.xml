@@ -1,9 +1,14 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/TicketController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/AppUser.cs">
     <Files>
       <File FileName="FinalProjectWorkspace/Startup.cs" Line="21" Column="67" />
-      <File FileName="FinalProjectWorkspace/Controllers/TicketController.cs" Line="67" Column="18" />
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="554" Column="9" />
+      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="549" Column="47" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="18" Column="9" />
+      <File FileName="FinalProjectWorkspace/Controllers/AccountController.cs" Line="422" Column="37" />
+      <File FileName="FinalProjectWorkspace/Views/Account/ChangePasswordEmpMan.cshtml" Line="15" Column="51" />
+      <File FileName="FinalProjectWorkspace/Views/Account/ChangePassword.cshtml" Line="24" Column="27" />
+      <File FileName="FinalProjectWorkspace/Views/Account/Index.cshtml" Line="63" Column="14" />
+      <File FileName="FinalProjectWorkspace/Models/ViewModels/AccountViewModels.cs" Line="28" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,10 +16,14 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="TicketController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
+                <Node name="AppUser.cs" selected="True" />
               </Node>
-              <Node name="Views" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -27,6 +36,14 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Catchpoint exceptionName="System.NullReferenceException" includeSubclasses="True" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="429" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="439" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="443" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="406" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="408" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="414" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="410" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Views/Account/ChangePasswordEmpMan.cshtml" relfile="FinalProjectWorkspace/Views/Account/ChangePasswordEmpMan.cshtml" line="15" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
