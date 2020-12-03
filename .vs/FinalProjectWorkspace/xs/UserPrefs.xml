@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/AppUser.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/wwwroot/lib/jquery-validate/additional-methods 2.js">
     <Files>
-      <File FileName="FinalProjectWorkspace/Startup.cs" Line="26" Column="13" />
-      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" Line="19" Column="1" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" />
+      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="538" Column="1" />
+      <File FileName="FinalProjectWorkspace/wwwroot/lib/jquery-validate/additional-methods 2.js" Line="667" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,8 +12,13 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="AppUser.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="lib" expanded="True">
+                  <Node name="jquery-validate" expanded="True">
+                    <Node name="additional-methods 2.js" selected="True" />
+                  </Node>
+                </Node>
               </Node>
             </Node>
           </Node>
