@@ -763,7 +763,7 @@ namespace FinalProjectWorkspace.Controllers
         {
             //Initial query LINQ
             var query = from m in _context.Ticket select m;
-            query = query.Include(m => m.Showing).ThenInclude(m => m.Movie).Include(m => m.Order).ThenInclude(m => m.Purchaser).Where(t => t.TicketStatus != "Cancelled");
+            query = query.Include(m => m.Showing).ThenInclude(m => m.Movie).Include(m => m.Order).ThenInclude(m => m.Purchaser);
 
             //If statements corresponding to each input form control
 
