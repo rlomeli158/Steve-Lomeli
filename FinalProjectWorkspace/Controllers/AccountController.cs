@@ -415,9 +415,12 @@ namespace FinalProjectWorkspace.Controllers
             }
         }
 
-        public IActionResult ChangePasswordEmpMan(String id)
+        public async Task<IActionResult> ChangePasswordEmpManAsync(String id)
         {
-            return View();
+            AppUser userLoggedIn = await _userManager.FindByIdAsync(id);
+            ChangePasswordViewModel cpvm = new ChangePasswordViewModel();
+            cpvm.UserID = id;
+            return View(cpvm);
         }
 
         // POST: /Account/ChangePassword
@@ -434,7 +437,15 @@ namespace FinalProjectWorkspace.Controllers
 
             //Find the logged in user using the UserManager
             //AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
-            AppUser userLoggedIn = await _userManager.FindByIdAsync(id);
+            AppUser userLoggedIn;
+            if(cpvm.UserID != null)
+            {
+                userLoggedIn = await _userManager.FindByIdAsync(cpvm.UserID);
+            }
+            else
+            {
+                userLoggedIn = await _userManager.FindByIdAsync(id);
+            }
 
             if (User.IsInRole("Manager") || User.IsInRole("Employee") && userLoggedIn.UserName != User.Identity.Name)
             {
