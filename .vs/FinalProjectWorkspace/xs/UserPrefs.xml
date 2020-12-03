@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Controllers/OrderController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Models/AppUser.cs">
     <Files>
-      <File FileName="FinalProjectWorkspace/Controllers/OrderController.cs" Line="47" Column="31" />
+      <File FileName="FinalProjectWorkspace/Startup.cs" Line="26" Column="13" />
+      <File FileName="FinalProjectWorkspace/Models/AppUser.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,12 +10,8 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
             <Node name="FinalProjectWorkspace" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="OrderController.cs" selected="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Ticket" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="AppUser.cs" selected="True" />
               </Node>
             </Node>
           </Node>

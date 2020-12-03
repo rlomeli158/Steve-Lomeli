@@ -15,7 +15,7 @@ namespace FinalProjectWorkspace.Models
         public String FirstName { get; set; }
 
         [Display(Name = "Enter user a middle initial")]
-        [Required(ErrorMessage = "Please enter your middle initial!")]
+        //[Required(ErrorMessage = "Please enter your middle initial!")]
         public String MiddleInitial { get; set; }
 
         [Display(Name = "Enter user last name")]

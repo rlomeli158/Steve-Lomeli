@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProjectWorkspace.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201130002822_InitialSetup")]
-    partial class InitialSetup
+    [Migration("20201203194505_Middle")]
+    partial class Middle
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,7 +69,6 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("MiddleInitial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")

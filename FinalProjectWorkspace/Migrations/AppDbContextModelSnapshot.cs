@@ -67,7 +67,6 @@ namespace FinalProjectWorkspace.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("MiddleInitial")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
