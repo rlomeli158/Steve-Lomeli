@@ -405,7 +405,9 @@ namespace FinalProjectWorkspace.Controllers
         {
             AppUser userLoggedIn = await _userManager.FindByIdAsync(id);
 
-            if (User.IsInRole("Manager") || User.IsInRole("Employee") && userLoggedIn.UserName != User.Identity.Name)
+            return View();
+            /*
+            if ((User.IsInRole("Manager") || User.IsInRole("Employee")) && userLoggedIn.UserName != User.Identity.Name)
             {
                 return View();
             }
@@ -413,6 +415,7 @@ namespace FinalProjectWorkspace.Controllers
             {
                 return RedirectToAction("ChangePasswordEmpMan","Account", new { id });
             }
+            */
         }
 
         public async Task<IActionResult> ChangePasswordEmpManAsync(String id)
