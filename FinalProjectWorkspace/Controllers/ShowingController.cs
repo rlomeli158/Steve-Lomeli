@@ -557,6 +557,7 @@ namespace FinalProjectWorkspace.Controllers
                     _context.SaveChanges();
                 }
 
+
                 return RedirectToAction(nameof(Index), new { theatre = pvm.SelectedTheatre, StartingShowingDate = pvm.SelectedStartingDate });
 
             }
