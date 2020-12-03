@@ -35,7 +35,7 @@
                         <th>Middle Initial</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Remove from Role</th>
+                        <th>Add to Role</th>
                         <th>Edit Profile</th>
                     </tr>
                     foreach (AppUser user in Model.NonMembers)
@@ -48,7 +48,7 @@
                             <td>@user.LastName</td>
                             <td>@user.Email</td>
                             <td>
-                                <input type="checkbox" name="IdsToRemove" value="@user.Id" />
+                                <input type="checkbox" name="IdsToAdd" value="@user.Id" />
                             </td>
                             <td>
                                 @Html.ActionLink("Edit", "EditAccount", "Account", new { id = user.Id }, new { @class = "btn btn-outline-info" })
@@ -100,7 +100,7 @@
                             @if (User.IsInRole("Manager"))
                             {
                             <td>
-                                <input type="checkbox" name="IdsToRemove" value="@user.Id" />
+                                <input type="checkbox" name="IdsToDelete" value="@user.Id" />
                             </td>
                             }
                             <td>
