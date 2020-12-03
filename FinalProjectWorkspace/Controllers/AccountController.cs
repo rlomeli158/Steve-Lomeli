@@ -432,7 +432,16 @@ namespace FinalProjectWorkspace.Controllers
             //change password page to try again
             if (ModelState.IsValid == false)
             {
-                return View(cpvm);
+                if (cpvm.UserID != null)
+                {
+                    //send the user back to the change password page to try again
+                    return View("ChangePasswordEmpMan", cpvm);
+                }
+                else
+                {
+                    //send the user back to the change password page to try again
+                    return View(cpvm);
+                }
             }
 
             //Find the logged in user using the UserManager
@@ -447,7 +456,7 @@ namespace FinalProjectWorkspace.Controllers
                 userLoggedIn = await _userManager.FindByIdAsync(id);
             }
 
-            if (User.IsInRole("Manager") || User.IsInRole("Employee") && userLoggedIn.UserName != User.Identity.Name)
+            if ((User.IsInRole("Manager") || User.IsInRole("Employee")) && userLoggedIn.UserName != User.Identity.Name)
             {
                 var resetpswd = await _userManager.GeneratePasswordResetTokenAsync(userLoggedIn);
                 var outcome = await _userManager.ResetPasswordAsync(userLoggedIn, resetpswd, cpvm.NewPassword);
@@ -475,9 +484,16 @@ namespace FinalProjectWorkspace.Controllers
                     {
                         ModelState.AddModelError("", error.Description);
                     }
-
-                    //send the user back to the change password page to try again
-                    return View(cpvm);
+                    if (cpvm.UserID != null)
+                    {
+                        //send the user back to the change password page to try again
+                        return View("ChangePasswordEmpMan", cpvm);
+                    } else
+                    {
+                        //send the user back to the change password page to try again
+                        return View(cpvm);
+                    }
+                    
                 }
 
 
@@ -505,8 +521,16 @@ namespace FinalProjectWorkspace.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
 
-                //send the user back to the change password page to try again
-                return View(cpvm);
+                if (cpvm.UserID != null)
+                {
+                    //send the user back to the change password page to try again
+                    return View("ChangePasswordEmpMan", cpvm);
+                }
+                else
+                {
+                    //send the user back to the change password page to try again
+                    return View(cpvm);
+                }
             }
         }
 
