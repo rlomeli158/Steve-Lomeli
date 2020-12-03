@@ -536,28 +536,25 @@ namespace FinalProjectWorkspace.Controllers
                     goodEndTimeShowingsWeek = s.EndTime;
                 }
                     goodEndTimeShowingsWeek = new DateTime(2100, 1, 1, 23, 59, 59);
-                }
 
-                //if there wasn't a movie that ended past nine, you have to add one
-                if (movieEndPastNine < 7)
-                {
-                    return View("Error", new string[] { "There is no movie that runs past 9:30 PM. Please add one." });
-                }
-                else if (movieStartByNine < 7)
-                {
-                    return View("Error", new string[] { "There is no movie that starts by 9:45 AM. Please add one." });
-                }
-                //otherwise, you are set to go, and you can set each showing to publish and update the DB
-                else
-                {
-                    foreach (Showing s in showingsToPublishWeek)
+                    //if there wasn't a movie that ended past nine, you have to add one
+                    if (movieEndPastNine < 1)
                     {
-                        s.Status = "Published";
-
-                        //save the changes
-                        _context.Showings.Update(s);
-                        _context.SaveChanges();
+                        return View("Error", new string[] { "There is no movie that runs past 9:30 PM on "+ day +". Please add one." });
                     }
+                    else if (movieStartByNine < 1)
+                    {
+                        return View("Error", new string[] { "There is no movie that starts by 9:45 AM on " + day + ". Please add one." });
+                    }
+                }
+
+                foreach (Showing s in showingsToPublishWeek)
+                {
+                    s.Status = "Published";
+
+                    //save the changes
+                    _context.Showings.Update(s);
+                    _context.SaveChanges();
                 }
 
                 return RedirectToAction(nameof(Index), new { theatre = pvm.SelectedTheatre, StartingShowingDate = pvm.SelectedStartingDate });
