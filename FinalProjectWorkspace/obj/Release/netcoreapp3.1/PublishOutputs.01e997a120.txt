@@ -1,7 +1,10 @@
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/css/bootstrap.css
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/css/bootstrap.min.css
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/css/jquery.seat-charts.css
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/images/c1.gif
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/images/c2.gif
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/images/error.png
+/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/images/error1.png
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/images/favicon.ico
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/images/logo.png
 /Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/images/MSM.mp4
