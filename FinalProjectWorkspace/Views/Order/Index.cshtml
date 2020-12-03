@@ -68,6 +68,7 @@
                     @if ((item.OrderStatus == "Paid" || item.OrderStatus == "Partially Cancelled") && !item.Tickets.Any(t => t.Showing.StartTime < DateTime.Now.AddHours(1)))
                     {
                         <a class="btn btn-outline-danger" asp-action="Cancelled" asp-route-id="@item.OrderID">Cancel</a>
+                        <img src="https://www.flaticon.com/svg/static/icons/svg/189/189678.svg"/>
                     }
                 </td>
             </tr>
