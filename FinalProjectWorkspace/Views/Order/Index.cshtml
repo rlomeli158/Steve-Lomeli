@@ -36,6 +36,9 @@
                 @Html.DisplayNameFor(model => model.Seller)
             </th>
             <th>
+                View
+            </th>
+            <th>
                 Actions
             </th>
         </tr>
@@ -60,14 +63,21 @@
                     @Html.DisplayFor(modelItem => item.Seller.FirstName) @Html.DisplayFor(modelItem => item.Seller.LastName)
                 </td>
                 <td>
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.OrderID">View</a>
+                </td>
+                <td>
+                    
                     @if (item.OrderStatus == "Active")
                     {
-                        <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.OrderID">Edit Tickets</a>
+                        
+                            <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.OrderID">Edit Tickets</a>
+
                     }
-                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.OrderID">View</a>
+
                     @if ((item.OrderStatus == "Paid" || item.OrderStatus == "Partially Cancelled") && !item.Tickets.Any(t => t.Showing.StartTime < DateTime.Now.AddHours(1)))
                     {
-                        <a class="btn btn-outline-danger" asp-action="Cancelled" asp-route-id="@item.OrderID">Cancel</a>
+
+                            <a class="btn btn-outline-danger" asp-action="Cancelled" asp-route-id="@item.OrderID">Cancel</a>
                     }
                 </td>
             </tr>

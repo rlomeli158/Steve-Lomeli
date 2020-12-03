@@ -282,13 +282,14 @@ else
 </div>
 
 <br />
-<div style="display:inline-flex; grid-column-gap:15px" class="text-left">
+<div class="text-center">
     <!--<a asp-action="Index" class="btn btn-warning">Back to Order History</a>-->
     <!--if (Model.OrderStatus == "Active")
     {
         <a asp-action="Edit" asp-route-id="Model.OrderID" class="btn btn-info">Edit or Delete Tickets</a>
     }
         -->
+    <br />
     @if ((Model.OrderStatus == "Paid" || Model.OrderStatus == "Partially Cancelled") && !Model.Tickets.Any(t => DateTime.Now > t.Showing.StartTime))
     {
         <br />

@@ -84,15 +84,13 @@ namespace FinalProjectWorkspace.Controllers
                 if (User.IsInRole("Manager"))
                 {
                     var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Your order was cancelled by a manager. Here are the details of the cancelled order: </p></br>" +
-                    "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Order Subtotal: {3}</p><p>Taxes: {4}</p><p>Order Total: {5}</p> " +
-                    "<p>Popcorn Points: {6}</p><p>Paid With PopcornPoints: {7}</p><p>Purchaser: {8}</p>" +
+                    "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Purchaser: {3}</p>" +
                     "<p>You will be refunded to the original payment method. Please contatc us so we can reschedule you for another showing. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                     var message = new MailMessage();
                     message.To.Add(new MailAddress(msEmail)); //replace with valid value
                     message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
                     message.Subject = "Team 17 - Sorry! Your Order was Canceled";
-                    message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
-                        order.Purchaser);
+                    message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.Purchaser);
                     message.IsBodyHtml = true;
 
 
@@ -112,15 +110,13 @@ namespace FinalProjectWorkspace.Controllers
                 else
                 {
                     var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Your order was canceled. Here are the details of the cancelled order: </p></br>" +
-                    "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Order Subtotal: {3}</p><p>Taxes: {4}</p><p>Order Total: {5}</p> " +
-                    "<p>Popcorn Points: {6}</p><p>Paid With PopcornPoints: {7}</p><p>Purchaser: {8}</p>" +
+                    "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Purchaser: {3}</p>" +
                     "<p>You will be refunded to the original payment method. If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                     var message = new MailMessage();
                     message.To.Add(new MailAddress(msEmail)); //replace with valid value
                     message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
                     message.Subject = "Team 17 - Order Cancellation";
-                    message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
-                        order.Purchaser);
+                    message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.Purchaser);
                     message.IsBodyHtml = true;
 
 
@@ -167,17 +163,22 @@ namespace FinalProjectWorkspace.Controllers
 
             string msEmail = Convert.ToString(user.Email);
 
+            var orderSub = order.OrderSubtotal.ToString("0.00");
+            var orderTax = order.Taxes.ToString("0.00");
+            var orderTotal = order.OrderTotal.ToString("0.00");
+
+
             if (ModelState.IsValid)
             {
                 var body = "<h1>Hello {0}!</h1><p>Thank you for choosing Main St.!</p><p>Rock on!! Your order was confirmed! Here are the deets: </p></br>" +
-                    "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Order Subtotal: {3}</p><p>Taxes: {4}</p><p>Order Total: {5}</p> " +
+                    "<p>Transaction Number: {1}</p></br><p>Order Date: {2}</p><p>Order Subtotal: ${3}</p><p>Taxes: ${4}</p><p>Order Total: ${5}</p> " +
                     "<p>Popcorn Points: {6}</p><p>Paid With PopcornPoints: {7}</p><p>Purchaser: {8}</p>" +
                     "<p>If you need any more assistance, please contact us.</p><p>Have a great rest of your day!</p></br><p>~ Dak from Main St.</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(msEmail)); //replace with valid value
                 message.From = new MailAddress("dak.mainst@gmail.com", "Dak from Main St.");
                 message.Subject = "Team 17 - Order Confirmation";
-                message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, order.OrderSubtotal, order.Taxes, order.OrderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
+                message.Body = string.Format(body, user.FirstName, order.TransactionNumber, order.OrderDate, orderSub, orderTax, orderTotal, order.PopcornPoints, order.PaidWithPopcornPoints,
                     order.Purchaser);
                 message.IsBodyHtml = true;
 
