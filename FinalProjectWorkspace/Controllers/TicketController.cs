@@ -834,17 +834,17 @@ namespace FinalProjectWorkspace.Controllers
             }
 
             //Execute query
-            
-            List<Ticket> SelectedTickets = query.Include(m => m.Showing).ThenInclude(m => m.Movie).Include(m => m.Order).ThenInclude(m => m.Purchaser).Where(r => r.TicketStatus == "Active").ToList();
+
+            List<Ticket> SelectedTickets = query.Include(m => m.Showing).ThenInclude(m => m.Movie).Include(m => m.Order).ThenInclude(m => m.Purchaser).ToList();//.Where(r => r.TicketStatus == "Active").ToList();
             ReportViewModel rvm = new ReportViewModel();
 
             if (rsvm.TotalRevenue != false) 
             {
-                rvm.TotalRevenue = SelectedTickets.Sum(r => r.TotalCost);
+                rvm.TotalRevenue = SelectedTickets.Where(t => t.TicketStatus == "Active").Sum(r => r.TotalCost);
             }
             if (rsvm.TotalSeatsSold != false) 
             {
-                rvm.TotalSeatsSold = SelectedTickets.Count();
+                rvm.TotalSeatsSold = SelectedTickets.Where(t => t.TicketStatus == "Active").Count();
             }
             if (rsvm.ByCustomers != false)
             {
@@ -860,7 +860,7 @@ namespace FinalProjectWorkspace.Controllers
             }
             if (rsvm.PPTickets != false)
             {
-                rvm.PopcornPointTickets = SelectedTickets.Where(r => r.Order.PaidWithPopcornPoints == true).ToList();
+                rvm.PopcornPointTickets = SelectedTickets.Where(r => r.Order.PaidWithPopcornPoints == true && r.TicketStatus == "Active").ToList();
             }
 
             return View("ReportSearchResults", rvm);

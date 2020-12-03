@@ -2,7 +2,7 @@
 
 @{ ViewData["Title"] = "Revenue Report"; }
 
-    <br />
+<br />
 <h1 class="text-center text-danger">Report</h1>
 <hr style="height:2px;border-width:0;color:#d0faff;background-color:#d0faff">
 <br />
@@ -59,6 +59,12 @@
 @if (Model.AppUsers != null)
 {
     <h3>Customer Report</h3>
+    <div>
+        <label class="form-check-label">
+            More Details
+            <input type="checkbox" id="myCheck" onclick="myFunction()" />
+        </label>
+    </div>
     <br />
     <table class="table table-hover text-center">
         <thead>
@@ -107,7 +113,6 @@
                 {
                     <tr class="table-secondary text-center text-dark">
                         <td>
-                            
                         </td>
                         <td>
                             @Html.DisplayFor(modelTicket => ticket.TotalCost)
@@ -119,9 +124,11 @@
                             @Html.DisplayFor(modelTicket => ticket.TransactionPopcornPoints)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelTicket => ticket.Showing.Movie.Title) <br />
-                            Date: @Html.DisplayFor(modelTicket => ticket.Showing.ShowingDate)
-                            @Html.DisplayFor(modelTicket => ticket.Showing.StartTime)<br />
+                            <div class="text" style="display:none">
+                                @Html.DisplayFor(modelTicket => ticket.Showing.Movie.Title) <br />
+                                Date: @Html.DisplayFor(modelTicket => ticket.Showing.ShowingDate)
+                                @Html.DisplayFor(modelTicket => ticket.Showing.StartTime)<br />
+                            </div>
                             Status: @Html.DisplayFor(modelTicket => ticket.TicketStatus)
                         </td>
                     </tr>
@@ -177,3 +184,16 @@
     </table>
 }
 
+
+<script>function myFunction() {
+    var elements = document.getElementsByClassName("text");
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].style.display === "none") {
+            elements[i].style.display = "block";
+        }else if (elements[i].style.display === "block") {
+            elements[i].style.display = "none";
+        }
+
+    }
+}
+    </script>
