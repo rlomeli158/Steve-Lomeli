@@ -44,7 +44,7 @@ namespace FinalProjectWorkspace.Controllers
                                                 || o.Purchaser.UserName == User.Identity.Name).Include(ord => ord.Tickets).ThenInclude(ord => ord.Showing).ToList();
             }
 
-            return View(Orders);
+            return View(Orders.OrderByDescending(o => o.OrderDate));
         }
 
         // GET: Order/Details/5
