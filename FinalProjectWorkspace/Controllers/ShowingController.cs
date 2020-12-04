@@ -881,7 +881,7 @@ namespace FinalProjectWorkspace.Controllers
                         if (o.PaidWithPopcornPoints == true)
                         {
                             //get entire order
-                            Order fullOrder = _context.Order.Include(p => p.Tickets).First(p => p.OrderID == o.OrderID);
+                            Order fullOrder = _context.Order.Include(p => p.Tickets).ThenInclude(p => p.Showing).First(p => p.OrderID == o.OrderID);
 
                             //Loop through each ticket, make status cancelled
                             foreach (Ticket t in o.Tickets)
