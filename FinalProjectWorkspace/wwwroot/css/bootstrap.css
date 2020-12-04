@@ -10774,3 +10774,18 @@ div.video {
 .row-centered {
     text-align:center;
 }
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: #d0faff;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: #d0faff;
+}
+
+
+
+a {
+    background-color: #d0faff;
+
+}

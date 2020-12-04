@@ -1,21 +1,25 @@
 ﻿<Properties StartupConfiguration="{723884EE-3AD6-471C-B3CD-72A76DA6C762}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProjectWorkspace/Startup.cs">
-    <Files>
-      <File FileName="FinalProjectWorkspace/Startup.cs" Line="26" Column="15" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Option id="ShowAllFiles" value="True" />
           <Node name="FinalProjectWorkspace" expanded="True">
-            <Node name="FinalProjectWorkspace" expanded="True">
+            <Node name="FinalProjectWorkspace" expanded="True" selected="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Order" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
               </Node>
-              <Node name="wwwroot" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Seeding" expanded="True" />
+              <Node name="Utilities" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Order" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -30,6 +34,8 @@
       <Catchpoint exceptionName="System.NullReferenceException" includeSubclasses="True" />
       <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/MovieReviewController.cs" relfile="FinalProjectWorkspace/Controllers/MovieReviewController.cs" line="93" column="1" />
       <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/MovieReviewController.cs" relfile="FinalProjectWorkspace/Controllers/MovieReviewController.cs" line="87" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="187" column="1" />
+      <Breakpoint file="/Users/slomeli/Desktop/Sophomore Year/First Semester/MIS 333K/Projects/Final Project/FinalProjectWorkspace/FinalProject/FinalProjectWorkspace/Controllers/AccountController.cs" relfile="FinalProjectWorkspace/Controllers/AccountController.cs" line="190" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

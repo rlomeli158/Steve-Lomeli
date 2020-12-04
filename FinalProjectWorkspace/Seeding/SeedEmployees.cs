@@ -81,9 +81,9 @@ namespace FinalProjectWorkspace.Seeding
 				db.SaveChanges();
 				newUserEmp3 = db.Users.FirstOrDefault(u => u.UserName == "e.rice@mainstreetmovies.com");
 			}
-			if (await _userManager.IsInRoleAsync(newUserEmp3, "Employee") == false)
+			if (await _userManager.IsInRoleAsync(newUserEmp3, "Manager") == false)
 			{
-				await _userManager.AddToRoleAsync(newUserEmp3, "Employee");
+				await _userManager.AddToRoleAsync(newUserEmp3, "Manager");
 			}
 			db.SaveChanges();
 			AppUser newUserEmp4 = db.Users.FirstOrDefault(u => u.Email == "a.taylor@mainstreetmovies.com");
@@ -209,9 +209,9 @@ namespace FinalProjectWorkspace.Seeding
 				db.SaveChanges();
 				newUserEmp7 = db.Users.FirstOrDefault(u => u.UserName == "j.tanner@mainstreetmovies.com");
 			}
-			if (await _userManager.IsInRoleAsync(newUserEmp7, "Employee") == false)
+			if (await _userManager.IsInRoleAsync(newUserEmp7, "Manager") == false)
 			{
-				await _userManager.AddToRoleAsync(newUserEmp7, "Employee");
+				await _userManager.AddToRoleAsync(newUserEmp7, "Manager");
 			}
 			db.SaveChanges();
 			AppUser newUserEmp8 = db.Users.FirstOrDefault(u => u.Email == "m.rhodes@mainstreetmovies.com");
@@ -305,9 +305,9 @@ namespace FinalProjectWorkspace.Seeding
 				db.SaveChanges();
 				newUserEmp10 = db.Users.FirstOrDefault(u => u.UserName == "r.taylor@mainstreetmovies.com");
 			}
-			if (await _userManager.IsInRoleAsync(newUserEmp10, "Employee") == false)
+			if (await _userManager.IsInRoleAsync(newUserEmp10, "Manager") == false)
 			{
-				await _userManager.AddToRoleAsync(newUserEmp10, "Employee");
+				await _userManager.AddToRoleAsync(newUserEmp10, "Manager");
 			}
 			db.SaveChanges();
 			AppUser newUserEmp11 = db.Users.FirstOrDefault(u => u.Email == "v.lawrence@mainstreetmovies.com");
@@ -369,9 +369,9 @@ namespace FinalProjectWorkspace.Seeding
 				db.SaveChanges();
 				newUserEmp12 = db.Users.FirstOrDefault(u => u.UserName == "a.rogers@mainstreetmovies.com");
 			}
-			if (await _userManager.IsInRoleAsync(newUserEmp12, "Employee") == false)
+			if (await _userManager.IsInRoleAsync(newUserEmp12, "Manager") == false)
 			{
-				await _userManager.AddToRoleAsync(newUserEmp12, "Employee");
+				await _userManager.AddToRoleAsync(newUserEmp12, "Manager");
 			}
 			db.SaveChanges();
 			AppUser newUserEmp13 = db.Users.FirstOrDefault(u => u.Email == "c.baker@mainstreetmovies.com");
@@ -529,9 +529,9 @@ namespace FinalProjectWorkspace.Seeding
 				db.SaveChanges();
 				newUserEmp17 = db.Users.FirstOrDefault(u => u.UserName == "m.nguyen@mainstreetmovies.com");
 			}
-			if (await _userManager.IsInRoleAsync(newUserEmp17, "Employee") == false)
+			if (await _userManager.IsInRoleAsync(newUserEmp17, "Manager") == false)
 			{
-				await _userManager.AddToRoleAsync(newUserEmp17, "Employee");
+				await _userManager.AddToRoleAsync(newUserEmp17, "Manager");
 			}
 			db.SaveChanges();
 			AppUser newUserEmp18 = db.Users.FirstOrDefault(u => u.Email == "s.barnes@mainstreetmovies.com");

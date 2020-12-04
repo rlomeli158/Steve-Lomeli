@@ -23,7 +23,7 @@ namespace FinalProjectWorkspace.Models
 
         public Int32 MovieID { get; set; } 
 
-        public int MovieNumber { get; set; } //from 3001!
+        public Int32 MovieNumber { get; set; } //from 3001!
 
         [Required(ErrorMessage = "Movie Title is required!")]
         public String Title { get; set; }

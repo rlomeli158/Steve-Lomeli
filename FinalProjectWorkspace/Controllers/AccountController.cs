@@ -176,7 +176,14 @@ namespace FinalProjectWorkspace.Controllers
                 {
                     return RedirectToAction("EmployeeHomeView", "Home");
                 }
-
+                else if (await _userManager.IsInRoleAsync(userLoggedIn, "Manager") && userLoggedIn.AccountStatus == false)
+                {
+                    //return ?? "/" means if returnUrl is null, substitute "/" (home)
+                    await _signInManager.SignOutAsync();
+                    ModelState.AddModelError("", "Access is denied.");
+                    //send user back to login page to try again
+                    return View(lvm);
+                }
                 else if (await _userManager.IsInRoleAsync(userLoggedIn, "Employee") && userLoggedIn.AccountStatus == false)
                 {
                     //return ?? "/" means if returnUrl is null, substitute "/" (home)
@@ -209,6 +216,7 @@ namespace FinalProjectWorkspace.Controllers
 
             //add an error to the model to show invalid attempt
             ModelState.AddModelError("", "Invalid login attempt.");
+            await _signInManager.SignOutAsync();
             //send user back to login page to try again
             return View(lvm);
 

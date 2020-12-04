@@ -942,12 +942,15 @@ namespace FinalProjectWorkspace.Controllers
                         //they didn't pay with popcorn points
                         else
                         {
-                            Order fullOrder = _context.Order.Include(p => p.Tickets).First(p => p.OrderID == o.OrderID);
+                            Order fullOrder = _context.Order.Include(p => p.Tickets).ThenInclude(p => p.Showing).First(p => p.OrderID == o.OrderID);
+
+                            //List<Ticket> tickets = fullOrder.Tickets.ToList();
 
                             foreach (Ticket t in o.Tickets)
                             {
+
                                 //if ticket matches showing that was cancelled, remove price and cost to remove revenue
-                                if(t.Showing.ShowingID == dbShowing.ShowingID)
+                                if(t.Showing.ShowingID == dbShowing.ShowingID && t.Showing != null)
                                 {
                                     t.TicketPrice = 0;
                                     t.TotalCost = 0;
