@@ -121,8 +121,8 @@
                             {
                                 @if (User.IsInRole("Manager"))
                                 {
-                                    <a asp-action="Edit" asp-route-id="@item.ShowingID">Edit | </a>
-                                    <a asp-action="Delete" asp-route-id="@item.ShowingID">Delete</a>
+                                    <a style="background-color: transparent;" asp-action="Edit" asp-route-id="@item.ShowingID">Edit | </a>
+                                    <a style="background-color: transparent;" asp-action="Delete" asp-route-id="@item.ShowingID">Delete</a>
                                 }
                             }
 
